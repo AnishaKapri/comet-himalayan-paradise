@@ -4,7 +4,14 @@ import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Mountain, Compass, ChevronDown } from "lucide-react";
+import {
+  Mountain,
+  Compass,
+  ChevronDown,
+  Briefcase,
+  Home as HomeIcon,
+  Sparkles,
+} from "lucide-react";
 
 const stats = [
   { value: "20+", label: "Trek Routes" },
@@ -68,13 +75,13 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-          className="text-white text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-bold leading-[1.08] tracking-tight mb-6 max-w-5xl"
+          className="text-white text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.08] tracking-tight mb-6 max-w-5xl"
         >
-          Discover the Soul
+          Gateway to Himalayan Living
           <br />
-          of the{" "}
+          and{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-emerald-300 to-sky-400">
-            Himalayas
+            Entrepreneurship
           </span>
         </motion.h1>
 
@@ -92,10 +99,11 @@ export function Hero() {
 
         {/* CTAs */}
         <motion.div
+          id="hero-ctas"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.95 }}
-          className="flex flex-col sm:flex-row gap-4 mb-16 sm:mb-24"
+          className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-16 sm:mb-24 max-w-3xl"
         >
           <Link
             href="/contact"
@@ -110,6 +118,27 @@ export function Hero() {
           >
             <Compass className="w-4 h-4" />
             Explore Treks
+          </Link>
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-2 glass text-white px-6 py-3.5 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <Briefcase className="w-4 h-4" />
+            Explore Business & Investment Opportunities
+          </Link>
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-2 glass text-white px-6 py-3.5 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <HomeIcon className="w-4 h-4" />
+            Own a Second Home in the Himalayas
+          </Link>
+          <Link
+            href="/#purpose-driven-space"
+            className="group inline-flex items-center gap-2 glass text-white px-6 py-3.5 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <Sparkles className="w-4 h-4" />
+            Purpose Driven Space
           </Link>
         </motion.div>
 

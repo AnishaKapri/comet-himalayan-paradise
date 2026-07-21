@@ -4,6 +4,8 @@ import { WhyCHP } from "@/components/home/WhyCHP";
 import { ExperiencesSection } from "@/components/home/ExperiencesSection";
 import { PopularTreks } from "@/components/home/PopularTreks";
 import { StatsSection } from "@/components/home/StatsSection";
+import { CHPFacilities } from "@/components/home/CHPFacilities";
+import { PurposeDrivenSpace } from "@/components/home/PurposeDrivenSpace";
 import { GallerySection } from "@/components/home/GallerySection";
 import { Testimonials } from "@/components/home/Testimonials";
 import { FAQ } from "@/components/home/FAQ";
@@ -23,6 +25,8 @@ export default function HomePage() {
       <ExperiencesSection />
       <PopularTreks />
       <StatsSection />
+      <CHPFacilities />
+      <PurposeDrivenSpace />
       <GallerySection />
       <Testimonials />
       <FAQ />

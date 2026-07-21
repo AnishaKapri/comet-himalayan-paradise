@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mountain, Menu, X, Phone } from "lucide-react";
+import { Mountain, Menu, X, Phone, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -15,6 +15,13 @@ const navLinks = [
   { href: "/accommodation", label: "Stay" },
   { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
+];
+
+const moreLinks = [
+  { href: "/contact", label: "Second Home" },
+  { href: "/#facilities", label: "CHP Facilities" },
+  { href: "/contact", label: "Business & Investment" },
+  { href: "/#purpose-driven-space", label: "Purpose Driven Space" },
 ];
 
 export function Navbar() {
@@ -73,49 +80,74 @@ export function Navbar() {
             )}
           >
             <Mountain className="w-6 h-6" />
-            <span>
-              CHP{" "}
-              <span
-                className={cn(
-                  "font-light",
-                  scrolled || !isHome ? "text-slate-600" : "text-white/80"
-                )}
-              >
-                Himalayan
-              </span>
-            </span>
+            <span>CHP</span>
           </Link>
 
           {/* Desktop links */}
-          <ul className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={cn(
-                    "px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200",
-                    pathname === link.href
-                      ? scrolled || !isHome
-                        ? "bg-green-900/10 text-green-900"
-                        : "bg-white/20 text-white"
-                      : cn(
-                          "hover:bg-black/5",
-                          scrolled || !isHome
-                            ? "text-slate-600 hover:text-slate-900"
-                            : "text-white/80 hover:text-white hover:bg-white/10"
-                        )
-                  )}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+          <ul className="hidden lg:flex items-center gap-0.5">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.label} className="shrink-0">
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      "px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200",
+                      isActive
+                        ? scrolled || !isHome
+                          ? "bg-green-900/10 text-green-900"
+                          : "bg-white/20 text-white"
+                        : cn(
+                            "hover:bg-black/5",
+                            scrolled || !isHome
+                              ? "text-slate-600 hover:text-slate-900"
+                              : "text-white/80 hover:text-white hover:bg-white/10"
+                          )
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+
+            {/* More dropdown */}
+            <li className="relative shrink-0 group">
+              <button
+                type="button"
+                className={cn(
+                  "flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200",
+                  "hover:bg-black/5",
+                  scrolled || !isHome
+                    ? "text-slate-600 hover:text-slate-900"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
+                )}
+              >
+                More
+                <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
+              </button>
+
+              <div className="absolute right-0 top-full pt-2 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 transition-all duration-150">
+                <ul className="min-w-[220px] bg-white rounded-xl shadow-lg shadow-black/10 border border-slate-100 py-2">
+                  {moreLinks.map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
           </ul>
 
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+911234567890"
+              href="tel:+919949994989"
               className={cn(
                 "flex items-center gap-1.5 text-sm transition-colors",
                 scrolled || !isHome
@@ -124,13 +156,13 @@ export function Navbar() {
               )}
             >
               <Phone className="w-3.5 h-3.5" />
-              <span>+91 98765 43210</span>
+              <span>99499 94989</span>
             </a>
             <Link
               href="/contact"
               className="bg-green-900 hover:bg-green-800 text-white text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-green-900/25 hover:-translate-y-0.5"
             >
-              Book Now
+              Contact CHP
             </Link>
           </div>
 
@@ -162,21 +194,45 @@ export function Navbar() {
             className="fixed inset-0 z-40 bg-white pt-16 px-6 overflow-y-auto"
           >
             <ul className="flex flex-col gap-1 py-6">
-              {navLinks.map((link, i) => (
+              {navLinks.map((link, i) => {
+                const isActive = pathname === link.href;
+                return (
+                  <motion.li
+                    key={link.label}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                  >
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        "flex items-center py-3 px-4 rounded-xl text-lg font-medium transition-colors",
+                        isActive
+                          ? "bg-green-900/10 text-green-900"
+                          : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.li>
+                );
+              })}
+
+              <li className="pt-4 pb-1 px-4">
+                <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+                  More
+                </span>
+              </li>
+              {moreLinks.map((link, i) => (
                 <motion.li
-                  key={link.href}
+                  key={link.label}
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
+                  transition={{ delay: (navLinks.length + i) * 0.05 }}
                 >
                   <Link
                     href={link.href}
-                    className={cn(
-                      "flex items-center py-3 px-4 rounded-xl text-lg font-medium transition-colors",
-                      pathname === link.href
-                        ? "bg-green-900/10 text-green-900"
-                        : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
-                    )}
+                    className="flex items-center py-3 px-4 rounded-xl text-lg font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -186,11 +242,11 @@ export function Navbar() {
 
             <div className="border-t border-slate-100 pt-6 flex flex-col gap-3">
               <a
-                href="tel:+911234567890"
+                href="tel:+919949994989"
                 className="flex items-center gap-2 text-slate-600 py-2"
               >
                 <Phone className="w-4 h-4" />
-                +91 98765 43210
+                99499 94989
               </a>
               <Link
                 href="/contact"

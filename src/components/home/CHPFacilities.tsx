@@ -7,39 +7,42 @@ import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
+
+
+
+// Placeholder facilities — swap names, descriptions, and images for the real 3 once available.
 // Placeholder facilities — swap names, descriptions, and images for the real 3 once available.
 const facilities = [
   {
-    title: "Dining Hall",
+    title: "Holiday Resort",
     description:
-      "A warm communal dining space serving fresh, organic Himalayan meals throughout the day.",
-    image:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80&auto=format&fit=crop",
+      "A comfortable Himalayan retreat offering scenic stays, guided experiences, and year-round hospitality.",
+    image: "/images/facilities/holiday-resort.png",
   },
   {
-    title: "Wellness Spa",
+    title: "Himalayan Mind Space",
     description:
-      "On-site yoga decks, meditation rooms, and therapy spaces for holistic mountain wellness.",
-    image:
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80&auto=format&fit=crop",
+      "A dedicated space for mindfulness, meditation, and mental wellness set against the mountains.",
+    image: "/images/facilities/mind-space.png",
   },
   {
-    title: "Adventure Gear Center",
+    title: "Himalayan Floral Paradise",
     description:
-      "Fully stocked trekking and camping gear, maintained and issued by our expert crew.",
-    image:
-      "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=800&q=80&auto=format&fit=crop",
+      "A vibrant floral sanctuary showcasing the natural beauty and biodiversity of the Himalayas.",
+    image: "/images/facilities/floral-paradise.png",
   },
-];
-
+]
 export function CHPFacilities() {
   return (
     <section id="facilities" className="py-20 lg:py-28 bg-stone-50 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
+       <SectionHeader
           eyebrow="On-Site"
           title="CHP Facilities"
-          subtitle="Everything you need for a comfortable, well-equipped Himalayan stay — all in one place."
+          subtitle="A Vision Beyond Tourism
+CHP is creating a first-of-its-kind integrated Himalayan ecosystem where hospitality, wellness, adventure, spirituality, remote work, events, and authentic local experiences come together in one destination. The vision is to establish CHP as a one-stop destination for complete Himalayan experiences, serving travelers, families, corporates, and wellness seekers throughout the year.
+To make this vision a reality, CHP invites entrepreneurs and investors to co-own 20+ tourism and community facilities through a partnership-based profit-sharing model. Join us in building a sustainable Himalayan destination while creating long-term value and recurring income opportunities.
+"
         />
 
         <StaggerContainer
@@ -76,7 +79,7 @@ export function CHPFacilities() {
 
         <div className="mt-10 text-center">
           <Link
-            href="/accommodation"
+            href="/facilities"
             className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
           >
             View all 20+ Facilities

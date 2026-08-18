@@ -209,28 +209,7 @@ export const treks: Trek[] = [
     category: "adventure",
     isPopular: true,
   },
-  {
-    id: "jungle-safari",
-    name: "Jungle Safari",
-    slug: "jungle-safari",
-    tagline: "Into the wild Himalayan forests",
-    difficulty: "Easy",
-    duration: "Full Day",
-    bestSeason: "March – June, October – November",
-    location: "Dense Forest Zones",
-    highlights: [
-      "Leopard & bear territory",
-      "Expert wildlife tracker",
-      "Jeep & walking safari",
-      "Wildlife photography",
-    ],
-    description:
-      "Enter the dense forests bordering Himalayan wildlife corridors with expert trackers. Spot leopard pugmarks, Himalayan black bear dens, barking deer, and a wealth of bird life on this immersive guided safari.",
-    image:
-      "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=800&q=80&auto=format&fit=crop",
-    category: "adventure",
-    isPopular: true,
-  },
+
   {
     id: "night-safari",
     name: "Night Safari",
@@ -296,6 +275,27 @@ export const treks: Trek[] = [
     image:
       "/Gaushla and medicinal farm.png",
     category: "cultural",
+  },
+   {
+    id: "Himalayan-Crop-Discovery-trail",
+    name: "Himalayan Crop Discovery trail",
+    slug: "night-safari",
+    tagline: "Discover Himalayan Crops",
+    difficulty: "Easy",
+    duration: "Evening",
+    bestSeason: "March – November",
+    location: "Forest Fringe Zones",
+    highlights: [
+      "Nocturnal wildlife observation",
+      "Leopard territory walks",
+      "Stargazing at altitude",
+      "Expert naturalist guide",
+    ],
+    description:
+      "Discover the rich agricultural diversity of the Himalayas through traditional crops, local farming practices, and seasonal produce while experiencing authentic mountain life.",
+    image:
+      "/HImalayan-Crop-Discovery.png",
+    category: "adventure",
   },
 
   // ── Major Himalayan Treks ──────────────────────────────────────────────────

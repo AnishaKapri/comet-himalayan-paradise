@@ -14,7 +14,7 @@ const allFacilities = [
   { title: "Yoga Camp", image: "/images/facilities/yoga-camp.png" },
   { title: "Cosmic View Point", image: "/images/facilities/cosmic-vp.png" },
   { title: "Pyramid Living Space", image: "/images/facilities/pyramid.png" },
-  { title: "STEM Lab", image: "/images/facilities/stem-lab.png" },
+  { title: "STEM Lab", image: "/images/facilities/stem-lab.png"},
   { title: "Himalayan Bonsai World", image: "/images/facilities/bonsai-world.png" },
   { title: "Himalayan Rare Gems", image: "/images/facilities/rare-gems.png" },
   { title: "Himalayan Floral Paradise", image: "/images/facilities/floral-paradise.png" },

@@ -22,6 +22,7 @@ const moreLinks = [
   { href: "/#facilities", label: "CHP Facilities" },
   { href: "/contact", label: "Business & Investment" },
   { href: "/#purpose-driven-space", label: "Purpose Driven Space" },
+  { href: "/chp-enclave", label: "CHP Enclave" },
 ];
 
 export function Navbar() {
@@ -260,4 +261,6 @@ export function Navbar() {
       </AnimatePresence>
     </>
   );
+  
 }
+

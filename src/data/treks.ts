@@ -496,7 +496,7 @@ export const treks: Trek[] = [
     slug: "panchachuli-base-camp",
     tagline: "At the feet of five eternal flames",
     difficulty: "Challenging",
-    duration: "7–9 Days",
+    duration: "2-4 Days",
     distance: "80–100 km",
     maxAltitude: "4,800m",
     bestSeason: "May – June, September – October",

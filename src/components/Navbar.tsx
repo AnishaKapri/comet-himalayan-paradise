@@ -261,4 +261,6 @@ export function Navbar() {
       </AnimatePresence>
     </>
   );
+  
 }
+

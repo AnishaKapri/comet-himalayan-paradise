@@ -40,7 +40,7 @@ export default function TreksPage() {
       {/* Hero */}
       <section className="relative bg-green-950 pt-32 pb-20">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[url('/new.png')] bg-cover bg-center" />
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?w=1920&q=60')] bg-cover bg-center" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p

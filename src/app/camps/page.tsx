@@ -102,17 +102,17 @@ const accommodationTypes = [
   {
     type: "Homestays",
     desc: "Stay with a warm Kumaoni family. Experience local food, culture, and genuine mountain life.",
-    image: "/homestay.png",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
   },
   {
     type: "Traditional Houses",
     desc: "Stone-and-wood heritage homes with centuries of Himalayan character and craftsmanship.",
-    image: "/th.png",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80&auto=format&fit=crop",
   },
   {
     type: "Camping Tents",
     desc: "Premium canvas tents at scenic riverside or meadow locations. Bedding provided.",
-    image: "/ct.png",
+    image: "https://images.unsplash.com/photo-1504609773096-3761a51151b4?w=600&q=80&auto=format&fit=crop",
   },
 ];
 
@@ -122,7 +122,7 @@ export default function CampsPage() {
       {/* Hero */}
       <section className="relative h-[65vh] min-h-[480px] overflow-hidden">
         <Image
-          src="/Holiday Camp Header 1.png"
+          src="https://images.unsplash.com/photo-1504609773096-3761a51151b4?w=1920&q=80&auto=format&fit=crop"
           alt="Himalayan holiday camp"
           fill
           priority
@@ -151,7 +151,7 @@ export default function CampsPage() {
           </Link>
         </div>
       </section>
-      
+
       {/* Overview */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -198,14 +198,22 @@ export default function CampsPage() {
               <div className="relative">
                 <div className="relative h-80 rounded-2xl overflow-hidden">
                   <Image
-                    src="/Holiday Camp 2.png"
+                    src="https://images.unsplash.com/photo-1570641963303-92ce4845ed4c?w=800&q=80&auto=format&fit=crop"
                     alt="Himalayan camp aerial view"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>
-                
+                <div className="absolute -bottom-6 -right-6 w-48 h-48 rounded-2xl overflow-hidden border-4 border-white shadow-xl">
+                  <Image
+                    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80&auto=format&fit=crop"
+                    alt="Yoga at Himalayan camp"
+                    fill
+                    sizes="192px"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </ScrollReveal>
           </div>
@@ -213,258 +221,74 @@ export default function CampsPage() {
       </section>
 
       {/* Features grid */}
-<section className="py-20 bg-stone-50">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <SectionHeader
-      eyebrow="Camp Features"
-      title="Everything You Could Want"
-      subtitle="A comprehensive camp experience curated for maximum enjoyment and authentic Himalayan immersion."
-    />
+      <section className="py-20 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Camp Features"
+            title="Everything You Could Want"
+            subtitle="A comprehensive camp experience curated for maximum enjoyment and authentic Himalayan immersion."
+          />
 
-    <StaggerContainer
-      className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
-      staggerDelay={0.07}
-    >
-      {campFeatures.map((f, index) => {
-        const Icon = f.icon;
-
-        const iconColors = [
-          "#059669", // Emerald
-          "#2563EB", // Blue
-          "#EA580C", // Orange
-          "#16A34A", // Green
-          "#E11D48", // Rose
-          "#9333EA", // Purple
-          "#4F46E5", // Indigo
-          "#0891B2", // Cyan
-        ];
-
-        const iconBackgrounds = [
-          "#D1FAE5", // Light Emerald
-          "#DBEAFE", // Light Blue
-          "#FFEDD5", // Light Orange
-          "#DCFCE7", // Light Green
-          "#FFE4E6", // Light Rose
-          "#F3E8FF", // Light Purple
-          "#E0E7FF", // Light Indigo
-          "#CFFAFE", // Light Cyan
-        ];
-
-        return (
-          <StaggerItem key={f.title}>
-            <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow h-full">
-
-              {/* Icon */}
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-                style={{
-                  backgroundColor: iconBackgrounds[index % iconBackgrounds.length],
-                }}
-              >
-                <Icon
-                  className="w-5 h-5"
-                  style={{
-                    color: iconColors[index % iconColors.length],
-                  }}
-                />
-              </div>
-
-              {/* Title */}
-              <h3 className="font-semibold text-slate-800 text-sm mb-2">
-                {f.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-slate-500 text-xs leading-relaxed">
-                {f.description}
-              </p>
-
-            </div>
-          </StaggerItem>
-        );
-      })}
-    </StaggerContainer>
-  </div>
-</section>
-{/* Camp Activities */}
-<section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-      {/* LEFT — Camp Activities */}
-      <div>
-        <SectionHeader
-          eyebrow="CAMP ACTIVITIES"
-          title="Camp Activities"
-          subtitle="Make the most of your Himalayan stay with experiences designed for adventure, wellness, nature, and connection."
-        />
-
-        <StaggerContainer
-          className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4"
-          staggerDelay={0.08}
-        >
-
-          {/* Trekking */}
-          <StaggerItem>
-            <div className="group bg-stone-50 rounded-2xl p-5 border border-stone-100 hover:bg-emerald-50 hover:border-emerald-100 transition-all duration-300">
-              <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center mb-4">
-                <span className="text-xl">🥾</span>
-              </div>
-              <h3 className="font-semibold text-slate-800 text-sm mb-1">
-                Himalayan Treks
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Explore scenic mountain trails, forests, villages, and breathtaking Himalayan viewpoints.
-              </p>
-            </div>
-          </StaggerItem>
-
-          {/* Campfire */}
-          <StaggerItem>
-            <div className="group bg-stone-50 rounded-2xl p-5 border border-stone-100 hover:bg-orange-50 hover:border-orange-100 transition-all duration-300">
-              <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center mb-4">
-                <span className="text-xl">🔥</span>
-              </div>
-              <h3 className="font-semibold text-slate-800 text-sm mb-1">
-                Campfire Nights
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Gather around a warm Himalayan campfire with music, stories, food, and unforgettable evenings.
-              </p>
-            </div>
-          </StaggerItem>
-
-          {/* Yoga */}
-          <StaggerItem>
-            <div className="group bg-stone-50 rounded-2xl p-5 border border-stone-100 hover:bg-purple-50 hover:border-purple-100 transition-all duration-300">
-              <div className="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center mb-4">
-                <span className="text-xl">🧘</span>
-              </div>
-              <h3 className="font-semibold text-slate-800 text-sm mb-1">
-                Yoga & Meditation
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Start your mornings with yoga, meditation, pranayama, and peaceful moments surrounded by nature.
-              </p>
-            </div>
-          </StaggerItem>
-
-          {/* Organic Farming */}
-          <StaggerItem>
-            <div className="group bg-stone-50 rounded-2xl p-5 border border-stone-100 hover:bg-green-50 hover:border-green-100 transition-all duration-300">
-              <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center mb-4">
-                <span className="text-xl">🌱</span>
-              </div>
-              <h3 className="font-semibold text-slate-800 text-sm mb-1">
-                Organic Farming
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Experience Himalayan farming and learn about organic cultivation.
-              </p>
-            </div>
-          </StaggerItem>
-
-          {/* Wildlife */}
-          <StaggerItem>
-            <div className="group bg-stone-50 rounded-2xl p-5 border border-stone-100 hover:bg-blue-50 hover:border-blue-100 transition-all duration-300">
-              <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
-                <span className="text-xl">🦌</span>
-              </div>
-              <h3 className="font-semibold text-slate-800 text-sm mb-1">
-                Wildlife Experiences
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Discover Himalayan wildlife through guided nature walks and safaris.
-              </p>
-            </div>
-          </StaggerItem>
-
-          {/* Local Culture */}
-          <StaggerItem>
-            <div className="group bg-stone-50 rounded-2xl p-5 border border-stone-100 hover:bg-rose-50 hover:border-rose-100 transition-all duration-300">
-              <div className="w-10 h-10 rounded-xl bg-rose-100 flex items-center justify-center mb-4">
-                <span className="text-xl">🏔️</span>
-              </div>
-              <h3 className="font-semibold text-slate-800 text-sm mb-1">
-                Local Himalayan Life
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Experience local traditions, village life, and Himalayan cuisine.
-              </p>
-            </div>
-          </StaggerItem>
-
-        </StaggerContainer>
-      </div>
-
-      {/* RIGHT — Activity Image */}
-      <div className="w-full">
-       <div className="relative w-full flex items-center justify-center">
-  <img
-    src="/activities.png"
-    alt="Himalayan camp activities"
-    className="w-full max-w-[560px] h-auto object-contain rounded-3xl shadow-lg"
-  />
-</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-      {/* Daily Schedule */}
-<section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-      {/* LEFT — Schedule Description */}
-      <div>
-        <SectionHeader
-          eyebrow="A TYPICAL DAY"
-          title="Camp Schedule | Duration"
-          subtitle="Each day is thoughtfully structured — busy enough to be enriching, relaxed enough to breathe."
-        />
-
-        <div className="mt-10">
-
-          <p className="text-slate-600 text-sm leading-7">
-            Each day at our Himalayan camp is thoughtfully planned to offer a
-            balanced mix of wellness, adventure, nature, culture, and community.
-            Begin your morning with yoga and a wholesome Himalayan breakfast,
-            followed by guided nature walks, treks, farm experiences, and
-            cultural activities.
-          </p>
-
-          <p className="mt-5 text-slate-600 text-sm leading-7">
-            As the day continues, enjoy wildlife experiences, campfire evenings,
-            music, group activities, and traditional Himalayan dinners. Selected
-            camps also offer stargazing and night safaris for a memorable
-            experience under the mountain sky.
-          </p>
-
-          <p className="mt-5 text-slate-500 text-sm leading-7">
-            Camp durations are flexible, ranging from one-day experiences and
-            weekend stays to extended programmes. Schedules can be adjusted
-            according to weather conditions, group preferences, and programme
-            type.
-          </p>
-
+          <StaggerContainer
+            className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+            staggerDelay={0.07}
+          >
+            {campFeatures.map((f) => {
+              const Icon = f.icon;
+              return (
+                <StaggerItem key={f.title}>
+                  <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow h-full">
+                    <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center mb-4">
+                      <Icon className="w-5 h-5 text-green-700" />
+                    </div>
+                    <h3 className="font-semibold text-slate-800 text-sm mb-2">
+                      {f.title}
+                    </h3>
+                    <p className="text-slate-500 text-xs leading-relaxed">
+                      {f.description}
+                    </p>
+                  </div>
+                </StaggerItem>
+              );
+            })}
+          </StaggerContainer>
         </div>
-      </div>
+      </section>
 
-      {/* RIGHT — Schedule Image */}
-      <div className="w-full flex items-center justify-center">
-        <img
-          src="/schedule.png"
-          alt="Himalayan camp schedule"
-          className="w-full max-w-[560px] h-auto object-contain rounded-3xl shadow-lg"
-        />
-      </div>
+      {/* Daily Schedule */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="A Typical Day"
+            title="Camp Schedule"
+            subtitle="Each day is thoughtfully structured — busy enough to be enriching, relaxed enough to breathe."
+          />
 
-    </div>
-  </div>
-</section>
+          <div className="mt-12 space-y-0">
+            {scheduleItems.map((item, i) => (
+              <ScrollReveal key={i} delay={i * 0.05}>
+                <div className="flex items-center gap-4 py-4 border-b border-slate-100 last:border-0">
+                  <span className="text-green-700 font-mono text-sm font-semibold w-20 shrink-0">
+                    {item.time}
+                  </span>
+                  <div className="flex-1">
+                    <p className="text-slate-800 font-medium text-sm">
+                      {item.activity}
+                    </p>
+                  </div>
+                  <span className="text-xs text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full shrink-0">
+                    {item.tag}
+                  </span>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          <p className="text-slate-400 text-xs mt-6 text-center">
+            * Schedules may vary based on weather, group preferences, and programme type.
+          </p>
+        </div>
+      </section>
+
       {/* Accommodation */}
       <section className="py-20 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

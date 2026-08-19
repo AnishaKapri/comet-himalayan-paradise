@@ -177,7 +177,7 @@ export function PurposeDrivenSpace() {
             ))}
           </div>
         </div>
-      </div>
+       </div>
     </section>
   );
 }

@@ -293,6 +293,7 @@ export default function AboutPage() {
       </section>
 
       <CTABanner />
+      
     </>
   );
 }

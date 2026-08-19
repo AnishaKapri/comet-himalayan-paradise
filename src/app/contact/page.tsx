@@ -292,7 +292,6 @@ export default function ContactPage() {
   </label>
 
   <select
-    value={form.numberOfDays}
     onChange={(e) =>
       setForm((f) => ({ ...f, numberOfDays: e.target.value }))
     }

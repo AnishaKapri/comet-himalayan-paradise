@@ -151,7 +151,7 @@ export default function CampsPage() {
           </Link>
         </div>
       </section>
-
+      
       {/* Overview */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -212,7 +212,7 @@ export default function CampsPage() {
         </div>
       </section>
 
-      {/* Features Grid */}
+      {/* Features grid */}
 <section className="py-20 bg-stone-50">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <SectionHeader

@@ -182,8 +182,7 @@ export const treks: Trek[] = [
     ],
     description:
       "Experience the thrill of cycling through Himalayan terrain on high-altitude routes with jaw-dropping views. Suitable for intermediate cyclists, the routes wind through forests, villages, and mountain passes.",
-    image:
-      "/Mountain cycling.png",
+    image: "/Mountain cycling.png",
     category: "adventure",
     isPopular: true,
   },
@@ -204,8 +203,29 @@ export const treks: Trek[] = [
     ],
     description:
       "Camp on the banks of the pristine Ramganga river as it rushes down from Himalayan glaciers. Fish for trout, swim in crystal-clear pools, and spend evenings around a crackling fire under a star-filled sky.",
+    image: "/River camping.png",
+    category: "adventure",
+    isPopular: true,
+  },
+  {
+    id: "jungle-safari",
+    name: "Jungle Safari",
+    slug: "jungle-safari",
+    tagline: "Into the wild Himalayan forests",
+    difficulty: "Easy",
+    duration: "Full Day",
+    bestSeason: "March – June, October – November",
+    location: "Dense Forest Zones",
+    highlights: [
+      "Leopard & bear territory",
+      "Expert wildlife tracker",
+      "Jeep & walking safari",
+      "Wildlife photography",
+    ],
+    description:
+      "Enter the dense forests bordering Himalayan wildlife corridors with expert trackers. Spot leopard pugmarks, Himalayan black bear dens, barking deer, and a wealth of bird life on this immersive guided safari.",
     image:
-      "/River camping.png",
+      "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=800&q=80&auto=format&fit=crop",
     category: "adventure",
     isPopular: true,
   },
@@ -250,8 +270,7 @@ export const treks: Trek[] = [
     ],
     description:
       "Walk through centuries-old Kumaoni villages where traditional stone houses, ancient temples, and artisan communities preserve a way of life unchanged for generations. Share a meal with a local family.",
-    image:
-      "/village heritage tour.png",
+    image: "/village heritage tour.png",
     category: "cultural",
     isPopular: true,
   },
@@ -276,7 +295,7 @@ export const treks: Trek[] = [
       "/Gaushla and medicinal farm.png",
     category: "cultural",
   },
-   {
+  {
     id: "Himalayan-Crop-Discovery-trail",
     name: "Himalayan Crop Discovery trail",
     slug: "night-safari",
@@ -355,8 +374,7 @@ export const treks: Trek[] = [
     ],
     description:
       "An offbeat pilgrimage trek to an ancient Shiva temple set in a stunning high-altitude meadow. The route passes through oak forests, alpine pastures, and glacial moraine with views of the Panchachuli and Nanda Devi groups.",
-    image:
-      "/Thal Kedar Trek.png",
+    image: "/Thal Kedar Trek.png",
     category: "major",
     itinerary: [
       {
@@ -398,8 +416,7 @@ export const treks: Trek[] = [
     ],
     description:
       "Named for its fluttering dhwaj (flags), this temple perched on a forested hilltop offers one of the finest sunrise views in the Munsiyari region. A rewarding moderate trek with deep cultural significance.",
-    image:
-      "/dhwaj temple trek.png",
+    image: "/dhwaj temple trek.png",
     category: "major",
   },
   {
@@ -459,8 +476,7 @@ export const treks: Trek[] = [
     ],
     description:
       "One of the most spiritually significant treks in the Indian Himalayas. Adi Kailash mirrors the shape of Mount Kailash in Tibet, while Om Parvat carries a naturally formed Om symbol in snow—a sight that has drawn pilgrims for centuries.",
-    image:
-      "/Adi Kailash Om Parvat Trek.png",
+    image: "/Adi Kailash Om Parvat Trek.png",
     category: "major",
     isPopular: true,
     itinerary: [
@@ -496,7 +512,7 @@ export const treks: Trek[] = [
     slug: "panchachuli-base-camp",
     tagline: "At the feet of five eternal flames",
     difficulty: "Challenging",
-    duration: "2-4 Days",
+    duration: "7–9 Days",
     distance: "80–100 km",
     maxAltitude: "4,800m",
     bestSeason: "May – June, September – October",
@@ -555,8 +571,7 @@ export const treks: Trek[] = [
     ],
     description:
       "The Mila Glacier trek is a raw, strenuous adventure into the high Himalayan zone where the Panchachuli glaciers originate. Expect demanding ascents, glacial river crossings, and the profound silence of absolute wilderness.",
-    image:
-      "/Milam Glacier Trek.png",
+    image: "/Milam Glacier Trek.png",
     category: "major",
     isPopular: true,
   },
@@ -579,8 +594,7 @@ export const treks: Trek[] = [
     ],
     description:
       "Nanda Devi, at 7,816m, is India's second-highest peak and the country's highest entirely within its borders. The base camp approach through Milam Valley is a landmark Himalayan expedition combining wilderness, culture, and high-altitude grandeur.",
-    image:
-      "/Nanda Devi Base Camp.png",
+    image: "/Nanda Devi Base Camp.png",
     category: "major",
     isPopular: true,
   },
@@ -603,8 +617,7 @@ export const treks: Trek[] = [
     ],
     description:
       "One of Munsiyari's best-kept secrets, the Nagini Dhura ridge offers dramatic camping at altitude with sweeping views of the Panchachuli range. The approach through pristine bugyals makes this one of the most scenic treks in Kumaon.",
-    image:
-      "/Nagini Dhura Trek.png",
+    image: "/Nagini Dhura Trek.png",
     category: "major",
   },
   {

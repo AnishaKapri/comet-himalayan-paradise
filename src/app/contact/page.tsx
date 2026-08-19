@@ -114,10 +114,10 @@ export default function ContactPage() {
                   <div>
                     <p className="text-slate-800 font-semibold text-sm mb-0.5">Phone</p>
                     <a
-                      href="tel:+919876543210"
+                      href="tel:+9199499 94989"
                       className="text-slate-600 text-sm hover:text-green-700 transition-colors"
                     >
-                      +91 98765 43210
+                      +91 99499 94989
                     </a>
                   </div>
                 </div>

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Himalayan Holiday Camps | CHP Himalayan Paradise",
     description: "Immersive Himalayan holiday camps combining trekking, wellness, culture, and nature. Programs for all ages from 1 day to 45 days.",
     url: "https://comet-himalayan-paradise.vercel.app/camps",
-    images: [{ url: "https://images.unsplash.com/photo-1504609773096-3761a51151b4?w=1200&q=80&auto=format&fit=crop", width: 1200, height: 630, alt: "Himalayan Holiday Camp" }],
+    images: [{ url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80&auto=format&fit=crop", width: 1200, height: 630, alt: "Himalayan Holiday Camp" }],
   },
 };
 

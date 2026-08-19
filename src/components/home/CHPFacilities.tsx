@@ -7,42 +7,38 @@ import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
-
-
-
-// Placeholder facilities — swap names, descriptions, and images for the real 3 once available.
-// Placeholder facilities — swap names, descriptions, and images for the real 3 once available.
 const facilities = [
   {
-    title: "Holiday Resort",
+    title: "HOA-AOA Guest House",
     description:
-      "A comfortable Himalayan retreat offering scenic stays, guided experiences, and year-round hospitality.",
-    image: "/images/facilities/holiday-resort.png",
+      "Comfortable, community-managed residential accommodations offering serene mountain views, modern amenities, and home-like hospitality.",
+    image:
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80&auto=format&fit=crop",
   },
   {
-    title: "Himalayan Mind Space",
+    title: "Remote Work Office",
     description:
-      "A dedicated space for mindfulness, meditation, and mental wellness set against the mountains.",
-    image: "/images/facilities/mind-space.png",
+      "High-speed fiber connectivity, ergonomic workstations, private call booths, and solar-backed uninterrupted power supply.",
+    image:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80&auto=format&fit=crop",
   },
   {
-    title: "Himalayan Floral Paradise",
+    title: "Destination Wedding Centre",
     description:
-      "A vibrant floral sanctuary showcasing the natural beauty and biodiversity of the Himalayas.",
-    image: "/images/facilities/floral-paradise.png",
+      "Picturesque outdoor lawn and event spaces surrounded by majestic Himalayan peaks, offering complete event management for weddings.",
+    image:
+      "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80&auto=format&fit=crop",
   },
-]
+];
+
 export function CHPFacilities() {
   return (
     <section id="facilities" className="py-20 lg:py-28 bg-stone-50 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       <SectionHeader
-          eyebrow="On-Site"
+        <SectionHeader
+          eyebrow="On-Site Facilities"
           title="CHP Facilities"
-          subtitle="A Vision Beyond Tourism
-CHP is creating a first-of-its-kind integrated Himalayan ecosystem where hospitality, wellness, adventure, spirituality, remote work, events, and authentic local experiences come together in one destination. The vision is to establish CHP as a one-stop destination for complete Himalayan experiences, serving travelers, families, corporates, and wellness seekers throughout the year.
-To make this vision a reality, CHP invites entrepreneurs and investors to co-own 20+ tourism and community facilities through a partnership-based profit-sharing model. Join us in building a sustainable Himalayan destination while creating long-term value and recurring income opportunities.
-"
+          subtitle="CHP is an integration of 20+ travel related residential and commercial facilities under CHP umbrella."
         />
 
         <StaggerContainer
@@ -82,7 +78,7 @@ To make this vision a reality, CHP invites entrepreneurs and investors to co-own
             href="/facilities"
             className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
           >
-            View all 20+ Facilities
+            Explore Facilities
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

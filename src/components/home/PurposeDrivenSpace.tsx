@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
@@ -177,7 +179,18 @@ export function PurposeDrivenSpace() {
             ))}
           </div>
         </div>
-       </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/purpose-driven-space"
+            className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
+          >
+            View Details
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
     </section>
   );
 }
+

@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/camps", label: "Holiday Camps" },
-  { href: "/treks", label: "Treks & Trails" },
+  { href: "/treks", label: "Treks" },
   { href: "/experiences", label: "Experiences" },
   { href: "/accommodation", label: "Stay" },
   { href: "/gallery", label: "Gallery" },
@@ -22,6 +22,7 @@ const moreLinks = [
   { href: "/#facilities", label: "CHP Facilities" },
   { href: "/contact", label: "Business & Investment" },
   { href: "/#purpose-driven-space", label: "Purpose Driven Space" },
+  { href: "/chp-enclave", label: "CHP Enclave" },
 ];
 
 export function Navbar() {

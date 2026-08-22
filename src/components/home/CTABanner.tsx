@@ -33,7 +33,7 @@ export function CTABanner() {
         >
           <div className="inline-flex items-center gap-2 glass text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] px-4 py-2 rounded-full mb-6">
             <Mountain className="w-3.5 h-3.5" />
-            Start Your Journey
+            Enter the CHP Himalayan Paradise Ecosystem
           </div>
 
           <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">

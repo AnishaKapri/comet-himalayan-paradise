@@ -23,15 +23,6 @@ const interests = [
   "Corporate Group",
   "School Trip",
   "Custom Itinerary",
-  "Homestay",
-  "Himalayan Trails",
-  "Yoga Camp",
-  "Adi Kailash Trek",
-  "Milam Glacier Trek",
-  "Remote Work",
-  "Buy a Cottage in CHP",
-  "Co-own a CHP Facility",
-  "Explore Business Case in Himalayas",
 ];
 
 export default function ContactPage() {
@@ -57,21 +48,20 @@ export default function ContactPage() {
 
   return (
     <>
-    {/* Hero */}
-<section className="relative w-full aspect-[1568/519] overflow-hidden bg-slate-900">
-  <Image
-    src="/Home-page-Image.png"
-    alt="Contact CHP Himalayan Paradise"
-    fill
-    priority
-    sizes="99vw"
-    className="object-cover scale-[1.01]"
-  />
+      {/* Hero */}
+      <section className="relative h-[45vh] min-h-[340px] overflow-hidden">
+        <Image
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/db273aa7-482e-4423-87c6-4aff2215b27e-images.jpeg"
+          alt="Contact CHP Himalayan Paradise"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
 
-  {/* Dark overlay */}
   <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
 
-  {/* Hero text */}
   <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
     <p className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
       Get in Touch
@@ -82,12 +72,11 @@ export default function ContactPage() {
     </h1>
 
     <p className="text-white/65 text-base max-w-md">
-      Tell us your dream Himalayan experience and we&apos;ll design it
-      for you. Free consultation, no commitment.
+      Tell us your dream Himalayan experience and we&apos;ll design it for you.
+      Free consultation, no commitment.
     </p>
   </div>
 </section>
-
       {/* Contact section */}
       <section className="py-20 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -178,7 +167,7 @@ export default function ContactPage() {
               {/* Map placeholder */}
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm h-52 relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1570641963303-92ce4845ed4c?w=600&q=60&auto=format&fit=crop"
+                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/db273aa7-482e-4423-87c6-4aff2215b27e-images.jpeg"
                   alt="Munsiyari location map"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -278,70 +267,72 @@ export default function ContactPage() {
                         >
                           <option value="">Select size</option>
                           <option>Solo</option>
-                          <option>2–4 guest</option>
+                          <option>2–4 Guest</option>
                           <option>5–10 Guest</option>
                           <option>11–20 Guest</option>
                           <option>20+ Guests</option>
                         </select>
                       </div>
                     </div>
-                    {/* Number of Days */}
-<div className="mb-5">
-  <label className="block text-xs font-semibold text-slate-600 mb-2">
-    Number of Days
-  </label>
-
-  <select
-    onChange={(e) =>
-      setForm((f) => ({ ...f, numberOfDays: e.target.value }))
-    }
-    className="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-green-900/20 focus:border-green-900"
-  >
-    <option value="">Select number of days</option>
-    <option value="1">1 Day</option>
-    <option value="2">2 Days</option>
-    <option value="3">3 Days</option>
-    <option value="4">4 Days</option>
-    <option value="5">5 Days</option>
-    <option value="6">6 Days</option>
-    <option value="7">7 Days</option>
-    <option value="8">8 Days</option>
-    <option value="9">9 Days</option>
-    <option value="10">10 Days</option>
-    <option value="11-15">11–15 Days</option>
-    <option value="16-30">16–30 Days</option>
-    <option value="30+">30+ Days</option>
-  </select>
-</div>
-
-{/* I'm Interested In */}
+                  
 
                     <div>
-  <label className="block text-xs font-semibold text-slate-600 mb-2">
-    I&apos;m Interested In
+                      <label className="block text-xs font-semibold text-slate-600 mb-2">
+                        I&apos;m Interested In
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+  "Homestay",
+  "Himalayan Trails",
+  "Yoga Camp",
+  "Adi Kailash Trek",
+  "Milam Glacier Trek",
+  "Remote Work",
+  "Buy a cottage in CHP",
+  "Co-own a CHP facility",
+  "Explore business case in Himalayas",
+].map((item) => (
+                          <button
+                            key={item}
+                            type="button"
+                            onClick={() =>
+                              setForm((f) => ({
+                                ...f,
+                                interest: f.interest === item ? "" : item,
+                              }))
+                            }
+                            className={`text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-colors ${
+                              form.interest === item
+                                ? "bg-green-900 text-white border-green-900"
+                                : "bg-white text-slate-600 border-slate-200 hover:border-green-900/30 hover:text-green-900"
+                            }`}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+  <label className="block text-xs font-semibold text-slate-600 mb-1.5">
+    Number of Days
   </label>
-
-  <div className="flex flex-wrap gap-2">
-    {interests.map((item) => (
-      <button
-        key={item}
-        type="button"
-        onClick={() =>
-          setForm((f) => ({
-            ...f,
-            interest: f.interest === item ? "" : item,
-          }))
-        }
-        className={`text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-colors ${
-          form.interest === item
-            ? "bg-green-900 text-white border-green-900"
-            : "bg-white text-slate-600 border-slate-200 hover:border-green-900/30 hover:text-green-900"
-        }`}
-      >
-        {item}
-      </button>
-    ))}
-  </div>
+  <select
+    value={form.days}
+    onChange={(e) => setForm((f) => ({ ...f, days: e.target.value }))}
+    className="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-green-900/20 focus:border-green-700 transition-colors"
+  >
+    <option value="">Select days</option>
+    <option>1 day</option>
+    <option>2 days</option>
+    <option>3 days</option>
+    <option>4 days</option>
+    <option>5 days</option>
+    <option>6 days</option>
+    <option>7 days</option>
+    <option>8–10 days</option>
+    <option>10+ days</option>
+    <option>Not sure</option>
+  </select>
 </div>
 
                     <div>

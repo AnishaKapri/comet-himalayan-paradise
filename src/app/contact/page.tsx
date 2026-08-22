@@ -60,19 +60,23 @@ export default function ContactPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <p className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
-            Get in Touch
-          </p>
-          <h1 className="text-white text-4xl sm:text-5xl font-bold tracking-tight mb-3">
-            Start Your Journey
-          </h1>
-          <p className="text-white/65 text-base max-w-md">
-            Tell us your dream Himalayan experience and we&apos;ll design it for you. Free consultation, no commitment.
-          </p>
-        </div>
-      </section>
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
 
+  <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+    <p className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+      Get in Touch
+    </p>
+
+    <h1 className="text-white text-4xl sm:text-5xl font-bold tracking-tight mb-3">
+      Enter the CHP Himalayan Paradise Ecosystem
+    </h1>
+
+    <p className="text-white/65 text-base max-w-md">
+      Tell us your dream Himalayan experience and we&apos;ll design it for you.
+      Free consultation, no commitment.
+    </p>
+  </div>
+</section>
       {/* Contact section */}
       <section className="py-20 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -263,20 +267,31 @@ export default function ContactPage() {
                         >
                           <option value="">Select size</option>
                           <option>Solo</option>
-                          <option>2–4 people</option>
-                          <option>5–10 people</option>
-                          <option>11–20 people</option>
-                          <option>20+ people</option>
+                          <option>2–4 Guest</option>
+                          <option>5–10 Guest</option>
+                          <option>11–20 Guest</option>
+                          <option>20+ Guests</option>
                         </select>
                       </div>
                     </div>
+                  
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-600 mb-2">
                         I&apos;m Interested In
                       </label>
                       <div className="flex flex-wrap gap-2">
-                        {interests.map((item) => (
+                        {[
+  "Homestay",
+  "Himalayan Trails",
+  "Yoga Camp",
+  "Adi Kailash Trek",
+  "Milam Glacier Trek",
+  "Remote Work",
+  "Buy a cottage in CHP",
+  "Co-own a CHP facility",
+  "Explore business case in Himalayas",
+].map((item) => (
                           <button
                             key={item}
                             type="button"
@@ -297,6 +312,28 @@ export default function ContactPage() {
                         ))}
                       </div>
                     </div>
+                    <div>
+  <label className="block text-xs font-semibold text-slate-600 mb-1.5">
+    Number of Days
+  </label>
+  <select
+    value={form.days}
+    onChange={(e) => setForm((f) => ({ ...f, days: e.target.value }))}
+    className="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-green-900/20 focus:border-green-700 transition-colors"
+  >
+    <option value="">Select days</option>
+    <option>1 day</option>
+    <option>2 days</option>
+    <option>3 days</option>
+    <option>4 days</option>
+    <option>5 days</option>
+    <option>6 days</option>
+    <option>7 days</option>
+    <option>8–10 days</option>
+    <option>10+ days</option>
+    <option>Not sure</option>
+  </select>
+</div>
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-600 mb-1.5">

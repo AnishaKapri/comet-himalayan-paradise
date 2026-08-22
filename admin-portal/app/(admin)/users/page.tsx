@@ -1,17 +1,20 @@
 "use client";
 
+import { UserPlus } from "lucide-react";
 import { FormEvent, useEffect, useState } from "react";
 import { DataTable } from "../../../components/DataTable";
 import { EmptyState } from "../../../components/EmptyState";
 import { ErrorState } from "../../../components/ErrorState";
-import { LoadingState } from "../../../components/LoadingState";
 import { PageHeader } from "../../../components/PageHeader";
+import { Select } from "../../../components/Select";
 import { ApiError } from "../../../lib/api/client";
 import { usersApi } from "../../../lib/api/users";
 import { useAuth } from "../../../lib/auth-context";
+import { cn } from "../../../lib/utils";
 import { Role, User } from "../../../lib/types";
 
 const ROLES: Role[] = ["SUPER_ADMIN", "ADMIN", "EDITOR", "VIEWER"];
+const ROLE_OPTIONS = ROLES.map((role) => ({ value: role, label: role }));
 
 export default function UsersPage() {
   const { user: currentUser } = useAuth();
@@ -43,7 +46,10 @@ function UsersManager() {
   function load() {
     usersApi
       .list()
-      .then(setUsers)
+      .then((data) => {
+        setUsers(data);
+        setError(null);
+      })
       .catch(() => setError("Failed to load users."))
       .finally(() => setLoading(false));
   }
@@ -87,35 +93,35 @@ function UsersManager() {
       <PageHeader title="Users" />
 
       {error && <ErrorState message={error} />}
-      {loading && <LoadingState />}
 
-      {!loading && !error && (
+      {!error && (
         <DataTable
           rows={users}
+          loading={loading}
           rowKey={(u) => u.id}
           columns={[
-            { header: "Name", cell: (u) => u.name },
-            { header: "Email", cell: (u) => u.email },
+            { header: "Name", cell: (u) => <span className="font-medium text-slate-800">{u.name}</span> },
+            { header: "Email", cell: (u) => <span className="text-slate-600">{u.email}</span> },
             {
               header: "Role",
               cell: (u) => (
-                <select
+                <Select
                   value={u.role}
-                  onChange={(e) => handleRoleChange(u, e.target.value as Role)}
-                  className="rounded-md border border-slate-300 px-2 py-1 text-xs"
-                >
-                  {ROLES.map((r) => (
-                    <option key={r} value={r}>
-                      {r}
-                    </option>
-                  ))}
-                </select>
+                  onChange={(value) => handleRoleChange(u, value as Role)}
+                  options={ROLE_OPTIONS}
+                  className="w-36"
+                />
               ),
             },
             {
               header: "Status",
               cell: (u) => (
-                <span className={u.isActive ? "text-green-700" : "text-slate-400"}>
+                <span
+                  className={cn(
+                    "inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium",
+                    u.isActive ? "bg-green-50 text-green-700" : "bg-slate-100 text-slate-500",
+                  )}
+                >
                   {u.isActive ? "Active" : "Deactivated"}
                 </span>
               ),
@@ -125,7 +131,7 @@ function UsersManager() {
               cell: (u) => (
                 <button
                   onClick={() => handleToggleActive(u)}
-                  className="rounded-md border border-slate-200 px-2 py-1 text-xs text-slate-600 hover:bg-slate-100"
+                  className="rounded-md border border-slate-200 px-2 py-1 text-xs text-slate-600 transition hover:bg-slate-100"
                 >
                   {u.isActive ? "Deactivate" : "Activate"}
                 </button>
@@ -137,13 +143,13 @@ function UsersManager() {
 
       <form onSubmit={handleCreate} className="mt-6 space-y-3 rounded-lg border border-slate-200 bg-white p-4">
         <h2 className="text-sm font-semibold text-slate-900">Create User</h2>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap items-start gap-3">
           <input
             placeholder="Name"
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-[var(--color-brand)] focus:outline-none"
+            className="rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-[var(--color-brand)] focus:outline-none"
           />
           <input
             type="email"
@@ -151,7 +157,7 @@ function UsersManager() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-[var(--color-brand)] focus:outline-none"
+            className="rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-[var(--color-brand)] focus:outline-none"
           />
           <input
             type="password"
@@ -160,24 +166,15 @@ function UsersManager() {
             minLength={8}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-[var(--color-brand)] focus:outline-none"
+            className="rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-[var(--color-brand)] focus:outline-none"
           />
-          <select
-            value={role}
-            onChange={(e) => setRole(e.target.value as Role)}
-            className="rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-[var(--color-brand)] focus:outline-none"
-          >
-            {ROLES.map((r) => (
-              <option key={r} value={r}>
-                {r}
-              </option>
-            ))}
-          </select>
+          <Select value={role} onChange={(value) => setRole(value as Role)} options={ROLE_OPTIONS} className="w-40" />
           <button
             type="submit"
             disabled={creating}
-            className="rounded-md bg-[var(--color-brand)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--color-brand-dark)] disabled:opacity-60"
+            className="flex items-center gap-1.5 rounded-md bg-[var(--color-brand)] px-4 py-2 text-sm font-medium text-white transition hover:bg-[var(--color-brand-dark)] disabled:opacity-60"
           >
+            <UserPlus className="h-4 w-4" />
             {creating ? "Creating…" : "Create"}
           </button>
         </div>

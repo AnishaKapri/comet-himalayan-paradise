@@ -6,6 +6,7 @@ import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
 import { CreateFolderDto } from './dto/create-folder.dto';
 import { UpdateFolderDto } from './dto/update-folder.dto';
+import { FolderWithStats } from './entities/folder-with-stats.entity';
 import { FoldersService } from './folders.service';
 
 @ApiTags('folders')
@@ -16,7 +17,7 @@ export class FoldersController {
   constructor(private readonly foldersService: FoldersService) {}
 
   @Get()
-  findAll(): Promise<Folder[]> {
+  findAll(): Promise<FolderWithStats[]> {
     return this.foldersService.findAll();
   }
 

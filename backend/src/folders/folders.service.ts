@@ -3,14 +3,48 @@ import { Folder, Prisma } from '@prisma/client';
 import { PrismaService } from '../database/prisma.service';
 import { CreateFolderDto } from './dto/create-folder.dto';
 import { UpdateFolderDto } from './dto/update-folder.dto';
+import { FolderWithStats } from './entities/folder-with-stats.entity';
 import { slugify } from './folders.utils';
 
 @Injectable()
 export class FoldersService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async findAll(): Promise<Folder[]> {
-    return this.prisma.folder.findMany({ orderBy: { path: 'asc' } });
+  async findAll(): Promise<FolderWithStats[]> {
+    const [folders, assets] = await Promise.all([
+      this.prisma.folder.findMany({ orderBy: { path: 'asc' } }),
+      this.prisma.asset.findMany({
+        where: { isActive: true },
+        orderBy: { createdAt: 'desc' },
+        select: { id: true, folderId: true, publicUrl: true, altText: true, originalFilename: true },
+      }),
+    ]);
+
+    const statsByFolder = new Map<string, { count: number; latest: (typeof assets)[number] }>();
+    for (const asset of assets) {
+      const existing = statsByFolder.get(asset.folderId);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        statsByFolder.set(asset.folderId, { count: 1, latest: asset });
+      }
+    }
+
+    return folders.map((folder) => {
+      const stats = statsByFolder.get(folder.id);
+      return {
+        ...folder,
+        assetCount: stats?.count ?? 0,
+        latestAsset: stats
+          ? {
+              id: stats.latest.id,
+              publicUrl: stats.latest.publicUrl,
+              altText: stats.latest.altText,
+              originalFilename: stats.latest.originalFilename,
+            }
+          : null,
+      };
+    });
   }
 
   async findByIdOrThrow(id: string): Promise<Folder> {

@@ -1,19 +1,26 @@
 "use client";
 
+import { Check, CheckCircle2, Copy, UploadCloud } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { FormEvent, useEffect, useState } from "react";
+import { DragEvent, FormEvent, useEffect, useRef, useState } from "react";
 import { PageHeader } from "../../../../components/PageHeader";
+import { Select } from "../../../../components/Select";
 import { assetsApi } from "../../../../lib/api/assets";
 import { foldersApi } from "../../../../lib/api/folders";
 import { ApiError } from "../../../../lib/api/client";
+import { cn } from "../../../../lib/utils";
 import { flattenFolderTree } from "../../../../lib/folder-tree";
 import { Asset, Folder } from "../../../../lib/types";
 
+const ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
+
 export default function UploadAssetPage() {
   const router = useRouter();
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [folders, setFolders] = useState<Folder[]>([]);
   const [file, setFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [dragActive, setDragActive] = useState(false);
   const [folderId, setFolderId] = useState("");
   const [useCase, setUseCase] = useState("");
   const [altText, setAltText] = useState("");
@@ -27,8 +34,20 @@ export default function UploadAssetPage() {
   }, []);
 
   function handleFileChange(selected: File | null) {
+    if (selected && !ACCEPTED_TYPES.includes(selected.type)) {
+      setError("Unsupported file type. Please choose a JPEG, PNG, WEBP, or GIF image.");
+      return;
+    }
+    setError(null);
     setFile(selected);
     setPreviewUrl(selected ? URL.createObjectURL(selected) : null);
+  }
+
+  function handleDrop(event: DragEvent<HTMLDivElement>) {
+    event.preventDefault();
+    setDragActive(false);
+    const dropped = event.dataTransfer.files?.[0] ?? null;
+    if (dropped) handleFileChange(dropped);
   }
 
   async function handleSubmit(event: FormEvent) {
@@ -58,19 +77,40 @@ export default function UploadAssetPage() {
   }
 
   const folderOptions = flattenFolderTree(folders);
+  const folderSelectOptions = folderOptions.map(({ folder, depth }) => ({
+    value: folder.id,
+    label: folder.name,
+    indent: depth,
+  }));
 
   if (uploaded) {
     return (
       <div className="max-w-lg">
         <PageHeader title="Upload Image" />
         <div className="rounded-lg border border-slate-200 bg-white p-6">
-          <p className="text-sm font-medium text-green-700">Upload successful</p>
+          <p className="flex items-center gap-1.5 text-sm font-medium text-green-700">
+            <CheckCircle2 className="h-4 w-4" />
+            Upload successful
+          </p>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={uploaded.publicUrl} alt={uploaded.altText ?? uploaded.originalFilename} className="mt-4 max-h-64 rounded-md object-contain" />
           <div className="mt-4 flex items-center gap-2">
             <input readOnly value={uploaded.publicUrl} className="flex-1 rounded-md border border-slate-300 px-3 py-2 text-xs text-slate-600" />
-            <button onClick={handleCopy} className="rounded-md border border-slate-200 px-3 py-2 text-xs text-slate-600 hover:bg-slate-100">
-              {copied ? "Copied!" : "Copy URL"}
+            <button
+              onClick={handleCopy}
+              className="flex items-center gap-1.5 rounded-md border border-slate-200 px-3 py-2 text-xs text-slate-600 transition hover:bg-slate-100"
+            >
+              {copied ? (
+                <>
+                  <Check className="h-3.5 w-3.5 text-green-600" />
+                  Copied!
+                </>
+              ) : (
+                <>
+                  <Copy className="h-3.5 w-3.5" />
+                  Copy URL
+                </>
+              )}
             </button>
           </div>
           <div className="mt-6 flex gap-3">
@@ -106,39 +146,71 @@ export default function UploadAssetPage() {
             Image File
           </label>
           <input
+            ref={fileInputRef}
             id="file"
             type="file"
-            accept="image/jpeg,image/png,image/webp,image/gif"
+            accept={ACCEPTED_TYPES.join(",")}
             required
             onChange={(e) => handleFileChange(e.target.files?.[0] ?? null)}
-            className="mt-1 w-full text-sm"
+            className="sr-only"
           />
-          {previewUrl && (
-            /* eslint-disable-next-line @next/next/no-img-element */
-            <img src={previewUrl} alt="Preview" className="mt-3 max-h-48 rounded-md border border-slate-200 object-contain" />
-          )}
+
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => fileInputRef.current?.click()}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                fileInputRef.current?.click();
+              }
+            }}
+            onDragOver={(e) => {
+              e.preventDefault();
+              setDragActive(true);
+            }}
+            onDragLeave={() => setDragActive(false)}
+            onDrop={handleDrop}
+            className={cn(
+              "mt-1 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed px-6 py-10 text-center transition",
+              dragActive
+                ? "border-[var(--color-brand)] bg-green-50"
+                : "border-slate-300 hover:border-slate-400 hover:bg-slate-50",
+              file && "py-4",
+            )}
+          >
+            {previewUrl ? (
+              <>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={previewUrl} alt="Preview" className="max-h-48 rounded-md border border-slate-200 object-contain" />
+                <p className="mt-1 text-sm font-medium text-slate-700">{file?.name}</p>
+                <p className="text-xs text-slate-500">Click or drop a different image to replace it</p>
+              </>
+            ) : (
+              <>
+                <UploadCloud
+                  className={cn("h-10 w-10", dragActive ? "text-[var(--color-brand)]" : "text-slate-400")}
+                  strokeWidth={1.5}
+                />
+                <p className="text-sm font-medium text-slate-700">
+                  <span className="text-[var(--color-brand)]">Click to upload</span> or drag and drop
+                </p>
+                <p className="text-xs text-slate-500">JPEG, PNG, WEBP, or GIF</p>
+              </>
+            )}
+          </div>
         </div>
 
         <div>
-          <label htmlFor="folder" className="block text-sm font-medium text-slate-700">
-            Folder
-          </label>
-          <select
-            id="folder"
-            required
+          <label className="block text-sm font-medium text-slate-700">Folder</label>
+          <Select
             value={folderId}
-            onChange={(e) => setFolderId(e.target.value)}
-            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-[var(--color-brand)] focus:outline-none"
-          >
-            <option value="" disabled>
-              Select a folder
-            </option>
-            {folderOptions.map(({ folder, depth }) => (
-              <option key={folder.id} value={folder.id}>
-                {"—".repeat(depth)} {folder.name}
-              </option>
-            ))}
-          </select>
+            onChange={setFolderId}
+            options={folderSelectOptions}
+            placeholder={folders.length === 0 ? "Loading folders…" : "Select a folder"}
+            disabled={folders.length === 0}
+            className="mt-1"
+          />
         </div>
 
         <div>

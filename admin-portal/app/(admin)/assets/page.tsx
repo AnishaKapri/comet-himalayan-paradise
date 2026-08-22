@@ -1,12 +1,14 @@
 "use client";
 
+import { Check, ChevronLeft, ChevronRight, Copy, Search, Trash2, Upload } from "lucide-react";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { ConfirmDialog } from "../../../components/ConfirmDialog";
 import { EmptyState } from "../../../components/EmptyState";
 import { ErrorState } from "../../../components/ErrorState";
-import { LoadingState } from "../../../components/LoadingState";
 import { PageHeader } from "../../../components/PageHeader";
+import { Select } from "../../../components/Select";
+import { Skeleton } from "../../../components/Skeleton";
 import { assetsApi } from "../../../lib/api/assets";
 import { foldersApi } from "../../../lib/api/folders";
 import { useAuth } from "../../../lib/auth-context";
@@ -61,6 +63,10 @@ export default function AssetsPage() {
   }
 
   const folderOptions = flattenFolderTree(folders);
+  const folderSelectOptions = [
+    { value: "", label: "All folders" },
+    ...folderOptions.map(({ folder, depth }) => ({ value: folder.id, label: folder.name, indent: depth })),
+  ];
 
   return (
     <div>
@@ -70,8 +76,9 @@ export default function AssetsPage() {
           canUpload ? (
             <Link
               href="/assets/upload"
-              className="rounded-md bg-[var(--color-brand)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--color-brand-dark)]"
+              className="flex items-center gap-1.5 rounded-md bg-[var(--color-brand)] px-4 py-2 text-sm font-medium text-white transition hover:bg-[var(--color-brand-dark)]"
             >
+              <Upload className="h-4 w-4" />
               Upload Image
             </Link>
           ) : undefined
@@ -79,35 +86,45 @@ export default function AssetsPage() {
       />
 
       <div className="mb-4 flex flex-wrap gap-3">
-        <input
-          type="search"
-          placeholder="Search images…"
-          value={search}
-          onChange={(e) => {
-            setPage(1);
-            setSearch(e.target.value);
-          }}
-          className="w-64 rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-[var(--color-brand)] focus:outline-none"
-        />
-        <select
+        <div className="relative w-64">
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+          <input
+            type="search"
+            placeholder="Search images…"
+            value={search}
+            onChange={(e) => {
+              setPage(1);
+              setSearch(e.target.value);
+            }}
+            className="w-full rounded-md border border-slate-300 py-2 pl-9 pr-3 text-sm shadow-sm focus:border-[var(--color-brand)] focus:outline-none"
+          />
+        </div>
+        <Select
           value={folderId}
-          onChange={(e) => {
+          onChange={(value) => {
             setPage(1);
-            setFolderId(e.target.value);
+            setFolderId(value);
           }}
-          className="rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-[var(--color-brand)] focus:outline-none"
-        >
-          <option value="">All folders</option>
-          {folderOptions.map(({ folder, depth }) => (
-            <option key={folder.id} value={folder.id}>
-              {"—".repeat(depth)} {folder.name}
-            </option>
-          ))}
-        </select>
+          options={folderSelectOptions}
+          className="w-56"
+        />
       </div>
 
       {error && <ErrorState message={error} />}
-      {!error && !result && <LoadingState />}
+
+      {!error && !result && (
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div key={i} className="overflow-hidden rounded-lg border border-slate-200 bg-white">
+              <Skeleton className="h-32 w-full rounded-none" />
+              <div className="space-y-2 p-3">
+                <Skeleton className="h-4 w-3/4" />
+                <Skeleton className="h-3 w-1/3" />
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
 
       {result && result.items.length === 0 && (
         <EmptyState title="No images found" description="Try a different search or upload a new image." />
@@ -117,7 +134,10 @@ export default function AssetsPage() {
         <>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {result.items.map((asset) => (
-              <div key={asset.id} className="overflow-hidden rounded-lg border border-slate-200 bg-white">
+              <div
+                key={asset.id}
+                className="overflow-hidden rounded-lg border border-slate-200 bg-white transition hover:border-slate-300 hover:shadow-sm"
+              >
                 <Link href={`/assets/${asset.id}`}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -134,16 +154,27 @@ export default function AssetsPage() {
                   <div className="mt-2 flex gap-2">
                     <button
                       onClick={() => handleCopy(asset)}
-                      className="flex-1 rounded-md border border-slate-200 px-2 py-1 text-xs text-slate-600 hover:bg-slate-100"
+                      className="flex flex-1 items-center justify-center gap-1.5 rounded-md border border-slate-200 px-2 py-1.5 text-xs text-slate-600 transition hover:bg-slate-100"
                     >
-                      {copiedId === asset.id ? "Copied!" : "Copy URL"}
+                      {copiedId === asset.id ? (
+                        <>
+                          <Check className="h-3.5 w-3.5 text-green-600" />
+                          Copied!
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="h-3.5 w-3.5" />
+                          Copy URL
+                        </>
+                      )}
                     </button>
                     {canManage && (
                       <button
                         onClick={() => setDeleteTarget(asset)}
-                        className="rounded-md border border-red-200 px-2 py-1 text-xs text-red-600 hover:bg-red-50"
+                        aria-label="Delete asset"
+                        className="rounded-md border border-red-200 p-1.5 text-red-600 transition hover:bg-red-50"
                       >
-                        Delete
+                        <Trash2 className="h-3.5 w-3.5" />
                       </button>
                     )}
                   </div>
@@ -160,16 +191,18 @@ export default function AssetsPage() {
               <button
                 onClick={() => setPage((p) => Math.max(1, p - 1))}
                 disabled={result.page <= 1}
-                className="rounded-md border border-slate-200 px-3 py-1.5 disabled:cursor-not-allowed disabled:opacity-50"
+                className="flex items-center gap-1 rounded-md border border-slate-200 px-3 py-1.5 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent"
               >
+                <ChevronLeft className="h-4 w-4" />
                 Previous
               </button>
               <button
                 onClick={() => setPage((p) => Math.min(result.totalPages, p + 1))}
                 disabled={result.page >= result.totalPages}
-                className="rounded-md border border-slate-200 px-3 py-1.5 disabled:cursor-not-allowed disabled:opacity-50"
+                className="flex items-center gap-1 rounded-md border border-slate-200 px-3 py-1.5 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent"
               >
                 Next
+                <ChevronRight className="h-4 w-4" />
               </button>
             </div>
           </div>

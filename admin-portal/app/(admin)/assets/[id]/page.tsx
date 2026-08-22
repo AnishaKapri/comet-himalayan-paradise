@@ -1,11 +1,12 @@
 "use client";
 
+import { Check, Copy, Trash2 } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ConfirmDialog } from "../../../../components/ConfirmDialog";
 import { ErrorState } from "../../../../components/ErrorState";
-import { LoadingState } from "../../../../components/LoadingState";
 import { PageHeader } from "../../../../components/PageHeader";
+import { Skeleton } from "../../../../components/Skeleton";
 import { assetsApi } from "../../../../lib/api/assets";
 import { ApiError } from "../../../../lib/api/client";
 import { useAuth } from "../../../../lib/auth-context";
@@ -61,7 +62,26 @@ export default function AssetDetailPage() {
   }
 
   if (error) return <ErrorState message={error} />;
-  if (!asset) return <LoadingState />;
+
+  if (!asset) {
+    return (
+      <div className="max-w-2xl">
+        <PageHeader title="Asset" />
+        <div className="rounded-lg border border-slate-200 bg-white p-6">
+          <Skeleton className="h-80 w-full" />
+          <div className="mt-6 grid grid-cols-2 gap-4">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <div key={i} className="space-y-1.5">
+                <Skeleton className="h-3 w-16" />
+                <Skeleton className="h-4 w-24" />
+              </div>
+            ))}
+          </div>
+          <Skeleton className="mt-4 h-9 w-full" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-2xl">
@@ -80,8 +100,21 @@ export default function AssetDetailPage() {
 
         <div className="mt-4 flex items-center gap-2">
           <input readOnly value={asset.publicUrl} className="flex-1 rounded-md border border-slate-300 px-3 py-2 text-xs text-slate-600" />
-          <button onClick={handleCopy} className="rounded-md border border-slate-200 px-3 py-2 text-xs text-slate-600 hover:bg-slate-100">
-            {copied ? "Copied!" : "Copy URL"}
+          <button
+            onClick={handleCopy}
+            className="flex items-center gap-1.5 rounded-md border border-slate-200 px-3 py-2 text-xs text-slate-600 transition hover:bg-slate-100"
+          >
+            {copied ? (
+              <>
+                <Check className="h-3.5 w-3.5 text-green-600" />
+                Copied!
+              </>
+            ) : (
+              <>
+                <Copy className="h-3.5 w-3.5" />
+                Copy URL
+              </>
+            )}
           </button>
         </div>
 
@@ -113,8 +146,9 @@ export default function AssetDetailPage() {
               </button>
               <button
                 onClick={() => setConfirmDelete(true)}
-                className="rounded-md border border-red-200 px-4 py-2 text-sm text-red-600 hover:bg-red-50"
+                className="flex items-center gap-1.5 rounded-md border border-red-200 px-4 py-2 text-sm text-red-600 transition hover:bg-red-50"
               >
+                <Trash2 className="h-4 w-4" />
                 Delete asset
               </button>
             </div>

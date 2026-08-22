@@ -47,7 +47,7 @@ never reaches either Next.js app.
 
 ## Prerequisites
 
-- Node.js 20+, npm
+- Node.js 22+ for `backend/` (its Supabase client needs native `WebSocket` support); Node.js 20+ is fine for the two Next.js apps
 - A [Supabase](https://supabase.com) project (free tier is fine)
 
 ## 1. Supabase setup

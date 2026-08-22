@@ -4,7 +4,7 @@
   "private": true,
   "description": "NestJS backend for CHP asset management system (auth, users, folders, assets)",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "scripts": {
     "postinstall": "prisma generate",

@@ -12,7 +12,8 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/camps", label: "Holiday Camps" },
-  { href: "/treks", label: "Treks" },
+  { href: "/treks", label: "Treks & Trails" },
+  { href: "/experiences", label: "Experiences" },
   { href: "/accommodation", label: "Stay" },
   { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
@@ -295,6 +296,4 @@ export function Navbar() {
       </AnimatePresence>
     </>
   );
-  
 }
-

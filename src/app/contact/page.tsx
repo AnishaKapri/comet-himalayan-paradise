@@ -49,15 +49,16 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative w-full aspect-[1568/519] overflow-hidden block">
-  <Image
-    src="/Home-page-Image.png"
-    alt="Contact CHP Himalayan Paradise"
-    fill
-    priority
-    sizes="100vw"
-    className="object-cover object-[center_45%]"
-  />
+      <section className="relative h-[45vh] min-h-[340px] overflow-hidden">
+        <Image
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/db273aa7-482e-4423-87c6-4aff2215b27e-images.jpeg"
+          alt="Contact CHP Himalayan Paradise"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
 
   <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
 
@@ -166,7 +167,7 @@ export default function ContactPage() {
               {/* Map placeholder */}
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm h-52 relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1570641963303-92ce4845ed4c?w=600&q=60&auto=format&fit=crop"
+                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/db273aa7-482e-4423-87c6-4aff2215b27e-images.jpeg"
                   alt="Munsiyari location map"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"

@@ -210,28 +210,6 @@ export const treks: Trek[] = [
     isPopular: true,
   },
   {
-    id: "jungle-safari",
-    name: "Jungle Safari",
-    slug: "jungle-safari",
-    tagline: "Into the wild Himalayan forests",
-    difficulty: "Easy",
-    duration: "Full Day",
-    bestSeason: "March – June, October – November",
-    location: "Dense Forest Zones",
-    highlights: [
-      "Leopard & bear territory",
-      "Expert wildlife tracker",
-      "Jeep & walking safari",
-      "Wildlife photography",
-    ],
-    description:
-      "Enter the dense forests bordering Himalayan wildlife corridors with expert trackers. Spot leopard pugmarks, Himalayan black bear dens, barking deer, and a wealth of bird life on this immersive guided safari.",
-    image:
-      "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=800&q=80&auto=format&fit=crop",
-    category: "adventure",
-    isPopular: true,
-  },
-  {
     id: "night-safari",
     name: "Night Safari",
     slug: "night-safari",
@@ -278,7 +256,7 @@ export const treks: Trek[] = [
   },
   {
     id: "gaushala-visit",
-    name: "Gaushala & Organic Farm Visit",
+    name: "Gaushala & medicinal farm visit",
     slug: "gaushala-visit",
     tagline: "The heartbeat of Himalayan village life",
     difficulty: "Easy",
@@ -628,6 +606,29 @@ export const treks: Trek[] = [
       "The Brijganga Pass is an ancient trans-Himalayan route connecting remote valleys. The trek combines dense forest ascents, high-altitude meadows, glacial lake camps, and a technically demanding pass crossing in pristine wilderness.",
     image:
       "/Brij Ganga Pass.png",
+    category: "major",
+  },
+  {
+    id: "Himalayan-Crop-Discovery",
+    name: "Himalayan Crop Discovery",
+    slug: "Himalayan-Crop",
+    tagline: "Discover the crops that grow in the heart of the Himalayas.",
+    difficulty: "Strenuous",
+    duration: "2-3 Days",
+    distance: "85–100 km",
+    maxAltitude: "4,800m",
+    bestSeason: "June, September",
+    location: "Kumaon High Ranges",
+    highlights: [
+      "Remote high-altitude pass",
+      "Panoramic trans-Himalayan views",
+      "Ancient trade route",
+      "Glacial lake camping",
+    ],
+    description:
+      "Explore traditional Himalayan farming as you walk through vibrant fields and discover the crops, herbs, and vegetables grown in the mountain communities. Learn about local farming practices, seasonal harvests, and the connection between Himalayan soil, culture, and everyday life.",
+    image:
+      "/HImalayan Crop Discovery.png",
     category: "major",
   },
 ];

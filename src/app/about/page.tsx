@@ -102,7 +102,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative h-[68vh] min-h-[480px] overflow-hidden">
         <Image
-          src="/chp intro image.png"
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7ff715ce-30a4-4356-baa6-3055fdf0caa8-scaled-chp-intro-2.webp"
           alt="CHP Himalayan Paradise"
           fill
           priority
@@ -261,7 +261,7 @@ export default function AboutPage() {
               <div className="group relative mt-6 mx-3 lg:mt-0">
                 <div className="relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
                   <Image
-                    src="/thingstodo.png"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d00729b2-da47-4aaf-8b4b-8f750ef0d250-scaled-thingstodo.webp"
                     alt="Things to do at CHP Himalayan Paradise"
                     width={640}
                     height={480}

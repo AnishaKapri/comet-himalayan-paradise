@@ -58,19 +58,19 @@ const spaces = [
     title: "Comet Services",
     description:
       "Concierge support for travel, stay, and on-ground logistics — handled end-to-end by the Comet team.",
-    image: "/comet services2.png",
+    image: "/scaled_Comet Services 2.png",
   },
   {
     title: "Gaushala",
     description:
       "A traditional cattle farm woven into daily life at CHP, reflecting our commitment to rural Himalayan heritage.",
-    image: "/gaushala.png",
+    image: "/scaled_Gaushala.png",
   },
   {
     title: "Isht Dev Sthal",
     description:
       "A sacred space for prayer and reflection, honoring the spiritual traditions of the Himalayan region.",
-    image: "/isht dev-sthal.png",
+    image: "/scaled_Isht Dev Sthal.png",
   },
 ];
 

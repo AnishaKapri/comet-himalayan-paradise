@@ -168,7 +168,7 @@ export default function ContactPage() {
               {/* Map placeholder */}
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm h-52 relative">
                 <Image
-                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/db273aa7-482e-4423-87c6-4aff2215b27e-images.jpeg"
+                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ea85b896-ebcc-49e9-a660-3d787cc10515-scaled-nanda-devi-base-camp.webp"
                   alt="Munsiyari location map"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"

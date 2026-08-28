@@ -42,7 +42,7 @@ export default function TreksPage() {
         <div className="absolute inset-0 opacity-20">
           <div
   className="absolute inset-0 bg-cover bg-center"
-  style={{ backgroundImage: "url('/new.png')" }}
+  style={{ backgroundImage: "url('https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7faa583a-fae6-42cd-9755-b3ef23cb0a29-scaled-treks-and-trails-header.webp')" }}
 />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

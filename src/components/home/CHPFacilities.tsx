@@ -7,29 +7,6 @@ import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
-<<<<<<< HEAD
-const facilities = [
-  {
-    title: "HOA-AOA Guest House",
-    description:
-      "Comfortable, community-managed residential accommodations offering serene mountain views, modern amenities, and home-like hospitality.",
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80&auto=format&fit=crop",
-  },
-  {
-    title: "Remote Work Office",
-    description:
-      "High-speed fiber connectivity, ergonomic workstations, private call booths, and solar-backed uninterrupted power supply.",
-    image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80&auto=format&fit=crop",
-  },
-  {
-    title: "Destination Wedding Centre",
-    description:
-      "Picturesque outdoor lawn and event spaces surrounded by majestic Himalayan peaks, offering complete event management for weddings.",
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80&auto=format&fit=crop",
-=======
 // Placeholder facilities — swap names, descriptions, and images for the real 3 once available.
 const facilities = [
   {
@@ -52,7 +29,6 @@ const facilities = [
       "Fully stocked trekking and camping gear, maintained and issued by our expert crew.",
     image:
       "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=800&q=80&auto=format&fit=crop",
->>>>>>> dd27ce782c49ceb99ffdbbd1ac399a26b7874204
   },
 ];
 
@@ -61,15 +37,9 @@ export function CHPFacilities() {
     <section id="facilities" className="py-20 lg:py-28 bg-stone-50 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-<<<<<<< HEAD
-          eyebrow="On-Site Facilities"
-          title="CHP Facilities"
-          subtitle="CHP is an integration of 20+ travel related residential and commercial facilities under CHP umbrella."
-=======
           eyebrow="On-Site"
           title="CHP Facilities"
           subtitle="Everything you need for a comfortable, well-equipped Himalayan stay — all in one place."
->>>>>>> dd27ce782c49ceb99ffdbbd1ac399a26b7874204
         />
 
         <StaggerContainer

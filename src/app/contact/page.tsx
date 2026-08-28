@@ -51,7 +51,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="relative h-[45vh] min-h-[340px] overflow-hidden">
         <Image
-          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/db273aa7-482e-4423-87c6-4aff2215b27e-images.jpeg"
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f1f4b80c-0f19-4c16-8a5c-f462b8487e42-scaled-home-page-image.webp"
           alt="Contact CHP Himalayan Paradise"
           fill
           priority

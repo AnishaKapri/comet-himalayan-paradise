@@ -206,7 +206,7 @@ export default function CampsPage() {
               <div className="relative">
                 <div className="relative h-80 rounded-2xl overflow-hidden">
                   <Image
-                    src="/Holiday Camp 2.png"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a6144aa9-77bf-406b-8909-fccf2edf9929-scaled-holiday-camp-2.webp"
                     alt="Himalayan camp aerial view"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -434,7 +434,7 @@ export default function CampsPage() {
       {/* IMAGE — RIGHT SIDE */}
       <div className="relative h-[420px] rounded-2xl overflow-hidden">
         <Image
-          src="/schedule.png"
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/976486cc-548b-42f2-ae8d-b2d827dc3448-scaled-schedule.webp"
           alt="Himalayan camp schedule"
           fill
           sizes="(max-width: 1024px) 100vw, 50vw"

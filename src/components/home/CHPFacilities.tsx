@@ -7,31 +7,31 @@ import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
+
+
+
+// Placeholder facilities — swap names, descriptions, and images for the real 3 once available.
 // Placeholder facilities — swap names, descriptions, and images for the real 3 once available.
 const facilities = [
   {
-    title: "Dining Hall",
+    title: "Holiday Resort",
     description:
-      "A warm communal dining space serving fresh, organic Himalayan meals throughout the day.",
-    image:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80&auto=format&fit=crop",
+      "A comfortable Himalayan retreat offering scenic stays, guided experiences, and year-round hospitality.",
+    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/07565577-ae72-41ad-9905-0dc30374ef9a-scaled-holiday-resort.webp",
   },
   {
-    title: "Wellness Spa",
+    title: "Himalayan Mind Space",
     description:
-      "On-site yoga decks, meditation rooms, and therapy spaces for holistic mountain wellness.",
-    image:
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80&auto=format&fit=crop",
+      "A dedicated space for mindfulness, meditation, and mental wellness set against the mountains.",
+    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/c2fffd03-8a8d-46d8-86e9-e26f8574c63e-scaled-mind-space.webp",
   },
   {
-    title: "Adventure Gear Center",
+    title: "Himalayan Floral Paradise",
     description:
-      "Fully stocked trekking and camping gear, maintained and issued by our expert crew.",
-    image:
-      "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=800&q=80&auto=format&fit=crop",
+      "A vibrant floral sanctuary showcasing the natural beauty and biodiversity of the Himalayas.",
+    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/42be2f0f-86c2-498b-8285-9ac90298b77f-scaled-floral-paradise.webp",
   },
-];
-
+]
 export function CHPFacilities() {
   return (
     <section id="facilities" className="py-20 lg:py-28 bg-stone-50 scroll-mt-20">
@@ -39,7 +39,10 @@ export function CHPFacilities() {
         <SectionHeader
           eyebrow="On-Site"
           title="CHP Facilities"
-          subtitle="Everything you need for a comfortable, well-equipped Himalayan stay — all in one place."
+          subtitle="A Vision Beyond Tourism
+CHP is creating a first-of-its-kind integrated Himalayan ecosystem where hospitality, wellness, adventure, spirituality, remote work, events, and authentic local experiences come together in one destination. The vision is to establish CHP as a one-stop destination for complete Himalayan experiences, serving travelers, families, corporates, and wellness seekers throughout the year.
+To make this vision a reality, CHP invites entrepreneurs and investors to co-own 20+ tourism and community facilities through a partnership-based profit-sharing model. Join us in building a sustainable Himalayan destination while creating long-term value and recurring income opportunities.
+"
         />
 
         <StaggerContainer
@@ -76,7 +79,7 @@ export function CHPFacilities() {
 
         <div className="mt-10 text-center">
           <Link
-            href="/accommodation"
+            href="/facilities"
             className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
           >
             View all 20+ Facilities

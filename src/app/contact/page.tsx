@@ -33,6 +33,7 @@ export default function ContactPage() {
     interest: "",
     dates: "",
     groupSize: "",
+    days: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);

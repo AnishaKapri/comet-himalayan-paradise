@@ -69,7 +69,7 @@ export function Footer() {
                 <MapPin className="w-4 h-4 text-green-400 mt-0.5 shrink-0" />
                 <span className="text-slate-400">
                    Pithoragarh,
-                  <br /> Uttarakhand 262554, India
+                  <br /> Uttarakhand 262501, India
                 </span>
               </li>
               <li className="flex items-center gap-3">

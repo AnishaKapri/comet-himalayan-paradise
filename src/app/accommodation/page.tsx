@@ -19,31 +19,14 @@ export const metadata: Metadata = {
 };
 
 const stays = [
+  
   {
-    type: "Mountain Hotels",
-    tagline: "Comfort with a Himalayan soul",
-    description:
-      "Comfortable en-suite rooms with Himalayan views, hot water, and warm service. Our partner hotels are carefully selected for location, cleanliness, and authentic mountain character.",
-    image:
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&q=80&auto=format&fit=crop",
-    amenities: [
-      "En-suite bathrooms with hot water",
-      "Mountain-view rooms",
-      "In-house dining with local cuisine",
-      "Wi-Fi in common areas",
-      "Room service",
-    ],
-    bestFor: "Families, Comfort seekers, First-time visitors",
-    priceRange: "₹₹",
-    rating: 4.6,
-  },
-  {
-    type: "Homestays",
+    type: "Traditional Houses",
     tagline: "Live as a local — genuinely",
     description:
       "Stay with warm Kumaoni families in their homes. Share meals at the family table, learn about daily mountain life, and form friendships that last long after you leave.",
     image:
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=900&q=80&auto=format&fit=crop",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d6e7b927-f6b1-4320-9c7c-320e04e15101-scaled-traditinoal-house.webp",
     amenities: [
       "Home-cooked traditional meals",
       "Cultural immersion activities",
@@ -55,31 +38,14 @@ const stays = [
     priceRange: "₹",
     rating: 4.9,
   },
-  {
-    type: "Traditional Houses",
-    tagline: "Stone, wood, and centuries of character",
-    description:
-      "Stay in traditional Kumaoni stone-and-wood architecture — heritage homes that have withstood Himalayan winters for generations. Each tells a story.",
-    image:
-      "https://images.unsplash.com/photo-1464822756203-d3ef4e69bdc7?w=900&q=80&auto=format&fit=crop",
-    amenities: [
-      "Heritage architecture experience",
-      "Wood fire heating in winter",
-      "Traditional furnishings",
-      "Home-grown food",
-      "Orchard access",
-    ],
-    bestFor: "Heritage enthusiasts, Writers, Photographers",
-    priceRange: "₹₹",
-    rating: 4.8,
-  },
+
   {
     type: "Camping Tents",
     tagline: "Sleep under Himalayan stars",
     description:
       "Premium canvas tents set at spectacular riverside, meadow, or forest locations. All bedding and equipment provided — bring only yourself and your sense of wonder.",
     image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=900&q=80&auto=format&fit=crop",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/fb51f723-c566-4148-84a4-99c66ea3e7a4-camping-tents.webp",
     amenities: [
       "Insulated premium tents",
       "Comfortable sleeping bags & mattresses",
@@ -92,12 +58,12 @@ const stays = [
     rating: 4.8,
   },
   {
-    type: "Luxury Cottages",
+    type: " CHP Luxury Cottages",
     tagline: "Premium comfort, mountain magic",
     description:
       "Beautifully appointed cottages with panoramic Himalayan views, private decks, premium bedding, and curated interiors. The finest way to experience the mountains in comfort.",
     image:
-      "https://images.unsplash.com/photo-1570641963303-92ce4845ed4c?w=900&q=80&auto=format&fit=crop",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7b1e8f4c-e165-4c62-bef8-3165e7352ace-scaled-chp-cottages.webp",
     amenities: [
       "Private mountain-view deck",
       "King-size beds",
@@ -117,7 +83,7 @@ export default function AccommodationPage() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[400px] overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1920&q=80&auto=format&fit=crop"
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/85e08a69-8e2c-458a-b7b8-2b36bf846c43-scaled-stay-options.webp"
           alt="Mountain accommodation"
           fill
           priority
@@ -134,7 +100,7 @@ export default function AccommodationPage() {
             Accommodation
           </h1>
           <p className="text-white/65 text-lg max-w-xl">
-            Five distinct ways to stay in the Himalayas — from camping tents
+            Three distinct ways to stay in the Himalayas — from camping tents
             under stars to heritage homes and luxury cottages.
           </p>
         </div>

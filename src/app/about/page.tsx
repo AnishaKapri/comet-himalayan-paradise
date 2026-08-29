@@ -102,7 +102,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative h-[68vh] min-h-[480px] overflow-hidden">
         <Image
-          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7ff715ce-30a4-4356-baa6-3055fdf0caa8-scaled-chp-intro-2.webp"
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4425a0c8-b7a1-4e60-b237-8478c7107de6-scaled-chp-intro-image.webp"
           alt="CHP Himalayan Paradise"
           fill
           priority
@@ -174,7 +174,7 @@ export default function AboutPage() {
               <div className="relative mt-6 mx-3 lg:mt-0">
                 <div className="group rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
                   <Image
-                    src="/chp intro 2.png"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7ff715ce-30a4-4356-baa6-3055fdf0caa8-scaled-chp-intro-2.webp"
                     alt="CHP Himalayan Paradise experience"
                     width={640}
                     height={480}
@@ -200,7 +200,7 @@ export default function AboutPage() {
               <div className="group flex justify-center shrink-0">
                 <div className="inline-block rounded-2xl bg-white shadow-sm ring-1 ring-black/5 p-0 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:ring-orange-300/40">
                   <Image
-                    src="/corp footprints.png"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/bc54a26e-71c2-4c7d-987b-03cfac7e8c94-scaled-corp-footprints.webp"
                     alt="Organizations who have chosen CHP"
                     width={480}
                     height={320}

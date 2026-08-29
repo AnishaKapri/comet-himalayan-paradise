@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     title: "CHP Enclave | CHP Himalayan Paradise",
     description: "A thoughtfully planned Himalayan mountain community — premium cottages, group ownership, and a shared-services lifestyle.",
     url: "https://comet-himalayan-paradise.vercel.app/chp-enclave",
-    images: [{ url: "/CHP Enclave 2.png", width: 1200, height: 630, alt: "CHP Enclave" }],
+    images: [{ url: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/8a2998d6-8c90-4122-848d-917500bfc92d-scaled-chp-enclave-2.webp", width: 1200, height: 630, alt: "CHP Enclave" }],
   },
 };
 
 const locationHighlights = [
-  { src: "/zero risk zone.png", alt: "Zero risk zone" },
-  { src: "/location2.png", alt: "CHP Enclave location" },
+  { src: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/8f689330-8332-45f3-b9bf-7ba38d02b375-scaled-zero-risk-zone.webp", alt: "Zero risk zone" },
+  { src: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/778db5f4-90a2-45f0-9599-5dcb15c64f43-scaled-location2.webp", alt: "CHP Enclave location" },
 ];
 
 export default function CHPEnclavePage() {
@@ -66,7 +66,7 @@ export default function CHPEnclavePage() {
               <div className="group flex justify-center lg:justify-start">
                 <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
                   <Image
-                    src="/CHPEnclave2.png"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/8a2998d6-8c90-4122-848d-917500bfc92d-scaled-chp-enclave-2.webp"
                     alt="CHP Enclave"
                     width={640}
                     height={480}
@@ -88,7 +88,7 @@ export default function CHPEnclavePage() {
               <div className="group flex justify-center lg:justify-start">
                 <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
                   <Image
-                    src="/group ownership.png"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/06532a1c-fee9-4c16-aeb7-491ee5299b07-scaled-group-ownership-1.webp"
                     alt="Group Ownership Model"
                     width={640}
                     height={480}
@@ -176,7 +176,7 @@ export default function CHPEnclavePage() {
               <div className="group flex justify-center lg:justify-start">
                 <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
                   <Image
-                    src="/sharedservices.png"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/98ed1fbb-3c18-468e-a819-01a7af55bd32-scaled-shared-services.webp"
                     alt="Shared Services"
                     width={640}
                     height={480}
@@ -236,7 +236,7 @@ export default function CHPEnclavePage() {
               <div className="group flex justify-center lg:justify-start">
                 <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
                   <Image
-                    src="/temples.png"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/2725e0fe-1197-442c-96ff-fd337bc4d6e0-scaled-temples.webp"
                     alt="Nearby Temples & Spiritual Destinations"
                     width={640}
                     height={480}

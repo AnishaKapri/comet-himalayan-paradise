@@ -210,7 +210,7 @@ export const treks: Trek[] = [
 
   {
     id: "night-safari",
-    name: "Night Safari",
+    name: "Night-Jungle Safari",
     slug: "night-safari",
     tagline: "The mountain awakens after dark",
     difficulty: "Easy",

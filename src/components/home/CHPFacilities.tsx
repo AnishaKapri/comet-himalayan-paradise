@@ -40,9 +40,8 @@ export function CHPFacilities() {
           eyebrow="On-Site"
           title="CHP Facilities"
           subtitle="A Vision Beyond Tourism
-CHP is creating a first-of-its-kind integrated Himalayan ecosystem where hospitality, wellness, adventure, spirituality, remote work, events, and authentic local experiences come together in one destination. The vision is to establish CHP as a one-stop destination for complete Himalayan experiences, serving travelers, families, corporates, and wellness seekers throughout the year.
-To make this vision a reality, CHP invites entrepreneurs and investors to co-own 20+ tourism and community facilities through a partnership-based profit-sharing model. Join us in building a sustainable Himalayan destination while creating long-term value and recurring income opportunities.
-"
+20+ tourism and community facilities available for co-ownership
+            through our partnership-based profit-sharing model."
         />
 
         <StaggerContainer

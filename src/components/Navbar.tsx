@@ -24,7 +24,7 @@ const moreLinks = [
   { href: "/contact", label: "Second Home" },
   { href: "/#facilities", label: "CHP Facilities" },
   { href: "/contact", label: "Business & Investment" },
-  { href: "/#purpose-driven-space", label: "Purpose Driven Space" },
+  { href: "/purpose-driven-space", label: "Purpose Driven Space" },
   { href: "/chp-enclave", label: "CHP Enclave" },
 ];
 

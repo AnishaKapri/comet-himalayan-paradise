@@ -25,23 +25,30 @@ import {
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
-const investmentModes = [
+type InvestmentMode = {
+  title: string;
+  description: string;
+  highlight: string;
+  bullets?: string[];
+};
+
+const investmentModes: InvestmentMode[] = [
   {
     title: "Plot-Based Investment",
     description:
-      "Invest in strategically located plots within the CHP community and benefit from the appreciation of land value as the destination grows.",
+      "CHP offers a range of investment plans starting from \u20b910 lakh, with attractive plot discounts of 30% to 75%. Higher investments unlock greater discounts, along with privileged access to select CHP experiences.",
     highlight: "Land Appreciation & Value Growth",
   },
   {
-    title: "Cottage-Based Investment",
-    description:
-      "Own a registered plot, build your dream Himalayan cottage, and generate attractive returns through tourism, homestay operations, or future resale opportunities.",
-    highlight: "Rental Income & Resale Potential",
-  },
-  {
     title: "Facility-Based Investment",
-    description:
-      "Co-own or invest in CHP's shared tourism and community facilities, enabling you to participate in revenue-generating infrastructure without owning individual land.",
+    description: "Invest in a CHP co-owned facility and enjoy multiple benefits:",
+    bullets: [
+      "30% discount on space",
+      "1 plot as a gift for a personal cottage within the CHP community",
+      "Privileged access to all CHP amenities",
+      "100% profit share until the total invested amount is recovered",
+      "80% profit share thereafter",
+    ],
     highlight: "Shared Infrastructure Revenue",
   },
 ];
@@ -108,7 +115,7 @@ export default function BusinessInvestmentPage() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-base sm:text-lg text-slate-300 leading-relaxed font-light mb-8"
               >
-                CHP offers a three modes of investment opportunities across cottages, homestays, hospitality, wellness, remote work infrastructure, and tourism-driven businesses. Be a part of a fast-growing Himalayan ecosystem built for sustainable growth, recurring income, and long-term value.
+                CHP offers two modes of investment opportunities across cottages, homestays, hospitality, wellness, remote work infrastructure, and tourism-driven businesses. Be a part of a fast-growing Himalayan ecosystem built for sustainable growth, recurring income, and long-term value.
               </motion.p>
 
               {/* Three Modes Cards */}
@@ -133,6 +140,19 @@ export default function BusinessInvestmentPage() {
                     <p className="text-slate-300 text-sm leading-relaxed">
                       {mode.description}
                     </p>
+                    {mode.bullets && (
+                      <ul className="mt-3 space-y-1.5">
+                        {mode.bullets.map((bullet) => (
+                          <li
+                            key={bullet}
+                            className="flex items-start gap-2 text-slate-300 text-sm leading-relaxed"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0" />
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </motion.div>
                 ))}
               </div>
@@ -177,7 +197,7 @@ export default function BusinessInvestmentPage() {
                   Investment Portal
                 </p>
                 <p className="text-white text-sm font-medium">
-                  3 Modes of Sustainable Investment across Plots, Cottages & Facilities.
+                  2 Modes of Sustainable Investment across Plots & Facilities.
                 </p>
               </div>
             </motion.div>
@@ -187,44 +207,13 @@ export default function BusinessInvestmentPage() {
 
       {/* ── 2. Strategic Advantages Section ── */}
       <section className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-800">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Side Image: advantage.png */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5 relative w-full h-80 sm:h-96 lg:h-[420px] rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl group order-2 lg:order-1"
-          >
-            <img
-              src="/advantage.png"
-              alt="Strategic Advantages"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              onError={(e) => {
-                (e.target as HTMLElement).setAttribute(
-                  "src",
-                  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80&auto=format&fit=crop"
-                );
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-white/10">
-              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-1">
-                Strategic Advantages
-              </p>
-              <p className="text-white text-sm font-medium">
-                Pristine location with strong market demand and community backing.
-              </p>
-            </div>
-          </motion.div>
-
+        <div className="grid grid-cols-1 gap-12 items-center">
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 order-1 lg:order-2"
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-6">
               <Award className="w-3.5 h-3.5" />
@@ -264,14 +253,13 @@ export default function BusinessInvestmentPage() {
       {/* ── 3. Target Market Opportunities Section ── */}
       <section className="py-20 lg:py-28 bg-slate-950 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 gap-12 items-center">
             {/* Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-7"
             >
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-6">
                 <Target className="w-3.5 h-3.5" />
@@ -307,50 +295,19 @@ export default function BusinessInvestmentPage() {
                 ))}
               </div>
             </motion.div>
-
-            {/* Right Image: target market opportunities.png */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-5 relative w-full h-80 sm:h-96 lg:h-[420px] rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl group"
-            >
-              <img
-                src="/target market opportunities.png"
-                alt="Target Market Opportunities"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                onError={(e) => {
-                  (e.target as HTMLElement).setAttribute(
-                    "src",
-                    "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80&auto=format&fit=crop"
-                  );
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-white/10">
-                <p className="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1">
-                  Year-Round Demands
-                </p>
-                <p className="text-white text-sm font-medium">
-                  Diverse customer segments spanning tourism, education & corporate retreats.
-                </p>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
 
       {/* ── 4. Revenue Streams Section ── */}
       <section className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-800">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 gap-12 items-center">
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7"
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-6">
               <PieChart className="w-3.5 h-3.5" />
@@ -384,50 +341,19 @@ export default function BusinessInvestmentPage() {
               ))}
             </div>
           </motion.div>
-
-          {/* Right Image: revenue.png */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5 relative w-full h-80 sm:h-96 lg:h-[420px] rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl group"
-          >
-            <img
-              src="/revenue.png"
-              alt="Revenue Streams"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              onError={(e) => {
-                (e.target as HTMLElement).setAttribute(
-                  "src",
-                  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80&auto=format&fit=crop"
-                );
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-white/10">
-              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-1">
-                Diversified Income
-              </p>
-              <p className="text-white text-sm font-medium">
-                Multiple recurring revenue channels ensuring year-round occupancy & income.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
 
       {/* ── 5. CHP Advantage for Hospitality Entrepreneurs ── */}
       <section className="py-20 lg:py-28 bg-slate-950 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 gap-12 items-center">
             {/* Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-7"
             >
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-6">
                 <Building2 className="w-3.5 h-3.5" />
@@ -459,36 +385,6 @@ export default function BusinessInvestmentPage() {
                     <span>{benefit}</span>
                   </div>
                 ))}
-              </div>
-            </motion.div>
-
-            {/* Right Image: entrprbenefit.png */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-5 relative w-full h-80 sm:h-96 lg:h-[420px] rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl group"
-            >
-              <img
-                src="/entrprbenefit.png"
-                alt="CHP Advantage for Hospitality Entrepreneurs"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                onError={(e) => {
-                  (e.target as HTMLElement).setAttribute(
-                    "src",
-                    "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80&auto=format&fit=crop"
-                  );
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-white/10">
-                <p className="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1">
-                  Hospitality Ownership
-                </p>
-                <p className="text-white text-sm font-medium">
-                  Smarter Himalayan ownership with managed maintenance & shared infrastructure.
-                </p>
               </div>
             </motion.div>
           </div>
@@ -587,7 +483,6 @@ export default function BusinessInvestmentPage() {
                   className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-amber-500 transition-colors"
                 >
                   <option value="Plot-Based Investment">Plot-Based Investment</option>
-                  <option value="Cottage-Based Investment">Cottage-Based Investment</option>
                   <option value="Facility-Based Investment">Facility-Based Investment</option>
                   <option value="Hospitality Venture">Hospitality Venture</option>
                   <option value="Other Business Venture">Other Business Venture</option>

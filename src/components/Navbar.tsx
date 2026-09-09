@@ -25,7 +25,7 @@ const moreLinks = [
   { href: "/growth-partner", label: "CHP Partnership" },
   { href: "/gallery", label: "Gallery" },
   { href: "/second-home", label: "Second Home" },
-  { href: "/business-investment", label: "Business & Investment" },
+  { href: "/business-investment", label: "Investment Opportunities" },
   { href: "/purpose-driven-space", label: "Purpose Driven Space" },
   { href: "/chp-enclave", label: "CHP Enclave" },
 ];

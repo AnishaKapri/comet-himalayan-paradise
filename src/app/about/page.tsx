@@ -24,7 +24,7 @@ const values = [
     icon: Mountain,
     title: "Deep Mountain Knowledge",
     description:
-      "Our team has lived, trekked, and explored the Kumaon Himalayas for decades. Every trail, village, and hidden valley is known to us — not as tourists, but as mountain people.",
+      "Our team has lived, trekked and explored the Kumaon Himalayas for decades. Every trail, village, and hidden valley is known to us — not as tourists, but as mountain people.",
   },
   {
     icon: Heart,

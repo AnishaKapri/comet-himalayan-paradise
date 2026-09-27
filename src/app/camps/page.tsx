@@ -125,6 +125,11 @@ const accommodationTypes = [
 ];
 
 export default function CampsPage() {
+  // Paste your image URLs below (or leave empty to show "Image coming soon")
+  const trekkingImage = "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f648cc02-54ed-4667-90e3-c902f07103b6-scaled-panchachuli-base-camp.webp";
+  const campfireImage = "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4dc30f8c-3ced-4516-b042-c8f5f559339c-scaled-campfire-evenings.webp";
+  const wildlifeImage = "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/2c4f9283-5476-4a35-80cf-d3ddda2787ba-scaled-bird-watching-1.webp";
+
   return (
     <>
       {/* Hero */}
@@ -216,45 +221,29 @@ export default function CampsPage() {
             className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-3/4 lg:mx-auto"
             staggerDelay={0.07}
           >
-            {campFeatures.filter((f) => campFeaturePreviewTitles.includes(f.title)).map((f) => {
-  const iconMap = { Mountain, Tent, Flame, Leaf, Heart, Star, Users, Clock };
-  const Icon = iconMap[f.icon];
-
-  const colorStyles = {
-    blue: "bg-blue-100 text-blue-700",
-    orange: "bg-orange-100 text-orange-700",
-    red: "bg-red-100 text-red-700",
-    green: "bg-green-100 text-green-700",
-    pink: "bg-pink-100 text-pink-700",
-    purple: "bg-purple-100 text-purple-700",
-    teal: "bg-teal-100 text-teal-700",
-    indigo: "bg-indigo-100 text-indigo-700",
-  };
-
-  return (
-    <StaggerItem key={f.title}>
-      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow h-full">
-        
-        <div
-          className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${
-            colorStyles[f.color as keyof typeof colorStyles]
-          }`}
-        >
-          <Icon className="w-5 h-5" />
-        </div>
-
-        <h3 className="font-semibold text-slate-800 text-sm mb-2">
-          {f.title}
-        </h3>
-
-        <p className="text-slate-500 text-xs leading-relaxed">
-          {f.description}
-        </p>
-
-      </div>
-    </StaggerItem>
-  );
-})}
+            {campFeatures
+              .filter((feature) => campFeaturePreviewTitles.includes(feature.title))
+              .map((feature) => (
+                <StaggerItem key={feature.title}>
+                  <article className="h-full overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm [transform-style:preserve-3d] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-2xl hover:[transform:perspective(1000px)_rotateX(4deg)_rotateY(-4deg)_translateY(-4px)]">
+                    <div className="relative aspect-video overflow-hidden bg-stone-100">
+                      {feature.image.startsWith("PASTE_IMAGE_URL_") ? (
+                        <div className="flex h-full items-center justify-center text-sm font-medium text-stone-500">
+                          Image coming soon
+                        </div>
+                      ) : (
+                        <Image
+                          src={feature.image}
+                          alt={feature.title}
+                          fill
+                          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                          className="object-cover"
+                        />
+                      )}
+                    </div>
+                  </article>
+                </StaggerItem>
+              ))}
           </StaggerContainer>
           <div className="mt-10 text-center">
             <Link href="/features" className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30">
@@ -287,34 +276,85 @@ export default function CampsPage() {
           {/* Activities — three boxes, left to right */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
 
-            <div className="p-5 rounded-2xl bg-green-50">
-              <h3 className="font-semibold text-green-900 mb-2">
-                🥾 Trekking & Hiking
-              </h3>
-              <p className="text-sm text-slate-600">
-                Explore scenic Himalayan trails, forests, villages and mountain
-                viewpoints.
-              </p>
+            <div className="rounded-2xl bg-green-50 overflow-hidden shadow-sm [transform-style:preserve-3d] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-2xl hover:[transform:perspective(1000px)_rotateX(4deg)_rotateY(-4deg)_translateY(-4px)]">
+              <div className="relative aspect-video w-full overflow-hidden bg-green-100">
+                {trekkingImage ? (
+                  <Image
+                    src={trekkingImage}
+                    alt="Trekking & Hiking"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center text-sm font-medium text-green-700">
+                    Image coming soon
+                  </div>
+                )}
+              </div>
+              <div className="p-5">
+                <h3 className="font-semibold text-green-900 mb-2">
+                  🥾 Trekking & Hiking
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Explore scenic Himalayan trails, forests, villages and mountain
+                  viewpoints.
+                </p>
+              </div>
             </div>
 
-            <div className="p-5 rounded-2xl bg-orange-50">
-              <h3 className="font-semibold text-orange-900 mb-2">
-                🔥 Campfire Evenings
-              </h3>
-              <p className="text-sm text-slate-600">
-                Enjoy music, stories, conversations and unforgettable evenings
-                around the fire.
-              </p>
+            <div className="rounded-2xl bg-orange-50 overflow-hidden shadow-sm [transform-style:preserve-3d] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-2xl hover:[transform:perspective(1000px)_rotateX(4deg)_rotateY(-4deg)_translateY(-4px)]">
+              <div className="relative aspect-video w-full overflow-hidden bg-orange-100">
+                {campfireImage ? (
+                  <Image
+                    src={campfireImage}
+                    alt="Campfire Evenings"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center text-sm font-medium text-orange-700">
+                    Image coming soon
+                  </div>
+                )}
+              </div>
+              <div className="p-5">
+                <h3 className="font-semibold text-orange-900 mb-2">
+                  🔥 Campfire Evenings
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Enjoy music, stories, conversations and unforgettable evenings
+                  around the fire.
+                </p>
+              </div>
             </div>
 
-            <div className="p-5 rounded-2xl bg-blue-50">
-              <h3 className="font-semibold text-blue-900 mb-2">
-                🐦 Nature & Wildlife
-              </h3>
-              <p className="text-sm text-slate-600">
-                Discover Himalayan birds, wildlife and the beauty of untouched
-                mountain landscapes.
-              </p>
+            <div className="rounded-2xl bg-blue-50 overflow-hidden shadow-sm [transform-style:preserve-3d] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-2xl hover:[transform:perspective(1000px)_rotateX(4deg)_rotateY(-4deg)_translateY(-4px)]">
+              <div className="relative aspect-video w-full overflow-hidden bg-blue-100">
+                {wildlifeImage ? (
+                  <Image
+                    src={wildlifeImage}
+                    alt="Nature & Wildlife"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center text-sm font-medium text-blue-700">
+                    Image coming soon
+                  </div>
+                )}
+              </div>
+              <div className="p-5">
+                <h3 className="font-semibold text-blue-900 mb-2">
+                  🐦 Nature & Wildlife
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Discover Himalayan birds, wildlife and the beauty of untouched
+                  mountain landscapes.
+                </p>
+              </div>
             </div>
 
           </div>

@@ -27,12 +27,18 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const bgY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", "40%"]
+  );
+
   const contentOpacity = useTransform(
     scrollYProgress,
     [0, 0.7],
     [1, 0]
   );
+
   const contentY = useTransform(
     scrollYProgress,
     [0, 0.7],
@@ -44,7 +50,9 @@ export function Hero() {
       ref={ref}
       className="relative h-screen min-h-[640px] overflow-hidden"
     >
-      {/* Parallax background */}
+      {/* =========================================================
+          PARALLAX BACKGROUND
+      ========================================================= */}
       <motion.div
         className="absolute inset-0 scale-110"
         style={{ y: bgY }}
@@ -59,11 +67,16 @@ export function Hero() {
         />
       </motion.div>
 
-      {/* Gradient overlay */}
+      {/* =========================================================
+          GRADIENT OVERLAY
+      ========================================================= */}
       <div className="absolute inset-0 hero-overlay" />
+
       <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
 
-      {/* Content */}
+      {/* =========================================================
+          CONTENT
+      ========================================================= */}
       <motion.div
         style={{
           opacity: contentOpacity,
@@ -71,7 +84,9 @@ export function Hero() {
         }}
         className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6"
       >
-        {/* Eyebrow */}
+        {/* =====================================================
+            EYEBROW
+        ===================================================== */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -84,9 +99,9 @@ export function Hero() {
           {/* Left decorative line */}
           <span className="h-px w-8 sm:w-10 bg-orange-400" />
 
-          {/* Contrasting text box */}
-          <div className="bg-green-950/95 border border-green-700/70 px-5 py-2.5 sm:px-6 sm:py-3 rounded-md shadow-lg backdrop-blur-sm">
-            <span className="text-orange-400 text-xs sm:text-sm font-bold uppercase tracking-[0.22em]">
+          {/* CHP Himalayan Paradise */}
+          <div className="bg-green-950/95 border border-green-700/70 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-md shadow-lg backdrop-blur-sm">
+            <span className="text-white text-xs sm:text-sm font-bold uppercase tracking-[0.22em]">
               CHP Himalayan Paradise
             </span>
           </div>
@@ -95,7 +110,9 @@ export function Hero() {
           <span className="h-px w-8 sm:w-10 bg-orange-400" />
         </motion.div>
 
-        {/* Headline */}
+        {/* =====================================================
+            HEADLINE
+        ===================================================== */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -114,7 +131,9 @@ export function Hero() {
           </span>
         </motion.h1>
 
-        {/* Subhead */}
+        {/* =====================================================
+            SUBHEAD
+        ===================================================== */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -129,7 +148,9 @@ export function Hero() {
           experiences — created for living, not just visiting.
         </motion.p>
 
-        {/* CTAs */}
+        {/* =====================================================
+            CTA BUTTONS
+        ===================================================== */}
         <motion.div
           id="hero-ctas"
           initial={{ opacity: 0, y: 20 }}
@@ -140,6 +161,7 @@ export function Hero() {
           }}
           className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-16 sm:mb-24 max-w-3xl"
         >
+          {/* Booking Options */}
           <Link
             href="/contact"
             className="group inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white px-8 py-4 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:shadow-2xl hover:shadow-green-900/40 hover:-translate-y-0.5"
@@ -148,6 +170,7 @@ export function Hero() {
             Booking Options
           </Link>
 
+          {/* Treks and Trails */}
           <Link
             href="/treks"
             className="group inline-flex items-center gap-2 glass text-white px-8 py-4 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:-translate-y-0.5"
@@ -156,6 +179,7 @@ export function Hero() {
             Treks and Trails
           </Link>
 
+          {/* Business Opportunities */}
           <Link
             href="/contact"
             className="group inline-flex items-center gap-2 glass text-white px-6 py-3.5 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 hover:-translate-y-0.5"
@@ -164,6 +188,7 @@ export function Hero() {
             Biz & investment Opportunities
           </Link>
 
+          {/* Second Home */}
           <Link
             href="/contact"
             className="group inline-flex items-center gap-2 glass text-white px-6 py-3.5 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 hover:-translate-y-0.5"
@@ -172,6 +197,7 @@ export function Hero() {
             Own a second home in Himalayas
           </Link>
 
+          {/* Purpose Driven Space */}
           <Link
             href="/#purpose-driven-space"
             className="group inline-flex items-center gap-2 glass text-white px-6 py-3.5 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 hover:-translate-y-0.5"
@@ -181,7 +207,9 @@ export function Hero() {
           </Link>
         </motion.div>
 
-        {/* Stats bar */}
+        {/* =====================================================
+            STATS BAR
+        ===================================================== */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -214,7 +242,9 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* =========================================================
+          SCROLL INDICATOR
+      ========================================================= */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

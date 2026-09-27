@@ -125,6 +125,14 @@ export default function GrowthPartnerPage() {
                                     <span>Become a Growth Partner</span>
                                     <ArrowRight className="w-4 h-4" />
                                 </a>
+
+                                <a
+                                    href="/promotions"
+                                    className="border border-amber-400/50 bg-slate-900/60 hover:bg-slate-800 text-white font-bold px-7 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-black/20 flex items-center gap-2"
+                                >
+                                    <span>Promotions</span>
+                                    <ArrowRight className="w-4 h-4" />
+                                </a>
                             </motion.div>
                         </div>
 

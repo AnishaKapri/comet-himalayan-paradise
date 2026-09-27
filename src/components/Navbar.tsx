@@ -32,16 +32,13 @@ const navGroups = [
   {
     label: "CHP Biz. Opportunities",
     items: [
+      { href: "/chp-biz-partnership", label: "CHP Biz. Partnership" },
+      { href: "/growth-partner", label: "CHP Growth Partnership" },
+      { href: "/business-investment", label: "Investment Options" },
       { href: "/chp-enclave", label: "Second Home" },
       { href: "/facilities", label: "16 Dream Spaces" },
       { href: "/facilities", label: "12 Biz Facilities" },
       { href: "/gateways", label: "5 Gateways" },
-      { href: "/chp-biz-partnership", label: "CHP Biz. Partnership" },
-      { href: "/growth-partner", label: "CHP Partnerships" },
-      { href: "/business-investment", label: "Investment Options" },
-      { href: "/growth-partner", label: "CHP Growth Partners" },
-      { href: "/promotions", label: "Promotions" },
-      { href: "/business-proposals", label: "Business Proposal" },
     ],
   },
   {

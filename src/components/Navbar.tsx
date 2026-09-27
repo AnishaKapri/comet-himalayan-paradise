@@ -36,6 +36,7 @@ const navGroups = [
       { href: "/facilities", label: "16 Dream Spaces" },
       { href: "/facilities", label: "12 Biz Facilities" },
       { href: "/gateways", label: "5 Gateways" },
+      { href: "/chp-biz-partnership", label: "CHP Biz. Partnership" },
       { href: "/growth-partner", label: "CHP Partnerships" },
       { href: "/business-investment", label: "Investment Options" },
       { href: "/growth-partner", label: "CHP Growth Partners" },
@@ -99,7 +100,7 @@ export function Navbar() {
             <ul className="navbar-links flex items-center gap-0.5">
               {directLinks.map((link) => <li key={link.label}><Link href={link.href} className={cn(desktopLink, pathname === link.href ? isLight ? "bg-green-900/10 text-green-900 font-semibold" : "bg-white/20 text-white font-semibold" : desktopText)}>{link.label}</Link></li>)}
               {navGroups.map((group) => {
-                const isGroupActive = group.items.some((item) => item.href === pathname);
+                const isGroupActive = group.items.some((item) => item.href && (item.href === pathname || pathname.startsWith(`${item.href}/`)));
 
                 return (
                 <li key={group.label} className="relative group" onMouseEnter={() => setOpenGroup(group.label)} onMouseLeave={() => setOpenGroup(null)}>

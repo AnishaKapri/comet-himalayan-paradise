@@ -30,7 +30,7 @@ const navGroups = [
     ],
   },
   {
-    label: "CHP Opportunities",
+    label: "CHP Biz. Opportunities",
     items: [
       { href: "/chp-enclave", label: "Second Home" },
       { href: "/facilities", label: "16 Dream Spaces" },
@@ -40,6 +40,7 @@ const navGroups = [
       { href: "/business-investment", label: "Investment Options" },
       { href: "/growth-partner", label: "CHP Growth Partners" },
       { href: "/promotions", label: "Promotions" },
+      { href: "/business-proposals", label: "Business Proposal" },
     ],
   },
   {

@@ -634,12 +634,6 @@ export default function ContactPage() {
                     >
                       himalayan.pradise@gmail.com
                     </a>
-                    <a
-                      href="mailto:himalayancamp.chp@gmail.com"
-                      className="block text-slate-600 text-sm hover:text-sky-600 transition-colors mt-0.5"
-                    >
-                      himalayancamp.chp@gmail.com
-                    </a>
                   </div>
                 </div>
 
@@ -653,9 +647,9 @@ export default function ContactPage() {
                     <p className="text-slate-600 text-sm">
                       CHP Himalayan Paradise,
                       <br />
-                      Munsiyari, Pithoragarh,
+                      Pathrauli, Pithoragarh,
                       <br />
-                      Uttarakhand 262554, India
+                      Uttarakhand 262543, India
                     </p>
                   </div>
                 </div>

@@ -27,7 +27,6 @@ export default function FeaturesPage() {
                     <Image src={feature.image} alt={feature.title} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-contain" />
                   )}
                 </div>
-                <h2 className="px-5 py-4 font-semibold text-slate-800">{feature.title}</h2>
               </article>
             </StaggerItem>
           ))}

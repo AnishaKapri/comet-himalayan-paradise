@@ -54,7 +54,7 @@ function ActivityItem({ activity, onPreview, onDismiss }: { activity: CampActivi
 export function ActivityCategoryCard({ category }: { category: CampCategory }) {
   return <a href={`#${categorySlug(category.title)}`} className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-xl hover:shadow-black/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-900">
     <div className="relative aspect-[16/9] overflow-hidden bg-stone-100"><Image src={category.image} alt={`${category.title} camp activity`} fill sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" className="object-contain transition-transform duration-700 group-hover:scale-105" /></div>
-    <div className="flex min-w-0 grow flex-col p-5"><h3 className="text-lg font-bold leading-snug text-slate-800 transition-colors group-hover:text-green-900">{category.title}</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">{category.description}</p><span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-green-900 transition-colors group-hover:text-green-700">Explore More <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div>
+    <div className="flex min-w-0 grow flex-col p-5"><p className="mt-2 text-sm leading-relaxed text-slate-600">{category.description}</p><span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-green-900 transition-colors group-hover:text-green-700">Explore More <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div>
   </a>;
 }
 

@@ -8,7 +8,35 @@ const HEADER_IMAGE =
 
 export function AboutHero() {
   return (
-    <section className="relative w-full overflow-hidden bg-black">
+    <section className="relative w-full overflow-hidden bg-white">
+      {/* =====================================================
+          ABOUT CHP TITLE — ABOVE HEADER IMAGE
+      ===================================================== */}
+      <div className="w-full flex items-center justify-center bg-white py-5 sm:py-6 md:py-7">
+        <motion.h2
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            ease: "easeOut",
+          }}
+          className="
+            text-[#1f3557]
+            text-sm
+            sm:text-base
+            md:text-lg
+            font-semibold
+            uppercase
+            tracking-[0.28em]
+          "
+        >
+          About CHP
+        </motion.h2>
+      </div>
+
+      {/* =====================================================
+          HEADER IMAGE
+      ===================================================== */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -33,6 +61,7 @@ export function AboutHero() {
 
         {/* =====================================================
             CENTER CONTENT
+            No About CHP here anymore.
         ===================================================== */}
         <div className="absolute inset-0 flex items-center justify-center px-4">
           <div
@@ -46,12 +75,6 @@ export function AboutHero() {
               md:mt-[4%]
             "
           >
-            {/* =================================================
-                TEXT CONTENT
-                No blur background.
-                No dark oval.
-                No glass effect.
-            ================================================= */}
             <div
               className="
                 relative
@@ -65,65 +88,9 @@ export function AboutHero() {
                 sm:py-10
               "
             >
-              {/* ABOUT CHP */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.2,
-                }}
-                className="
-                  flex
-                  items-center
-                  justify-center
-                  gap-3
-                  sm:gap-4
-                  mb-3
-                  sm:mb-4
-                "
-              >
-                <span
-                  className="
-                    h-px
-                    w-7
-                    sm:w-10
-                    md:w-14
-                    bg-orange-400
-                    shrink-0
-                  "
-                />
-
-                <span
-                  className="
-                    text-white
-                    text-[10px]
-                    sm:text-xs
-                    md:text-sm
-                    font-semibold
-                    uppercase
-                    tracking-[0.28em]
-                    whitespace-nowrap
-                    drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]
-                  "
-                >
-                  About CHP
-                </span>
-
-                <span
-                  className="
-                    h-px
-                    w-7
-                    sm:w-10
-                    md:w-14
-                    bg-orange-400
-                    shrink-0
-                  "
-                />
-              </motion.div>
-
-              
-              {/* GREEN DECORATIVE LINE */}
+              {/* =================================================
+                  GREEN DECORATIVE LINE
+              ================================================= */}
               <motion.div
                 initial={{
                   opacity: 0,
@@ -135,7 +102,7 @@ export function AboutHero() {
                 }}
                 transition={{
                   duration: 0.7,
-                  delay: 0.5,
+                  delay: 0.3,
                 }}
                 className="
                   flex
@@ -156,7 +123,9 @@ export function AboutHero() {
                 <span className="h-px w-10 sm:w-16 md:w-24 bg-green-400" />
               </motion.div>
 
-              {/* TAGLINE */}
+              {/* =================================================
+                  TAGLINE
+              ================================================= */}
               <motion.p
                 initial={{
                   opacity: 0,
@@ -168,7 +137,7 @@ export function AboutHero() {
                 }}
                 transition={{
                   duration: 0.6,
-                  delay: 0.65,
+                  delay: 0.45,
                 }}
                 className="
                   mt-3

@@ -19,6 +19,8 @@ const footerLinks = {
     { href: "/purpose-driven-space", label: "Purpose Driven Space" },
     { href: "/business-investment", label: "Business & Investment" },
     { href: "/growth-partner", label: "CHP Growth Partner" },
+    { href: "/comet-educational-services", label: "Comet Educational Services" },
+    { href: "/sanaatan-isht-dev-sthal", label: "Sanaatan Isht Dev Sthal" },
   ],
 
   Popular: [

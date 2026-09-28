@@ -45,9 +45,9 @@ const navGroups = [
     label: "CHP Social Impact",
     items: [
       { href: "/purpose-driven-space", label: "Educational Services" },
-      { href: "/purpose-driven-space", label: "Gaushala" },
+      { href: "/purpose-driven-space", label: "Comet Gauseva" },
       { label: "Organic and medicinal farming" },
-      { href: "/purpose-driven-space", label: "Isht Dev Sthal" },
+      { href: "/sanaatan-isht-dev-sthal", label: "Sanaatan Isht Dev Sthal" },
     ],
   },
 ];
@@ -100,18 +100,18 @@ export function Navbar() {
                 const isGroupActive = group.items.some((item) => item.href && (item.href === pathname || pathname.startsWith(`${item.href}/`)));
 
                 return (
-                <li key={group.label} className="relative group" onMouseEnter={() => setOpenGroup(group.label)} onMouseLeave={() => setOpenGroup(null)}>
-                  <button type="button" aria-haspopup="menu" aria-expanded={openGroup === group.label} onClick={() => setOpenGroup(openGroup === group.label ? null : group.label)} className={cn(desktopLink, "flex items-center gap-1", isGroupActive ? isLight ? "bg-green-900/10 text-green-900 font-semibold" : "bg-white/20 text-white font-semibold" : desktopText)}>
-                    {group.label}<ChevronDown className={cn("w-3.5 h-3.5 transition-transform duration-200", openGroup === group.label && "rotate-180")} />
-                  </button>
-                  <div className={cn("absolute left-0 top-full pt-2 transition-all duration-150", openGroup === group.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-1")}>
-                    <ul className="min-w-[220px] bg-white rounded-xl shadow-lg shadow-black/10 border border-slate-100 py-2 z-50" role="menu" aria-label={group.label}>
-                      <li className="px-4 pt-1.5 pb-1 text-[10px] font-semibold uppercase tracking-widest text-slate-400">{group.label}</li>
-                      {group.items.map((item) => <li key={item.label} role="none">{item.href ? <Link href={item.href} role="menuitem" className="block px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">{item.label}</Link> : <span className="block px-4 py-2 text-sm font-medium text-slate-500">{item.label}</span>}</li>)}
-                    </ul>
-                  </div>
-                </li>
-              );
+                  <li key={group.label} className="relative group" onMouseEnter={() => setOpenGroup(group.label)} onMouseLeave={() => setOpenGroup(null)}>
+                    <button type="button" aria-haspopup="menu" aria-expanded={openGroup === group.label} onClick={() => setOpenGroup(openGroup === group.label ? null : group.label)} className={cn(desktopLink, "flex items-center gap-1", isGroupActive ? isLight ? "bg-green-900/10 text-green-900 font-semibold" : "bg-white/20 text-white font-semibold" : desktopText)}>
+                      {group.label}<ChevronDown className={cn("w-3.5 h-3.5 transition-transform duration-200", openGroup === group.label && "rotate-180")} />
+                    </button>
+                    <div className={cn("absolute left-0 top-full pt-2 transition-all duration-150", openGroup === group.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-1")}>
+                      <ul className="min-w-[220px] bg-white rounded-xl shadow-lg shadow-black/10 border border-slate-100 py-2 z-50" role="menu" aria-label={group.label}>
+                        <li className="px-4 pt-1.5 pb-1 text-[10px] font-semibold uppercase tracking-widest text-slate-400">{group.label}</li>
+                        {group.items.map((item) => <li key={item.label} role="none">{item.href ? <Link href={item.href} role="menuitem" className="block px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">{item.label}</Link> : <span className="block px-4 py-2 text-sm font-medium text-slate-500">{item.label}</span>}</li>)}
+                      </ul>
+                    </div>
+                  </li>
+                );
               })}
               <li><Link href={operationsLink.href} className={cn(desktopLink, pathname === operationsLink.href ? isLight ? "bg-green-900/10 text-green-900 font-semibold" : "bg-white/20 text-white font-semibold" : desktopText)}>{operationsLink.label}</Link></li>
             </ul>

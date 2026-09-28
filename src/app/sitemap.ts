@@ -48,10 +48,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-     url: `${BASE_URL}/chp-enclave`,
-     lastModified: new Date(),
-     changeFrequency: "monthly",
-     priority: 0.8,
+      url: `${BASE_URL}/chp-enclave`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${BASE_URL}/contact`,
@@ -82,6 +82,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/comet-educational-services`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/sanaatan-isht-dev-sthal`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
   ];
 

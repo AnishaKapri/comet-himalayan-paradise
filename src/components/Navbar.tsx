@@ -45,7 +45,7 @@ const navGroups = [
     label: "CHP Social Impact",
     items: [
       { href: "/purpose-driven-space", label: "Educational Services" },
-      { href: "/purpose-driven-space", label: "Gaushala" },
+      { href: "/purpose-driven-space", label: "Comet Gauseva" },
       { label: "Organic and medicinal farming" },
       { href: "/purpose-driven-space", label: "Isht Dev Sthal" },
     ],

@@ -226,6 +226,7 @@ export default function GrowthPartnerPage() {
           src={HEADER_IMAGE}
           alt="CHP Growth Partnership in the Himalayas"
           fill
+                  unoptimized
           priority
           sizes="100vw"
           className="object-cover object-center"
@@ -354,6 +355,7 @@ export default function GrowthPartnerPage() {
                   src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ea9d5a29-444d-466f-9c4e-c6e97d747ec2-hospitality-stays-1.webp"
                   alt="Himalayan hospitality opportunity"
                   fill
+                  unoptimized
                   sizes="(max-width: 1024px) 60vw, 45vw"
                   className="object-cover"
                 />
@@ -365,6 +367,7 @@ export default function GrowthPartnerPage() {
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6a94f636-fbe3-498a-a43a-8eb27a69761d-adventure-tourism.jpg"
                     alt="Himalayan travel and adventure"
                     fill
+                  unoptimized
                     sizes="(max-width: 1024px) 40vw, 30vw"
                     className="object-cover"
                   />
@@ -375,6 +378,7 @@ export default function GrowthPartnerPage() {
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4b7c56df-d9d5-4eed-98e8-ae8bcdd4e8a6-wellness-retreats.jpg"
                     alt="Himalayan wellness experience"
                     fill
+                  unoptimized
                     sizes="(max-width: 1024px) 40vw, 30vw"
                     className="object-cover"
                   />
@@ -429,6 +433,7 @@ export default function GrowthPartnerPage() {
                       src={item.image}
                       alt={item.title}
                       fill
+                  unoptimized
                       sizes="(max-width: 1024px) 50vw, 25vw"
                       className="object-cover transition duration-700 group-hover:scale-105"
                     />
@@ -551,6 +556,7 @@ export default function GrowthPartnerPage() {
             src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/affa9b38-a1fd-48ba-8040-f954839807b5-himalayan-experiences.jpg"
             alt=""
             fill
+                  unoptimized
             sizes="100vw"
             className="object-cover"
           />
@@ -1063,9 +1069,10 @@ export default function GrowthPartnerPage() {
       <section className="relative overflow-hidden bg-[#0c211c] py-20 text-white sm:py-24">
         <div className="absolute inset-0 opacity-25">
           <Image
-            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80"
+            src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/affa9b38-a1fd-48ba-8040-f954839807b5-himalayan-experiences.jpg"
             alt=""
             fill
+                  unoptimized
             sizes="100vw"
             className="object-cover"
           />

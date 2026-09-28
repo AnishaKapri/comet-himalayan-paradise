@@ -393,10 +393,18 @@ export default function CHPBizPartnershipPage() {
               </a>
 
               <a
+                href="#partnership-form"
+                className="group inline-flex items-center gap-1.5 rounded-full bg-emerald-950/90 px-5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-black/20 ring-1 ring-white/20 backdrop-blur-md transition duration-200 hover:-translate-y-0.5 hover:bg-emerald-900 hover:shadow-xl sm:px-5.5 sm:py-2.5 sm:text-sm"
+              >
+                Start a Partnership Conversation
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 sm:h-4 sm:w-4" />
+              </a>
+
+              <a
                 href="/partnership-proposals"
                 className="inline-flex items-center gap-1.5 rounded-full border border-white/35 bg-slate-900/20 px-5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-black/15 backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-slate-900/30 sm:px-5.5 sm:py-2.5 sm:text-sm"
               >
-                Business Proposal
+                Business Proposals
               </a>
             </div>
           </div>
@@ -819,6 +827,236 @@ export default function CHPBizPartnershipPage() {
         </div>
       </section>
 
+
+      {/* Partnership conversation form */}
+      <section
+        id="partnership-form"
+        className="scroll-mt-28 bg-white py-20 sm:py-24 lg:py-28"
+      >
+        <div className="mx-auto max-w-6xl px-6 sm:px-8">
+          <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 shadow-[0_25px_80px_-35px_rgba(15,23,42,0.28)]">
+            <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
+              <div className="relative overflow-hidden bg-emerald-950 p-8 text-white sm:p-10 lg:p-12">
+                <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-emerald-400/15 blur-3xl" />
+                <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-amber-300/10 blur-3xl" />
+
+                <div className="relative">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-300">
+                    Start the conversation
+                  </p>
+
+                  <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+                    Let&apos;s explore what you can build with CHP.
+                  </h2>
+
+                  <p className="mt-5 text-sm leading-7 text-white/65 sm:text-base">
+                    Share a little about your business, idea or expertise. The
+                    information below will help frame the right partnership
+                    conversation with the CHP team.
+                  </p>
+
+                  <div className="mt-8 space-y-4">
+                    {[
+                      "Tell us what you want to build",
+                      "Identify the right CHP opportunity",
+                      "Discuss partnership and operating models",
+                      "Explore the next steps together",
+                    ].map((item) => (
+                      <div key={item} className="flex items-start gap-3">
+                        <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-400/15">
+                          <Check className="h-3.5 w-3.5 text-emerald-300" />
+                        </div>
+                        <p className="text-sm leading-6 text-white/75">{item}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-9 rounded-2xl border border-white/10 bg-white/[0.06] p-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+                      Partnership note
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-white/60">
+                      Partnership structures, responsibilities and support are
+                      defined separately according to the selected business
+                      opportunity.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-7 sm:p-10 lg:p-12">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">
+                    Partnership enquiry
+                  </p>
+                  <h3 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                    Tell us about your idea
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-500">
+                    Fill in the details below and start your CHP partnership
+                    conversation.
+                  </p>
+                </div>
+
+                <form
+                  className="mt-8 space-y-5"
+                  action="/contact"
+                  method="get"
+                >
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <div>
+                      <label
+                        htmlFor="partnership-name"
+                        className="mb-2 block text-sm font-medium text-slate-700"
+                      >
+                        Full name
+                      </label>
+                      <input
+                        id="partnership-name"
+                        name="name"
+                        type="text"
+                        required
+                        placeholder="Your full name"
+                        className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="partnership-email"
+                        className="mb-2 block text-sm font-medium text-slate-700"
+                      >
+                        Email address
+                      </label>
+                      <input
+                        id="partnership-email"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="you@example.com"
+                        className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <div>
+                      <label
+                        htmlFor="partnership-phone"
+                        className="mb-2 block text-sm font-medium text-slate-700"
+                      >
+                        Phone number
+                      </label>
+                      <input
+                        id="partnership-phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="+91 XXXXX XXXXX"
+                        className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="partnership-organization"
+                        className="mb-2 block text-sm font-medium text-slate-700"
+                      >
+                        Business / organization
+                      </label>
+                      <input
+                        id="partnership-organization"
+                        name="organization"
+                        type="text"
+                        placeholder="Company or organization name"
+                        className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="partnership-type"
+                      className="mb-2 block text-sm font-medium text-slate-700"
+                    >
+                      What are you interested in?
+                    </label>
+                    <select
+                      id="partnership-type"
+                      name="partnershipType"
+                      defaultValue=""
+                      required
+                      className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10"
+                    >
+                      <option value="" disabled>
+                        Select an opportunity
+                      </option>
+                      <option value="hospitality">
+                        Hospitality &amp; Second Homes
+                      </option>
+                      <option value="tourism">
+                        Adventure &amp; Tourism
+                      </option>
+                      <option value="wellness">
+                        Wellness &amp; Experiential Living
+                      </option>
+                      <option value="education">
+                        Education &amp; Learning
+                      </option>
+                      <option value="eco-agri">
+                        Eco-Agri &amp; Natural Products
+                      </option>
+                      <option value="creative-media">
+                        Creative &amp; Media
+                      </option>
+                      <option value="events">
+                        Events &amp; Celebrations
+                      </option>
+                      <option value="food">
+                        Food &amp; Hospitality
+                      </option>
+                      <option value="purpose-driven">
+                        Purpose-Driven Initiatives
+                      </option>
+                      <option value="other">Something else</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="partnership-message"
+                      className="mb-2 block text-sm font-medium text-slate-700"
+                    >
+                      Tell us about your idea
+                    </label>
+                    <textarea
+                      id="partnership-message"
+                      name="message"
+                      required
+                      rows={5}
+                      placeholder="What would you like to build, operate, invest in or bring to the CHP ecosystem?"
+                      className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm leading-6 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-950 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-950/10 transition duration-200 hover:-translate-y-0.5 hover:bg-emerald-900"
+                  >
+                    Start Partnership Conversation
+                    <ArrowRight className="h-4 w-4" />
+                  </button>
+
+                  <p className="text-center text-xs leading-5 text-slate-400">
+                    By submitting this enquiry, you are sharing your details
+                    with CHP for partnership discussions.
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why CHP */}
       <section className="bg-[#f6f8f5] py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
@@ -862,13 +1100,13 @@ export default function CHPBizPartnershipPage() {
           </p>
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <Link
-              href="/partnership-proposals"
+            <a
+              href="#partnership-form"
               className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-emerald-950 transition hover:-translate-y-0.5 hover:bg-white/90"
             >
               Start a Partnership Conversation
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
             <Link
               href="/business-proposals"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/15"

@@ -91,37 +91,7 @@ export function AboutHero() {
               {/* =================================================
                   GREEN DECORATIVE LINE
               ================================================= */}
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  scaleX: 0.6,
-                }}
-                animate={{
-                  opacity: 1,
-                  scaleX: 1,
-                }}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.3,
-                }}
-                className="
-                  flex
-                  items-center
-                  justify-center
-                  gap-2
-                  sm:gap-3
-                  mt-4
-                  sm:mt-5
-                "
-              >
-                <span className="h-px w-10 sm:w-16 md:w-24 bg-green-400" />
-
-                <span className="text-green-400 text-lg sm:text-xl leading-none">
-                  ❧
-                </span>
-
-                <span className="h-px w-10 sm:w-16 md:w-24 bg-green-400" />
-              </motion.div>
+              
 
               {/* =================================================
                   TAGLINE
@@ -152,7 +122,7 @@ export function AboutHero() {
                   drop-shadow-[0_3px_7px_rgba(0,0,0,0.95)]
                 "
               >
-                Rooted in Nature. Driven by Purpose. Built by Generations.
+               
               </motion.p>
             </div>
           </div>

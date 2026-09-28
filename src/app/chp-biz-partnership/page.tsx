@@ -352,6 +352,7 @@ export default function CHPBizPartnershipPage() {
           alt="CHP Biz Partnership in the Himalayas"
           fill
           priority
+          unoptimized
           sizes="100vw"
           className="object-cover"
         />

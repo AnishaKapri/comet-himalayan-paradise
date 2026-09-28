@@ -46,7 +46,7 @@ const navGroups = [
     items: [
       { href: "/purpose-driven-space", label: "Educational Services" },
       { href: "/purpose-driven-space", label: "Comet Gauseva" },
-      { label: "Organic and medicinal farming" },
+      { href: "/organic", label: "Organic and medicinal farming" },
       { href: "/purpose-driven-space", label: "Isht Dev Sthal" },
     ],
   },

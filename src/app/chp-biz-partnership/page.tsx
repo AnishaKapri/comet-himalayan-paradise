@@ -17,6 +17,7 @@ import {
   Play,
   Rocket,
   Sparkles,
+  TrendingUp,
   Users,
   Utensils,
   Video,
@@ -346,7 +347,8 @@ export default function CHPBizPartnershipPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative isolate min-h-[78vh] overflow-hidden bg-slate-950">
+      {/* Keep the hero below the fixed site navbar so the top of the artwork is never hidden behind it. */}
+      <section className="relative isolate mt-[70px] min-h-[72vh] overflow-hidden bg-slate-950 sm:mt-[72px]">
         <Image
           src={HEADER_IMAGE}
           alt="CHP Biz Partnership in the Himalayas"
@@ -360,50 +362,54 @@ export default function CHPBizPartnershipPage() {
         {/* Subtle cinematic darkening — keeps the original artwork visible */}
         <div className="absolute inset-0 bg-black/10" />
 
-        <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-7xl flex-col items-center px-6 pt-20 text-center sm:px-8 sm:pt-24 lg:px-10 lg:pt-28">
-          {/* Small premium glass label */}
-          <div className="rounded-lg border border-white/25 bg-slate-900/35 px-5 py-2 shadow-lg shadow-black/15 backdrop-blur-md sm:px-6 sm:py-2.5">
-            <span className="text-sm font-semibold tracking-[0.08em] text-white sm:text-base">
-              CHP Biz. Partnership
+        <div className="relative z-10 mx-auto flex min-h-[72vh] w-full max-w-7xl flex-col items-center px-5 pb-36 pt-12 text-center sm:px-8 sm:pb-40 sm:pt-14 lg:items-start lg:px-10 lg:pb-40 lg:pl-16 lg:pt-20 lg:text-left xl:pl-20">
+          {/* Glass title — kept in normal flow so it can never be clipped behind the navbar */}
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-white/25 bg-slate-950/40 px-4 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.22)] backdrop-blur-xl sm:px-5 sm:py-2.5">
+            <TrendingUp
+              className="h-4 w-4 shrink-0 text-amber-400 sm:h-[18px] sm:w-[18px]"
+              strokeWidth={2.1}
+            />
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-300 sm:text-xs sm:tracking-[0.22em]">
+              CHP BIZ. PARTNERSHIP
             </span>
           </div>
 
-          {/* All hero content stays safely above the 9-circle artwork */}
-          <div className="mt-5 w-full max-w-6xl text-white sm:mt-6">
-            <h1 className="mx-auto max-w-5xl text-[2.35rem] font-bold leading-[1.08] tracking-[-0.03em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:text-4xl md:text-[2.75rem] lg:text-[3.15rem] xl:text-[3.35rem]">
+          {/* Compact hero content */}
+          <div className="mt-5 w-full max-w-5xl text-white sm:mt-6 lg:max-w-4xl">
+            <h1 className="max-w-4xl text-[2.15rem] font-bold leading-[1.08] tracking-[-0.025em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:text-[2.5rem] md:text-[2.8rem] lg:text-[3.05rem] xl:text-[3.2rem]">
               <span className="block">Bring Your Business. Build Your Vision.</span>
               <span className="mt-1 block">
                 Become Part of the <span className="text-amber-500">CHP Ecosystem.</span>
               </span>
             </h1>
 
-            <p className="mx-auto mt-4 max-w-4xl text-sm leading-6 text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] sm:mt-5 sm:text-base sm:leading-7 lg:text-[17px]">
+            <p className="mt-4 max-w-3xl text-sm leading-6 text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] sm:mt-5 sm:text-[15px] sm:leading-6.5 lg:text-[16px]">
               CHP Biz Partnership brings together entrepreneurs, investors, professionals,
               organizations, institutions and business groups to create and operate
               distinctive businesses within the CHP Himalayan Paradise ecosystem.
             </p>
 
-            {/* Compact CTAs — deliberately positioned above the 9 circles */}
-            <div className="mt-5 flex flex-wrap justify-center gap-2.5 sm:mt-6 sm:gap-3">
+            {/* Smaller, left-aligned CTAs to match the Growth Partnership hero */}
+            <div className="mt-5 flex flex-wrap justify-center gap-2.5 sm:mt-6 sm:gap-3 lg:justify-start">
               <a
                 href="#opportunities"
-                className="inline-flex items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-slate-900 shadow-lg shadow-black/15 transition duration-200 hover:-translate-y-0.5 hover:bg-white/90 sm:px-5.5 sm:py-2.5 sm:text-sm"
+                className="inline-flex items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-slate-900 shadow-lg shadow-black/15 transition duration-200 hover:-translate-y-0.5 hover:bg-white/90 sm:px-5 sm:py-2.5 sm:text-[13px]"
               >
                 Explore Opportunities
-                <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                <ArrowRight className="h-3.5 w-3.5" />
               </a>
 
               <a
                 href="#partnership-form"
-                className="group inline-flex items-center gap-1.5 rounded-full bg-emerald-950/90 px-5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-black/20 ring-1 ring-white/20 backdrop-blur-md transition duration-200 hover:-translate-y-0.5 hover:bg-emerald-900 hover:shadow-xl sm:px-5.5 sm:py-2.5 sm:text-sm"
+                className="group inline-flex items-center gap-1.5 rounded-full bg-emerald-950/90 px-5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-black/20 ring-1 ring-white/20 backdrop-blur-md transition duration-200 hover:-translate-y-0.5 hover:bg-emerald-900 hover:shadow-xl sm:px-5 sm:py-2.5 sm:text-[13px]"
               >
                 Start a Partnership Conversation
-                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 sm:h-4 sm:w-4" />
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
               </a>
 
               <a
                 href="/partnership-proposals"
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/35 bg-slate-900/20 px-5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-black/15 backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-slate-900/30 sm:px-5.5 sm:py-2.5 sm:text-sm"
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/35 bg-slate-900/20 px-5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-black/15 backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-slate-900/30 sm:px-5 sm:py-2.5 sm:text-[13px]"
               >
                 Business Proposals
               </a>

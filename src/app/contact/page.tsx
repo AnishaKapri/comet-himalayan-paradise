@@ -678,22 +678,44 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map placeholder */}
-              <div className="bg-white rounded-2xl overflow-hidden shadow-sm h-52 relative">
-                <Image
-                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ea85b896-ebcc-49e9-a660-3d787cc10515-scaled-nanda-devi-base-camp.webp"
-                  alt="Munsiyari location map"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-green-900/40 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <MapPin className="w-8 h-8 mx-auto mb-2" />
-                    <p className="font-semibold text-sm">Munsiyari, Uttarakhand</p>
-                    <p className="text-white/70 text-xs">2,200m above sea level</p>
+              {/* Real CHP Location Map */}
+              <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+                <div className="relative h-64 sm:h-72">
+                  <iframe
+                    title="CHP Himalayan Paradise location"
+                    src="https://www.google.com/maps?q=29.686992,80.202186&z=16&output=embed"
+                    className="absolute inset-0 h-full w-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+
+                  {/* Location label */}
+                  <div className="pointer-events-none absolute left-4 bottom-4 right-4">
+                    <div className="inline-flex max-w-full items-center gap-3 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-md">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-50">
+                        <MapPin className="h-5 w-5 text-orange-600" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-bold text-slate-800">
+                          CHP Himalayan Paradise
+                        </p>
+                        <p className="text-xs text-slate-500">
+                          Pathrauli, Pithoragarh, Uttarakhand 262543
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
+                <a
+                  href="https://maps.app.goo.gl/cp62xMS5UiY1udSs8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between gap-3 border-t border-slate-100 px-4 py-3 text-sm font-semibold text-green-800 transition-colors hover:bg-green-50"
+                >
+                  <span>Open exact location in Google Maps</span>
+                  <MapPin className="h-4 w-4 shrink-0" />
+                </a>
               </div>
             </div>
 

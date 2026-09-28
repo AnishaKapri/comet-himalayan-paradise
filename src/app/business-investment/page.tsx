@@ -70,19 +70,20 @@ export default function BusinessInvestmentPage() {
 
   return (
     <main className="min-h-screen bg-stone-50 text-slate-800 pt-20">
+      {/* ── FULL-WIDTH HEADER IMAGE ── */}
+    <div className="w-full h-[340px] sm:h-[400px] lg:h-[600px] overflow-hidden">
+      <Image
+        src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/0c29135f-8f3f-408c-8163-a5533f27db3a-investment-options.webp"
+        alt="CHP Business and Investment"
+        width={1920}
+        height={600}
+        priority
+        className="w-full h-full object-cover object-center"
+      />
+    </div>
       {/* ── 1. Hero & Business and Investment Section ── */}
       <section className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-amber-50 via-stone-50 to-stone-50 border-b border-stone-200">
-        <div className="absolute inset-0 z-0 opacity-10">
-          <Image
-            src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1600&q=80&auto=format&fit=crop"
-            alt="Himalayan Valley Investment"
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-50 via-stone-50/90 to-stone-50/40" />
-        </div>
-
+        
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
@@ -186,23 +187,17 @@ export default function BusinessInvestmentPage() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="lg:col-span-5 relative w-full h-80 sm:h-96 lg:h-[500px] rounded-3xl overflow-hidden border border-stone-200 shadow-xl group"
             >
-              <Image
+              <img
                 src="/investment.png"
                 alt="Investment Opportunities in CHP"
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                priority
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                onError={(e) => {
+                  (e.target as HTMLElement).setAttribute(
+                    "src",
+                    "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6795ec9f-92e1-4c10-9e4f-afcc051f4d03-investment.webp"
+                  );
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-stone-200 shadow-lg">
-                <p className="text-xs font-semibold uppercase tracking-wider text-amber-600 mb-1">
-                  Investment Portal
-                </p>
-                <p className="text-slate-800 text-sm font-medium">
-                  2 Modes of Sustainable Investment across Plots, Cottages & Facilities.
-                </p>
-              </div>
             </motion.div>
           </div>
         </div>

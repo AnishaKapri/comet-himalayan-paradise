@@ -1,28 +1,57 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 const HERO_IMAGE_URL =
   "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ecea6144-0af9-4acf-9670-23da3c694548-chp-enclave-no-text-under-900kb.webp";
 
 export function CHPEnclaveHero() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
-  });
-  const contentY = useTransform(scrollYProgress, [0, 0.75], ["0%", "-18%"]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative h-[65vh] min-h-[480px] overflow-hidden bg-black"
-    >
-      <div className="absolute inset-0">
+    <section className="relative w-full overflow-hidden bg-white">
+      {/* =====================================================
+          MENU NAME PILL — ABOVE HEADER IMAGE
+          Same font family / size / colours as the About CHP hero.
+          Top padding clears the fixed navbar (h-16).
+      ===================================================== */}
+      <div className="w-full flex items-center justify-center bg-white pt-20 pb-5 sm:pt-24 sm:pb-6 md:pb-7">
+        <motion.h1
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            ease: "easeOut",
+          }}
+          className="
+            rounded-full
+            bg-green-900
+            px-5
+            py-2
+            text-white
+            text-sm
+            sm:text-base
+            md:text-lg
+            font-semibold
+            uppercase
+            tracking-[0.28em]
+          "
+        >
+          Co-Ownership Models
+        </motion.h1>
+      </div>
+
+      {/* =====================================================
+          HEADER IMAGE
+      ===================================================== */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
+        className="relative w-full aspect-[3/1] min-h-[200px] overflow-hidden"
+      >
         <Image
           src={HERO_IMAGE_URL}
           alt="CHP Enclave"
@@ -43,14 +72,14 @@ export function CHPEnclaveHero() {
         style={{ y: contentY, opacity: contentOpacity }}
         className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center sm:px-6"
       >
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-xs font-semibold uppercase tracking-wider mb-6">
+        <div className="mb-5 flex items-center gap-3">
           <span className="h-px w-8 bg-orange-400/70" />
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-orange-400">
             A New Way to Belong
           </p>
           <span className="h-px w-8 bg-orange-400/70" />
         </div>
-        <h1 className="text-4xl font-bold tracking-tight text-white drop-shadow-sm sm:text-5xl md:text-4xl">
+        <h1 className="text-4xl font-bold tracking-tight text-white drop-shadow-sm sm:text-5xl md:text-7xl">
           CHP Enclave
         </h1>
         <p className="mt-5 text-base leading-relaxed text-white/90 drop-shadow-sm sm:text-lg">

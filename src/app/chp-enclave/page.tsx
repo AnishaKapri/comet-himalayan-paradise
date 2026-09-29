@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { CHPEnclaveHero } from "./CHPEnclaveHero";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { CTABanner } from "@/components/home/CTABanner";
+
+// Same frame for every content image on this page (4:3, same max width, no border).
+// Matches the frame used on the About page.
+const IMAGE_FRAME_CLASS = "aspect-[4/3] w-full max-w-md object-contain";
+
+// Key words/phrases: bold + contrasting colour. Change the colour here in one place.
+function Highlight({ children }: { children: ReactNode }) {
+  return <strong className="font-bold text-green-800">{children}</strong>;
+}
 
 export const metadata: Metadata = {
   title: "CHP Enclave",
@@ -28,9 +39,9 @@ export default function CHPEnclavePage() {
       <CHPEnclaveHero />
 
       {/* Intro */}
-      <section id="intro" className="py-20 bg-white overflow-hidden">
+      <section id="intro" className="py-8 sm:py-10 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
             <ScrollReveal direction="left">
               <div className="flex items-center gap-3 mb-4">
                 <span className="h-px w-8 bg-orange-500" />
@@ -42,26 +53,20 @@ export default function CHPEnclavePage() {
                 A Mountain Community, Thoughtfully Planned
               </h2>
               <p className="text-slate-600 leading-relaxed text-lg text-justify">
-                CHP Himalayan Paradise Enclave is CHP&apos;s first thoughtfully
-                planned mountain community where nature, comfort, and
-                opportunity come together. Enjoy premium cottages,
-                breathtaking Himalayan views, and a vibrant ecosystem designed
-                for leisure, wellness, remote work, and meaningful living.
+                CHP Himalayan Paradise Enclave is CHP&apos;s first <Highlight>thoughtfully planned mountain community</Highlight> where nature, comfort, and opportunity come together. Enjoy <Highlight>premium cottages</Highlight>, <Highlight>breathtaking Himalayan views</Highlight>, and a vibrant ecosystem designed for leisure, wellness, remote work, and meaningful living.
               </p>
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="group flex justify-center lg:justify-start">
-                <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
-                  <Image
-                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/62177696-0ba9-4d9f-aaf5-75b042433e8f-scaled-chp-enclave-2.webp"
-                    alt="CHP Enclave"
-                    width={640}
-                    height={480}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="w-full h-auto max-h-[26rem] object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
+              <div className="flex w-full justify-center lg:justify-start">
+                <Image
+                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/62177696-0ba9-4d9f-aaf5-75b042433e8f-scaled-chp-enclave-2.webp"
+                  alt="CHP Enclave"
+                  width={640}
+                  height={480}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className={IMAGE_FRAME_CLASS}
+                />
               </div>
             </ScrollReveal>
           </div>
@@ -69,21 +74,19 @@ export default function CHPEnclavePage() {
       </section>
 
       {/* Group Ownership Model */}
-      <section id="group-ownership" className="py-20 bg-stone-50 overflow-hidden">
+      <section id="group-ownership" className="py-8 sm:py-10 bg-stone-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
             <ScrollReveal direction="left">
-              <div className="group flex justify-center lg:justify-start">
-                <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
-                  <Image
-                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/06532a1c-fee9-4c16-aeb7-491ee5299b07-scaled-group-ownership-1.webp"
-                    alt="Group Ownership Model"
-                    width={640}
-                    height={480}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="w-full h-auto max-h-[26rem] object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
+              <div className="flex w-full justify-center lg:justify-start">
+                <Image
+                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/06532a1c-fee9-4c16-aeb7-491ee5299b07-scaled-group-ownership-1.webp"
+                  alt="Group Ownership Model"
+                  width={640}
+                  height={480}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className={IMAGE_FRAME_CLASS}
+                />
               </div>
             </ScrollReveal>
 
@@ -98,12 +101,7 @@ export default function CHPEnclavePage() {
                 Group-Ownership Model
               </h2>
               <p className="text-slate-600 leading-relaxed text-lg text-justify">
-                CHP&apos;s Group Ownership Model enables friends, families, or
-                like-minded investors to co-own premium Himalayan assets
-                through shared investment. This collaborative approach reduces
-                individual investment costs while creating opportunities for
-                shared returns, lower financial risk, and long-term wealth
-                creation.
+                CHP&apos;s <Highlight>Group Ownership Model</Highlight> enables friends, families, or like-minded investors to <Highlight>co-own premium Himalayan assets</Highlight> through shared investment. This collaborative approach reduces individual investment costs while creating opportunities for <Highlight>shared returns, lower financial risk, and long-term wealth creation</Highlight>.
               </p>
             </ScrollReveal>
           </div>
@@ -111,67 +109,56 @@ export default function CHPEnclavePage() {
       </section>
 
       {/* Location Matters */}
-      <section id="location" className="py-20 bg-white overflow-hidden">
+      <section id="location" className="py-8 sm:py-10 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <ScrollReveal direction="left">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="h-px w-8 bg-orange-500" />
-                <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em]">
-                  Location
-                </p>
-              </div>
-              <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
-                Location Matters
-              </h2>
-              <p className="text-slate-600 leading-relaxed text-lg text-justify">
-                Strategically located in the Himalayas with excellent road
-                connectivity, stunning mountain views, and close proximity to
-                the airport, Munsyari, and Adi Kailash—offering the perfect
-                balance of accessibility and serenity.
+          <ScrollReveal direction="left">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-8 bg-orange-500" />
+              <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em]">
+                Location
               </p>
-            </ScrollReveal>
+            </div>
+            <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
+              Location Matters
+            </h2>
+            <p className="max-w-3xl text-slate-600 leading-relaxed text-lg text-justify">
+              Strategically located in the Himalayas with <Highlight>excellent road connectivity</Highlight>, stunning mountain views, and close proximity to the <Highlight>airport, Munsyari, and Adi Kailash</Highlight>—offering the perfect balance of accessibility and serenity.
+            </p>
+          </ScrollReveal>
 
-            <ScrollReveal direction="right">
-              <div className="grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
-                {locationHighlights.map((img) => (
-                  <div
-                    key={img.src}
-                    className="group relative aspect-square rounded-2xl overflow-hidden shadow-lg ring-1 ring-black/5 bg-white p-3"
-                  >
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={img.src}
-                        alt={img.alt}
-                        fill
-                        sizes="(max-width: 1024px) 50vw, 20vw"
-                        className="object-contain transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
+          {/* Both location images use the same frame as every other image on the page */}
+          <ScrollReveal direction="right">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
+              {locationHighlights.map((img) => (
+                <Image
+                  key={img.src}
+                  src={img.src}
+                  alt={img.alt}
+                  width={640}
+                  height={480}
+                  sizes="(max-width: 640px) 100vw, 448px"
+                  className={IMAGE_FRAME_CLASS}
+                />
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Shared Services */}
-      <section id="shared-services" className="py-20 bg-stone-50 overflow-hidden">
+      <section id="shared-services" className="py-8 sm:py-10 bg-stone-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
             <ScrollReveal direction="left">
-              <div className="group flex justify-center lg:justify-start">
-                <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
-                  <Image
-                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/98ed1fbb-3c18-468e-a819-01a7af55bd32-scaled-shared-services.webp"
-                    alt="Shared Services"
-                    width={640}
-                    height={480}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="w-full h-auto max-h-[26rem] object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
+              <div className="flex w-full justify-center lg:justify-start">
+                <Image
+                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/98ed1fbb-3c18-468e-a819-01a7af55bd32-scaled-shared-services.webp"
+                  alt="Shared Services"
+                  width={640}
+                  height={480}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className={IMAGE_FRAME_CLASS}
+                />
               </div>
             </ScrollReveal>
 
@@ -186,11 +173,7 @@ export default function CHPEnclavePage() {
                 Shared Services
               </h2>
               <p className="text-slate-600 leading-relaxed text-lg text-justify">
-                CHP Himalayan Enclave offers professionally managed shared
-                services, allowing residents to enjoy premium facilities
-                without the burden of individual maintenance. From
-                housekeeping and security to landscaping and common
-                infrastructure, everything is managed by the community.
+                CHP Himalayan Enclave offers <Highlight>professionally managed shared services</Highlight>, allowing residents to enjoy premium facilities without the burden of individual maintenance. From housekeeping and security to landscaping and common infrastructure, <Highlight>everything is managed by the community</Highlight>.
               </p>
               <ul className="mt-6 grid grid-cols-1 gap-x-8 gap-y-1 pl-5 text-sm leading-6 text-slate-600 sm:grid-cols-2 sm:list-disc">
                 <li>Camp fire facility</li>
@@ -210,9 +193,9 @@ export default function CHPEnclavePage() {
       </section>
 
       {/* Nearby Temples & Spiritual Destinations */}
-      <section id="temples" className="py-20 bg-white overflow-hidden">
+      <section id="temples" className="py-8 sm:py-10 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
             <ScrollReveal direction="left">
               <div className="flex items-center gap-3 mb-4">
                 <span className="h-px w-8 bg-orange-500" />
@@ -224,11 +207,7 @@ export default function CHPEnclavePage() {
                 Nearby Temples &amp; Spiritual Destinations
               </h2>
               <p className="text-slate-600 leading-relaxed text-lg text-justify">
-                CHP Himalayan Enclave is surrounded by some of Uttarakhand&apos;s
-                most revered temples and spiritual destinations, including Adi
-                Kailash, Patal Bhuvaneshwar, Bal Jageshwar, Chandika Ghat, and
-                Narayan Ashram. Experience a perfect blend of peaceful living
-                and year-round spiritual journeys.
+                CHP Himalayan Enclave is surrounded by some of Uttarakhand&apos;s most revered temples and spiritual destinations, including <Highlight>Adi Kailash, Patal Bhuvaneshwar, Bal Jageshwar, Chandika Ghat, and Narayan Ashram</Highlight>. Experience a perfect blend of peaceful living and year-round spiritual journeys.
               </p>
               <ul className="mt-6 grid grid-cols-1 gap-x-8 gap-y-1 pl-5 text-sm leading-6 text-slate-600 sm:grid-cols-2 sm:list-disc">
                 <li>Nanda devi</li>
@@ -245,17 +224,15 @@ export default function CHPEnclavePage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="group flex justify-center lg:justify-start">
-                <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
-                  <Image
-                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/2725e0fe-1197-442c-96ff-fd337bc4d6e0-scaled-temples.webp"
-                    alt="Nearby Temples & Spiritual Destinations"
-                    width={640}
-                    height={480}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="w-full h-auto max-h-[26rem] object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
+              <div className="flex w-full justify-center lg:justify-start">
+                <Image
+                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/2725e0fe-1197-442c-96ff-fd337bc4d6e0-scaled-temples.webp"
+                  alt="Nearby Temples & Spiritual Destinations"
+                  width={640}
+                  height={480}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className={IMAGE_FRAME_CLASS}
+                />
               </div>
             </ScrollReveal>
           </div>
@@ -263,6 +240,16 @@ export default function CHPEnclavePage() {
       </section>
 
       <CTABanner />
+
+      {/* Go back to source page */}
+      <div className="py-6 text-center">
+        <Link
+          href="/business-proposals"
+          className="inline-flex items-center rounded-full bg-green-900 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-2xl hover:shadow-green-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-900"
+        >
+          Go back to Business Proposals
+        </Link>
+      </div>
     </>
   );
 }

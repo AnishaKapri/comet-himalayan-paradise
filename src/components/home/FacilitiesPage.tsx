@@ -1,5 +1,14 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
+
+/* Highlight helpers: bold + contrasting colour for key words/phrases */
+const Hl = ({ children }: { children: ReactNode }) => (
+  <strong className="font-bold text-green-800">{children}</strong>
+);
+const HlLight = ({ children }: { children: ReactNode }) => (
+  <strong className="font-bold text-amber-300">{children}</strong>
+);
 
 type EcosystemItem = {
   title: string;
@@ -340,7 +349,7 @@ function EcosystemCard({
   );
 
   const className =
-    "group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/12 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-800";
+    "group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl bg-green-50 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/12 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-800";
 
   /*
    * INTERNAL CHP LINK
@@ -385,7 +394,7 @@ function EcosystemSection({
   items,
 }: {
   title: string;
-  intro: string;
+  intro: ReactNode;
   items: EcosystemItem[];
 }) {
   const headingId = `${title
@@ -397,7 +406,7 @@ function EcosystemSection({
       className="scroll-mt-24"
       aria-labelledby={headingId}
     >
-      <div className="mb-8 border-l-4 border-green-800 pl-4 sm:mb-10">
+      <div className="mb-4 rounded-r-xl border-l-4 border-green-800 bg-green-50 py-3 pl-4 pr-4 sm:mb-5">
         <h2
           id={headingId}
           className="text-2xl font-bold text-stone-900 sm:text-3xl"
@@ -405,7 +414,7 @@ function EcosystemSection({
           {title}
         </h2>
 
-        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-stone-600 sm:text-base">
+        <p className="mt-2 text-justify text-sm leading-relaxed text-stone-600 sm:text-base">
           {intro}
         </p>
       </div>
@@ -434,17 +443,20 @@ export function FacilitiesPage() {
           CHP ECOSYSTEM HERO
           ====================================================== */}
 
-      <section className="relative w-full overflow-hidden">
+      <section className="relative w-full aspect-[3/1] min-h-[260px] overflow-hidden">
 
         {/* Text-free background image */}
-        <img
+        <Image
           src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/d7bba640-d857-4f11-b5e0-3a1aa1b47fc4-chp-ecosystem-header-under-500kb.webp"
           alt="CHP Ecosystem"
-          className="block h-auto w-full"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
         />
 
         {/* Subtle dark overlay */}
-        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 bg-black/40" />
 
         {/* ==================================================
             WEBSITE TEXT
@@ -453,23 +465,23 @@ export function FacilitiesPage() {
         <div className="absolute inset-0 flex items-center justify-center px-5 text-center">
           <div className="max-w-5xl">
 
-            {/* Small eyebrow */}
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-white drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)] sm:text-base">
-              CHP Ecosystem
+            {/* Menu name pill */}
+            <p className="mb-3 inline-block rounded-full bg-green-900 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-white sm:text-xs">
+              Remote Work
             </p>
 
-            {/* Main heading */}
-            <h1 className="text-4xl font-bold leading-tight text-white drop-shadow-[0_3px_8px_rgba(0,0,0,0.8)] sm:text-5xl md:text-6xl lg:text-7xl">
+            {/* Main heading — same style as About CHP header */}
+            <h1 className="text-sm font-semibold uppercase tracking-[0.28em] text-white drop-shadow-[0_3px_7px_rgba(0,0,0,0.95)] sm:text-base md:text-lg">
               CHP Dream Spaces and Facilities
             </h1>
 
             {/* Description */}
-            <p className="mx-auto mt-5 max-w-4xl text-sm font-medium leading-relaxed text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] sm:text-base md:text-lg lg:text-xl">
-              CHP brings together thoughtfully designed spaces for living,
-              community, retreat, nature, and meaningful Himalayan experiences
-              with facilities for hospitality, wellness, recreation, food,
-              events, adventure, creativity, and more—forming one connected
-              Himalayan ecosystem.
+            <p className="mx-auto mt-3 max-w-4xl text-justify text-[10px] font-medium tracking-wide text-white drop-shadow-[0_3px_7px_rgba(0,0,0,0.95)] sm:text-xs md:text-sm lg:text-base">
+              CHP brings together thoughtfully designed{" "}
+              <HlLight>spaces for living, community, retreat, and nature</HlLight>{" "}
+              with <HlLight>facilities for hospitality, wellness, recreation, food,
+              events, adventure, and creativity</HlLight>—forming one connected{" "}
+              <HlLight>Himalayan ecosystem</HlLight>.
             </p>
 
           </div>
@@ -480,9 +492,9 @@ export function FacilitiesPage() {
           PAGE CONTENT
           ====================================================== */}
 
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
 
-        <div className="space-y-16 sm:space-y-20">
+        <div className="space-y-8">
 
           {/* ==================================================
               DREAM SPACES
@@ -490,7 +502,13 @@ export function FacilitiesPage() {
 
           <EcosystemSection
             title="CHP Dream Spaces"
-            intro="Spaces shaped for belonging, reflection, community, and an enduring connection with the Himalayas."
+            intro={
+              <>
+                Spaces shaped for <Hl>belonging</Hl>, <Hl>reflection</Hl>,{" "}
+                <Hl>community</Hl>, and an enduring connection with the{" "}
+                <Hl>Himalayas</Hl>.
+              </>
+            }
             items={dreamSpaces}
           />
 
@@ -500,10 +518,27 @@ export function FacilitiesPage() {
 
           <EcosystemSection
             title="CHP Facilities"
-            intro="Supporting hospitality, wellness, recreation, food, events, adventure, creativity, and memorable experiences throughout the CHP ecosystem."
+            intro={
+              <>
+                Supporting <Hl>hospitality</Hl>, <Hl>wellness</Hl>,{" "}
+                <Hl>recreation</Hl>, <Hl>food</Hl>, <Hl>events</Hl>,{" "}
+                <Hl>adventure</Hl>, <Hl>creativity</Hl>, and memorable experiences
+                throughout the CHP ecosystem.
+              </>
+            }
             items={facilities}
           />
 
+        </div>
+
+        {/* Go back */}
+        <div className="mt-8 flex justify-center">
+          <Link
+            href="/"
+            className="inline-flex items-center rounded-full bg-green-900 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-green-800"
+          >
+            Go back to Home
+          </Link>
         </div>
       </div>
     </main>

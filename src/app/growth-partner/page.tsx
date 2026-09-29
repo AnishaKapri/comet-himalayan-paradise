@@ -294,83 +294,74 @@ export default function GrowthPartnerPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#f5f1e8] text-[#14231f]">
       {/* HERO */}
-      <section className="relative min-h-[760px] lg:min-h-[820px] flex items-end overflow-hidden">
+      <section className="relative isolate min-h-[78vh] overflow-hidden bg-slate-950">
         <Image
           src={HEADER_IMAGE}
           alt="CHP Growth Partnership in the Himalayas"
           fill
-                  unoptimized
+          unoptimized
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071512]/95 via-[#071512]/72 to-[#071512]/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071512]/90 via-transparent to-[#071512]/10" />
+        {/* Subtle darkening — keeps the supplied header artwork visible */}
+        <div className="absolute inset-0 bg-black/10" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pb-16 lg:pb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl"
-          >
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#f3c96b] backdrop-blur-md">
-              <TrendingUp className="h-3.5 w-3.5" />
+        {/* Hero content aligned like the CHP Biz Partnership hero */}
+        <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-7xl flex-col items-center px-6 pt-16 pb-12 text-center sm:px-8 sm:pt-20 sm:pb-14 lg:px-10 lg:pt-24 lg:pb-16">
+          {/* Dark-green CHP label */}
+          <div className="inline-flex items-center rounded-full border border-white/20 bg-emerald-950/90 px-4 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.22)] backdrop-blur-md sm:px-5 sm:py-2.5">
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white sm:text-xs sm:tracking-[0.22em]">
               CHP Growth Partnership
-            </div>
+            </span>
+          </div>
 
-            <h1 className="mt-6 font-serif text-5xl leading-[0.96] tracking-[-0.035em] text-white sm:text-6xl lg:text-8xl">
-              Grow with CHP.
-              <span className="block text-[#f3c96b]">Build opportunities</span>
-              <span className="block">in the Himalayas.</span>
+          {/* Title */}
+          <div className="mt-5 w-full max-w-6xl text-white sm:mt-6">
+            <h1 className="mx-auto max-w-5xl font-serif text-[2.35rem] font-bold leading-[1.08] tracking-[-0.03em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:text-4xl md:text-[2.75rem] lg:text-[3.15rem] xl:text-[3.35rem]">
+              <span className="block">Grow with CHP.</span>
+              <span className="mt-1 block text-[#f3c96b]">
+                Build opportunities
+              </span>
+              <span className="mt-1 block">in the Himalayas.</span>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-base leading-7 text-white/82 sm:text-lg">
-              Be part of a purpose-driven ecosystem bringing together hospitality,
-              tourism, adventure, wellness, agriculture, events, infrastructure and
-              other opportunities across the Himalayas.
+            {/* Description */}
+            <p className="mx-auto mt-5 max-w-3xl text-[14px] leading-6 text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] sm:mt-6 sm:text-[15px] sm:leading-6.5 lg:text-base lg:leading-7">
+              Be part of a{" "}
+              <strong className="font-semibold text-white">
+                purpose-driven ecosystem
+              </strong>{" "}
+              bringing together{" "}
+              <strong className="font-semibold text-white">
+                hospitality, tourism, adventure, wellness, agriculture, events,
+                infrastructure and other opportunities
+              </strong>{" "}
+              across the Himalayas.
             </p>
+          </div>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#apply-partner"
-                className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#f3c96b] px-7 py-4 text-sm font-bold text-[#14231f] shadow-xl shadow-black/20 transition hover:bg-[#ffe09a]"
-              >
-                Become a Growth Partner
-                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-              </a>
+          {/* Buttons aligned and sized like CHP Biz Partnership */}
+          <div className="mt-6 flex w-full flex-wrap justify-center gap-2.5 sm:mt-7 sm:gap-3">
+            <a
+              href="#apply-partner"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#f3c96b] px-5 py-2.5 text-xs font-semibold text-[#14231f] shadow-lg shadow-black/10 transition duration-200 hover:-translate-y-0.5 hover:bg-[#ffe09a] sm:px-5.5 sm:py-2.5 sm:text-sm"
+            >
+              Become a Growth Partner
+              <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+            </a>
 
-              <a
-                href="#program"
-                className="inline-flex items-center justify-center gap-3 rounded-full border border-white/35 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/15"
-              >
-                Explore the partnership
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/10 bg-[#071512]/70 backdrop-blur-xl">
-          <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-white/10 sm:grid-cols-4">
-            {[
-              { icon: Network, label: "Expand your network" },
-              { icon: TrendingUp, label: "Create opportunities" },
-              { icon: Mountain, label: "Build in the Himalayas" },
-              { icon: Leaf, label: "Grow together" },
-            ].map(({ icon: Icon, label }, i) => (
-              <div key={i} className="flex items-center gap-3 px-4 py-4 sm:px-7">
-                <Icon className="h-5 w-5 shrink-0 text-[#f3c96b]" />
-                <span className="text-xs font-medium text-white/80 sm:text-sm">
-                  {label}
-                </span>
-              </div>
-            ))}
+            <a
+              href="#program"
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-black/10 px-5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-black/10 backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-black/15 sm:px-5.5 sm:py-2.5 sm:text-sm"
+            >
+              Explore the partnership
+              <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+            </a>
           </div>
         </div>
       </section>
-
 
       {/* WHAT IS CHP GROWTH PARTNERSHIP? */}
       <section id="program" className="scroll-mt-24 bg-[#f5f1e8] py-20 sm:py-24 lg:py-28">

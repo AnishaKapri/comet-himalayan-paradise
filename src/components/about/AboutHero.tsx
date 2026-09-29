@@ -12,7 +12,7 @@ export function AboutHero() {
       {/* =====================================================
           ABOUT CHP TITLE — ABOVE HEADER IMAGE
       ===================================================== */}
-      <div className="w-full flex items-center justify-center bg-white py-5 sm:py-6 md:py-7">
+      <div className="w-full flex items-center justify-center bg-white pt-20 pb-5 sm:pt-24 sm:pb-6 md:pb-7">
         <motion.h2
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -21,7 +21,11 @@ export function AboutHero() {
             ease: "easeOut",
           }}
           className="
-            text-[#1f3557]
+            rounded-full
+            bg-green-900
+            px-5
+            py-2
+            text-white
             text-sm
             sm:text-base
             md:text-lg

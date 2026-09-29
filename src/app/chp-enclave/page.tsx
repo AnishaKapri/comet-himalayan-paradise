@@ -41,7 +41,7 @@ export default function CHPEnclavePage() {
               <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
                 A Mountain Community, Thoughtfully Planned
               </h2>
-              <p className="text-slate-600 leading-relaxed text-lg">
+              <p className="text-slate-600 leading-relaxed text-lg text-justify">
                 CHP Himalayan Paradise Enclave is CHP&apos;s first thoughtfully
                 planned mountain community where nature, comfort, and
                 opportunity come together. Enjoy premium cottages,
@@ -97,7 +97,7 @@ export default function CHPEnclavePage() {
               <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
                 Group-Ownership Model
               </h2>
-              <p className="text-slate-600 leading-relaxed text-lg">
+              <p className="text-slate-600 leading-relaxed text-lg text-justify">
                 CHP&apos;s Group Ownership Model enables friends, families, or
                 like-minded investors to co-own premium Himalayan assets
                 through shared investment. This collaborative approach reduces
@@ -124,7 +124,7 @@ export default function CHPEnclavePage() {
               <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
                 Location Matters
               </h2>
-              <p className="text-slate-600 leading-relaxed text-lg">
+              <p className="text-slate-600 leading-relaxed text-lg text-justify">
                 Strategically located in the Himalayas with excellent road
                 connectivity, stunning mountain views, and close proximity to
                 the airport, Munsyari, and Adi Kailash—offering the perfect
@@ -185,7 +185,7 @@ export default function CHPEnclavePage() {
               <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
                 Shared Services
               </h2>
-              <p className="text-slate-600 leading-relaxed text-lg">
+              <p className="text-slate-600 leading-relaxed text-lg text-justify">
                 CHP Himalayan Enclave offers professionally managed shared
                 services, allowing residents to enjoy premium facilities
                 without the burden of individual maintenance. From
@@ -223,7 +223,7 @@ export default function CHPEnclavePage() {
               <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
                 Nearby Temples &amp; Spiritual Destinations
               </h2>
-              <p className="text-slate-600 leading-relaxed text-lg">
+              <p className="text-slate-600 leading-relaxed text-lg text-justify">
                 CHP Himalayan Enclave is surrounded by some of Uttarakhand&apos;s
                 most revered temples and spiritual destinations, including Adi
                 Kailash, Patal Bhuvaneshwar, Bal Jageshwar, Chandika Ghat, and

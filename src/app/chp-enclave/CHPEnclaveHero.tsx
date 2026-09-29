@@ -43,14 +43,14 @@ export function CHPEnclaveHero() {
         style={{ y: contentY, opacity: contentOpacity }}
         className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center sm:px-6"
       >
-        <div className="mb-5 flex items-center gap-3">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-xs font-semibold uppercase tracking-wider mb-6">
           <span className="h-px w-8 bg-orange-400/70" />
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-orange-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white-400">
             A New Way to Belong
           </p>
           <span className="h-px w-8 bg-orange-400/70" />
         </div>
-        <h1 className="text-4xl font-bold tracking-tight text-white drop-shadow-sm sm:text-5xl md:text-7xl">
+        <h1 className="text-4xl font-bold tracking-tight text-white drop-shadow-sm sm:text-5xl md:text-4xl">
           CHP Enclave
         </h1>
         <p className="mt-5 text-base leading-relaxed text-white/90 drop-shadow-sm sm:text-lg">

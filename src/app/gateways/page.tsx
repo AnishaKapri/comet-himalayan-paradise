@@ -112,7 +112,7 @@ export default function GatewaysPage() {
     };
 
     return (
-        <main className="min-h-screen bg-slate-900 text-slate-100 pt-20">
+        <main className="min-h-screen bg-slate-900 text-slate-100 pt-20 text-justify">
             {/* Hero Section */}
             <section className="relative py-28 lg:py-36 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 border-b border-slate-800">
                 <div className="absolute inset-0 z-0 opacity-40">
@@ -133,7 +133,7 @@ export default function GatewaysPage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5 }}
-                                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-6"
+                                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-xs font-semibold uppercase tracking-wider mb-6"
                             >
                                 <Navigation className="w-3.5 h-3.5" />
                                 <span>Ecosystem Partnerships & Access</span>
@@ -143,7 +143,7 @@ export default function GatewaysPage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.1 }}
-                                className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight"
+                                className="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight"
                             >
                                 Gateways to <br />
                                 <span className="bg-gradient-to-r from-emerald-300 via-teal-200 to-amber-300 bg-clip-text text-transparent">

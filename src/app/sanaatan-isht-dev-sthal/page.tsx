@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import {
     Flame,
     MapPin,
@@ -177,37 +178,32 @@ export default function SanaatanIshtDevSthalPage() {
                 {/* Content */}
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full">
                     <ScrollReveal direction="up">
-                        <div className="flex items-center gap-3 mb-5">
-                            <span className="h-px w-8 bg-amber-300" />
-                            <p className="text-amber-300 text-xs font-semibold uppercase tracking-[0.2em]">CHP Social Impact</p>
-                        </div>
+                        <span className="inline-block mb-4 rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold tracking-wide text-white shadow-sm">
+                            CHP Social Impact
+                        </span>
                         <div className="flex items-center gap-4 mb-5">
-                            <span className="text-5xl">🕉️</span>
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
-                                Sanaatan Isht<br />
-                                <span className="text-amber-300">Dev Sthal</span>
+                            <span className="text-4xl sm:text-5xl">🕉️</span>
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tight">
+                                Sanaatan Isht <span className="text-amber-300">Dev Sthal</span>
                             </h1>
                         </div>
-                        <p className="text-white/90 text-xl sm:text-2xl font-semibold mb-4 italic">
-                            One Place. Divine Unity. A Temple for Every Heart.
+                        <p className="text-white/90 text-xl sm:text-2xl font-semibold mb-4 italic text-justify sm:text-left">
+                            <strong className="font-bold text-amber-300">One Place. Divine Unity. A Temple for Every Heart.</strong>
                         </p>
-                        <p className="text-white/80 text-base leading-relaxed max-w-2xl mb-4">
-                            A sacred initiative to reconnect generations with their Isht-Devas, Sanatan traditions and
-                            Uttarakhand&apos;s rich spiritual heritage.
+                        <p className="text-white/80 text-base leading-relaxed max-w-2xl mb-4 text-justify">
+                            A sacred initiative to reconnect generations with their <strong className="font-bold text-amber-200">Isht-Devas, Sanatan traditions</strong> and Uttarakhand&apos;s rich spiritual heritage.
                         </p>
-                        <p className="text-white/70 text-sm leading-relaxed max-w-2xl">
-                            Isht Dev Sthal is envisioned as a unique spiritual and cultural destination in Pithoragarh,
-                            Uttarakhand, bringing together representations of Isht-Devas, sacred pilgrimage traditions and
-                            spiritual learning within a single peaceful campus.
+                        <p className="text-white/70 text-sm leading-relaxed max-w-2xl text-justify">
+                            Isht Dev Sthal is envisioned as a unique spiritual and cultural destination in <strong className="font-bold text-amber-200">Pithoragarh, Uttarakhand</strong>, bringing together representations of Isht-Devas, sacred pilgrimage traditions and spiritual learning within a single peaceful campus.
                         </p>
                     </ScrollReveal>
                 </div>
             </section>
 
             {/* ── The Vision ── */}
-            <section id="vision" className="py-20 bg-white">
+            <section id="vision" className="py-10 sm:py-12 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                         <ScrollReveal direction="left">
                             <div className="flex items-center gap-3 mb-4">
                                 <span className="h-px w-8 bg-amber-500" />
@@ -216,30 +212,24 @@ export default function SanaatanIshtDevSthalPage() {
                             <h2 className="text-3xl sm:text-4xl font-bold mb-6 leading-tight text-slate-800">
                                 A Harmonious Spiritual Corridor
                             </h2>
-                            <p className="text-slate-600 leading-relaxed mb-6">
-                                The initiative seeks to create a harmonious cluster of Isht-Devta (preferred deities) within a single
-                                spiritual corridor — a place for pilgrims, devotees, families, students and the next generation to
-                                discover, experience and connect with India&apos;s diverse spiritual traditions.
+                            <p className="text-slate-600 leading-relaxed mb-6 text-justify">
+                                The initiative seeks to create a <strong className="font-bold text-amber-700">harmonious cluster of Isht-Devta</strong> (preferred deities) within a single spiritual corridor — a place for pilgrims, devotees, families, students and the next generation to discover, experience and connect with India&apos;s diverse spiritual traditions.
                             </p>
-                            <p className="text-slate-600 leading-relaxed mb-8">
-                                The campus is envisioned not simply as a temple complex, but as a place for faith, cultural
-                                learning, reflection and spiritual experience.
+                            <p className="text-slate-600 leading-relaxed mb-6 text-justify">
+                                The campus is envisioned not simply as a temple complex, but as a place for <strong className="font-bold text-green-900">faith, cultural learning, reflection</strong> and spiritual experience.
                             </p>
-                            <p className="text-slate-600 leading-relaxed">
-                                This makes Isht Dev Sthal potentially relevant not only to devotees, but also to students, families,
-                                cultural explorers, pilgrims and visitors interested in Uttarakhand&apos;s spiritual heritage.
+                            <p className="text-slate-600 leading-relaxed text-justify">
+                                This makes Isht Dev Sthal potentially relevant not only to devotees, but also to students, families, cultural explorers, pilgrims and visitors interested in <strong className="font-bold text-amber-700">Uttarakhand&apos;s spiritual heritage</strong>.
                             </p>
                         </ScrollReveal>
                         <ScrollReveal direction="right">
-                            <div className="bg-gradient-to-br from-amber-950 to-orange-900 text-white rounded-2xl p-8">
+                            <div className="bg-gradient-to-br from-amber-950 to-orange-900 text-white rounded-2xl p-8 shadow-lg">
                                 <div className="flex items-center gap-3 mb-6">
                                     <MapPin className="w-6 h-6 text-amber-300" />
                                     <p className="text-amber-300 text-sm font-semibold uppercase tracking-wider">Located in Devbhoomi</p>
                                 </div>
-                                <p className="text-white/85 leading-relaxed mb-6">
-                                    Located in Uttarakhand — widely associated with the idea of Devbhoomi, the Land of the Gods —
-                                    the initiative aims to provide a dedicated space where different Isht-Dev traditions can be
-                                    experienced together.
+                                <p className="text-white/85 leading-relaxed mb-6 text-justify">
+                                    Located in Uttarakhand — widely associated with the idea of <strong className="font-bold text-amber-300">Devbhoomi, the Land of the Gods</strong> — the initiative aims to provide a dedicated space where different Isht-Dev traditions can be experienced together.
                                 </p>
                                 <p className="text-amber-300 font-semibold mb-6 text-sm">This project is intended to contribute to:</p>
                                 <ul className="space-y-3">
@@ -257,21 +247,21 @@ export default function SanaatanIshtDevSthalPage() {
             </section>
 
             {/* ── A Community-Supported Initiative ── */}
-            <section id="community" className="py-20 bg-amber-950/5">
+            <section id="community" className="py-10 sm:py-12 bg-amber-950/5">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeader
                         eyebrow="A Community-Supported Initiative"
                         title="The Isht Dev Sthal Trust"
                         subtitle="The Isht Dev Sthal Trust is the spiritual wing operating within the CHP framework and the driving force behind the initiative. The Trust proposes to develop a dedicated space where Hindu deities are represented along with their names and glory through stone inscriptions."
                     />
-                    <div className="mt-14">
-                        <p className="text-slate-700 font-semibold text-lg mb-8 text-center">The Proposed Implementation Model Includes:</p>
+                    <div className="mt-10">
+                        <p className="text-slate-700 font-semibold text-lg mb-6 text-center">The Proposed Implementation Model Includes:</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                             {visionPoints.map((point, i) => (
                                 <ScrollReveal key={i} delay={i * 0.08} direction="up">
-                                    <div className="bg-white border border-amber-100 rounded-2xl p-6 flex items-start gap-4 shadow-sm">
+                                    <div className="bg-white border border-amber-100/80 rounded-2xl p-6 flex items-start gap-4 shadow-sm hover:border-amber-200 transition-colors">
                                         <span className="w-8 h-8 rounded-full bg-amber-600 text-white flex items-center justify-center text-sm font-bold shrink-0">{i + 1}</span>
-                                        <p className="text-slate-600 text-sm leading-relaxed">{point}</p>
+                                        <p className="text-slate-600 text-sm leading-relaxed text-justify">{point}</p>
                                     </div>
                                 </ScrollReveal>
                             ))}
@@ -281,20 +271,20 @@ export default function SanaatanIshtDevSthalPage() {
             </section>
 
             {/* ── A Journey Through India's Spiritual Heritage ── */}
-            <section id="spiritual-spaces" className="py-20 bg-white">
+            <section id="spiritual-spaces" className="py-10 sm:py-12 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeader
                         eyebrow="A Journey Through India's Spiritual Heritage"
                         title="The Proposed Campus Brings Together Several Themed Spiritual Spaces"
                         subtitle="Experience India's diverse spiritual and cultural heritage, all within one sacred destination in the heart of Uttarakhand."
                     />
-                    <StaggerContainer className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.06}>
+                    <StaggerContainer className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.06}>
                         {spiritualSpaces.map((space, i) => (
                             <StaggerItem key={i}>
                                 <div className={`rounded-2xl border p-6 hover:shadow-md transition-shadow duration-300 h-full ${space.color}`}>
                                     <span className="text-4xl mb-4 block">{space.icon}</span>
                                     <h3 className="text-slate-800 font-bold text-lg mb-3">{space.title}</h3>
-                                    <p className="text-slate-600 text-sm leading-relaxed">{space.description}</p>
+                                    <p className="text-slate-600 text-sm leading-relaxed text-justify">{space.description}</p>
                                 </div>
                             </StaggerItem>
                         ))}
@@ -303,7 +293,7 @@ export default function SanaatanIshtDevSthalPage() {
             </section>
 
             {/* ── More Than a Place of Worship ── */}
-            <section id="more-than-worship" className="py-20 bg-gradient-to-br from-amber-950 to-orange-900 text-white">
+            <section id="more-than-worship" className="py-12 bg-gradient-to-br from-amber-950 to-orange-900 text-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <ScrollReveal direction="up">
                         <div className="flex items-center gap-3 mb-4 justify-center">
@@ -314,21 +304,21 @@ export default function SanaatanIshtDevSthalPage() {
                         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
                             A Destination Combining Devotion, Cultural Education,<br className="hidden sm:block" /> Wellness & Community
                         </h2>
-                        <p className="text-white/70 text-center max-w-2xl mx-auto mb-14">
-                            The proposed Isht Dev Sthal is envisioned as a complete destination for devotees, students, families and visitors alike.
+                        <p className="text-white/80 text-center max-w-2xl mx-auto mb-10 text-justify sm:text-center">
+                            The proposed Isht Dev Sthal is envisioned as a <strong className="font-bold text-amber-200">complete destination for devotees, students, families and visitors</strong> alike.
                         </p>
                     </ScrollReveal>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                         {moreThanWorship.map((item, i) => {
                             const Icon = item.icon;
                             return (
                                 <ScrollReveal key={i} delay={i * 0.1} direction="up">
-                                    <div className="bg-white/10 border border-white/20 rounded-2xl p-8">
-                                        <div className="w-12 h-12 rounded-xl bg-amber-400/20 flex items-center justify-center mb-5">
+                                    <div className="bg-white/10 border border-white/20 rounded-2xl p-6 sm:p-8">
+                                        <div className="w-12 h-12 rounded-xl bg-amber-400/20 flex items-center justify-center mb-4">
                                             <Icon className="w-6 h-6 text-amber-300" />
                                         </div>
                                         <h3 className="text-white font-bold text-xl mb-3">{item.title}</h3>
-                                        <p className="text-white/75 text-sm leading-relaxed">{item.description}</p>
+                                        <p className="text-white/80 text-sm leading-relaxed text-justify">{item.description}</p>
                                     </div>
                                 </ScrollReveal>
                             );
@@ -337,13 +327,13 @@ export default function SanaatanIshtDevSthalPage() {
 
                     {/* Self-Sustaining Model */}
                     <ScrollReveal direction="up">
-                        <div className="bg-white/10 border border-white/20 rounded-2xl p-8 max-w-3xl mx-auto">
+                        <div className="bg-white/10 border border-white/20 rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto">
                             <div className="flex items-center gap-3 mb-6">
                                 <Leaf className="w-6 h-6 text-amber-300" />
                                 <h3 className="text-white font-bold text-xl">Building a Self-Sustaining Spiritual Initiative</h3>
                             </div>
-                            <p className="text-white/75 text-sm mb-6 leading-relaxed">
-                                The initiative proposes a self-sustainability model that includes:
+                            <p className="text-white/80 text-sm mb-6 leading-relaxed text-justify">
+                                The initiative proposes a <strong className="font-bold text-amber-200">self-sustainability model</strong> that includes:
                             </p>
                             <ul className="space-y-3">
                                 {selfSustainability.map((item, i) => (
@@ -359,7 +349,7 @@ export default function SanaatanIshtDevSthalPage() {
             </section>
 
             {/* ── Sponsor & Participation ── */}
-            <section id="sponsor" className="py-20 bg-white">
+            <section id="sponsor" className="py-10 sm:py-12 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-3xl mx-auto">
                         <ScrollReveal direction="up">
@@ -371,22 +361,20 @@ export default function SanaatanIshtDevSthalPage() {
                             <h2 className="text-3xl sm:text-4xl font-bold mb-6 leading-tight text-slate-800 text-center">
                                 Be Part of the Sacred Journey
                             </h2>
-                            <p className="text-slate-600 text-center mb-4 leading-relaxed">
-                                The proposed model allows devotees and supporters to contribute towards individual Isht-Devta shrines.
-                                The sponsor&apos;s name is proposed to be displayed alongside the deity&apos;s inscription, with
-                                a dedicated stone-wall board recognizing contributing sponsors.
+                            <p className="text-slate-600 text-center mb-4 leading-relaxed text-justify sm:text-center">
+                                The proposed model allows devotees and supporters to contribute towards individual <strong className="font-bold text-amber-700">Isht-Devta shrines</strong>. The sponsor&apos;s name is proposed to be displayed alongside the deity&apos;s inscription, with a dedicated stone-wall board recognizing contributing sponsors.
                             </p>
-                            <p className="text-slate-500 text-center text-sm mb-12">
-                                The initiative also mentions issuance of tax-exemption receipts under applicable 12A/80G provisions.
+                            <p className="text-slate-500 text-center text-sm mb-8 text-justify sm:text-center">
+                                The initiative also mentions issuance of <strong className="font-bold text-slate-700">tax-exemption receipts under applicable 12A/80G provisions</strong>.
                             </p>
                         </ScrollReveal>
 
                         <ScrollReveal direction="up">
-                            <div className="bg-gradient-to-br from-amber-950 to-orange-900 text-white rounded-2xl p-10 text-center mb-8">
+                            <div className="bg-gradient-to-br from-amber-950 to-orange-900 text-white rounded-2xl p-8 sm:p-10 text-center mb-6 shadow-xl">
                                 <span className="text-5xl mb-6 block">🪔</span>
                                 <p className="text-amber-300 font-semibold text-sm uppercase tracking-widest mb-4">Faith. Service. Action.</p>
                                 <h3 className="text-2xl font-bold mb-3">Support a shrine. Preserve a tradition. Connect generations.</h3>
-                                <p className="text-white/75 text-sm leading-relaxed mb-8">
+                                <p className="text-white/80 text-sm leading-relaxed mb-8">
                                     Reconnect with Your Isht-Devta.<br />
                                     A sacred journey of faith, heritage and discovery in the Himalayas.
                                 </p>
@@ -404,6 +392,18 @@ export default function SanaatanIshtDevSthalPage() {
                             </div>
                         </ScrollReveal>
                     </div>
+                </div>
+            </section>
+
+            {/* Change 7: Bottom Nav Pill */}
+            <section className="py-8 bg-white border-t border-stone-200">
+                <div className="max-w-7xl mx-auto px-4 text-center">
+                    <Link
+                        href="/#social-impact"
+                        className="inline-block rounded-full bg-green-900 px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-md hover:bg-green-800 transition-all duration-200 hover:-translate-y-0.5"
+                    >
+                        Go back to CHP Social Impact
+                    </Link>
                 </div>
             </section>
 

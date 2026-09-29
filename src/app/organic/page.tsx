@@ -177,14 +177,14 @@ export default function OrganicFarmingPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/75" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center sm:px-6">
-          <p className="mb-4 rounded-full bg-black/25 px-4 py-2 text-sm font-bold uppercase tracking-[0.24em] text-orange-300 shadow-sm backdrop-blur-sm">
-            CHP Eco-Agri Farming
-          </p>
-          <h1 className="mb-5 max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+          <span className="inline-block mb-4 rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold tracking-wide text-white shadow-sm">
+            CHP Social Impact
+          </span>
+          <h1 className="mb-5 max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
             CHP Himalayan Organic &amp; Medicinal Farming
           </h1>
-          <p className="mb-8 max-w-2xl text-lg font-semibold text-orange-200 sm:text-xl">
-            Shelter for Cows. Jobs for Villagers. Organic Food Products for You.
+          <p className="mb-8 max-w-2xl text-lg font-semibold text-orange-200 sm:text-xl text-justify sm:text-center">
+            <strong className="font-bold text-white">Shelter for Cows.</strong> Jobs for Villagers. <strong className="font-bold text-white">Organic Food Products for You.</strong>
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row">
             <Link href="/contact" className={btnPrimary}>
@@ -198,20 +198,20 @@ export default function OrganicFarmingPage() {
       </section>
 
       {/* Vision */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-10 sm:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <ScrollReveal direction="left">
               <p className={eyebrow}>Our Vision</p>
               <h2 className={`${h2} mb-5`}>Farming Is More Than Cultivation</h2>
-              <p className="mb-5 leading-relaxed text-slate-600">
-                At CHP Himalayan Paradise, we envision farming as more than cultivation. It is a way to connect people with the land, create opportunities for Himalayan communities, support sustainable living and build a meaningful relationship between agriculture, nature and society.
+              <p className="mb-5 leading-relaxed text-slate-600 text-justify">
+                At CHP Himalayan Paradise, we envision farming as more than cultivation. It is a way to <strong className="font-bold text-green-900">connect people with the land</strong>, create opportunities for <strong className="font-bold text-green-900">Himalayan communities</strong>, support sustainable living and build a meaningful relationship between agriculture, nature and society.
               </p>
-              <p className="mb-5 leading-relaxed text-slate-600">
-                The CHP Himalayan Organic &amp; Eco-Agri Farming initiative brings together organic farming, medicinal and herbal plants, traditional Himalayan crops and community participation in a unique farming ecosystem.
+              <p className="mb-5 leading-relaxed text-slate-600 text-justify">
+                The CHP Himalayan Organic &amp; Eco-Agri Farming initiative brings together <strong className="font-bold text-green-900">organic farming, medicinal and herbal plants</strong>, traditional Himalayan crops and community participation in a unique farming ecosystem.
               </p>
-              <p className="leading-relaxed text-slate-600">
-                Located in the Himalayan region of Pithoragarh, the initiative is connected with a village spread across more than 11 hectares of land, located approximately 15 km from the main city, airport and CHP community. The village is being developed around Gaushala and organic farming, with the objective of making the Gaushala progressively self-sustainable.
+              <p className="leading-relaxed text-slate-600 text-justify">
+                Located in the Himalayan region of Pithoragarh, the initiative is connected with a village spread across <strong className="font-bold text-green-900">more than 11 hectares of land</strong>, located approximately 15 km from the main city, airport and CHP community. The village is being developed around Gaushala and organic farming, with the objective of making the Gaushala progressively self-sustainable.
               </p>
             </ScrollReveal>
 
@@ -221,7 +221,7 @@ export default function OrganicFarmingPage() {
               </div>
               <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
                 {facts.map((f) => (
-                  <div key={f.value} className={`rounded-2xl bg-green-50 p-4 ${tilt}`}>
+                  <div key={f.value} className={`rounded-2xl bg-emerald-50/80 border border-emerald-100 p-4 ${tilt}`}>
                     <p className="text-lg font-bold text-green-900">{f.value}</p>
                     <p className="mt-1 text-xs leading-relaxed text-slate-600">{f.label}</p>
                   </div>
@@ -233,7 +233,7 @@ export default function OrganicFarmingPage() {
       </section>
 
       {/* Ecosystem */}
-      <section className="bg-green-950 py-20 text-white">
+      <section className="bg-green-950 py-10 sm:py-12 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -246,17 +246,17 @@ export default function OrganicFarmingPage() {
                   </span>
                 ))}
               </div>
-              <p className="mb-4 leading-relaxed text-white/80">
-                The CHP Eco-Agri Farming Community is a group of individuals who share an interest in organic farming and want to participate in a community-oriented agricultural initiative in the Himalayan region.
+              <p className="mb-4 leading-relaxed text-white/80 text-justify">
+                The CHP Eco-Agri Farming Community is a group of individuals who share an interest in <strong className="font-bold text-orange-300">organic farming</strong> and want to participate in a community-oriented agricultural initiative in the Himalayan region.
               </p>
-              <p className="leading-relaxed text-white/80">
-                The availability of water resources and nutrient-rich manure from the Gaushala provides a foundation for organic cultivation. The model brings together land, farmers, community members and sustainable agricultural practices to create a shared farming ecosystem.
+              <p className="leading-relaxed text-white/80 text-justify">
+                The availability of water resources and nutrient-rich manure from the Gaushala provides a foundation for organic cultivation. The model brings together <strong className="font-bold text-orange-300">land, farmers, community members</strong> and sustainable agricultural practices to create a shared farming ecosystem.
               </p>
             </div>
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="mx-auto mt-12 max-w-5xl rounded-2xl border border-white/15 bg-white/5 p-6 sm:p-8">
+            <div className="mx-auto mt-10 max-w-5xl rounded-2xl border border-white/15 bg-white/5 p-6 sm:p-8">
               <p className="mb-6 flex items-center justify-center gap-2 text-center font-semibold text-orange-200">
                 <Droplets className="h-5 w-5" /> The initiative aims to create a cycle in which:
               </p>
@@ -270,8 +270,8 @@ export default function OrganicFarmingPage() {
                   </div>
                 ))}
               </div>
-              <p className="mt-6 text-center text-sm leading-relaxed text-white/70">
-                This creates an opportunity to connect Gauseva, organic agriculture, local employment and responsible consumption within one ecosystem.
+              <p className="mt-6 text-center text-sm leading-relaxed text-white/70 text-justify">
+                This creates an opportunity to connect <strong className="font-bold text-orange-200">Gauseva, organic agriculture, local employment</strong> and responsible consumption within one ecosystem.
               </p>
             </div>
           </ScrollReveal>
@@ -279,14 +279,14 @@ export default function OrganicFarmingPage() {
       </section>
 
       {/* What we grow */}
-      <section id="what-we-grow" className="scroll-mt-20 bg-stone-50 py-20">
+      <section id="what-we-grow" className="scroll-mt-20 bg-stone-50 py-10 sm:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="mx-auto mb-14 max-w-3xl text-center">
+            <div className="mx-auto mb-10 max-w-3xl text-center">
               <p className={eyebrow}>What We Grow</p>
               <h2 className={`${h2} mb-4`}>Himalayan Plants, Crops and Produce</h2>
-              <p className="leading-relaxed text-slate-500">
-                CHP&apos;s farming initiative focuses on a combination of Himalayan medicinal plants, organic food crops, traditional produce, herbs and agricultural products.
+              <p className="leading-relaxed text-slate-600 text-justify sm:text-center">
+                CHP&apos;s farming initiative focuses on a combination of <strong className="font-bold text-green-900">Himalayan medicinal plants, organic food crops, traditional produce, herbs</strong> and agricultural products.
               </p>
             </div>
           </ScrollReveal>
@@ -301,7 +301,7 @@ export default function OrganicFarmingPage() {
             ))}
           </div>
 
-          <h3 className="mb-2 mt-14 flex items-center gap-2 text-xl font-bold text-slate-800">
+          <h3 className="mb-2 mt-10 flex items-center gap-2 text-xl font-bold text-slate-800">
             <Sprout className="h-5 w-5 text-green-800" /> Himalayan Organic Produce
           </h3>
           <p className="mb-6 text-sm text-slate-500">The traditional agricultural richness and food diversity of the Himalayan region.</p>
@@ -311,11 +311,11 @@ export default function OrganicFarmingPage() {
             ))}
           </div>
 
-          <div className={`mt-14 rounded-2xl bg-orange-50 p-6 sm:p-8 ${tilt}`}>
+          <div className={`mt-10 rounded-2xl bg-amber-50/80 border border-amber-200/60 p-6 sm:p-8 ${tilt}`}>
             <h3 className="mb-2 flex items-center gap-2 text-xl font-bold text-slate-800">
               <Wheat className="h-5 w-5 text-orange-600" /> Other Farming Opportunities
             </h3>
-            <p className="mb-5 text-sm leading-relaxed text-slate-600">
+            <p className="mb-5 text-sm leading-relaxed text-slate-600 text-justify">
               Depending on the farming plan and crop selection, the community model can include:
             </p>
             <div className="flex flex-wrap gap-3">
@@ -330,10 +330,10 @@ export default function OrganicFarmingPage() {
       </section>
 
       {/* Why */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-10 sm:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="mx-auto mb-12 max-w-3xl text-center">
+            <div className="mx-auto mb-10 max-w-3xl text-center">
               <p className={eyebrow}>Why CHP Organic &amp; Eco-Agri Farming?</p>
               <h2 className={`${h2} mb-4`}>Shared Soil. Shared Future.</h2>
               <p className="leading-relaxed text-slate-500">The initiative has been designed around four core objectives.</p>
@@ -342,11 +342,11 @@ export default function OrganicFarmingPage() {
           <StaggerContainer className="grid grid-cols-1 gap-5 sm:grid-cols-2" staggerDelay={0.08}>
             {objectives.map((o, i) => (
               <StaggerItem key={o.title}>
-                <div className={`${card} flex h-full gap-5 bg-stone-50`}>
+                <div className={`${card} flex h-full gap-5 bg-emerald-50/40 border border-emerald-100/80`}>
                   <span className="text-4xl font-bold leading-none text-orange-500">{i + 1}</span>
                   <div>
                     <h3 className="mb-2 font-semibold text-green-900">{o.title}</h3>
-                    <p className="text-sm leading-relaxed text-slate-600">{o.desc}</p>
+                    <p className="text-sm leading-relaxed text-slate-600 text-justify">{o.desc}</p>
                   </div>
                 </div>
               </StaggerItem>
@@ -356,27 +356,27 @@ export default function OrganicFarmingPage() {
       </section>
 
       {/* Community and model */}
-      <section className="bg-stone-50 py-20">
+      <section className="bg-stone-50 py-10 sm:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="mx-auto mb-12 max-w-3xl text-center">
+            <div className="mx-auto mb-10 max-w-3xl text-center">
               <p className={eyebrow}>The CHP Eco-Agri Farming Community</p>
               <h2 className={`${h2} mb-4`}>Together We Farm. Together We Flourish.</h2>
-              <p className="leading-relaxed text-slate-500">
+              <p className="leading-relaxed text-slate-600 text-justify sm:text-center">
                 The community model allows interested members to participate in farming without having to personally manage day-to-day agricultural operations.
               </p>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             <ScrollReveal direction="left">
-              <div className={`${card} h-full`}>
+              <div className={`${card} h-full bg-emerald-50/30 border border-emerald-100`}>
                 <h3 className="mb-1 text-xl font-bold text-green-900">CHP&apos;s Role</h3>
                 <p className="mb-5 text-sm text-slate-500">CHP facilitates the operational side of the farming program, including:</p>
                 <CheckList items={chpRole} />
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right">
-              <div className={`${card} h-full`}>
+              <div className={`${card} h-full bg-amber-50/40 border border-amber-100`}>
                 <h3 className="mb-1 text-xl font-bold text-orange-700">Farm Owner&apos;s Responsibilities</h3>
                 <p className="mb-5 text-sm text-slate-500">
                   Under the proposed model, the participating farm owner is responsible for the applicable farming-related expenses, including:
@@ -386,18 +386,18 @@ export default function OrganicFarmingPage() {
             </ScrollReveal>
           </div>
           <ScrollReveal>
-            <p className="mx-auto mt-8 max-w-3xl text-center leading-relaxed text-slate-600">
-              This creates a structured model where the community member can participate while local farmers remain involved in the actual cultivation process.
+            <p className="mx-auto mt-8 max-w-3xl text-center leading-relaxed text-slate-600 text-justify sm:text-center">
+              This creates a structured model where the community member can participate while <strong className="font-bold text-green-900">local farmers remain involved</strong> in the actual cultivation process.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Benefits */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-10 sm:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="mx-auto mb-12 max-w-3xl text-center">
+            <div className="mx-auto mb-10 max-w-3xl text-center">
               <p className={eyebrow}>More Than Farming</p>
               <h2 className={`${h2} mb-4`}>Organic Roots. Strong Communities.</h2>
               <p className="leading-relaxed text-slate-500">The CHP Eco-Agri model seeks to create value at multiple levels.</p>
@@ -406,33 +406,33 @@ export default function OrganicFarmingPage() {
           <StaggerContainer className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.07}>
             {benefits.map(({ icon: Icon, title, desc }) => (
               <StaggerItem key={title}>
-                <div className={`${card} h-full bg-stone-50`}>
+                <div className={`${card} h-full bg-stone-50 border border-stone-200/60`}>
                   <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-green-900 text-white">
                     <Icon className="h-5 w-5" />
                   </span>
                   <h3 className="mb-2 font-semibold text-slate-800">{title}</h3>
-                  <p className="text-sm leading-relaxed text-slate-600">{desc}</p>
+                  <p className="text-sm leading-relaxed text-slate-600 text-justify">{desc}</p>
                 </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
-          <p className="mx-auto mt-10 max-w-3xl rounded-2xl border border-stone-200 bg-stone-50 p-5 text-sm leading-relaxed text-slate-600">
-            Contributions from farm owners are deposited into the Comet Foundation account, with 80G receipts described as a benefit for eligible contributions. Any tax benefit is subject to applicable law and the contributor&apos;s eligibility.
+          <p className="mx-auto mt-8 max-w-3xl rounded-2xl border border-stone-200 bg-stone-50 p-5 text-sm leading-relaxed text-slate-600 text-justify">
+            <strong className="font-bold text-slate-800">Contributions note:</strong> Contributions from farm owners are deposited into the Comet Foundation account, with 80G receipts described as a benefit for eligible contributions. Any tax benefit is subject to applicable law and the contributor&apos;s eligibility.
           </p>
         </div>
       </section>
 
       {/* Larger purpose */}
-      <section className="relative overflow-hidden bg-green-900 py-24 text-white">
+      <section className="relative overflow-hidden bg-green-900 py-12 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <ScrollReveal>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-orange-300">Our Larger Purpose</p>
             <h2 className="mb-6 text-3xl font-bold leading-tight sm:text-4xl">From Himalayan, For the World</h2>
-            <p className="mb-4 text-lg leading-relaxed text-white/85">
-              CHP&apos;s organic and medicinal farming vision is not simply about producing crops. It is about bringing Himalayan agriculture, traditional knowledge, local communities and responsible participation together.
+            <p className="mb-4 text-lg leading-relaxed text-white/85 text-justify sm:text-center">
+              CHP&apos;s organic and medicinal farming vision is not simply about producing crops. It is about bringing <strong className="font-bold text-orange-300">Himalayan agriculture, traditional knowledge, local communities</strong> and responsible participation together.
             </p>
-            <p className="mb-8 leading-relaxed text-white/75">
-              From medicinal and herbal plants to Pahadi Haldi, Adrak and Rajmaa, the initiative seeks to showcase the richness of Himalayan agriculture while creating opportunities for people to participate in a sustainable community model.
+            <p className="mb-8 leading-relaxed text-white/75 text-justify sm:text-center">
+              From medicinal and herbal plants to <strong className="font-bold text-orange-300">Pahadi Haldi, Adrak and Rajmaa</strong>, the initiative seeks to showcase the richness of Himalayan agriculture while creating opportunities for people to participate in a sustainable community model.
             </p>
             <p className="text-2xl font-bold text-orange-200">Pure. Natural. Himalayan.</p>
           </ScrollReveal>
@@ -440,21 +440,21 @@ export default function OrganicFarmingPage() {
       </section>
 
       {/* Join */}
-      <section className="bg-stone-50 py-20">
+      <section className="bg-stone-50 py-10 sm:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2">
             <ScrollReveal direction="left">
               <p className={eyebrow}>Become Part of the Community</p>
               <h2 className={`${h2} mb-4`}>Join Hands. Grow Organic. Give Back.</h2>
-              <p className="mb-6 leading-relaxed text-slate-600">If you are interested in:</p>
+              <p className="mb-6 leading-relaxed text-slate-600 text-justify">If you are interested in:</p>
               <CheckList items={interests} />
               <p className="mt-6 font-semibold text-green-900">Join the CHP Eco-Agri Farming Community.</p>
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className={`${card} p-8`}>
+              <div className={`${card} p-8 bg-white border border-stone-200`}>
                 <h3 className="mb-1 text-xl font-bold text-slate-800">Registration &amp; Contact</h3>
-                <p className="mb-6 text-sm text-slate-500">
+                <p className="mb-6 text-sm text-slate-500 text-justify">
                   Interested participants can register their membership with the CHP Eco-Agri Farming team.
                 </p>
                 <div className="space-y-4">
@@ -477,6 +477,18 @@ export default function OrganicFarmingPage() {
               </div>
             </ScrollReveal>
           </div>
+        </div>
+      </section>
+
+      {/* Change 7: Bottom Nav Pill */}
+      <section className="py-8 bg-white border-t border-stone-200">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <Link
+            href="/#social-impact"
+            className="inline-block rounded-full bg-green-900 px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-md hover:bg-green-800 transition-all duration-200 hover:-translate-y-0.5"
+          >
+            Go back to CHP Social Impact
+          </Link>
         </div>
       </section>
 

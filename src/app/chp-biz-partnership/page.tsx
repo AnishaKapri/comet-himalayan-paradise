@@ -24,7 +24,6 @@ import {
   Waves,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 
 const HEADER_IMAGE =
   "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/23208c14-1d7f-4885-bafb-052fca139bf4-chp-biz-partnership-under-500kb.webp";
@@ -355,7 +354,7 @@ export default function CHPBizPartnershipPage() {
       {/* =========================================================
           HERO
       ========================================================= */}
-      <section className="relative isolate mt-[70px] min-h-[72vh] overflow-hidden bg-slate-950 sm:mt-[72px]">
+      <section id="hero" className="relative isolate mt-[70px] min-h-[72vh] overflow-hidden bg-slate-950 sm:mt-[72px]">
         <Image
           src={HEADER_IMAGE}
           alt="CHP Biz Partnership in the Himalayas"
@@ -981,6 +980,7 @@ export default function CHPBizPartnershipPage() {
             Different businesses can attract different customer segments
             across different seasons.
           </div>
+
         </div>
       </section>
 
@@ -1376,10 +1376,20 @@ export default function CHPBizPartnershipPage() {
             </strong>{" "}
             according to the selected business opportunity.
           </p>
+
+          {/* Back to CHP Biz Partnership — positioned at the bottom of the green CTA section */}
+          <div className="mt-8 flex justify-center sm:mt-9">
+            <Link
+              href="#hero"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-black/10 backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-white/15"
+            >
+              <ArrowRight className="h-4 w-4 rotate-180" />
+              Back to CHP Biz Partnership
+            </Link>
+          </div>
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

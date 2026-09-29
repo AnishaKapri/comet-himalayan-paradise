@@ -294,7 +294,7 @@ export default function GrowthPartnerPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#f5f1e8] text-[#14231f]">
       {/* HERO */}
-      <section className="relative isolate min-h-[78vh] overflow-hidden bg-slate-950">
+      <section id="growth-partner-hero" className="relative isolate min-h-[78vh] overflow-hidden bg-slate-950">
         <Image
           src={HEADER_IMAGE}
           alt="CHP Growth Partnership in the Himalayas"
@@ -958,6 +958,17 @@ export default function GrowthPartnerPage() {
             Become a CHP Growth Partner
             <ArrowRight className="h-4 w-4" />
           </a>
+
+          {/* Back to the main CHP Growth Partnership header */}
+          <div className="mt-10 flex justify-center">
+            <a
+              href="#growth-partner-hero"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-xs font-semibold text-white backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-white/15 sm:text-sm"
+            >
+              Back to CHP Growth Partner
+              <ArrowRight className="h-4 w-4 rotate-[-90deg]" />
+            </a>
+          </div>
         </div>
       </section>
 

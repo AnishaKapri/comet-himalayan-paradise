@@ -50,7 +50,7 @@ export default function ExperiencesPage() {
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.1 }}
-                        className="text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-5"
+                        className="text-white text-4xl sm:text-5xl md"
                     >
                         Himalayan Experiences
                     </motion.h1>
@@ -58,7 +58,7 @@ export default function ExperiencesPage() {
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-white/60 text-lg max-w-2xl mx-auto"
+                        className="text-white/60 text-lg max-w-2xl mx-auto text-justify"
                     >
                         STAY • EXPLORE • ADVENTURE • WELLNESS • FOOD • CULTURE • LEARN • WORK
                     </motion.p>
@@ -136,7 +136,7 @@ export default function ExperiencesPage() {
                                             <h2 className="font-bold text-slate-800 text-lg mb-2">
                                                 {exp.title}
                                             </h2>
-                                            <p className="text-slate-500 text-sm leading-relaxed mb-5 flex-1">
+                                            <p className="text-slate-500 text-sm leading-relaxed mb-5 flex-1 text-justify">
                                                 {exp.description}
                                             </p>
 

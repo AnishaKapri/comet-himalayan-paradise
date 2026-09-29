@@ -330,13 +330,13 @@ function EcosystemCard({
         alt={item.title}
         fill
         sizes="(max-width: 419px) 100vw, (max-width: 767px) 50vw, (max-width: 1279px) 33vw, 25vw"
-        className="object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+        className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
       />
     </div>
   );
 
   const title = (
-    <h3 className="flex min-h-12 items-center px-4 py-2 text-xs font-bold leading-snug text-stone-900 transition-colors group-hover:text-green-800 sm:text-sm">
+    <h3 className="flex min-h-12 items-center justify-center px-4 py-2 text-xs font-bold leading-snug text-stone-900 transition-colors group-hover:text-green-800 sm:text-sm text-center">
       {item.title}
     </h3>
   );

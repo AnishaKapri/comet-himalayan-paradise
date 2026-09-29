@@ -597,15 +597,15 @@ export default function BusinessInvestmentPage() {
         )}
       </section>
 
-      {/* ── #9 Go back to source page ── */}
+      {/* ── #9 Go back to CHP Enclave ── */}
       <section className="pb-10 pt-2 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
           <Link
-            href={SOURCE_PAGE_HREF}
-            className="inline-flex items-center gap-2 rounded-full bg-green-50 border border-green-200 px-6 py-3 text-sm font-semibold text-green-900 hover:bg-green-100 transition-colors"
+            href="/chp-enclave"
+            className="inline-flex items-center gap-2 rounded-full bg-green-900 px-6 py-3 text-sm font-semibold text-white hover:bg-green-800 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            Go back to {SOURCE_PAGE_NAME}
+            Back to CHP Enclave
           </Link>
         </div>
       </section>

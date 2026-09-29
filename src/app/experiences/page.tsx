@@ -42,7 +42,7 @@ export default function ExperiencesPage() {
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="mb-4 inline-block rounded-full bg-black/25 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-orange-300 shadow-sm backdrop-blur-sm"
+                        className="mb-3 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-sm font-semibold uppercase tracking-wider"
                     >
                         CHP Himalayan Paradise
                     </motion.p>

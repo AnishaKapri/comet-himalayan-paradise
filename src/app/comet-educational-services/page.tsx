@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
     GraduationCap,
@@ -234,22 +235,19 @@ const leaders = [
         name: "Ram Datt Bhatt",
         role: "Founder & Chairman, COMET Foundation",
         bio: "An MCA postgraduate and IIM Calcutta alumnus, Ram Datt Bhatt brings more than two decades of experience across leading IT organizations. His professional journey includes management roles with companies such as Dell, HPE, Wipro, Infosys, Stanley and ValueLabs. His earlier experience in education and social service, combined with his passion for supporting students and creating sustainable opportunities in the Himalayan region, led to the creation of COMET and its broader social initiatives.",
-        initials: "RDB",
-        color: "bg-green-900",
+        photo: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-education-services/d5416b2e-95cc-425b-862d-e9d142a7cbe8-ram-sir.jpeg",
     },
     {
         name: "Jeetendra Ranjan",
         role: "Co-Founder & Director, COMET Foundation",
         bio: "A Master of Science in Computer Science and MBA, Jeetendra Ranjan has more than 20 years of experience working with Indian and multinational technology organizations. He contributes to COMET through his technical, management and mentoring expertise, helping strengthen programs designed for students and young professionals. He is also associated with social initiatives supporting education and scholarships for students from weaker sections of society.",
-        initials: "JR",
-        color: "bg-blue-900",
+        photo: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-education-services/716f2d6b-a5dc-4ad7-bb7c-99cd1ebbb44a-jjeetendraranjan.jpeg",
     },
     {
         name: "Harish Chandra Bhatt",
         role: "Co-Founder & Director, COMET Foundation",
         bio: "A B.Sc. and B.Ed. graduate from Kumaun University, Harish Chandra Bhatt has been actively involved in social causes in the Pithoragarh region for more than two decades. His longstanding commitment to supporting underserved communities and helping people in remote villages inspired him to join COMET and contribute to its education and community-development initiatives.",
-        initials: "HCB",
-        color: "bg-amber-700",
+        photo: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-education-services/b9912e60-8f4c-4bd5-ba96-8bc6058f644f-harishchandra.jpeg",
     },
 ];
 
@@ -272,35 +270,45 @@ export default function CometEducationalServicesPage() {
         <main className="min-h-screen bg-stone-50 text-slate-800 pt-16">
 
             {/* ── Hero ── */}
-            <section className="relative bg-gradient-to-br from-green-950 via-green-900 to-emerald-800 text-white overflow-hidden">
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 25% 50%, #4ade80 0%, transparent 50%), radial-gradient(circle at 75% 20%, #0ea5e9 0%, transparent 50%)" }} />
-                </div>
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <section className="relative h-[calc(100vh-4rem)] min-h-[650px] overflow-hidden flex items-center">
+                {/* Background image */}
+                <Image
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-education-services/0b0c37da-3d6f-4ddf-832f-c2c780cd99bb-chatgpt-image-sep-28-2026-08-01-24-pm.png"
+                    alt="Comet Educational Services – students learning in the Himalayas"
+                    fill
+                    priority
+                    className="object-cover object-center"
+                    sizes="100vw"
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-green-950/95 via-green-950/50 to-black/20" />
+                {/* Content */}
+                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full">
                     <ScrollReveal direction="up">
-                        <div className="flex items-center gap-3 mb-6">
+                        <div className="flex items-center gap-3 mb-5">
                             <span className="h-px w-8 bg-emerald-400" />
                             <p className="text-emerald-300 text-xs font-semibold uppercase tracking-[0.2em]">CHP Social Impact</p>
                         </div>
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 max-w-4xl">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5 max-w-4xl text-white">
                             About Comet<br />
                             <span className="text-emerald-300">Educational Services</span>
                         </h1>
-                        <p className="text-white/80 text-lg sm:text-xl leading-relaxed max-w-3xl mb-8">
+                        <p className="text-white/85 text-lg sm:text-xl leading-relaxed max-w-3xl mb-5">
                             COMET Educational Service is a nonprofit initiative that works to bridge the career-development gap
                             for talented students from remote and underserved communities.
                         </p>
-                        <p className="text-white/70 text-base leading-relaxed max-w-3xl mb-10">
+                        <p className="text-white/70 text-base leading-relaxed max-w-2xl mb-8">
                             Through career guidance, mentoring, IT and professional skills training, expert-led workshops and a
                             structured learning environment, COMET helps students discover their potential, develop their
                             capabilities and turn their aspirations into success stories.
                         </p>
                         <blockquote className="border-l-4 border-emerald-400 pl-6 text-white/90 text-lg italic font-medium max-w-2xl">
-                            "Talent is everywhere. Opportunity should be too."
+                            &ldquo;Talent is everywhere. Opportunity should be too.&rdquo;
                         </blockquote>
                     </ScrollReveal>
                 </div>
             </section>
+
 
             {/* ── Stats ── */}
             <section className="bg-white border-b border-slate-100">
@@ -652,8 +660,14 @@ export default function CometEducationalServicesPage() {
                         {leaders.map((leader) => (
                             <StaggerItem key={leader.name}>
                                 <div className="bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col gap-5">
-                                    <div className={`w-16 h-16 rounded-2xl ${leader.color} flex items-center justify-center`}>
-                                        <span className="text-white font-bold text-xl">{leader.initials}</span>
+                                    <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0 border border-slate-200 shadow-sm">
+                                        <Image
+                                            src={leader.photo}
+                                            alt={leader.name}
+                                            width={80}
+                                            height={80}
+                                            className="w-full h-full object-cover object-top"
+                                        />
                                     </div>
                                     <div>
                                         <h3 className="text-slate-800 font-bold text-lg mb-1">{leader.name}</h3>

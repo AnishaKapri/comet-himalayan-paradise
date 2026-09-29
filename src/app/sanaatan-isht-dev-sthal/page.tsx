@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
     Flame,
     MapPin,
@@ -161,23 +162,28 @@ export default function SanaatanIshtDevSthalPage() {
         <main className="min-h-screen bg-stone-50 text-slate-800 pt-16">
 
             {/* ── Hero ── */}
-            <section className="relative bg-gradient-to-br from-amber-950 via-orange-900 to-amber-800 text-white overflow-hidden">
-                <div className="absolute inset-0 opacity-15">
-                    <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 30% 40%, #fbbf24 0%, transparent 50%), radial-gradient(circle at 70% 70%, #f97316 0%, transparent 50%)" }} />
-                </div>
-                {/* Decorative mandala-like pattern */}
-                <div className="absolute right-0 top-0 w-96 h-96 opacity-5">
-                    <div className="w-full h-full rounded-full border-[40px] border-amber-200" />
-                </div>
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <section className="relative h-[calc(100vh-4rem)] min-h-[650px] overflow-hidden flex items-center">
+                {/* Background image */}
+                <Image
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/ec5945d9-4839-4bb5-aaf9-2707afbe521e-chatgpt-image-sep-28-2026-08-09-04-pm.png"
+                    alt="Sanaatan Isht Dev Sthal – sacred shrine complex in the Himalayas"
+                    fill
+                    priority
+                    className="object-cover object-center"
+                    sizes="100vw"
+                />
+                {/* Warm amber overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-amber-950/95 via-amber-900/55 to-black/20" />
+                {/* Content */}
+                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full">
                     <ScrollReveal direction="up">
-                        <div className="flex items-center gap-3 mb-6">
+                        <div className="flex items-center gap-3 mb-5">
                             <span className="h-px w-8 bg-amber-300" />
                             <p className="text-amber-300 text-xs font-semibold uppercase tracking-[0.2em]">CHP Social Impact</p>
                         </div>
-                        <div className="flex items-center gap-4 mb-6">
+                        <div className="flex items-center gap-4 mb-5">
                             <span className="text-5xl">🕉️</span>
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
                                 Sanaatan Isht<br />
                                 <span className="text-amber-300">Dev Sthal</span>
                             </h1>
@@ -185,11 +191,11 @@ export default function SanaatanIshtDevSthalPage() {
                         <p className="text-white/90 text-xl sm:text-2xl font-semibold mb-4 italic">
                             One Place. Divine Unity. A Temple for Every Heart.
                         </p>
-                        <p className="text-white/75 text-lg leading-relaxed max-w-3xl mb-8">
+                        <p className="text-white/80 text-base leading-relaxed max-w-2xl mb-4">
                             A sacred initiative to reconnect generations with their Isht-Devas, Sanatan traditions and
                             Uttarakhand&apos;s rich spiritual heritage.
                         </p>
-                        <p className="text-white/70 text-base leading-relaxed max-w-3xl">
+                        <p className="text-white/70 text-sm leading-relaxed max-w-2xl">
                             Isht Dev Sthal is envisioned as a unique spiritual and cultural destination in Pithoragarh,
                             Uttarakhand, bringing together representations of Isht-Devas, sacred pilgrimage traditions and
                             spiritual learning within a single peaceful campus.

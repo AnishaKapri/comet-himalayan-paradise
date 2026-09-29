@@ -15,6 +15,11 @@ const directLinks = [
 ];
 
 const operationsLink = { href: "/chp-operations", label: "CHP Operations" };
+const liveFromGroundLink = {
+  href: "/chp-live-from-the-ground",
+  label: "CHP Live from the Ground",
+};
+const faqLink = { href: "/faq", label: "FAQ" };
 
 const navGroups = [
   {
@@ -46,7 +51,7 @@ const navGroups = [
     items: [
       { href: "/comet-educational-services", label: "Comet Educational Services" },
       { href: "/purpose-driven-space", label: "Comet Gauseva" },
-      { href: "/organic", label: "Organic and medicinal farming" },
+      { href: "/organic", label: "Himalayan Organic & Herbal Farms" },
       { href: "/sanaatan-isht-dev-sthal", label: "Sanaatan Isht Dev Sthal" },
     ],
   },
@@ -290,6 +295,36 @@ export function Navbar() {
                   {operationsLink.label}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href={liveFromGroundLink.href}
+                  className={cn(
+                    desktopLink,
+                    pathname === liveFromGroundLink.href
+                      ? isLight
+                        ? "bg-green-900/10 text-green-900 font-semibold"
+                        : "bg-white/20 text-white font-semibold"
+                      : desktopText
+                  )}
+                >
+                  {liveFromGroundLink.label}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={faqLink.href}
+                  className={cn(
+                    desktopLink,
+                    pathname === faqLink.href
+                      ? isLight
+                        ? "bg-green-900/10 text-green-900 font-semibold"
+                        : "bg-white/20 text-white font-semibold"
+                      : desktopText
+                  )}
+                >
+                  {faqLink.label}
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -520,6 +555,70 @@ export function Navbar() {
                   )}
                 >
                   {operationsLink.label}
+                </Link>
+              </motion.li>
+              <motion.li
+                initial={{
+                  opacity: 0,
+                  x: -16,
+                }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                transition={{
+                  delay:
+                    (navGroups.length +
+                      directLinks.length +
+                      1) *
+                    0.045,
+                }}
+              >
+                <Link
+                  href={liveFromGroundLink.href}
+                  onClick={() =>
+                    setMenuOpen(false)
+                  }
+                  className={cn(
+                    "flex items-center py-3 px-4 rounded-xl text-lg font-medium transition-colors",
+                    pathname === liveFromGroundLink.href
+                      ? "bg-green-900/10 text-green-900"
+                      : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                  )}
+                >
+                  {liveFromGroundLink.label}
+                </Link>
+              </motion.li>
+              <motion.li
+                initial={{
+                  opacity: 0,
+                  x: -16,
+                }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                transition={{
+                  delay:
+                    (navGroups.length +
+                      directLinks.length +
+                      2) *
+                    0.045,
+                }}
+              >
+                <Link
+                  href={faqLink.href}
+                  onClick={() =>
+                    setMenuOpen(false)
+                  }
+                  className={cn(
+                    "flex items-center py-3 px-4 rounded-xl text-lg font-medium transition-colors",
+                    pathname === faqLink.href
+                      ? "bg-green-900/10 text-green-900"
+                      : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                  )}
+                >
+                  {faqLink.label}
                 </Link>
               </motion.li>
             </ul>

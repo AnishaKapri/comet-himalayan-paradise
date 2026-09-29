@@ -321,13 +321,13 @@ function EcosystemCard({
         alt={item.title}
         fill
         sizes="(max-width: 419px) 100vw, (max-width: 767px) 50vw, (max-width: 1279px) 33vw, 25vw"
-        className="object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+        className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
       />
     </div>
   );
 
   const title = (
-    <h3 className="flex min-h-12 items-center px-4 py-2 text-xs font-bold leading-snug text-stone-900 transition-colors group-hover:text-green-800 sm:text-sm">
+    <h3 className="flex min-h-12 items-center justify-center px-4 py-2 text-xs font-bold leading-snug text-stone-900 transition-colors group-hover:text-green-800 sm:text-sm text-center">
       {item.title}
     </h3>
   );
@@ -340,7 +340,7 @@ function EcosystemCard({
   );
 
   const className =
-    "group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/12 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-800";
+    "group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/12 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-800";
 
   /*
    * INTERNAL CHP LINK
@@ -405,7 +405,7 @@ function EcosystemSection({
           {title}
         </h2>
 
-        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-stone-600 sm:text-base">
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-stone-600 sm:text-base text-justify">
           {intro}
         </p>
       </div>
@@ -434,13 +434,13 @@ export function FacilitiesPage() {
           CHP ECOSYSTEM HERO
           ====================================================== */}
 
-      <section className="relative w-full overflow-hidden">
+      <section className="relative w-full h-[70vh] min-h-[480px] overflow-hidden">
 
         {/* Text-free background image */}
         <img
           src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/d7bba640-d857-4f11-b5e0-3a1aa1b47fc4-chp-ecosystem-header-under-500kb.webp"
           alt="CHP Ecosystem"
-          className="block h-auto w-full"
+          className="absolute inset-0 h-full w-full object-cover"
         />
 
         {/* Subtle dark overlay */}
@@ -454,17 +454,17 @@ export function FacilitiesPage() {
           <div className="max-w-5xl">
 
             {/* Small eyebrow */}
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-white drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)] sm:text-base">
+            <div className="mb-3 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-sm font-semibold uppercase tracking-wider">
               CHP Ecosystem
-            </p>
+            </div>
 
             {/* Main heading */}
-            <h1 className="text-4xl font-bold leading-tight text-white drop-shadow-[0_3px_8px_rgba(0,0,0,0.8)] sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="text-3xl font-bold leading-tight text-white drop-shadow-[0_3px_8px_rgba(0,0,0,0.8)] sm:text-4xl md:text-5xl">
               CHP Dream Spaces and Facilities
             </h1>
 
             {/* Description */}
-            <p className="mx-auto mt-5 max-w-4xl text-sm font-medium leading-relaxed text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] sm:text-base md:text-lg lg:text-xl">
+            <p className="mx-auto mt-5 max-w-4xl text-sm font-medium leading-relaxed text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] sm:text-base md:text-lg lg:text-xl text-justify">
               CHP brings together thoughtfully designed spaces for living,
               community, retreat, nature, and meaningful Himalayan experiences
               with facilities for hospitality, wellness, recreation, food,

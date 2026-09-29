@@ -50,7 +50,7 @@ export default function ExperiencesPage() {
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.1 }}
-                        className="text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-5"
+                        className="text-white text-4xl sm:text-5xl md"
                     >
                         Himalayan Experiences
                     </motion.h1>

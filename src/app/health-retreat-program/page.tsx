@@ -107,7 +107,7 @@ export default function HealthRetreatProgramPage() {
     };
 
     return (
-        <main className="min-h-screen bg-amber-950/5 text-slate-800 pt-16">
+        <main className="min-h-screen bg-amber-950/5 text-slate-800 pt-16 text-justify">
             {/* ── Hero ── */}
             <section className="relative h-[80vh] min-h-[560px] overflow-hidden">
                 <Image
@@ -120,7 +120,7 @@ export default function HealthRetreatProgramPage() {
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-semibold uppercase tracking-wider mb-5"
+                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-xs font-semibold uppercase tracking-wider mb-5"
                     >
                         <Flower2 className="w-3.5 h-3.5" />
                         Spiritual & Wellness Sanctuary
@@ -128,7 +128,7 @@ export default function HealthRetreatProgramPage() {
 
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-                        className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight max-w-4xl font-serif"
+                        className="text-white text-4xl sm:text-5xl lg"
                     >
                         Health Retreat Program <br />
                         <span className="bg-gradient-to-r from-amber-300 via-orange-300 to-emerald-300 bg-clip-text text-transparent">
@@ -138,7 +138,7 @@ export default function HealthRetreatProgramPage() {
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-                        className="mt-5 text-white/75 text-lg max-w-2xl leading-relaxed"
+                        className="mt-5 text-white/75 text-lg max-w-2xl leading-relaxed text-justify"
                     >
                         A sacred Himalayan environment for yoga, meditation, Ayurveda, spiritual ceremony, and deep inner renewal — far from the noise of modern life.
                     </motion.p>
@@ -161,7 +161,7 @@ export default function HealthRetreatProgramPage() {
             <section className="py-16 bg-gradient-to-r from-amber-950 to-stone-900 text-white">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <p className="text-amber-300 text-xs font-semibold uppercase tracking-widest mb-4">Our Philosophy</p>
-                    <blockquote className="text-2xl sm:text-3xl font-light leading-relaxed text-white/90 italic">
+                    <blockquote className="text-2xl sm:text-3xl font-light leading-relaxed text-white/90 italic text-justify">
                         {/* eslint-disable-next-line react/no-unescaped-entities */}
                         "The Himalayas do not merely house peaks — they house silence, wisdom, and the ancient breath of the earth. CHP is designed to help you listen."
                     </blockquote>
@@ -187,7 +187,7 @@ export default function HealthRetreatProgramPage() {
                                             <Icon className="w-5 h-5" />
                                         </div>
                                         <h3 className="text-lg font-bold text-slate-800 mb-2">{p.title}</h3>
-                                        <p className="text-slate-500 text-sm leading-relaxed">{p.description}</p>
+                                        <p className="text-slate-500 text-sm leading-relaxed text-justify">{p.description}</p>
                                     </div>
                                 </StaggerItem>
                             );
@@ -236,7 +236,7 @@ export default function HealthRetreatProgramPage() {
                                     <div className="p-6 flex-1 flex flex-col justify-between bg-white">
                                         <div>
                                             <h3 className="text-xl font-bold text-slate-800 mb-2">{r.title}</h3>
-                                            <p className="text-slate-500 text-sm leading-relaxed mb-4">{r.desc}</p>
+                                            <p className="text-slate-500 text-sm leading-relaxed mb-4 text-justify">{r.desc}</p>
                                             <ul className="space-y-2 mb-5">
                                                 {r.includes.map((inc) => (
                                                     <li key={inc} className="flex items-center gap-2 text-xs text-slate-600">
@@ -262,14 +262,14 @@ export default function HealthRetreatProgramPage() {
                     <div className="text-center mb-10">
                         <span className="text-amber-700 text-xs font-semibold uppercase tracking-wider">Begin Your Journey</span>
                         <h2 className="text-3xl font-bold text-slate-800 mt-2">Enquire About a Retreat</h2>
-                        <p className="text-slate-500 text-sm mt-2">Our wellness team will reach out within 24 hours with availability and programme details.</p>
+                        <p className="text-slate-500 text-sm mt-2 text-justify">Our wellness team will reach out within 24 hours with availability and programme details.</p>
                     </div>
 
                     {formSubmitted ? (
                         <div className="p-10 rounded-2xl bg-amber-50 border border-amber-200 text-center">
                             <CheckCircle2 className="w-12 h-12 text-amber-600 mx-auto mb-3" />
                             <h3 className="text-xl font-bold text-slate-800">Enquiry Received!</h3>
-                            <p className="text-slate-500 text-sm mt-2">Our team will get in touch to guide you toward the right program.</p>
+                            <p className="text-slate-500 text-sm mt-2 text-justify">Our team will get in touch to guide you toward the right program.</p>
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} className="bg-white border border-amber-100 rounded-2xl p-8 shadow-sm space-y-5">

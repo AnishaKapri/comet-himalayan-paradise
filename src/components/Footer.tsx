@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Share2, Globe, Video, X } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import { SocialBrandIcon } from "@/components/ui/SocialBrandIcon";
 
 const footerLinks = {
   Explore: [
@@ -11,27 +12,62 @@ const footerLinks = {
     { href: "/accommodation", label: "Accommodation" },
     { href: "/gallery", label: "Gallery" },
   ],
+
   Offerings: [
     { href: "/second-home", label: "Second Home" },
     { href: "/facilities", label: "Facilities" },
     { href: "/purpose-driven-space", label: "Purpose Driven Space" },
     { href: "/business-investment", label: "Business & Investment" },
     { href: "/growth-partner", label: "CHP Growth Partner" },
+    { href: "/comet-educational-services", label: "Comet Educational Services" },
+    { href: "/sanaatan-isht-dev-sthal", label: "Sanaatan Isht Dev Sthal" },
   ],
+
   Popular: [
-    { href: "/treks/khaliya-top", label: "Khaliya Top Trek" },
-    { href: "/treks/panchachuli-base-camp", label: "Panchachuli Base Camp" },
-    { href: "/treks/adi-kailash", label: "Adi Kailash Trek" },
-    { href: "/treks/nanda-devi-base-camp", label: "Nanda Devi Base Camp" },
-    { href: "/treks/mila-glacier", label: "Mila Glacier Trek" },
+    {
+      href: "/treks/khalia-top-trek",
+      label: "Khalia Top Trek",
+    },
+    {
+      href: "/treks/panchachuli-base-camp-trek",
+      label: "Panchachuli Base Camp",
+    },
+    {
+      href: "/treks/adi-kailash-om-parvat-trek",
+      label: "Adi Kailash Om Parvat",
+    },
+    {
+      href: "/treks/chandika-ghat-trek",
+      label: "Chandika Ghat Trek",
+    },
+    {
+      href: "/treks/milam-glacier-trek",
+      label: "Milam Glacier Trek",
+    },
   ],
 };
 
 const socials = [
-  { href: "#", label: "Instagram", Icon: Share2 },
-  { href: "#", label: "Facebook", Icon: Globe },
-  { href: "#", label: "YouTube", Icon: Video },
-  { href: "#", label: "Twitter / X", Icon: X },
+  {
+    href: "https://www.linkedin.com/in/ram-datt-bhatt-06122818/",
+    label: "LinkedIn",
+    brand: "linkedin" as const,
+  },
+  {
+    href: "https://www.instagram.com/chphimalayanparadise/",
+    label: "Instagram",
+    brand: "instagram" as const,
+  },
+  {
+    href: "https://www.youtube.com/@CHP_2316",
+    label: "YouTube",
+    brand: "youtube" as const,
+  },
+  {
+    href: "https://www.facebook.com/groups/1844944899612110",
+    label: "Facebook",
+    brand: "facebook" as const,
+  },
 ];
 
 export function Footer() {
@@ -40,6 +76,7 @@ export function Footer() {
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link
@@ -57,6 +94,7 @@ export function Footer() {
                 />
               </div>
             </Link>
+
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs mb-6">
               Immersive Himalayan travel experiences — holiday camps, guided
               treks, wellness retreats, and cultural adventures in the heart of
@@ -67,22 +105,28 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-green-400 mt-0.5 shrink-0" />
+
                 <span className="text-slate-400">
                   Pithoragarh,
-                  <br /> Uttarakhand 262501, India
+                  <br />
+                  Uttarakhand 262501, India
                 </span>
               </li>
+
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-green-400 shrink-0" />
+
                 <a
-                  href="tel:+9199499 94989"
+                  href="tel:+919949994989"
                   className="text-slate-400 hover:text-white transition-colors"
                 >
                   +91 99499 94989
                 </a>
               </li>
+
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-green-400 shrink-0" />
+
                 <a
                   href="mailto:hello@chphimalayanparadise.com"
                   className="text-slate-400 hover:text-white transition-colors"
@@ -94,14 +138,20 @@ export function Footer() {
 
             {/* Socials */}
             <div className="flex gap-3 mt-6">
-              {socials.map(({ href, label, Icon }) => (
+              {socials.map(({ href, label, brand }) => (
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
+                  title={label}
                   className="w-9 h-9 rounded-full bg-slate-800 hover:bg-green-900 flex items-center justify-center text-slate-400 hover:text-white transition-all duration-200"
                 >
-                  <Icon className="w-4 h-4" />
+                  <SocialBrandIcon
+                    name={brand}
+                    className="w-4 h-4"
+                  />
                 </a>
               ))}
             </div>
@@ -113,6 +163,7 @@ export function Footer() {
               <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
                 {title}
               </h3>
+
               <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link.href}>
@@ -133,18 +184,31 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+
           <p>
             © {new Date().getFullYear()} CHP Himalayan Paradise. All rights
             reserved.
           </p>
+
           <div className="flex gap-4">
-            <Link href="#" className="hover:text-slate-300 transition-colors">
+            <Link
+              href="#"
+              className="hover:text-slate-300 transition-colors"
+            >
               Privacy Policy
             </Link>
-            <Link href="#" className="hover:text-slate-300 transition-colors">
+
+            <Link
+              href="#"
+              className="hover:text-slate-300 transition-colors"
+            >
               Terms of Service
             </Link>
-            <Link href="#" className="hover:text-slate-300 transition-colors">
+
+            <Link
+              href="#"
+              className="hover:text-slate-300 transition-colors"
+            >
               Cookie Policy
             </Link>
           </div>

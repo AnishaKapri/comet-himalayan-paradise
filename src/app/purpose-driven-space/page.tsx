@@ -1,460 +1,729 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
+import { FormEvent, useState } from "react";
 import {
-    Flower2,
-    Sun,
-    Moon,
-    Heart,
-    Wind,
-    Leaf,
-    Flame,
-    Book,
-    Users,
-    Star,
-    CheckCircle2,
-    ArrowRight,
-    Send,
-    MapPin,
+  ArrowRight,
+  Building2,
+  Check,
+  Heart,
+  Leaf,
+  MapPin,
+  Megaphone,
+  PawPrint,
+  Shield,
+  Sprout,
+  Users,
+  Wheat,
 } from "lucide-react";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
-import { CTABanner } from "@/components/home/CTABanner";
 
-const benefits = [
-    { icon: "🏡", title: "Exclusive Cottage Benefits", description: "Enjoy privileged discounts on CHP cottages." },
-    { icon: "🔑", title: "Priority Guest House Access", description: "Avail special access to the Comeset Executive Guest House in Munsyari." },
-    { icon: "⭐", title: "VIP Access to CHP Programs", description: "Receive priority participation, exclusive guidance, and special privileges across all CHP initiatives." },
-    { icon: "📄", title: "Tax Benefits", description: "All eligible contributions will be acknowledged with 80G tax exemption receipts." },
+const HEADER_IMAGE =
+  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/df7926db-451e-458d-9471-b84f0a4b1860-comet-gauseva-header-under-500kb.webp";
+
+const GAUSEVA_WHATSAPP = "919949994989";
+
+const supportAreas = [
+  {
+    title: "Cow Care & Financial Support",
+    icon: Heart,
+    items: [
+      "Monthly sponsorship for feeding and caring for cows",
+      "Adopt-a-Cow programme",
+      "Veterinary care and vaccinations",
+      "Sponsorship of cow caretakers",
+      "One-time contributions for general upkeep",
+    ],
+  },
+  {
+    title: "Infrastructure Support",
+    icon: Building2,
+    items: [
+      "Cow shelters",
+      "Water tanks",
+      "Solar lighting",
+      "Construction materials such as bricks, cement, tin sheets and tiles",
+      "Farm equipment",
+    ],
+  },
+  {
+    title: "Material Support",
+    icon: Wheat,
+    items: ["Fodder", "Grains", "Medicines", "Supplements"],
+  },
+  {
+    title: "Professional & Volunteer Support",
+    icon: Users,
+    items: [
+      "Veterinary services",
+      "Digital marketing",
+      "Fundraising",
+      "Accounting",
+      "Other skilled services",
+    ],
+  },
 ];
 
-const supportCategories = [
-    {
-        title: "Comet Educational Services",
-        icon: "🎓",
-        items: [
-            "Fund an underprivileged school",
-            "Fund underprivileged students",
-            "Support Comet Students with Mentorship",
-            "Internship opportunity for students pursuing graduation course",
-            "Job placement for fresh graduates",
-        ],
-    },
-    {
-        title: "Comet Gaushala",
-        icon: "🐄",
-        items: [
-            "Adopt an abandoned cow in Comet Gaushala",
-            "Donations in cash or kind to support the feeding of adopted cows at the cow-care center",
-            "Sponsor for infrastructure setup in Gaushala",
-        ],
-    },
+const sustainabilityApproach = [
+  ["01", "Promoting organic farming.", Leaf],
+  ["02", "Developing useful applications for cow by-products.", Wheat],
+  ["03", "Establishing a nature-first, eco-friendly farming community.", Sprout],
+  [
+    "04",
+    "Encouraging individuals and organisations to support/adopt abandoned cows through applicable donation/CSR mechanisms.",
+    Users,
+  ],
+  ["05", "Accepting one-time contributions for general upkeep.", Heart],
+] as const;
+
+const communityParticipation = [
+  "Promoting Gauseva stories through social media",
+  "Organising fundraising campaigns",
+  "Visiting the Gauseva Kendra",
+  "School and college collaborations",
+  "Helping with government schemes",
+  "Supporting biogas and manure initiatives",
+  "Educational visits and projects",
 ];
 
-const spaces = [
-    {
-        title: "Comet Services",
-        description: "Concierge support for travel, stay, and on-ground logistics — handled end-to-end by the Comet team.",
-        image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/32308adc-0e58-4a98-acff-3731f0ad7327-scaled-comet-services-2.webp",
-    },
-    {
-        title: "Gaushala",
-        description: "A traditional cattle farm woven into daily life at CHP, reflecting our commitment to rural Himalayan heritage.",
-        image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/9d1fe41e-9c6c-405f-8b10-fe4d7c57e661-scaled-gaushala-png.webp",
-    },
-    {
-        title: "Isht Dev Sthal",
-        description: "A sacred space for prayer and reflection, honoring the spiritual traditions of the Himalayan region.",
-        image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6a3c6200-6934-459f-8c9e-b8c348d74708-scaled-isht-dev-sthal.webp",
-    },
+const individualBenefits = [
+  "80G receipt",
+  "Access to certain CHP services",
+  "Proposed adjustment of a portion of donation toward a CHP plot",
+  "Access to Comet Guest House in Munsyari",
+  "Opportunity to access land in the Gauseva village for organic farming",
+  "Guidance during Uttarakhand trips",
+  "Registration privileges for Yoga programmes in Pithoragarh",
 ];
 
-const pillars = [
-    {
-        icon: Sun,
-        title: "Daily Yoga & Pranayama",
-        description:
-            "Guided sunrise yoga on open mountain decks looking towards Panchachuli, followed by guided pranayama and breathwork with trained Himalayan instructors.",
-    },
-    {
-        icon: Moon,
-        title: "Meditation & Mindfulness",
-        description:
-            "Structured morning and evening meditation sessions in our dedicated silence hall, incorporating Vipassana, nature-sound therapy, and guided visualisation.",
-    },
-    {
-        icon: Flame,
-        title: "Isht Dev Sthal & Sacred Fire",
-        description:
-            "Our traditional Isht Dev Sthal hosts daily Agni Puja, Havans, and Kumaoni spiritual ceremonies — rooted in centuries of mountain devotion.",
-    },
-    {
-        icon: Leaf,
-        title: "Gaushala & Ayurvedic Farm",
-        description:
-            "Interact with gentle native Pahadi cattle, participate in Gobar Puja, and collect medicinal herbs from our living Ayurvedic garden.",
-    },
-    {
-        icon: Wind,
-        title: "Forest Bathing & Nature Therapy",
-        description:
-            "Guided Shinrin-Yoku (forest bathing) trails through pine and oak groves. Let the Himalayan birdsong, clean air, and natural soundscapes restore your nervous system.",
-    },
-    {
-        icon: Heart,
-        title: "Satsang & Community Evenings",
-        description:
-            "Campfire satsangs, kirtan evenings, storytelling circles, and Kumaoni folk music nights that foster genuine human connection under the stars.",
-    },
+const organisationOpportunities = [
+  "Employee work-from-the-Himalayas programmes",
+  "Executive team outings",
+  "Corporate workshops",
+  "Senior-management meetings",
+  "Client/customer experiences",
+  "Employee engagement and team programmes",
+  "Yoga and Sadhna Shivir programmes",
 ];
 
-const retreatPrograms = [
-    {
-        title: "Weekend Detox & Reset",
-        duration: "2 Nights / 3 Days",
-        desc: "Digital detox, daily yoga, guided meditation, Sattvic meals, and a Himalayan forest walk to reset your mind and body.",
-        includes: ["Morning & evening yoga", "2 meditation sessions/day", "Sattvic organic meals", "Forest therapy walk", "Campfire satsang"],
-        image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop",
-    },
-    {
-        title: "7-Day Inner Renewal",
-        duration: "7 Nights / 8 Days",
-        desc: "An immersive week of Himalayan healing — yoga, pranayama, Ayurveda, Havan, silent forest walks, and personalised one-on-one guidance.",
-        includes: ["Daily yoga & pranayama", "Havan & Agni Puja ceremony", "Ayurvedic consultation", "Silent nature trail daily", "Gaushala & farm immersion", "Group satsang evenings"],
-        image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80&auto=format&fit=crop",
-        featured: true,
-    },
-    {
-        title: "Purpose & Clarity Retreat",
-        duration: "14 Nights / 15 Days",
-        desc: "A deep-dive program for individuals seeking direction, clarity, and a renewed sense of purpose — combining silence, reflection, and Himalayan wisdom.",
-        includes: ["Personalised guidance sessions", "Purpose journaling workshop", "Sunrise peak treks", "Full Ayurvedic wellness plan", "Group & private meditation", "Cultural immersion visits"],
-        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80&auto=format&fit=crop",
-    },
-];
+const membershipOptions = [
+  ["Adopt a Cow", Heart],
+  ["Become a Member", Users],
+  ["Sponsor Cow Care", PawPrint],
+  ["Donate", Heart],
+  ["Volunteer", Users],
+  ["Support Infrastructure", Building2],
+  ["Partner With Us", Shield],
+  ["Visit CHP Gauseva Kendra", MapPin],
+] as const;
 
-const traditions = [
-    { label: "Isht Dev Sthal", desc: "CHP's sacred deity space with daily Agni Puja" },
-    { label: "Gaushala", desc: "Native Pahadi cattle sanctuary integral to CHP life" },
-    { label: "Kumaoni Havan", desc: "Traditional fire ceremonies with Vedic chanting" },
-    { label: "Himalayan Herb Garden", desc: "Living Ayurvedic garden of 40+ medicinal plants" },
-];
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  light = false,
+}: {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  light?: boolean;
+}) {
+  return (
+    <div className={`max-w-4xl ${light ? "text-white" : "text-[#17352d]"}`}>
+      {eyebrow && (
+        <p
+          className={`text-[11px] font-bold uppercase tracking-[0.28em] ${
+            light ? "text-[#f2d487]" : "text-[#96752f]"
+          }`}
+        >
+          {eyebrow}
+        </p>
+      )}
+      <h2 className="mt-3 font-serif text-4xl leading-[1.04] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+        {title}
+      </h2>
+      {description && (
+        <p
+          className={`mt-5 max-w-3xl text-base leading-7 sm:text-lg ${
+            light ? "text-white/68" : "text-[#5d6b65]"
+          }`}
+        >
+          {description}
+        </p>
+      )}
+    </div>
+  );
+}
 
-export default function PurposeDrivenSpacePage() {
-    const [formSubmitted, setFormSubmitted] = useState(false);
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        program: "7-Day Inner Renewal",
-        date: "",
-        message: "",
-    });
+function PdfBulletList({
+  items,
+  light = false,
+}: {
+  items: string[];
+  light?: boolean;
+}) {
+  return (
+    <ul className="space-y-3">
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-3 text-sm leading-6">
+          <Check
+            className={`mt-1 h-4 w-4 shrink-0 ${
+              light ? "text-[#f2d487]" : "text-[#96752f]"
+            }`}
+          />
+          <span className={light ? "text-white/72" : "text-[#5f6c66]"}>
+            {item}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setFormSubmitted(true);
-    };
+export default function CometGausevaPage() {
+  const [submitted, setSubmitted] = useState(false);
 
-    return (
-        <main className="min-h-screen bg-amber-950/5 text-slate-800 pt-16">
-            {/* ── Hero ── */}
-            <section className="relative h-[80vh] min-h-[560px] overflow-hidden">
-                <Image
-                    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&q=80&auto=format&fit=crop"
-                    alt="Purpose Driven Space at CHP"
-                    fill priority className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/75" />
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
 
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-semibold uppercase tracking-wider mb-5"
-                    >
-                        <Flower2 className="w-3.5 h-3.5" />
-                        Spiritual & Wellness Sanctuary
-                    </motion.div>
+    const data = new FormData(event.currentTarget);
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const phone = String(data.get("phone") || "").trim();
+    const interest = String(data.get("interest") || "").trim();
+    const message = String(data.get("message") || "").trim();
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-                        className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight max-w-4xl font-serif"
-                    >
-                        Purpose Driven Space <br />
-                        <span className="bg-gradient-to-r from-amber-300 via-orange-300 to-emerald-300 bg-clip-text text-transparent">
-                            Find Your Centre
-                        </span>
-                    </motion.h1>
+    const whatsappMessage = [
+      "CHP Gauseva Kendra — Interested",
+      "",
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Interest: ${interest}`,
+      "",
+      "Message:",
+      message || "No additional message.",
+    ].join("\n");
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-                        className="mt-5 text-white/75 text-lg max-w-2xl leading-relaxed"
-                    >
-                        A sacred Himalayan environment for yoga, meditation, Ayurveda, spiritual ceremony, and deep inner renewal — far from the noise of modern life.
-                    </motion.p>
+    setSubmitted(true);
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-                        className="mt-8 flex flex-wrap gap-4 justify-center"
-                    >
-                        <a href="#retreats" className="bg-amber-600 hover:bg-amber-500 text-white font-bold px-7 py-3.5 rounded-full flex items-center gap-2 shadow-lg transition-all">
-                            View Retreat Programs <ArrowRight className="w-4 h-4" />
-                        </a>
-                        <a href="#enquire" className="bg-white/10 hover:bg-white/20 text-white font-medium px-7 py-3.5 rounded-full border border-white/30 backdrop-blur-sm transition-all">
-                            Enquire Now
-                        </a>
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* ── Philosophy ── */}
-            <section className="py-16 bg-gradient-to-r from-amber-950 to-stone-900 text-white">
-                <div className="max-w-4xl mx-auto px-4 text-center">
-                    <p className="text-amber-300 text-xs font-semibold uppercase tracking-widest mb-4">Our Philosophy</p>
-                    <blockquote className="text-2xl sm:text-3xl font-light leading-relaxed text-white/90 italic">
-                        "The Himalayas do not merely house peaks — they house silence, wisdom, and the ancient breath of the earth. CHP is designed to help you listen."
-                    </blockquote>
-                    <p className="mt-5 text-amber-400 font-semibold text-sm">— CHP Himalayan Paradise</p>
-                </div>
-            </section>
-
-            {/* ── Wellness Pillars ── */}
-            <section className="py-20 lg:py-28 bg-stone-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <SectionHeader
-                        eyebrow="Core Practices"
-                        title="Pillars of the Purpose Driven Space"
-                        subtitle="Six integrated practices woven into daily life at CHP — each designed to restore balance, awareness, and inner clarity."
-                    />
-                    <StaggerContainer className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {pillars.map((p) => {
-                            const Icon = p.icon;
-                            return (
-                                <StaggerItem key={p.title}>
-                                    <div className="p-7 rounded-2xl bg-white border border-amber-100 hover:shadow-lg hover:shadow-amber-900/5 transition-all h-full">
-                                        <div className="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 mb-4">
-                                            <Icon className="w-5 h-5" />
-                                        </div>
-                                        <h3 className="text-lg font-bold text-slate-800 mb-2">{p.title}</h3>
-                                        <p className="text-slate-500 text-sm leading-relaxed">{p.description}</p>
-                                    </div>
-                                </StaggerItem>
-                            );
-                        })}
-                    </StaggerContainer>
-                </div>
-            </section>
-
-            {/* ── Sacred Traditions ── */}
-            <section className="py-16 bg-amber-950/10 border-y border-amber-200/40">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        {traditions.map((t) => (
-                            <div key={t.label} className="text-center p-5 rounded-2xl bg-white border border-amber-100">
-                                <div className="w-10 h-10 rounded-full bg-amber-100 mx-auto flex items-center justify-center text-amber-700 mb-3">
-                                    <Flame className="w-5 h-5" />
-                                </div>
-                                <h4 className="font-bold text-slate-800 text-sm mb-1">{t.label}</h4>
-                                <p className="text-slate-500 text-xs leading-snug">{t.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Retreat Programs ── */}
-            <section id="retreats" className="py-20 lg:py-28 bg-white scroll-mt-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <SectionHeader
-                        eyebrow="Retreat Programs"
-                        title="Curated Himalayan Retreat Journeys"
-                        subtitle="Choose a program suited to your time, intention, and depth of practice."
-                    />
-                    <StaggerContainer className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {retreatPrograms.map((r, i) => (
-                            <StaggerItem key={r.title}>
-                                <div className={`relative flex flex-col h-full rounded-2xl overflow-hidden border transition-all hover:shadow-xl hover:-translate-y-1 ${r.featured ? "border-amber-500 shadow-lg shadow-amber-900/10" : "border-slate-200"}`}>
-                                    {r.featured && (
-                                        <div className="absolute top-4 right-4 z-10 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">Most Popular</div>
-                                    )}
-                                    <div className="relative h-52 overflow-hidden">
-                                        <Image src={r.image} alt={r.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                        <div className="absolute bottom-4 left-4 text-amber-300 font-semibold text-xs">{r.duration}</div>
-                                    </div>
-                                    <div className="p-6 flex-1 flex flex-col justify-between bg-white">
-                                        <div>
-                                            <h3 className="text-xl font-bold text-slate-800 mb-2">{r.title}</h3>
-                                            <p className="text-slate-500 text-sm leading-relaxed mb-4">{r.desc}</p>
-                                            <ul className="space-y-2 mb-5">
-                                                {r.includes.map((inc) => (
-                                                    <li key={inc} className="flex items-center gap-2 text-xs text-slate-600">
-                                                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-500 shrink-0" />{inc}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <a href="#enquire" className={`w-full text-center py-3 rounded-xl font-semibold text-sm transition-colors ${r.featured ? "bg-amber-600 hover:bg-amber-700 text-white" : "bg-stone-100 hover:bg-stone-200 text-slate-800"}`}>
-                                            Enquire for {r.title}
-                                        </a>
-                                    </div>
-                                </div>
-                            </StaggerItem>
-                        ))}
-                    </StaggerContainer>
-                </div>
-            </section>
-
-            {/* ── Enquiry Form ── */}
-            <section id="enquire" className="py-20 bg-stone-50 scroll-mt-20">
-                <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-10">
-                        <span className="text-amber-700 text-xs font-semibold uppercase tracking-wider">Begin Your Journey</span>
-                        <h2 className="text-3xl font-bold text-slate-800 mt-2">Enquire About a Retreat</h2>
-                        <p className="text-slate-500 text-sm mt-2">Our wellness team will reach out within 24 hours with availability and programme details.</p>
-                    </div>
-
-                    {formSubmitted ? (
-                        <div className="p-10 rounded-2xl bg-amber-50 border border-amber-200 text-center">
-                            <CheckCircle2 className="w-12 h-12 text-amber-600 mx-auto mb-3" />
-                            <h3 className="text-xl font-bold text-slate-800">Enquiry Received!</h3>
-                            <p className="text-slate-500 text-sm mt-2">Our team will get in touch to guide you toward the right program.</p>
-                        </div>
-                    ) : (
-                        <form onSubmit={handleSubmit} className="bg-white border border-amber-100 rounded-2xl p-8 shadow-sm space-y-5">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                <div>
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-1.5">Your Name *</label>
-                                    <input type="text" required placeholder="Full name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-amber-500" />
-                                </div>
-                                <div>
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-1.5">Email *</label>
-                                    <input type="email" required placeholder="your@email.com" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-amber-500" />
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                <div>
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-1.5">Phone *</label>
-                                    <input type="tel" required placeholder="+91 99499 94989" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-amber-500" />
-                                </div>
-                                <div>
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-1.5">Retreat Program</label>
-                                    <select value={formData.program} onChange={(e) => setFormData({ ...formData, program: e.target.value })} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-amber-500">
-                                        <option>Weekend Detox & Reset</option>
-                                        <option>7-Day Inner Renewal</option>
-                                        <option>Purpose & Clarity Retreat</option>
-                                        <option>Custom Program</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div>
-                                <label className="block text-xs font-semibold uppercase text-slate-400 mb-1.5">Preferred Start Date</label>
-                                <input type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-amber-500" />
-                            </div>
-                            <div>
-                                <label className="block text-xs font-semibold uppercase text-slate-400 mb-1.5">Your Intention or Questions</label>
-                                <textarea rows={3} placeholder="What brings you to this journey? Any specific wellness goals?" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-amber-500" />
-                            </div>
-                            <button type="submit" className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2">
-                                <Send className="w-4 h-4" /> Submit Retreat Enquiry
-                            </button>
-                        </form>
-                    )}
-                </div>
-            </section>
-
-            {/* ── Spaces (from home) ── */}
-            <section className="py-20 lg:py-28 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <SectionHeader
-                        eyebrow="Beyond Travel"
-                        title="Purpose Driven Space"
-                        subtitle="CHP is more than a destination—it is a community built around meaningful initiatives. From serving abandoned cows and promoting spiritual well-being to empowering underprivileged students, every space at CHP reflects a deeper purpose that creates lasting social impact."
-                    />
-                    <StaggerContainer className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6" staggerDelay={0.08}>
-                        {spaces.map((space) => (
-                            <StaggerItem key={space.title}>
-                                <motion.article
-                                    whileHover={{ y: -5 }}
-                                    transition={{ duration: 0.25 }}
-                                    className="relative overflow-hidden rounded-2xl aspect-[4/5] shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300"
-                                >
-                                    <Image src={space.image} alt={space.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 hover:scale-110" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                                        <h3 className="text-white font-bold text-xl mb-1.5">{space.title}</h3>
-                                        <p className="text-white/65 text-sm leading-relaxed">{space.description}</p>
-                                    </div>
-                                </motion.article>
-                            </StaggerItem>
-                        ))}
-                    </StaggerContainer>
-
-                    {/* Ways to Support */}
-                    <div className="mt-20">
-                        <SectionHeader
-                            eyebrow="Get Involved"
-                            title="Ways to Support These Spaces"
-                            subtitle="Your contribution — big or small — helps sustain these meaningful initiatives and creates lasting impact in the Himalayan community."
-                        />
-                        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            {supportCategories.map((cat) => (
-                                <motion.div
-                                    key={cat.title}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: "-60px" }}
-                                    transition={{ duration: 0.5 }}
-                                    className="bg-slate-50 border border-slate-100 rounded-2xl p-6"
-                                >
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <span className="text-2xl">{cat.icon}</span>
-                                        <h3 className="text-slate-800 font-bold text-lg">{cat.title}</h3>
-                                    </div>
-                                    <ul className="space-y-2.5">
-                                        {cat.items.map((item, i) => (
-                                            <li key={i} className="flex items-start gap-2.5 text-slate-600 text-sm">
-                                                <span className="mt-1 w-4 h-4 rounded-full bg-orange-100 text-orange-500 flex items-center justify-center text-xs font-bold shrink-0">{i + 1}</span>
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Benefits */}
-                    <div className="mt-20">
-                        <SectionHeader
-                            eyebrow="Why Support"
-                            title="Benefits of Supporting These Spaces"
-                            subtitle="As a supporter of CHP's mission, you receive meaningful recognition and exclusive privileges in return for your generosity."
-                        />
-                        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {benefits.map((benefit, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: "-60px" }}
-                                    transition={{ duration: 0.5, delay: i * 0.08 }}
-                                    className="bg-orange-50 border border-orange-100 rounded-2xl p-6 flex flex-col gap-3"
-                                >
-                                    <span className="text-3xl">{benefit.icon}</span>
-                                    <h3 className="text-slate-800 font-bold text-base">{benefit.title}</h3>
-                                    <p className="text-slate-500 text-sm leading-relaxed">{benefit.description}</p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <CTABanner />
-        </main>
+    window.open(
+      `https://wa.me/${GAUSEVA_WHATSAPP}?text=${encodeURIComponent(
+        whatsappMessage,
+      )}`,
+      "_blank",
+      "noopener,noreferrer",
     );
+  }
+
+  return (
+    <main className="min-h-screen overflow-hidden bg-[#f7f3e9] text-[#17352d]">
+      {/* HERO — intentionally preserved from the existing page */}
+      <section className="relative isolate min-h-[760px] overflow-hidden bg-[#10241e]">
+        <img
+          src={HEADER_IMAGE}
+          alt="Comet Gauseva Kendra in the Himalayas"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          fetchPriority="high"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071610]/90 via-[#071610]/52 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#071610]/85 via-transparent to-[#071610]/10" />
+        <div className="relative z-10 mx-auto flex min-h-[760px] max-w-7xl items-end px-5 pb-16 sm:px-8 sm:pb-20 lg:px-10 lg:pb-24">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#f2d487] backdrop-blur-md">
+              <Heart className="h-3.5 w-3.5" /> CHP Cow-Care Centre
+            </div>
+            <h1 className="mt-6 font-serif text-5xl leading-[0.9] tracking-[-0.04em] text-white sm:text-6xl lg:text-8xl">
+              Comet<span className="block text-[#f2d487]">Gauseva Kendra.</span>
+            </h1>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl">
+              A compassionate initiative in the Himalayas providing shelter, protection and care for abandoned, injured and aging cows — while connecting care with land, livelihoods and community.
+            </p>
+
+            <div className="mt-8 grid max-w-2xl grid-cols-2 gap-y-4 sm:grid-cols-4 sm:gap-0">
+              {[
+                ["Cow Care", Heart],
+                ["Organic Farming", Leaf],
+                ["Rural Livelihoods", Users],
+                ["A Greener Himalaya", Sprout],
+              ].map(([label, Icon], index) => {
+                const C = Icon as typeof Heart;
+                return (
+                  <div
+                    key={String(label)}
+                    className={`flex items-center gap-2 ${
+                      index > 0
+                        ? "sm:border-l sm:border-white/25 sm:pl-5"
+                        : ""
+                    }`}
+                  >
+                    <C className="h-5 w-5 text-[#f2d487]" />
+                    <span className="text-xs font-semibold text-white/80 sm:text-sm">
+                      {String(label)}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#membership"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#f2d487] px-7 py-4 text-sm font-bold text-[#17352d] transition hover:bg-[#ffe4a0]"
+              >
+                Support Gauseva <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#sustainability"
+                className="inline-flex items-center justify-center gap-3 rounded-full border border-white/25 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/15"
+              >
+                Explore the model <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/10 bg-[#071610]/70 backdrop-blur-xl">
+          <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-white/10 sm:grid-cols-4">
+            {[
+              ["Care", Heart],
+              ["Organic farming", Leaf],
+              ["Rural livelihoods", Users],
+              ["Community", Shield],
+            ].map(([label, Icon], i) => {
+              const C = Icon as typeof Heart;
+              return (
+                <div
+                  key={String(label)}
+                  className={`flex items-center gap-3 px-4 py-4 ${
+                    i > 1 ? "hidden sm:flex" : ""
+                  } sm:px-7`}
+                >
+                  <C className="h-5 w-5 text-[#f2d487]" />
+                  <span className="text-xs font-semibold text-white/75 sm:text-sm">
+                    {String(label)}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* VISION & MISSION */}
+      <section className="bg-white px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading title="Vision & Mission" />
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+            <article className="rounded-[2rem] bg-[#17352d] p-8 text-white shadow-[0_25px_70px_-45px_rgba(20,45,37,0.7)] sm:p-10">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#f2d487]/10 text-[#f2d487]">
+                <Heart className="h-6 w-6" />
+              </div>
+              <h3 className="mt-7 font-serif text-3xl">Vision</h3>
+              <p className="mt-5 text-lg leading-8 text-white/78">
+                To create a compassionate and sustainable ecosystem where every cow is respected, protected and nurtured, while contributing to rural livelihoods, organic farming and spiritual harmony.
+              </p>
+            </article>
+
+            <article className="rounded-[2rem] border border-[#ded7c8] bg-[#f7f3e9] p-8 sm:p-10">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#17352d] text-[#f2d487]">
+                <Shield className="h-6 w-6" />
+              </div>
+              <h3 className="mt-7 font-serif text-3xl">Mission</h3>
+              <p className="mt-5 text-lg leading-8 text-[#5f6c66]">
+                To rescue, shelter and care for abandoned, injured and aging cows in a safe and loving environment.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* INTRODUCTION + SELF-SUSTAINING MODEL */}
+      <section className="bg-[#f7f3e9] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
+            <div className="rounded-[2rem] border border-[#ded7c8] bg-white p-8 sm:p-10">
+              <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-[#96752f]">
+                CHP Gauseva Kendra
+              </p>
+              <p className="mt-6 text-xl font-medium leading-9 text-[#17352d] sm:text-2xl">
+                Everyone can contribute. Give your time, skills, resources or support and become part of the journey from neglect to nurture.
+              </p>
+              <p className="mt-6 text-base leading-8 text-[#5f6c66]">
+                CHP Gauseva Kendra is an initiative focused on providing shelter, protection and compassionate care to abandoned, injured and aging cows. It is located in Pithoragarh, Uttarakhand, at Sinakhola village, Paleta.
+              </p>
+              <p className="mt-5 text-base leading-8 text-[#5f6c66]">
+                The initiative is built around the idea that caring for cows can also contribute to rural livelihoods, organic farming, environmental sustainability and community participation.
+              </p>
+              <div className="mt-8 rounded-2xl bg-[#17352d] p-6 text-white">
+                <p className="font-serif text-2xl">Let’s join hands to provide food, shelter and protection to abandoned cows.</p>
+              </div>
+            </div>
+
+            <div id="sustainability" className="rounded-[2rem] bg-[#102a23] p-8 text-white sm:p-10">
+              <SectionHeading
+                title="Building a Self-Sustaining Gauseva Model"
+                description="A major focus of the initiative is to move beyond dependence on donations and develop a self-sustaining model."
+                light
+              />
+              <p className="mt-8 text-sm font-semibold uppercase tracking-[0.2em] text-[#f2d487]">
+                The proposed sustainability approach includes:
+              </p>
+              <div className="mt-6 space-y-3">
+                {sustainabilityApproach.map(([number, text, Icon]) => {
+                  const C = Icon as typeof Heart;
+                  return (
+                    <div
+                      key={number}
+                      className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.045] p-4"
+                    >
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f2d487]/10 font-serif text-sm text-[#f2d487]">
+                        {number}
+                      </span>
+                      <div className="flex gap-3">
+                        <C className="mt-1 h-4 w-4 shrink-0 text-[#f2d487]" />
+                        <p className="text-sm leading-6 text-white/72">{text}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OUR SUSTAINABILITY MODEL */}
+      <section className="bg-white px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            title="Our Sustainability Model"
+            description="Care for cows. Cultivate the land. Create livelihoods. Build a sustainable community."
+          />
+
+          <div className="mt-12 rounded-[2rem] bg-[#17352d] p-7 text-white sm:p-10">
+            <div className="grid gap-3 md:grid-cols-5">
+              {[
+                ["Care for cows", Heart],
+                ["Cultivate the land", Leaf],
+                ["Create livelihoods", Users],
+                ["Build a sustainable community", Sprout],
+                ["Self-sustaining cow care", PawPrint],
+              ].map(([title, Icon], index) => {
+                const C = Icon as typeof Heart;
+                return (
+                  <div key={String(title)} className="relative rounded-2xl border border-white/10 bg-white/[0.045] p-5">
+                    <C className="h-5 w-5 text-[#f2d487]" />
+                    <p className="mt-5 font-serif text-xl">{String(title)}</p>
+                    {index < 4 && (
+                      <ArrowRight className="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-[#f2d487] md:block" />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW YOU CAN SUPPORT */}
+      <section className="bg-[#f7f3e9] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            title="How You Can Support"
+            description="CHP Gauseva Kendra provides a broad range of participation opportunities."
+          />
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
+            {supportAreas.map(({ title, icon: Icon, items }) => (
+              <article
+                key={title}
+                className="rounded-[2rem] border border-[#ded7c8] bg-white p-7 shadow-[0_20px_55px_-40px_rgba(20,45,37,0.55)] sm:p-9"
+              >
+                <div className="flex items-start gap-5">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#17352d] text-[#f2d487]">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-serif text-2xl leading-tight text-[#17352d] sm:text-3xl">
+                      {title}
+                    </h3>
+                    <div className="mt-6">
+                      <PdfBulletList items={items} />
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-5 rounded-[2rem] border border-[#ded7c8] bg-white p-7 sm:p-9">
+            <div className="flex items-center gap-4">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#f7f3e9] text-[#96752f]">
+                <Users className="h-5 w-5" />
+              </div>
+              <h3 className="font-serif text-2xl text-[#17352d] sm:text-3xl">
+                Community Participation
+              </h3>
+            </div>
+            <p className="mt-6 max-w-4xl text-base leading-8 text-[#5f6c66]">
+              The initiative also invites people to contribute their time, skills, networks and outreach, not only money.
+            </p>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-[#96752f]">
+              Possible participation includes:
+            </p>
+            <div className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+              {communityParticipation.map((item) => (
+                <div key={item} className="flex gap-3 text-sm leading-6 text-[#5f6c66]">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-[#96752f]" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ORGANIC FARMING & RURAL DEVELOPMENT */}
+      <section className="bg-[#102a23] px-5 py-20 text-white sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            title="Organic Farming & Rural Development"
+            description="The 11+ hectare village environment provides an opportunity to integrate Gauseva with organic farming and rural development."
+            light
+          />
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
+            <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-7 sm:p-9">
+              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#f2d487]">
+                Our ecosystem include:
+              </p>
+              <div className="mt-7 space-y-3">
+                {[
+                  ["Gauseva", Heart],
+                  ["Organic Farming", Leaf],
+                  ["Cow By-products", Wheat],
+                  ["Sustainable Agriculture", Sprout],
+                  ["Rural Livelihoods", Users],
+                  ["Self-Sustaining Cow Care", PawPrint],
+                ].map(([label, Icon], index) => {
+                  const C = Icon as typeof Heart;
+                  return (
+                    <div key={String(label)} className="flex items-center gap-4">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f2d487]/10 text-[#f2d487]">
+                        <C className="h-4 w-4" />
+                      </span>
+                      <span className="text-base font-medium text-white/78">{String(label)}</span>
+                      {index < 5 && <ArrowRight className="ml-auto hidden h-4 w-4 text-[#f2d487]/60 sm:block" />}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-between rounded-[2rem] border border-[#f2d487]/20 bg-[#f2d487]/[0.06] p-7 sm:p-9">
+              <div>
+                <p className="font-serif text-3xl leading-tight text-[#f7e7b5] sm:text-4xl">
+                  Gauseva → Organic Farming → Cow By-products → Sustainable Agriculture → Rural Livelihoods → Self-Sustaining Cow Care
+                </p>
+              </div>
+              <p className="mt-10 border-t border-white/10 pt-6 text-base leading-8 text-white/65">
+                This can become one of the important differentiators of the CHP initiative.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BENEFITS & ENGAGEMENT OPPORTUNITIES */}
+      <section className="bg-white px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            title="Benefits & Engagement Opportunities"
+            description="The document describes different engagement opportunities for individual contributors and organisations."
+          />
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <article className="rounded-[2rem] border border-[#ded7c8] bg-[#f7f3e9] p-7 sm:p-10">
+              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#96752f]">
+                Engagement opportunity
+              </p>
+              <h3 className="mt-3 font-serif text-3xl text-[#17352d]">
+                For Individual Contributors
+              </h3>
+              <div className="mt-8">
+                <PdfBulletList items={individualBenefits} />
+              </div>
+            </article>
+
+            <article className="rounded-[2rem] bg-[#17352d] p-7 text-white sm:p-10">
+              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#f2d487]">
+                Engagement opportunity
+              </p>
+              <h3 className="mt-3 font-serif text-3xl">
+                For Organisations
+              </h3>
+              <div className="mt-8">
+                <PdfBulletList items={organisationOpportunities} light />
+              </div>
+            </article>
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-[#d9cdb5] bg-[#fffaf0] p-5 sm:p-6">
+            <p className="text-sm leading-7 text-[#665f50]">
+              <strong className="text-[#403b32]">Website note:</strong> Tax benefits, donation deductions, CSR eligibility and any promised financial/land-related benefits should be legally and tax reviewed before publishing as definitive claims.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* MEMBERSHIP / JOIN US */}
+      <section id="membership" className="bg-[#f7f3e9] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading title="Membership / Join Us" />
+
+          <div className="mt-12 overflow-hidden rounded-[2rem] bg-[#0b1d18] text-white shadow-[0_30px_90px_-45px_rgba(20,45,37,0.8)]">
+            <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
+              <div className="p-8 sm:p-10 lg:p-12">
+                <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-[#f2d487]">
+                  Join the CHP Gauseva Initiative
+                </p>
+                <h2 className="mt-4 font-serif text-4xl leading-tight tracking-[-0.03em] sm:text-5xl">
+                  Join the CHP Gauseva Initiative
+                </h2>
+                <p className="mt-6 text-base leading-8 text-white/62">
+                  Everyone can contribute through care, membership, sponsorship, donations, volunteering, infrastructure support, partnerships or a visit to CHP Gauseva Kendra.
+                </p>
+
+                <div className="mt-9 grid gap-3 sm:grid-cols-2">
+                  {membershipOptions.map(([label, Icon]) => {
+                    const C = Icon as typeof Heart;
+                    return (
+                      <a
+                        href="#membership-form"
+                        key={String(label)}
+                        className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.045] p-4 transition hover:-translate-y-0.5 hover:bg-white/[0.08]"
+                      >
+                        <span className="text-sm font-semibold text-white/80">
+                          {String(label)}
+                        </span>
+                        <C className="h-4 w-4 text-[#f2d487] transition group-hover:scale-110" />
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div id="membership-form" className="border-t border-white/10 bg-white/[0.035] p-6 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
+                <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#f2d487]">
+                  Contact CHP
+                </p>
+                <h3 className="mt-3 font-serif text-3xl">
+                  Tell us how you would like to participate.
+                </h3>
+
+                <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <label className="block">
+                      <span className="mb-2 block text-sm font-semibold text-white/80">
+                        Full name *
+                      </span>
+                      <input
+                        name="name"
+                        required
+                        placeholder="Your name"
+                        className="w-full rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-3.5 text-sm text-white outline-none placeholder:text-white/35 focus:border-[#f2d487]/70"
+                      />
+                    </label>
+
+                    <label className="block">
+                      <span className="mb-2 block text-sm font-semibold text-white/80">
+                        Email *
+                      </span>
+                      <input
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="you@example.com"
+                        className="w-full rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-3.5 text-sm text-white outline-none placeholder:text-white/35 focus:border-[#f2d487]/70"
+                      />
+                    </label>
+                  </div>
+
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <label className="block">
+                      <span className="mb-2 block text-sm font-semibold text-white/80">
+                        Phone / WhatsApp *
+                      </span>
+                      <input
+                        name="phone"
+                        type="tel"
+                        required
+                        placeholder="+91 XXXXX XXXXX"
+                        className="w-full rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-3.5 text-sm text-white outline-none placeholder:text-white/35 focus:border-[#f2d487]/70"
+                      />
+                    </label>
+
+                    <label className="block">
+                      <span className="mb-2 block text-sm font-semibold text-white/80">
+                        I am interested in *
+                      </span>
+                      <select
+                        name="interest"
+                        required
+                        defaultValue=""
+                        className="w-full rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-3.5 text-sm text-white outline-none focus:border-[#f2d487]/70"
+                      >
+                        <option value="" disabled className="text-black">
+                          Select an option
+                        </option>
+                        {membershipOptions.map(([label]) => (
+                          <option key={String(label)} className="text-black">
+                            {String(label)}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                  </div>
+
+                  <label className="block">
+                    <span className="mb-2 block text-sm font-semibold text-white/80">
+                      Message
+                    </span>
+                    <textarea
+                      name="message"
+                      rows={5}
+                      placeholder="Tell us how you would like to contribute..."
+                      className="w-full resize-y rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-3.5 text-sm leading-6 text-white outline-none placeholder:text-white/35 focus:border-[#f2d487]/70"
+                    />
+                  </label>
+
+                  <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="max-w-md text-xs leading-5 text-white/42">
+                      Your enquiry opens in WhatsApp with the information you enter.
+                    </p>
+                    <button
+                      type="submit"
+                      className="inline-flex items-center justify-center gap-3 rounded-full bg-[#f2d487] px-7 py-4 text-sm font-bold text-[#17352d] transition hover:bg-[#ffe4a0]"
+                    >
+                      Send enquiry <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </div>
+
+                  {submitted && (
+                    <p className="rounded-xl border border-[#f2d487]/20 bg-[#f2d487]/10 px-4 py-3 text-sm text-[#f7e7b5]">
+                      Your WhatsApp enquiry has been prepared.
+                    </p>
+                  )}
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-[#ded7c8] bg-white px-5 py-8 text-center text-xs leading-6 text-[#77817c] sm:px-8">
+        CHP Gauseva Kendra · Sinakhola village, Paleta · Pithoragarh, Uttarakhand
+      </footer>
+    </main>
+  );
 }

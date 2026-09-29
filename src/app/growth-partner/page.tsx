@@ -2,614 +2,1024 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-    TrendingUp,
-    Building2,
-    ShieldCheck,
-    Compass,
-    Users,
-    Award,
-    Sparkles,
-    CheckCircle2,
-    ArrowRight,
-    Mail,
-    Phone,
-    Briefcase,
-    Leaf,
-    ChevronRight,
-    DollarSign,
-    Globe,
-    PieChart,
-    Handshake,
-    Send,
+  ArrowRight,
+  BriefcaseBusiness,
+  Building2,
+  CalendarDays,
+  Check,
+  CheckCircle2,
+  Handshake,
+  Leaf,
+  Megaphone,
+  Mountain,
+  Network,
+  Percent,
+  Send,
+  Sparkles,
+  Star,
+  Target,
+  TrendingUp,
+  Users,
+  WalletCards,
 } from "lucide-react";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
-const partnerVerticals = [
-    {
-        title: "Eco-Resorts & Luxury Stays",
-        category: "Hospitality Venture",
-        description:
-            "Collaborate on establishing premium eco-lodges, pine wood chalets, and heritage Kumaoni home-resorts in high-demand Himalayan locations.",
-        metrics: "Expected ROI: 18% – 24% p.a.",
-        image:
-            "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80&auto=format&fit=crop",
-        features: [
-            "Turnkey architecture & design",
-            "High occupancy seasonal management",
-            "Zero-footprint eco technology",
-        ],
-    },
-    {
-        title: "Expedition & Outdoor Sports Franchise",
-        category: "Adventure Tourism",
-        description:
-            "Co-brand and operate specialized trekking, white-water rafting, mountain cycling, and high-altitude expedition centers backed by CHP's safety protocols.",
-        metrics: "Scalable Multi-Location Model",
-        image:
-            "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=800&q=80&auto=format&fit=crop",
-        features: [
-            "Access to 20+ certified trek routes",
-            "Centralized gear & equipment pool",
-            "Rescue & medical support network",
-        ],
-    },
-    {
-        title: "Himalayan Organic & Herbal Farming",
-        category: "Agri-Tourism & Wellness",
-        description:
-            "Develop organic herbal estates, Gaushala wellness sanctuaries, and farm-to-table culinary destinations integrated with local Himalayan farmers.",
-        metrics: "Sustainable Local Impact",
-        image:
-            "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&q=80&auto=format&fit=crop",
-        features: [
-            "Medicinal herb cultivation",
-            "A2 Organic dairy & honey brand",
-            "Direct-to-consumer distribution",
-        ],
-    },
-    {
-        title: "Land & Mountain Infrastructure Collaboration",
-        category: "Real Estate & Asset Partner",
-        description:
-            "Unlock high-value scenic Himalayan land parcels for sustainable eco-tourism developments, glamping sanctuaries, and second-home enclaves.",
-        metrics: "Long-Term Asset Appreciation",
-        image:
-            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80&auto=format&fit=crop",
-        features: [
-            "Clear legal titles & local compliance",
-            "Infrastructure & road access",
-            "Joint venture revenue share",
-        ],
-    },
+const HEADER_IMAGE =
+  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ef39ec48-1b22-4b32-9fb6-83caf51fa84e-chp-growth-partnership-header-under-500kb.webp";
+
+const ecosystem = [
+  {
+    title: "Hospitality",
+    text: "Hospitality opportunities within the CHP Himalayan Ecosystem.",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ea9d5a29-444d-466f-9c4e-c6e97d747ec2-hospitality-stays-1.webp",
+    icon: Building2,
+  },
+  {
+    title: "Himalayan Experiences",
+    text: "Experiences and offerings connected to the Himalayan ecosystem.",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/affa9b38-a1fd-48ba-8040-f954839807b5-himalayan-experiences.jpg",
+    icon: Mountain,
+  },
+  {
+    title: "Tourism & Adventure",
+    text: "Tourism and adventure opportunities within the integrated ecosystem.",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6a94f636-fbe3-498a-a43a-8eb27a69761d-adventure-tourism.jpg",
+    icon: Target,
+  },
+  {
+    title: "Wellness",
+    text: "Wellness opportunities connected with the CHP ecosystem.",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4b7c56df-d9d5-4eed-98e8-ae8bcdd4e8a6-wellness-retreats.jpg",
+    icon: Sparkles,
+  },
+  {
+    title: "Agriculture",
+    text: "Agriculture and purpose-driven rural opportunities.",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ea158d98-ba6f-4911-bfdc-a17f411e4409-agriculture-local-products.jpg",
+    icon: Leaf,
+  },
+  {
+    title: "Events",
+    text: "Events and opportunities that connect people with the ecosystem.",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/85ede835-5902-4f80-9a9d-58aba6710810-events-experiences.jpg",
+    icon: CalendarDays,
+  },
+  {
+    title: "Infrastructure",
+    text: "Infrastructure and development opportunities within CHP.",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/e557bbdd-20e8-4bdb-9fce-9a48196598d8-infrastructure-development.jpg",
+    icon: Building2,
+  },
+  {
+    title: "Purpose-Driven Initiatives",
+    text: "Purpose-driven initiatives within the integrated CHP ecosystem.",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4b7c56df-d9d5-4eed-98e8-ae8bcdd4e8a6-wellness-retreats.jpg",
+    icon: Handshake,
+  },
 ];
 
-const growthModels = [
-    {
-        icon: PieChart,
-        title: "Revenue Sharing Model",
-        subtitle: "Low Risk, Shared Prosperity",
-        details:
-            "Partner with CHP by contributing operational capital or property assets and earn a transparent percentage of quarterly gross revenues across bookings.",
-    },
-    {
-        icon: Handshake,
-        title: "Joint Venture (JV) Partnership",
-        subtitle: "Strategic Co-Ownership",
-        details:
-            "Co-invest in flagship CHP projects with structured equity distribution, shared board governance, and joint decision-making rights.",
-    },
-    {
-        icon: Building2,
-        title: "Franchise & Management Contract",
-        subtitle: "Powered by CHP Brand",
-        details:
-            "Leverage CHP's brand equity, reservation engine, marketing reach, and hospitality standard operating procedures (SOPs) for your mountain resort.",
-    },
+const potentialPartners = [
+  {
+    title: "Business Professionals",
+    text: "People with strong professional and business networks who can introduce CHP to potential customers, investors and collaborators.",
+    icon: BriefcaseBusiness,
+  },
+  {
+    title: "Marketing Professionals & Agencies",
+    text: "Partners who can support CHP through digital marketing, social media, branding, content and promotional campaigns.",
+    icon: Megaphone,
+  },
+  {
+    title: "Travel & Tourism Partners",
+    text: "Tour operators, travel professionals, adventure companies and destination promoters interested in Himalayan tourism.",
+    icon: Mountain,
+  },
+  {
+    title: "Community & Network Leaders",
+    text: "Individuals with strong networks in housing societies, professional groups, business communities and social organizations.",
+    icon: Network,
+  },
+  {
+    title: "Entrepreneurs & Business Associates",
+    text: "People looking to develop or promote business opportunities within the CHP ecosystem.",
+    icon: TrendingUp,
+  },
+  {
+    title: "Referral Partners",
+    text: "Individuals who can introduce prospective cottage owners, facility partners, customers or business collaborators to CHP.",
+    icon: Handshake,
+  },
 ];
 
-const partnerPerks = [
-    "Direct access to CHP's global traveler base & booking funnel",
-    "Centralized marketing, PR, and social media campaigns",
-    "Dedicated Partner Relationship Manager & financial reporting portal",
-    "Complimentary stay passes across all CHP properties for partners",
-    "Local administrative support and environmental regulatory compliance",
-    "Priority investment rights in upcoming CHP flagship expansion sites",
+const contributionSteps = [
+  {
+    number: "01",
+    title: "Promote CHP",
+    intro: "Help introduce CHP to relevant audiences through:",
+    items: [
+      "Social media",
+      "Digital campaigns",
+      "Personal and professional networks",
+      "Offline campaigns",
+      "Business communities",
+      "Events and presentations",
+      "Influencer outreach",
+      "Word-of-mouth promotion",
+    ],
+    icon: Megaphone,
+  },
+  {
+    number: "02",
+    title: "Generate Leads",
+    intro: "Identify and introduce potential:",
+    items: [
+      "Cottage owners",
+      "Facility partners",
+      "Investors",
+      "Business collaborators",
+      "Tourists and guests",
+      "Corporate groups",
+      "Institutional partners",
+      "Entrepreneurs",
+    ],
+    icon: Users,
+  },
+  {
+    number: "03",
+    title: "Strengthen the CHP Brand",
+    intro:
+      "Work with the CHP team to communicate the vision, opportunities and experiences available within the Himalayan ecosystem.",
+    items: [],
+    icon: Star,
+  },
+  {
+    number: "04",
+    title: "Build Business Connections",
+    intro:
+      "Connect CHP with organizations, companies, communities, entrepreneurs and individuals who can contribute to the development of new business opportunities.",
+    items: [],
+    icon: Network,
+  },
+  {
+    number: "05",
+    title: "Refer New Opportunities",
+    intro:
+      "Growth Partners can refer prospective participants for plot-based cottage development and facility development, subject to CHP's applicable terms and agreements.",
+    items: [],
+    icon: Handshake,
+  },
 ];
 
-const faqs = [
-    {
-        q: "Who can become a CHP Business Growth Partner?",
-        a: "We welcome landowners in Himalayan regions, hospitality investors, adventure tour operators, eco-entrepreneurs, and individuals passionate about sustainable mountain tourism.",
-    },
-    {
-        q: "What is the minimum capital or asset requirement?",
-        a: "Partner options vary depending on the vertical. Franchise and equipment partnerships start with flexible tiers, while property JVs depend on land size and location.",
-    },
-    {
-        q: "How does CHP ensure environmental sustainability?",
-        a: "All CHP ventures strictly follow zero-waste policies, solar energy utilization, local Kumaoni architecture, and rainwater harvesting, preserving the pristine Himalayan ecosystem.",
-    },
-    {
-        q: "What support does CHP provide to Growth Partners?",
-        a: "CHP handles guest acquisition, digital marketing, staff training, safety audits, menu planning, equipment maintenance, and overall brand compliance.",
-    },
+const benefits = [
+  {
+    title: "Referral Benefits",
+    text: "Eligible Growth Partners can receive agreed referral-related benefits for successful registrations.",
+    icon: WalletCards,
+  },
+  {
+    title: "Partner Discounts",
+    text: "Under the current partnership framework, the CHP Founder and immediate relatives of an eligible CGP may receive a 25% discount on plot rates for a maximum of two referrals, subject to applicable terms.",
+    icon: Percent,
+  },
+  {
+    title: "Complimentary CHP Stay",
+    text: "The current framework provides for a complimentary 3-day stay in the CHP guest house, subject to availability, for the eligible Growth Partner Founder and immediate family members.",
+    icon: Mountain,
+  },
+  {
+    title: "Access to CHP Experiences",
+    text: "During eligible stays, Growth Partners can receive privileged access to CHP amenities and experiences, including Organic Farm, Gauseva Kendra, Yoga Camp, Holiday Camp activities, and other on-campus facilities and experiences.",
+    icon: Sparkles,
+  },
+  {
+    title: "Performance-Based Commercial Benefits",
+    text: "Under the current framework, eligible CGPs may be authorized to offer CHP plots at an agreed discounted rate, with commission payouts linked to successful plot registration.",
+    icon: TrendingUp,
+  },
+];
+
+const whatChpProvides = [
+  "CHP brand and business information",
+  "Marketing and promotional material",
+  "Partnership information",
+  "Product and facility details",
+  "Coordination with the CHP team",
+  "Support for outreach initiatives",
+  "Lead and referral coordination",
+  "Information required for prospective customers and partners",
+  "Agreed commercial and partnership terms",
+];
+
+const expectations = [
+  "Represent CHP accurately and professionally",
+  "Use approved CHP information and marketing material",
+  "Maintain transparency with prospective customers and partners",
+  "Coordinate leads with the CHP team",
+  "Follow agreed pricing and commercial terms",
+  "Respect confidentiality where applicable",
+  "Support timely communication and follow-up",
+  "Work within the mutually agreed partnership framework",
+];
+
+const networkOpportunities = [
+  "A Himalayan second home",
+  "A holiday cottage",
+  "A hospitality opportunity",
+  "A tourism business",
+  "An adventure venture",
+  "A wellness destination",
+  "An agricultural or rural enterprise",
+  "A destination for events and celebrations",
+  "A new business opportunity in Uttarakhand",
+];
+
+const whyJoin = [
+  {
+    title: "One Ecosystem. Multiple Opportunities.",
+    text: "CHP brings multiple Himalayan business and experience opportunities together within one ecosystem.",
+    icon: Network,
+  },
+  {
+    title: "Local Himalayan Connection",
+    text: "Work with a team developing opportunities on the ground in the Himalayan region.",
+    icon: Mountain,
+  },
+  {
+    title: "Multiple Business Verticals",
+    text: "Explore hospitality, tourism, adventure, wellness, agriculture, events, infrastructure and other emerging opportunities.",
+    icon: Building2,
+  },
+  {
+    title: "Collaborative Growth",
+    text: "Build relationships with entrepreneurs, customers, investors, organizations and communities.",
+    icon: Users,
+  },
+  {
+    title: "Performance-Linked Benefits",
+    text: "The partnership framework connects contribution and performance with agreed commercial and experiential benefits.",
+    icon: TrendingUp,
+  },
+  {
+    title: "Long-Term Relationship",
+    text: "The objective is to build lasting relationships rather than one-time transactions.",
+    icon: Handshake,
+  },
 ];
 
 export default function GrowthPartnerPage() {
-    const [formSubmitted, setFormSubmitted] = useState(false);
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        city: "",
-        category: "Eco-Resorts & Stays",
-        investmentTier: "INR 25L - 50L",
-        message: "",
-    });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    city: "",
+    interest: "Business & Professional Network",
+    message: "",
+  });
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setFormSubmitted(true);
-    };
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setFormSubmitted(true);
+  };
 
-    return (
-        <main className="min-h-screen bg-slate-900 text-slate-100 pt-20">
-            {/* Hero Section */}
-                        <section className="relative py-12 lg:py-16 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 border-b border-slate-800">
-                <div className="absolute inset-0 z-0 opacity-25">
-                    <Image
-                        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80&auto=format&fit=crop"
-                        alt="Himalayan Mountain Range"
-                        fill
-                        priority
-                        className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent" />
+  return (
+    <main className="min-h-screen overflow-hidden bg-[#f5f1e8] text-[#14231f]">
+      {/* HERO */}
+      <section id="growth-partner-hero" className="relative isolate min-h-[78vh] overflow-hidden bg-slate-950">
+        <Image
+          src={HEADER_IMAGE}
+          alt="CHP Growth Partnership in the Himalayas"
+          fill
+          unoptimized
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+
+        {/* Subtle darkening — keeps the supplied header artwork visible */}
+        <div className="absolute inset-0 bg-black/10" />
+
+        {/* Hero content aligned like the CHP Biz Partnership hero */}
+        <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-7xl flex-col items-center px-6 pt-16 pb-12 text-center sm:px-8 sm:pt-20 sm:pb-14 lg:px-10 lg:pt-24 lg:pb-16">
+          {/* Dark-green CHP label */}
+          <div className="inline-flex items-center rounded-full border border-white/20 bg-emerald-950/90 px-4 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.22)] backdrop-blur-md sm:px-5 sm:py-2.5">
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white sm:text-xs sm:tracking-[0.22em]">
+              CHP Growth Partnership
+            </span>
+          </div>
+
+          {/* Title */}
+          <div className="mt-5 w-full max-w-6xl text-white sm:mt-6">
+            <h1 className="mx-auto max-w-5xl font-serif text-[2.35rem] font-bold leading-[1.08] tracking-[-0.03em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:text-4xl md:text-[2.75rem] lg:text-[3.15rem] xl:text-[3.35rem]">
+              <span className="block">Grow with CHP.</span>
+              <span className="mt-1 block text-[#f3c96b]">
+                Build opportunities
+              </span>
+              <span className="mt-1 block">in the Himalayas.</span>
+            </h1>
+
+            {/* Description */}
+            <p className="mx-auto mt-5 max-w-3xl text-[14px] leading-6 text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] sm:mt-6 sm:text-[15px] sm:leading-6.5 lg:text-base lg:leading-7">
+              Be part of a{" "}
+              <strong className="font-semibold text-white">
+                purpose-driven ecosystem
+              </strong>{" "}
+              bringing together{" "}
+              <strong className="font-semibold text-white">
+                hospitality, tourism, adventure, wellness, agriculture, events,
+                infrastructure and other opportunities
+              </strong>{" "}
+              across the Himalayas.
+            </p>
+          </div>
+
+          {/* Buttons aligned and sized like CHP Biz Partnership */}
+          <div className="mt-6 flex w-full flex-wrap justify-center gap-2.5 sm:mt-7 sm:gap-3">
+            <a
+              href="#apply-partner"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#f3c96b] px-5 py-2.5 text-xs font-semibold text-[#14231f] shadow-lg shadow-black/10 transition duration-200 hover:-translate-y-0.5 hover:bg-[#ffe09a] sm:px-5.5 sm:py-2.5 sm:text-sm"
+            >
+              Become a Growth Partner
+              <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+            </a>
+
+            <a
+              href="#program"
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-black/10 px-5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-black/10 backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-black/15 sm:px-5.5 sm:py-2.5 sm:text-sm"
+            >
+              Explore the partnership
+              <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT IS CHP GROWTH PARTNERSHIP? */}
+      <section id="program" className="scroll-mt-24 bg-[#f5f1e8] py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:px-10">
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="lg:col-span-5"
+          >
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
+              CHP Growth Partnership
+            </p>
+            <h2 className="mt-4 font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
+              What is CHP Growth Partnership?
+            </h2>
+            <p className="mt-6 text-base leading-8 text-[#50605a]">
+              CHP Growth Partnership is a collaborative business-development model where partners help expand the CHP ecosystem through:
+            </p>
+
+            <div className="mt-7 space-y-3">
+              {[
+                "Digital marketing and social media promotion",
+                "Brand awareness and outreach",
+                "Lead generation",
+                "Customer and investor referrals",
+                "Business networking",
+                "Facility and cottage development referrals",
+                "Strategic collaborations",
+                "Local and regional business development",
+                "Promotion of CHP experiences and offerings",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-start gap-3 rounded-2xl border border-[#ddd6c8] bg-white/70 p-4 text-sm font-medium leading-6"
+                >
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#8d6a2d]" />
+                  <span>{item}</span>
                 </div>
-                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-                    <div className="lg:col-span-7">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-6"
-                        >
-                            <TrendingUp className="w-3.5 h-3.5" />
-                            <span>CHP Business Growth Partner Program</span>
-                        </motion.div>
+              ))}
+            </div>
 
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.1 }}
-                            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight"
-                        >
-                                                       Building the Himalayan Ecosystem,{" "}
-                            <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-emerald-400 bg-clip-text text-transparent">
-                                Together
-                            </span>
-                        </motion.h1>
+            <div className="mt-7 rounded-2xl border border-[#d8cba9] bg-[#fff8df] p-5 text-sm leading-7 text-[#5e553d]">
+              The partnership is designed around a mutually agreed, target-based framework, with benefits linked to the contribution and performance of the Growth Partner.
+            </div>
+          </motion.div>
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                            className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed font-light"
-                        >
-                            CHP Growth Partners are the driving force behind the expansion of the CHP ecosystem. From cottage owners and facility owners to marketing heads, referral partners, and business associates, every partner plays a valuable role in creating new opportunities and strengthening the community.<br />
-Together, they contribute through hospitality, infrastructure, marketing, guest experiences, referrals, and business development—helping CHP grow into a vibrant destination for tourism, entrepreneurship, wellness, and sustainable living.<br />
-As the CHP ecosystem grows, every Growth Partner benefits from greater visibility, stronger business opportunities, increased visitor engagement, and the shared success of a thriving Himalayan community.<br />
-<br /> 
-<span className="font-semibold text-white">Contact to join CHP as a Business Growth Partner</span>
-                        </motion.p>
-
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.25 }}
-                            className="mt-6 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight"
-                        >
-                            Together Towards{" "}
-                            <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-emerald-400 bg-clip-text text-transparent">
-                                Greater Success
-                            </span>
-                        </motion.h2>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.3 }}
-                            className="mt-8 flex flex-wrap gap-4"
-                        >
-                            <a
-                                href="#apply-partner"
-                                className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-7 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-amber-500/20 flex items-center gap-2"
-                            >
-                                <span>Become a Growth Partner</span>
-                                <ArrowRight className="w-4 h-4" />
-                            </a>
-                            <a
-                                                           
-                                href="#partner-verticals"
-                                className="bg-slate-800 hover:bg-slate-700 text-white font-medium px-7 py-3.5 rounded-full border border-slate-700 transition-all duration-200"
-                            >
-                                Explore Verticals
-                            </a>
-                        </motion.div>
-                    </div>
-
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="lg:col-span-5 relative w-full h-72 sm:h-96 lg:h-[420px] rounded-2xl overflow-hidden border border-slate-700/60"
-                    >
-                        <Image
-                            src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/41e46d9a-b3ec-4d64-a91c-6476d3e30b18-scaled-cgp.webp"
-                            alt="CHP Growth Partners"
-                            fill
-                            sizes="(max-width: 1024px) 100vw, 40vw"
-                            className="object-cover"
-                        />
-                    </motion.div>
-                    </div>
-
-                    {/* Quick Metrics Bar */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl bg-slate-800/80 border border-slate-700/60 backdrop-blur-md"
-                    >
-                        <div>
-                            <div className="text-3xl font-bold text-amber-400">20+</div>
-                            <div className="text-xs text-slate-400 mt-1">Guided Trek & Expedition Routes</div>
-                        </div>
-                        <div>
-                            <div className="text-3xl font-bold text-emerald-400">95%+</div>
-                            <div className="text-xs text-slate-400 mt-1">Guest Satisfaction Rating</div>
-                        </div>
-                        <div>
-                            <div className="text-3xl font-bold text-amber-400">3.5x</div>
-                            <div className="text-xs text-slate-400 mt-1">Regional Eco-Tourism Growth</div>
-                        </div>
-                        <div>
-                            <div className="text-3xl font-bold text-emerald-400">100%</div>
-                            <div className="text-xs text-slate-400 mt-1">Turnkey Operational Support</div>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* Partnership Verticals */}
-            <section id="partner-verticals" className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <SectionHeader
-                    eyebrow="Opportunities"
-                    title="Partnership Verticals"
-                    subtitle="Select from high-yield, sustainable investment and operational channels designed for long-term growth."
-                    light
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="relative lg:col-span-7"
+          >
+            <div className="grid grid-cols-12 gap-3 sm:gap-4">
+              <div className="relative col-span-7 h-[430px] overflow-hidden rounded-[2rem]">
+                <Image
+                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ea9d5a29-444d-466f-9c4e-c6e97d747ec2-hospitality-stays-1.webp"
+                  alt="Himalayan hospitality"
+                  fill
+                  unoptimized
+                  sizes="(max-width: 1024px) 60vw, 45vw"
+                  className="object-cover transition duration-700 hover:scale-105"
                 />
-
-                <StaggerContainer className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {partnerVerticals.map((vertical) => (
-                        <StaggerItem key={vertical.title}>
-                            <div className="bg-slate-800/60 rounded-2xl overflow-hidden border border-slate-700/80 hover:border-amber-500/50 transition-all duration-300 flex flex-col h-full group">
-                                <div className="relative h-60 w-full overflow-hidden">
-                                    <Image
-                                        src={vertical.image}
-                                        alt={vertical.title}
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 50vw"
-                                        className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
-                                    <div className="absolute top-4 left-4 bg-amber-500/90 text-slate-950 font-bold text-xs uppercase px-3 py-1 rounded-full backdrop-blur-md">
-                                        {vertical.category}
-                                    </div>
-                                    <div className="absolute bottom-4 right-4 bg-emerald-950/90 border border-emerald-500/40 text-emerald-300 font-semibold text-xs px-3 py-1 rounded-full backdrop-blur-md">
-                                        {vertical.metrics}
-                                    </div>
-                                </div>
-
-                                <div className="p-6 flex-1 flex flex-col justify-between">
-                                    <div>
-                                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
-                                            {vertical.title}
-                                        </h3>
-                                        <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                                            {vertical.description}
-                                        </p>
-
-                                        <ul className="space-y-2.5 mb-6">
-                                            {vertical.features.map((feat) => (
-                                                <li key={feat} className="flex items-center gap-2 text-xs text-slate-300">
-                                                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                                                    <span>{feat}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    <a
-                                        href="#apply-partner"
-                                        className="inline-flex items-center justify-between w-full pt-4 border-t border-slate-700/60 text-sm font-semibold text-amber-400 hover:text-amber-300 transition-colors"
-                                    >
-                                        <span>Partner in this Vertical</span>
-                                        <ChevronRight className="w-4 h-4" />
-                                    </a>
-                                </div>
-                            </div>
-                        </StaggerItem>
-                    ))}
-                </StaggerContainer>
-            </section>
-
-            {/* Growth & Investment Models */}
-            <section className="py-20 bg-slate-950 border-y border-slate-800">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <SectionHeader
-                        eyebrow="Structure"
-                        title="Flexible Collaboration Models"
-                        subtitle="Choose a partnership agreement tailored to your capital capacity, land availability, and operational involvement."
-                        light
-                    />
-
-                    <StaggerContainer className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {growthModels.map((model) => {
-                            const Icon = model.icon;
-                            return (
-                                <StaggerItem key={model.title}>
-                                    <div className="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all duration-300 h-full flex flex-col justify-between">
-                                        <div>
-                                            <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-6">
-                                                <Icon className="w-6 h-6" />
-                                            </div>
-                                            <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-1">
-                                                {model.subtitle}
-                                            </div>
-                                            <h3 className="text-xl font-bold text-white mb-3">{model.title}</h3>
-                                            <p className="text-slate-400 text-sm leading-relaxed">{model.details}</p>
-                                        </div>
-                                    </div>
-                                </StaggerItem>
-                            );
-                        })}
-                    </StaggerContainer>
+              </div>
+              <div className="col-span-5 grid gap-3 sm:gap-4">
+                <div className="relative h-[205px] overflow-hidden rounded-[2rem]">
+                  <Image
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6a94f636-fbe3-498a-a43a-8eb27a69761d-adventure-tourism.jpg"
+                    alt="Himalayan tourism and adventure"
+                    fill
+                    unoptimized
+                    sizes="(max-width: 1024px) 40vw, 30vw"
+                    className="object-cover transition duration-700 hover:scale-105"
+                  />
                 </div>
-            </section>
-
-            {/* Partner Perks Grid */}
-            <section className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div className="lg:col-span-5">
-                        <span className="text-amber-400 text-xs font-semibold uppercase tracking-wider">
-                            Exclusive Benefits
-                        </span>
-                        <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 leading-tight">
-                            Why Strategic Partners Choose CHP
-                        </h2>
-                        <p className="text-slate-400 mt-4 text-base leading-relaxed">
-                            We combine deep Himalayan ground expertise, certified trek safety standards, and robust hospitality marketing to deliver effortless, high-performance ventures for our partners.
-                        </p>
-
-                        <div className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-emerald-950/60 to-slate-800/60 border border-emerald-500/30">
-                            <div className="flex items-center gap-3">
-                                <ShieldCheck className="w-8 h-8 text-emerald-400 shrink-0" />
-                                <div>
-                                    <h4 className="text-white font-semibold text-sm">Protected Partnership Ecosystem</h4>
-                                    <p className="text-slate-300 text-xs mt-0.5">
-                                        Clear legal frameworks, audited accounting, and quarterly dividend payouts.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="lg:col-span-7">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {partnerPerks.map((perk, i) => (
-                                <div
-                                    key={i}
-                                    className="p-5 rounded-xl bg-slate-800/80 border border-slate-700/80 flex items-start gap-3.5"
-                                >
-                                    <div className="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
-                                        ✓
-                                    </div>
-                                    <span className="text-slate-200 text-sm leading-snug">{perk}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                <div className="relative h-[205px] overflow-hidden rounded-[2rem]">
+                  <Image
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4b7c56df-d9d5-4eed-98e8-ae8bcdd4e8a6-wellness-retreats.jpg"
+                    alt="Himalayan wellness"
+                    fill
+                    unoptimized
+                    sizes="(max-width: 1024px) 40vw, 30vw"
+                    className="object-cover transition duration-700 hover:scale-105"
+                  />
                 </div>
-            </section>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-            {/* Application / Inquiry Form */}
-            <section id="apply-partner" className="py-20 bg-slate-950 border-t border-slate-800 scroll-mt-20">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <span className="text-amber-400 text-xs font-semibold uppercase tracking-wider">
-                            Get Started
-                        </span>
-                        <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">
-                            Apply to Become a CHP Growth Partner
-                        </h2>
-                        <p className="text-slate-400 text-sm mt-3 max-w-xl mx-auto">
-                            Submit your inquiry and our Partnership Directorate will connect with you within 24 hours to present detailed proposal specs.
-                        </p>
+      {/* WHO CAN BECOME A GROWTH PARTNER? */}
+      <section className="bg-[#0c211c] py-20 text-white sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#f3c96b]">
+              Growth Partner Network
+            </p>
+            <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+              Who Can Become a Growth Partner?
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/65">
+              The program is open to people and organizations who can contribute to the growth of CHP through their networks, expertise, business relationships or market reach.
+            </p>
+          </div>
+
+          <div className="mt-12">
+            <p className="mb-5 text-sm font-bold uppercase tracking-[0.22em] text-[#f3c96b]">
+              Potential Growth Partners
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {potentialPartners.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <motion.article
+                    key={item.title}
+                    initial={{ opacity: 0, y: 18 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.15 }}
+                    transition={{ delay: index * 0.04 }}
+                    className="group rounded-[1.5rem] border border-white/10 bg-white/[0.045] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#f3c96b]/35 hover:bg-white/[0.07]"
+                  >
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#f3c96b]/30 bg-[#f3c96b]/10 text-[#f3c96b]">
+                      <Icon className="h-5 w-5" />
                     </div>
+                    <h3 className="mt-5 font-serif text-xl">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-white/55">
+                      {item.text}
+                    </p>
+                  </motion.article>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
 
-                    {formSubmitted ? (
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            className="p-10 rounded-2xl bg-emerald-950/60 border border-emerald-500/40 text-center"
-                        >
-                            <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center mb-4">
-                                <CheckCircle2 className="w-10 h-10" />
-                            </div>
-                            <h3 className="text-2xl font-bold text-white">Application Received!</h3>
-                            <p className="text-slate-300 text-sm mt-2 max-w-md mx-auto">
-                                Thank you for your interest in joining CHP as a Business Growth Partner. Our senior strategy team will review your application and contact you directly.
-                            </p>
-                            <button
-                                onClick={() => setFormSubmitted(false)}
-                                className="mt-6 text-xs text-amber-400 hover:underline font-semibold"
-                            >
-                                Submit another inquiry
-                            </button>
-                        </motion.div>
-                    ) : (
-                        <form
-                            onSubmit={handleSubmit}
-                            className="p-8 sm:p-10 rounded-2xl bg-slate-900 border border-slate-800 shadow-2xl space-y-6"
-                        >
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-2">
-                                        Full Name *
-                                    </label>
-                                    <input
-                                        type="text"
-                                        required
-                                        placeholder="e.g. Vikram Sharma"
-                                        value={formData.name}
-                                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                        className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500 transition-colors"
-                                    />
-                                </div>
+      {/* HOW GROWTH PARTNERS CONTRIBUTE */}
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
+              Contribution
+            </p>
+            <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+              How Growth Partners Contribute
+            </h2>
+          </div>
 
-                                <div>
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-2">
-                                        Email Address *
-                                    </label>
-                                    <input
-                                        type="email"
-                                        required
-                                        placeholder="e.g. vikram@example.com"
-                                        value={formData.email}
-                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                        className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500 transition-colors"
-                                    />
-                                </div>
-                            </div>
+          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+            {contributionSteps.map((step) => {
+              const Icon = step.icon;
+              return (
+                <article
+                  key={step.number}
+                  className="rounded-[1.75rem] border border-[#ddd6c8] bg-[#faf8f2] p-7 shadow-sm sm:p-8"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="font-serif text-4xl text-[#c9ad69]">
+                      {step.number}
+                    </span>
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0c211c] text-[#f3c96b]">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                  </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-2">
-                                        Phone / WhatsApp Number *
-                                    </label>
-                                    <input
-                                        type="tel"
-                                        required
-                                        placeholder="+91 99499 94989"
-                                        value={formData.phone}
-                                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                        className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500 transition-colors"
-                                    />
-                                </div>
+                  <h3 className="mt-6 font-serif text-2xl">{step.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-[#596760]">
+                    {step.intro}
+                  </p>
 
-                                <div>
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-2">
-                                        City / Base Location *
-                                    </label>
-                                    <input
-                                        type="text"
-                                        required
-                                        placeholder="e.g. Delhi / Dehradun / Pithoragarh"
-                                        value={formData.city}
-                                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                                        className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500 transition-colors"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-2">
-                                        Preferred Partnership Vertical
-                                    </label>
-                                    <select
-                                        value={formData.category}
-                                        onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                                        className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-amber-500 transition-colors"
-                                    >
-                                        <option value="Eco-Resorts & Stays">Eco-Resorts & Luxury Stays</option>
-                                        <option value="Trek Expedition Franchise">Trek Expedition Franchise</option>
-                                        <option value="Himalayan Organic Farming">Himalayan Organic Farming</option>
-                                        <option value="Land & Infrastructure Collaboration">Land & Infrastructure Collaboration</option>
-                                        <option value="Other Business Idea">Other Custom Venture</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-2">
-                                        Estimated Capital / Asset Range
-                                    </label>
-                                    <select
-                                        value={formData.investmentTier}
-                                        onChange={(e) => setFormData({ ...formData, investmentTier: e.target.value })}
-                                        className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-amber-500 transition-colors"
-                                    >
-                                        <option value="INR 10L - 25L">INR 10 Lakhs – 25 Lakhs</option>
-                                        <option value="INR 25L - 50L">INR 25 Lakhs – 50 Lakhs</option>
-                                        <option value="INR 50L - 1Cr">INR 50 Lakhs – 1 Crore</option>
-                                        <option value="INR 1Cr+">INR 1 Crore+</option>
-                                        <option value="Land / Property Partner">Land / Property Contribution</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label className="block text-xs font-semibold uppercase text-slate-400 mb-2">
-                                    Tell us about your background or property details
-                                </label>
-                                <textarea
-                                    rows={4}
-                                    placeholder="Provide brief details about your background, property location, or specific partnership interest..."
-                                    value={formData.message}
-                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500 transition-colors"
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold py-4 rounded-xl transition-all duration-200 shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 text-base"
-                            >
-                                <Send className="w-5 h-5" />
-                                <span>Submit Growth Partner Inquiry</span>
-                            </button>
-                        </form>
-                    )}
-                </div>
-            </section>
-
-            {/* FAQ Section */}
-            <section className="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <SectionHeader
-                    eyebrow="Questions"
-                    title="Frequently Asked Questions"
-                    subtitle="Everything you need to know about partnering with CHP Himalayan Paradise."
-                    light
-                />
-
-                <div className="mt-12 space-y-4">
-                    {faqs.map((faq, i) => (
+                  {step.items.length > 0 ? (
+                    <div className="mt-5 grid gap-2 sm:grid-cols-2">
+                      {step.items.map((item) => (
                         <div
-                            key={i}
-                            className="p-6 rounded-2xl bg-slate-800/60 border border-slate-700/60"
+                          key={item}
+                          className="flex items-start gap-2 rounded-xl border border-[#e2ddd3] bg-white px-3 py-2.5 text-sm leading-5 text-[#43504b]"
                         >
-                            <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
-                            <p className="text-slate-300 text-sm leading-relaxed">{faq.a}</p>
+                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#8d6a2d]" />
+                          {item}
                         </div>
-                    ))}
+                      ))}
+                    </div>
+                  ) : null}
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* A PERFORMANCE-BASED PARTNERSHIP */}
+      <section className="relative overflow-hidden bg-[#071512] py-20 text-white sm:py-24 lg:py-28">
+        <div className="absolute inset-0 opacity-25">
+          <Image
+            src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/affa9b38-a1fd-48ba-8040-f954839807b5-himalayan-experiences.jpg"
+            alt=""
+            fill
+            unoptimized
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-[#071512]/85" />
+
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#f3c96b]">
+            Current partnership framework
+          </p>
+          <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+            A Performance-Based Partnership
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-white/65">
+            CHP Growth Partnership follows a target-based approach.
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-white/50">
+            Under the current partnership framework, the indicative performance targets include:
+          </p>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            <div className="rounded-[1.5rem] border border-white/15 bg-white/[0.07] p-7 backdrop-blur-md">
+              <Building2 className="h-7 w-7 text-[#f3c96b]" />
+              <p className="mt-7 text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+                Personal Cottage Development
+              </p>
+              <p className="mt-3 font-serif text-3xl">1 plot registration referral per quarter</p>
+            </div>
+
+            <div className="rounded-[1.5rem] border border-white/15 bg-white/[0.07] p-7 backdrop-blur-md">
+              <Building2 className="h-7 w-7 text-[#f3c96b]" />
+              <p className="mt-7 text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+                Facility Development
+              </p>
+              <p className="mt-3 font-serif text-3xl">
+                1 facility registration referral every 6 months
+              </p>
+            </div>
+          </div>
+
+          <p className="mt-7 max-w-3xl text-sm leading-7 text-white/45">
+            Specific targets, terms and applicable conditions may be mutually agreed between CHP and the individual Growth Partner.
+          </p>
+        </div>
+      </section>
+
+      {/* GROWTH PARTNER BENEFITS */}
+      <section className="bg-[#f5f1e8] py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
+              Value for both sides
+            </p>
+            <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+              Growth Partner Benefits
+            </h2>
+            <p className="mt-5 text-base leading-8 text-[#66736d]">
+              CHP believes that successful partnerships should create value for both sides.
+            </p>
+            <p className="mt-2 text-sm leading-7 text-[#66736d]">
+              Depending on the applicable partnership agreement, Growth Partners may receive benefits such as:
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+            {benefits.map((item) => {
+              const Icon = item.icon;
+              return (
+                <motion.article
+                  key={item.title}
+                  whileHover={{ y: -4 }}
+                  className="rounded-[1.5rem] border border-[#e1ddd3] bg-white p-6 shadow-sm"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0c211c] text-[#f3c96b]">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-5 font-serif text-xl">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-[#69746f]">{item.text}</p>
+                </motion.article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT CHP PROVIDES */}
+      <section className="bg-[#e9e4d9] py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="rounded-[2rem] bg-[#0c211c] p-8 text-white sm:p-10 lg:p-12">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#f3c96b]">
+              CHP support
+            </p>
+            <h2 className="mt-4 font-serif text-4xl sm:text-5xl">
+              What CHP Provides
+            </h2>
+            <p className="mt-5 max-w-3xl text-base leading-8 text-white/65">
+              CHP works with Growth Partners by providing:
+            </p>
+
+            <div className="mt-9 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+              {whatChpProvides.map((item) => (
+                <div
+                  key={item}
+                  className="flex gap-3 border-b border-white/10 py-3 text-sm leading-6 text-white/75"
+                >
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#f3c96b]" />
+                  <span>{item}</span>
                 </div>
-            </section>
-        </main>
-    );
+              ))}
+            </div>
+
+            <p className="mt-8 text-sm leading-7 text-white/55">
+              The MoU specifically provides for coordination between the Growth Partner and CHP regarding marketing materials and outreach plans.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT WE EXPECT */}
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
+                Active participation
+              </p>
+              <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+                What We Expect From Our Growth Partners
+              </h2>
+              <p className="mt-5 text-base leading-8 text-[#66736d]">
+                A successful Growth Partner relationship depends on active participation.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-[#66736d]">
+                Growth Partners are expected to:
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {expectations.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-[#e2ddd3] bg-[#faf8f2] p-5 text-sm font-medium leading-6 text-[#40504a]"
+                >
+                  <CheckCircle2 className="mb-3 h-5 w-5 text-[#7d9a67]" />
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* YOUR NETWORK */}
+      <section className="bg-[#f5f1e8] py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-5">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
+                Network opportunity
+              </p>
+              <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+                Your Network Can Become a Himalayan Opportunity
+              </h2>
+              <p className="mt-6 text-base leading-8 text-[#66736d]">
+                You may already know people who are looking for:
+              </p>
+              <p className="mt-5 text-base font-semibold leading-8 text-[#14231f]">
+                Your introduction could become the beginning of a new CHP partnership.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-3">
+              {networkOpportunities.map((item) => (
+                <div
+                  key={item}
+                  className="group rounded-[1.25rem] border border-[#ddd6c8] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <Mountain className="h-5 w-5 text-[#8d6a2d]" />
+                  <p className="mt-5 text-sm font-semibold leading-6">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY JOIN */}
+      <section className="bg-[#0c211c] py-20 text-white sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#f3c96b]">
+              Growth Partner Network
+            </p>
+            <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+              Why Join CHP Growth Partner Network?
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {whyJoin.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.article
+                  key={item.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ delay: index * 0.04 }}
+                  className="rounded-[1.5rem] border border-white/10 bg-white/[0.045] p-7 transition hover:-translate-y-1 hover:border-[#f3c96b]/30 hover:bg-white/[0.07]"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#f3c96b]/30 bg-[#f3c96b]/10 text-[#f3c96b]">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-5 font-serif text-xl">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-white/55">{item.text}</p>
+                </motion.article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* APPLICATION */}
+      <section id="apply-partner" className="scroll-mt-20 bg-[#071512] py-20 text-white sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+          <div className="grid gap-10 lg:grid-cols-5 lg:items-start">
+            <div className="lg:col-span-2 lg:sticky lg:top-28">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#f3c96b]">
+                Become a CHP Growth Partner
+              </p>
+              <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+                Become a CHP Growth Partner
+              </h2>
+              <p className="mt-5 text-sm leading-7 text-white/60">
+                The CHP Growth Partnership Program is designed for individuals, entrepreneurs, business professionals, organizations, referral partners and community leaders who want to participate in the growth of the CHP Himalayan Ecosystem.
+              </p>
+              <div className="mt-8 space-y-3">
+                {["Partner with CHP", "Create Opportunities", "Grow Together"].map((item) => (
+                  <div key={item} className="flex items-center gap-3 text-sm text-white/75">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#f3c96b]/10 text-[#f3c96b]">
+                      <Check className="h-4 w-4" />
+                    </span>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="lg:col-span-3">
+              {formSubmitted ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="rounded-[2rem] border border-emerald-400/25 bg-emerald-950/40 p-10 text-center sm:p-14"
+                >
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-400/10 text-emerald-300">
+                    <CheckCircle2 className="h-9 w-9" />
+                  </div>
+                  <h3 className="mt-6 font-serif text-3xl">Application received.</h3>
+                  <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-white/60">
+                    Thank you for your interest in joining CHP as a Growth Partner. Our team can review your inquiry and connect with you regarding the applicable partnership framework.
+                  </p>
+                  <button
+                    onClick={() => setFormSubmitted(false)}
+                    className="mt-7 text-sm font-semibold text-[#f3c96b] hover:underline"
+                  >
+                    Submit another inquiry
+                  </button>
+                </motion.div>
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  className="rounded-[2rem] border border-white/10 bg-white/[0.055] p-6 shadow-2xl backdrop-blur-xl sm:p-9"
+                >
+                  <div className="mb-8">
+                    <h3 className="font-serif text-3xl">Partner with CHP</h3>
+                    <p className="mt-2 text-sm text-white/50">
+                      Share your network, expertise, business relationships or market reach.
+                    </p>
+                  </div>
+
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <Field label="Full Name *">
+                      <input
+                        required
+                        type="text"
+                        placeholder="Your name"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="form-input"
+                      />
+                    </Field>
+
+                    <Field label="Email Address *">
+                      <input
+                        required
+                        type="email"
+                        placeholder="you@example.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="form-input"
+                      />
+                    </Field>
+
+                    <Field label="Phone / WhatsApp Number *">
+                      <input
+                        required
+                        type="tel"
+                        placeholder="+91 00000 00000"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="form-input"
+                      />
+                    </Field>
+
+                    <Field label="City / Base Location *">
+                      <input
+                        required
+                        type="text"
+                        placeholder="Your city"
+                        value={formData.city}
+                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                        className="form-input"
+                      />
+                    </Field>
+
+                    <Field label="Preferred Partnership Area">
+                      <select
+                        value={formData.interest}
+                        onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
+                        className="form-input"
+                      >
+                        <option>Business & Professional Network</option>
+                        <option>Marketing & Digital Promotion</option>
+                        <option>Travel & Tourism</option>
+                        <option>Community & Network Development</option>
+                        <option>Cottage / Facility Referrals</option>
+                        <option>Entrepreneurship / Business Collaboration</option>
+                        <option>Other</option>
+                      </select>
+                    </Field>
+
+                    <div className="sm:col-span-1" />
+                  </div>
+
+                  <Field label="Tell us about your network, expertise or partnership interest" className="mt-5">
+                    <textarea
+                      rows={5}
+                      placeholder="Tell us about your network, business background, market reach or the opportunity you would like to explore..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="form-input resize-none"
+                    />
+                  </Field>
+
+                  <button
+                    type="submit"
+                    className="group mt-6 flex w-full items-center justify-center gap-3 rounded-2xl bg-[#f3c96b] px-6 py-4 text-sm font-bold text-[#14231f] transition hover:bg-[#ffe09a]"
+                  >
+                    <Send className="h-4 w-4" />
+                    Submit Growth Partner Inquiry
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="relative overflow-hidden bg-[#0c211c] py-20 text-white sm:py-24 lg:py-28">
+        <div className="absolute inset-0 opacity-20">
+          <Image
+            src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/affa9b38-a1fd-48ba-8040-f954839807b5-himalayan-experiences.jpg"
+            alt=""
+            fill
+            unoptimized
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-[#0c211c]/85" />
+        <div className="relative mx-auto max-w-5xl px-5 text-center sm:px-8">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#f3c96b]">
+            People. Partnerships. Possibilities.
+          </p>
+          <h2 className="mt-5 font-serif text-4xl leading-tight sm:text-6xl">
+            Together, we can create businesses, experiences and opportunities in the Himalayas.
+          </h2>
+          <a
+            href="#apply-partner"
+            className="mt-9 inline-flex items-center gap-3 rounded-full bg-[#f3c96b] px-7 py-4 text-sm font-bold text-[#14231f] transition hover:bg-[#ffe09a]"
+          >
+            Become a CHP Growth Partner
+            <ArrowRight className="h-4 w-4" />
+          </a>
+
+          {/* Back to the main CHP Growth Partnership header */}
+          <div className="mt-10 flex justify-center">
+            <a
+              href="#growth-partner-hero"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-xs font-semibold text-white backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-white/15 sm:text-sm"
+            >
+              Back to CHP Growth Partner
+              <ArrowRight className="h-4 w-4 rotate-[-90deg]" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <style jsx global>{`
+        .form-input {
+          width: 100%;
+          border-radius: 0.9rem;
+          border: 1px solid rgba(255, 255, 255, 0.11);
+          background: rgba(255, 255, 255, 0.055);
+          padding: 0.85rem 1rem;
+          color: white;
+          outline: none;
+          font-size: 0.875rem;
+          transition:
+            border-color 180ms ease,
+            background 180ms ease;
+        }
+
+        .form-input::placeholder {
+          color: rgba(255, 255, 255, 0.32);
+        }
+
+        .form-input:focus {
+          border-color: rgba(243, 201, 107, 0.65);
+          background: rgba(255, 255, 255, 0.075);
+        }
+
+        .form-input option {
+          color: #14231f;
+          background: white;
+        }
+      `}</style>
+    </main>
+  );
+}
+
+function Field({
+  label,
+  children,
+  className = "",
+}: {
+  label: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <label className="mb-2 block text-[11px] font-bold uppercase tracking-[0.16em] text-white/45">
+        {label}
+      </label>
+      {children}
+    </div>
+  );
 }

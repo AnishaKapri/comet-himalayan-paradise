@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
     root: path.resolve(__dirname),
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -32,12 +33,12 @@ const nextConfig: NextConfig = {
       },
       ...(supabaseHostname
         ? [
-            {
-              protocol: "https" as const,
-              hostname: supabaseHostname,
-              pathname: "/storage/v1/object/public/**",
-            },
-          ]
+          {
+            protocol: "https" as const,
+            hostname: supabaseHostname,
+            pathname: "/storage/v1/object/public/**",
+          },
+        ]
         : []),
     ],
   },

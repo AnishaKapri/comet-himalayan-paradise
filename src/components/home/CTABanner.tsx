@@ -7,15 +7,9 @@ import { Mountain, ArrowRight } from "lucide-react";
 
 type CTABannerProps = {
   showHomeButton?: boolean;
-  backHref?: string;
-  backLabel?: string;
 };
 
-export function CTABanner({
-  showHomeButton = false,
-  backHref,
-  backLabel,
-}: CTABannerProps) {
+export function CTABanner({ showHomeButton = false }: CTABannerProps) {
   return (
     <section className="relative overflow-hidden py-24 lg:py-32">
       {/* Background */}
@@ -88,20 +82,21 @@ export function CTABanner({
           <p className="mt-8 text-xs text-white/35">
             Free consultation · Fully customizable · Responsible tourism
           </p>
+
+          {/* Home redirect row */}
+          {showHomeButton && (
+            <div className="mt-8 flex justify-center">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 py-3.5 font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20"
+              >
+                Back to Home
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          )}
         </motion.div>
       </div>
-
-      {/* Optional Back Button */}
-      {showHomeButton && backHref && backLabel && (
-        <div className="absolute bottom-6 left-0 right-0 z-10 flex justify-center px-4">
-          <Link
-            href={backHref}
-            className="inline-flex items-center rounded-full bg-green-900 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-green-800"
-          >
-            {backLabel}
-          </Link>
-        </div>
-      )}
     </section>
   );
 }

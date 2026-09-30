@@ -3,15 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Mountain, ArrowRight } from "lucide-react";
+import { Mountain, ArrowRight, ArrowLeft } from "lucide-react";
 
-export function CTABanner({
-  backHref,
-  backLabel,
-}: {
+interface CTABannerProps {
+  /** Optional: shows a "go back" button in the same row as the other two buttons. */
   backHref?: string;
   backLabel?: string;
-}) {
+}
+
+export function CTABanner({ backHref, backLabel = "Go back" }: CTABannerProps) {
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
@@ -23,13 +23,12 @@ export function CTABanner({
           sizes="100vw"
           className="object-cover"
         />
-
         <div className="absolute inset-0 bg-gradient-to-br from-green-950/90 via-green-900/80 to-sky-900/70" />
       </div>
 
       {/* Decorative circles */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-white/5" />
-      <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-white/5" />
+      <div className="absolute left-0 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5" />
+      <div className="absolute right-0 top-1/2 h-80 w-80 translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
@@ -60,22 +59,32 @@ export function CTABanner({
             No two trips are the same.
           </p>
 
-          {/* Main Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* Buttons */}
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/30 hover:-translate-y-0.5"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-400 hover:shadow-2xl hover:shadow-orange-500/30"
             >
               Booking Options
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
 
             <Link
               href="/treks"
-              className="inline-flex items-center gap-2 glass text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5"
+              className="glass inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5"
             >
               Browse Treks
             </Link>
+
+            {backHref && (
+              <Link
+                href={backHref}
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-green-900 transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-50 hover:shadow-2xl"
+              >
+                <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                {backLabel}
+              </Link>
+            )}
           </div>
 
           {/* Small disclaimer */}
@@ -84,18 +93,6 @@ export function CTABanner({
           </p>
         </motion.div>
       </div>
-
-      {/* Optional Back Button */}
-      {backHref && backLabel && (
-        <div className="absolute bottom-6 left-0 right-0 z-10 flex justify-center px-4">
-          <Link
-            href={backHref}
-            className="inline-flex items-center rounded-full bg-green-900 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-green-800"
-          >
-            {backLabel}
-          </Link>
-        </div>
-      )}
     </section>
   );
 }

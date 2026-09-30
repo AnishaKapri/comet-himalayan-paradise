@@ -8,38 +8,10 @@ const HEADER_IMAGE =
 
 export function AboutHero() {
   return (
-    <section className="relative w-full overflow-hidden bg-white">
+    // pt-16 clears the fixed navbar (h-16) so the image starts right below it
+    <section className="relative w-full overflow-hidden bg-white pt-16">
       {/* =====================================================
-          ABOUT CHP TITLE — ABOVE HEADER IMAGE
-      ===================================================== */}
-      <div className="w-full flex items-center justify-center bg-white pt-20 pb-5 sm:pt-24 sm:pb-6 md:pb-7">
-        <motion.h2
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            ease: "easeOut",
-          }}
-          className="
-            rounded-full
-            bg-green-900
-            px-5
-            py-2
-            text-white
-            text-sm
-            sm:text-base
-            md:text-lg
-            font-semibold
-            uppercase
-            tracking-[0.28em]
-          "
-        >
-          About CHP
-        </motion.h2>
-      </div>
-
-      {/* =====================================================
-          HEADER IMAGE
+          HEADER IMAGE (with the About CHP pill inside it)
       ===================================================== */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -64,72 +36,35 @@ export function AboutHero() {
         <div className="absolute inset-0 bg-black/[0.04]" />
 
         {/* =====================================================
-            CENTER CONTENT
-            No About CHP here anymore.
+            MENU NAME PILL — INSIDE THE IMAGE, TOP CENTRE
         ===================================================== */}
-        <div className="absolute inset-0 flex items-center justify-center px-4">
-          <div
+        <div className="absolute inset-x-0 top-3 sm:top-4 md:top-6 flex justify-center px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
             className="
-              relative
-              w-full
-              flex
-              justify-center
-              mt-[8%]
-              sm:mt-[6%]
-              md:mt-[4%]
+              rounded-full
+              bg-green-900
+              px-3
+              py-1
+              sm:px-4
+              sm:py-1.5
+              text-white
+              text-[10px]
+              sm:text-xs
+              md:text-sm
+              font-semibold
+              uppercase
+              tracking-[0.24em]
+              shadow-md
             "
           >
-            <div
-              className="
-                relative
-                z-10
-                w-full
-                max-w-[1000px]
-                text-center
-                px-4
-                sm:px-6
-                py-8
-                sm:py-10
-              "
-            >
-              {/* =================================================
-                  GREEN DECORATIVE LINE
-              ================================================= */}
-              
-
-              {/* =================================================
-                  TAGLINE
-              ================================================= */}
-              <motion.p
-                initial={{
-                  opacity: 0,
-                  y: 10,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.45,
-                }}
-                className="
-                  mt-3
-                  sm:mt-4
-                  text-white
-                  text-[10px]
-                  sm:text-xs
-                  md:text-sm
-                  lg:text-base
-                  font-medium
-                  tracking-wide
-                  drop-shadow-[0_3px_7px_rgba(0,0,0,0.95)]
-                "
-              >
-               
-              </motion.p>
-            </div>
-          </div>
+            About CHP
+          </motion.h2>
         </div>
       </motion.div>
     </section>

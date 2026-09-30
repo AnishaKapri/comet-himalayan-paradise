@@ -61,7 +61,7 @@ export default function TreksPage() {
             transition={{ duration: 0.5 }}
             className={HERO_TAG_CLASS}
           >
-            Treks
+            Treks and trails 
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}

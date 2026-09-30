@@ -5,13 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Mountain, ArrowRight } from "lucide-react";
 
-export function CTABanner({
-  backHref,
-  backLabel,
-}: {
-  backHref?: string;
-  backLabel?: string;
-}) {
+export function CTABanner({ showHomeButton }: { showHomeButton?: boolean } = {}) {
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
@@ -89,16 +83,6 @@ export function CTABanner({
         </motion.div>
       </div>
 
-      {backHref && backLabel && (
-        <div className="absolute bottom-6 left-0 right-0 z-10 flex justify-center px-4">
-          <Link
-            href={backHref}
-            className="inline-flex items-center rounded-full bg-green-900 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-green-800"
-          >
-            {backLabel}
-          </Link>
-        </div>
-      )}
     </section>
   );
 }

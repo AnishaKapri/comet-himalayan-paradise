@@ -29,20 +29,23 @@ export default function ExperiencesPage() {
     return (
         <>
             {/* Hero */}
-            <section className="relative bg-black pt-32 pb-20 overflow-hidden">
-                <div className="absolute inset-0">
-                    <div
-                        className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: "url('https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ab74ec0a-4d09-40a2-b3d5-e249041fed33-chatgpt-image-sep-3-2026-02-25-33-am.webp')" }}
-                    />
-                </div>
+            <section className="relative h-[60vh] min-h-[420px] bg-black overflow-hidden">
+                <Image
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ab74ec0a-4d09-40a2-b3d5-e249041fed33-chatgpt-image-sep-3-2026-02-25-33-am.webp"
+                    alt="Himalayan Experiences"
+                    fill
+                    priority
+                    sizes="100vw"
+                    className="object-cover object-[center_20%]"
+                />
                 <div className="absolute inset-0 bg-black/45" />
-                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 gap-3">
                     <motion.p
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="mb-3 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-sm font-semibold uppercase tracking-wider"
+                        className="absolute top-30 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-sm font-semibold uppercase tracking-wider whitespace-nowrap"
                     >
                         CHP Himalayan Paradise
                     </motion.p>
@@ -50,7 +53,7 @@ export default function ExperiencesPage() {
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.1 }}
-                        className="text-white text-4xl sm:text-5xl md"
+                        className="text-white text-4xl sm:text-4xl"
                     >
                         Himalayan Experiences
                     </motion.h1>
@@ -58,7 +61,7 @@ export default function ExperiencesPage() {
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-white/60 text-lg max-w-2xl mx-auto text-justify"
+                        className="text-white/60 text-lg max-w-2xl mx-auto"
                     >
                         STAY • EXPLORE • ADVENTURE • WELLNESS • FOOD • CULTURE • LEARN • WORK
                     </motion.p>
@@ -168,7 +171,7 @@ export default function ExperiencesPage() {
                 </div>
             </section>
 
-            <CTABanner />
+            <CTABanner showHomeButton />
         </>
     );
 }

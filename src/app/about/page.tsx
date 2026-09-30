@@ -5,7 +5,6 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { CTABanner } from "@/components/home/CTABanner";
 import { AboutHero } from "@/components/about/AboutHero";
 import type { ReactNode } from "react";
-import Link from "next/link";
 
 // Same frame for every content image on this page (4:3, same max width).
 // The full-width timeline banner and the header image are intentionally excluded.
@@ -44,49 +43,49 @@ const timeline = [
     year: "2014–19",
     title: "The Beginning",
     description:
-      <>We began our journey with a <Highlight>single traditional Himalayan home</Highlight>, welcoming guests who wished to experience the simplicity, warmth, and authenticity of village life.</>,
+      "We began our journey with a single traditional Himalayan home, welcoming guests who wished to experience the simplicity, warmth, and authenticity of village life.",
   },
   {
     year: "2020",
     title: "First Trail Programs",
     description:
-      <>We launched our first <Highlight>guided bird watching and Himalayan crop discovery walk</Highlight>.</>,
+      "We launched our first guided bird watching and Himalayan crop discovery walk.",
   },
   {
     year: "2021",
     title: "Wildlife Safari Programs",
     description:
-      <>We launched <Highlight>dedicated wildlife safari programs</Highlight>, broadening our offering to serve wildlife photography enthusiasts.</>,
+      "We launched dedicated wildlife safari programs, broadening our offering to serve wildlife photography enthusiasts.",
   },
   {
     year: "2022",
     title: "Birth of CHP Concept",
     description:
-      <>The idea of the <Highlight>CHP Community</Highlight> began with a simple yet inspiring vision—to create a small cluster of <Highlight>just three cottages</Highlight> in a pristine, secluded Himalayan location offering uninterrupted views of the majestic mountain ranges.</>,
+      "The idea of the CHP Community began with a simple yet inspiring vision—to create a small cluster of just three cottages in a pristine, secluded Himalayan location offering uninterrupted views of the majestic mountain ranges.",
   },
   {
     year: "2023",
     title: "Expansion of CHP Community",
     description:
-      <>Driven by the increasing aspiration for <Highlight>peaceful second homes</Highlight> amidst nature, the CHP Community expanded into a vibrant neighborhood of <Highlight>35–40 cottages</Highlight>, creating an ideal destination for families, retirees, and remote professionals seeking a Himalayan lifestyle.</>,
+      <>Driven by the increasing aspiration for peaceful second homes amidst nature, the CHP Community expanded into a vibrant neighborhood of <Highlight>35–40 cottages</Highlight>, creating an ideal destination for families, retirees, and remote professionals seeking a Himalayan lifestyle.</>,
   },
   {
     year: "2024–25",
     title: "Transformation of CHP into CHP Ecosystem",
     description:
-      <>The evolution of CHP reached a new milestone with the creation of the <Highlight>CHP Ecosystem</Highlight>—an integrated network of <Highlight>25+ travel, hospitality, wellness, and recreational offerings</Highlight>. This holistic approach makes CHP a complete destination for unforgettable Himalayan experiences, all in one place.</>,
+      <>The evolution of CHP reached a new milestone with the creation of the CHP Ecosystem—an integrated network of <Highlight>25+ travel, hospitality, wellness, and recreational offerings</Highlight>. This holistic approach makes CHP a complete destination for unforgettable Himalayan experiences, all in one place.</>,
   },
   {
     year: "2025",
     title: "First Trek Programs",
     description:
-      <>We launched our <Highlight>first guided trek programs</Highlight> to <Highlight>Khaliya Top and Chandika Ghat</Highlight>, receiving overwhelmingly positive feedback from our early trekking groups.</>,
+      <>We launched our first guided trek programs to <Highlight>Khaliya Top and Chandika Ghat</Highlight>, receiving overwhelmingly positive feedback from our early trekking groups.</>,
   },
   {
     year: "2026",
     title: "Holiday Camp Launch",
     description:
-      <>The <Highlight>Holiday Camp program</Highlight> was born — our most comprehensive offering, combining accommodation, guided activities, wellness, and cultural immersion.</>,
+      <>The Holiday Camp program was born — our most comprehensive offering, combining accommodation, guided activities, wellness, and cultural immersion.</>,
   },
 ];
 
@@ -123,7 +122,7 @@ export default function AboutPage() {
 
               <div className="space-y-4 text-justify text-slate-600 leading-relaxed text-base">
                 <p>
-                  <Highlight>Comet Himalayan Paradise (CHP)</Highlight> is a unique Himalayan
+                  Comet Himalayan Paradise (CHP) is a unique Himalayan
                   destination where <Highlight>nature, adventure, wellness, culture, and
                   community living</Highlight> come together in one inspiring ecosystem.
                   Nestled amidst the pristine mountains of Uttarakhand, CHP
@@ -137,7 +136,7 @@ export default function AboutPage() {
                   Whether you&apos;re seeking a <Highlight>second home in the Himalayas</Highlight>, a
                   peaceful escape, an adventurous holiday, a remote work
                   destination, or a meaningful connection with Himalayan life,
-                  CHP provides <Highlight>unforgettable experiences</Highlight> for families,
+                  CHP provides unforgettable experiences for families,
                   students, nature lovers, corporate groups, and explorers of
                   all ages.
                 </p>
@@ -211,7 +210,7 @@ export default function AboutPage() {
                   Working on our mission to connect visionary leaders with the
                   Himalayas, <Highlight>professionals and industry leaders</Highlight> from the
                   following organizations have already chosen CHP as their{" "}
-                  <Highlight>second home</Highlight>.
+                  second home.
                 </p>
 
                 <a
@@ -253,7 +252,7 @@ export default function AboutPage() {
                 adventure, wellness, spirituality, and community living. From
                 scenic treks and village walks to remote work, cultural
                 experiences, and wellness retreats, every visit creates{" "}
-                <Highlight>lasting memories</Highlight>.
+                lasting memories.
               </p>
             </ScrollReveal>
 
@@ -310,7 +309,7 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-4">
             <span className="h-px w-8 bg-orange-400" />
 
@@ -363,7 +362,7 @@ export default function AboutPage() {
             <img
               src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/57c52a5a-8cff-4f4a-aba1-f59591d5a443-scaled-vision-mission-values.webp"
               alt="CHP Vision Mission Values"
-              className={`mx-auto ${IMAGE_FRAME_CLASS}`}
+              className={`mx-auto mix-blend-multiply ${IMAGE_FRAME_CLASS}`}
             />
           </div>
         </div>
@@ -424,17 +423,8 @@ export default function AboutPage() {
       {/* =====================================================
           CTA
       ===================================================== */}
-      <CTABanner />
-
-      {/* Go back to source page */}
-      <div className="py-6 text-center">
-        <Link
-          href="/"
-          className="inline-flex items-center rounded-full bg-green-900 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-2xl hover:shadow-green-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-900"
-        >
-          Go back to Home
-        </Link>
-      </div>
+      {/* Go back to source page — lives in the CTA button row */}
+      <CTABanner backHref="/" backLabel="Go back to Home" />
     </>
   );
 }

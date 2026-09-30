@@ -224,51 +224,10 @@ export default function CometGausevaPage() {
           fetchPriority="high"
           decoding="async"
         />
-<<<<<<< HEAD
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071610]/90 via-[#071610]/52 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071610]/85 via-transparent to-[#071610]/10" />
-        <div className="relative z-10 mx-auto flex min-h-[760px] max-w-7xl items-end px-5 pb-16 sm:px-8 sm:pb-20 lg:px-10 lg:pb-24">
-          <div className="max-w-3xl">
-            <span className="inline-block mb-4 rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold tracking-wide text-white">
-              CHP Social Impact
-            </span>
-            <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
-              Comet <span className="text-[#f2d487]">Gauseva Kendra.</span>
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl text-justify">
-              A compassionate initiative in the Himalayas providing <strong className="font-bold text-[#f2d487]">shelter, protection and care</strong> for <strong className="font-bold text-[#f2d487]">abandoned, injured and aging cows</strong> — while connecting care with land, livelihoods and community.
-            </p>
-
-            <div className="mt-8 grid max-w-2xl grid-cols-2 gap-y-4 sm:grid-cols-4 sm:gap-0">
-              {[
-                ["Cow Care", Heart],
-                ["Organic Farming", Leaf],
-                ["Rural Livelihoods", Users],
-                ["A Greener Himalaya", Sprout],
-              ].map(([label, Icon], index) => {
-                const C = Icon as typeof Heart;
-                return (
-                  <div
-                    key={String(label)}
-                    className={`flex items-center gap-2 ${index > 0
-                      ? "sm:border-l sm:border-white/25 sm:pl-5"
-                      : ""
-                      }`}
-                  >
-                    <C className="h-5 w-5 text-[#f2d487]" />
-                    <span className="text-xs font-semibold text-white/80 sm:text-sm">
-                      {String(label)}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-=======
 
         {/* Readability overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#071610]/90 via-[#071610]/48 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#071610]/90 via-[#071610]/20 to-transparent" />
->>>>>>> bb8fdf1 (c10)
 
         {/* Hero content */}
         <div className="absolute inset-0 z-10 pt-16 sm:pt-20 lg:pt-24">
@@ -341,14 +300,9 @@ export default function CometGausevaPage() {
               return (
                 <div
                   key={String(label)}
-<<<<<<< HEAD
-                  className={`flex items-center gap-3 px-4 py-4 ${i > 1 ? "hidden sm:flex" : ""
-                    } sm:px-7`}
-=======
                   className={`flex items-center justify-center gap-2 px-3 py-2.5 sm:gap-3 sm:px-7 sm:py-4 ${
                     i > 1 ? "hidden sm:flex" : ""
                   }`}
->>>>>>> bb8fdf1 (c10)
                 >
                   <C className="h-4 w-4 shrink-0 text-[#f2d487] sm:h-5 sm:w-5" />
                   <span className="text-[10px] font-semibold text-white/80 sm:text-sm">

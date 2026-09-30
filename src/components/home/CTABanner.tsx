@@ -72,6 +72,17 @@ export function CTABanner({
             </Link>
           </div>
 
+          {showHomeButton && (
+            <div className="flex justify-center mt-4">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5"
+              >
+                Back to Home
+              </Link>
+            </div>
+          )}
+
           <p className="text-white/35 text-xs mt-8">
             Free consultation · Fully customizable · Responsible tourism
           </p>

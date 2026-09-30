@@ -25,36 +25,48 @@ const pillars = [
         title: "Daily Yoga & Pranayama",
         description:
             "Guided sunrise yoga on open mountain decks looking towards Panchachuli, followed by guided pranayama and breathwork with trained Himalayan instructors.",
+        bg: "bg-amber-50",
+        border: "border-amber-200",
     },
     {
         icon: Moon,
         title: "Meditation & Mindfulness",
         description:
             "Structured morning and evening meditation sessions in our dedicated silence hall, incorporating Vipassana, nature-sound therapy, and guided visualisation.",
+        bg: "bg-sky-50",
+        border: "border-sky-200",
     },
     {
         icon: Flame,
         title: "Isht Dev Sthal & Sacred Fire",
         description:
-            "Our traditional Isht Dev Sthal hosts daily Agni Puja, Havans, and Kumaoni spiritual ceremonies — rooted in centuries of mountain devotion.",
+            <>Our traditional Isht Dev Sthal hosts daily <span className="font-semibold text-orange-700">Agni Puja, Havans, and Kumaoni spiritual ceremonies</span> — rooted in centuries of mountain devotion.</>,
+        bg: "bg-orange-50",
+        border: "border-orange-200",
     },
     {
         icon: Leaf,
         title: "Gaushala & Ayurvedic Farm",
         description:
             "Interact with gentle native Pahadi cattle, participate in Gobar Puja, and collect medicinal herbs from our living Ayurvedic garden.",
+        bg: "bg-green-50",
+        border: "border-green-200",
     },
     {
         icon: Wind,
         title: "Forest Bathing & Nature Therapy",
         description:
             "Guided Shinrin-Yoku (forest bathing) trails through pine and oak groves. Let the Himalayan birdsong, clean air, and natural soundscapes restore your nervous system.",
+        bg: "bg-teal-50",
+        border: "border-teal-200",
     },
     {
         icon: Heart,
         title: "Satsang & Community Evenings",
         description:
-            "Campfire satsangs, kirtan evenings, storytelling circles, and Kumaoni folk music nights that foster genuine human connection under the stars.",
+            <>Campfire satsangs, kirtan evenings, storytelling circles, and <span className="font-semibold text-rose-700">Kumaoni folk music</span> nights that foster genuine human connection under the stars.</>,
+        bg: "bg-rose-50",
+        border: "border-rose-200",
     },
 ];
 
@@ -84,10 +96,10 @@ const retreatPrograms = [
 ];
 
 const traditions = [
-    { label: "Isht Dev Sthal", desc: "CHP's sacred deity space with daily Agni Puja" },
-    { label: "Gaushala", desc: "Native Pahadi cattle sanctuary integral to CHP life" },
-    { label: "Kumaoni Havan", desc: "Traditional fire ceremonies with Vedic chanting" },
-    { label: "Himalayan Herb Garden", desc: "Living Ayurvedic garden of 40+ medicinal plants" },
+    { label: "Isht Dev Sthal", desc: "CHP's sacred deity space with daily Agni Puja", bg: "bg-violet-50", border: "border-violet-200" },
+    { label: "Gaushala", desc: "Native Pahadi cattle sanctuary integral to CHP life", bg: "bg-lime-50", border: "border-lime-200" },
+    { label: "Kumaoni Havan", desc: "Traditional fire ceremonies with Vedic chanting", bg: "bg-cyan-50", border: "border-cyan-200" },
+    { label: "Himalayan Herb Garden", desc: "Living Ayurvedic garden of 40+ medicinal plants", bg: "bg-pink-50", border: "border-pink-200" },
 ];
 
 export default function HealthRetreatProgramPage() {
@@ -117,43 +129,42 @@ export default function HealthRetreatProgramPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/75" />
 
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
+                <div className="absolute inset-0 flex flex-col items-center px-4 sm:px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-xs font-semibold uppercase tracking-wider mb-5"
+                        className="mt-20 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-xs font-semibold uppercase tracking-wider"
                     >
                         <Flower2 className="w-3.5 h-3.5" />
-                        Spiritual & Wellness Sanctuary
+                        Spiritual &amp; Wellness Sanctuary
                     </motion.div>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-                        className="text-white text-4xl sm:text-5xl lg"
-                    >
-                        Health Retreat Program <br />
-                        <span className="bg-gradient-to-r from-amber-300 via-orange-300 to-emerald-300 bg-clip-text text-transparent">
-                            Find Your Centre
-                        </span>
-                    </motion.h1>
+                    <div className="absolute top-45 left-1/2 -translate-x-1/2 z-10 flex-1 flex flex-col items-center justify-center text-center">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
+                            className="text-white text-4xl sm:text-4.5xl"
+                        >
+                            Health Retreat Program <br />
+                        </motion.h1>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-                        className="mt-5 text-white/75 text-lg max-w-2xl leading-relaxed text-justify"
-                    >
-                        A sacred Himalayan environment for yoga, meditation, Ayurveda, spiritual ceremony, and deep inner renewal — far from the noise of modern life.
-                    </motion.p>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+                            className="mt-5 text-white/75 text-lg max-w-2xl leading-relaxed text-justify"
+                        >
+                            A sacred Himalayan environment for yoga, meditation, Ayurveda, spiritual ceremony, and deep inner renewal — far from the noise of modern life.
+                        </motion.p>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-                        className="mt-8 flex flex-wrap gap-4 justify-center"
-                    >
-                        <a href="#retreats" className="bg-amber-600 hover:bg-amber-500 text-white font-bold px-7 py-3.5 rounded-full flex items-center gap-2 shadow-lg transition-all">
-                            View Retreat Programs <ArrowRight className="w-4 h-4" />
-                        </a>
-                        <a href="#enquire" className="bg-white/10 hover:bg-white/20 text-white font-medium px-7 py-3.5 rounded-full border border-white/30 backdrop-blur-sm transition-all">
-                            Enquire Now
-                        </a>
-                    </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+                            className="mt-8 flex flex-wrap gap-4 justify-center"
+                        >
+                            <a href="#retreats" className="bg-amber-600 hover:bg-amber-500 text-white font-bold px-7 py-3.5 rounded-full flex items-center gap-2 shadow-lg transition-all">
+                                View Retreat Programs <ArrowRight className="w-4 h-4" />
+                            </a>
+                            <a href="#enquire" className="bg-white/10 hover:bg-white/20 text-white font-medium px-7 py-3.5 rounded-full border border-white/30 backdrop-blur-sm transition-all">
+                                Enquire Now
+                            </a>
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -161,11 +172,10 @@ export default function HealthRetreatProgramPage() {
             <section className="py-16 bg-gradient-to-r from-amber-950 to-stone-900 text-white">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <p className="text-amber-300 text-xs font-semibold uppercase tracking-widest mb-4">Our Philosophy</p>
-                    <blockquote className="text-2xl sm:text-3xl font-light leading-relaxed text-white/90 italic text-justify">
+                    <blockquote className="text-2xl sm:text-2xl font-light leading-relaxed text-white/90 italic text-justify">
                         {/* eslint-disable-next-line react/no-unescaped-entities */}
                         "The Himalayas do not merely house peaks — they house silence, wisdom, and the ancient breath of the earth. CHP is designed to help you listen."
                     </blockquote>
-                    <p className="mt-5 text-amber-400 font-semibold text-sm">— CHP Himalayan Paradise</p>
                 </div>
             </section>
 
@@ -182,7 +192,7 @@ export default function HealthRetreatProgramPage() {
                             const Icon = p.icon;
                             return (
                                 <StaggerItem key={p.title}>
-                                    <div className="p-7 rounded-2xl bg-white border border-amber-100 hover:shadow-lg hover:shadow-amber-900/5 transition-all h-full">
+                                    <div className={`p-7 rounded-2xl ${p.bg} border ${p.border} hover:shadow-lg hover:shadow-amber-900/5 transition-all h-full`}>
                                         <div className="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 mb-4">
                                             <Icon className="w-5 h-5" />
                                         </div>
@@ -201,7 +211,7 @@ export default function HealthRetreatProgramPage() {
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {traditions.map((t) => (
-                            <div key={t.label} className="text-center p-5 rounded-2xl bg-white border border-amber-100">
+                            <div key={t.label} className={`text-center p-5 rounded-2xl ${t.bg} border ${t.border}`}>
                                 <div className="w-10 h-10 rounded-full bg-amber-100 mx-auto flex items-center justify-center text-amber-700 mb-3">
                                     <Flame className="w-5 h-5" />
                                 </div>
@@ -314,7 +324,7 @@ export default function HealthRetreatProgramPage() {
                 </div>
             </section>
 
-            <CTABanner />
+            <CTABanner showHomeButton />
         </main>
     );
 }

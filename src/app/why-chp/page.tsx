@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
     Shield,
     Map,
@@ -257,9 +258,11 @@ const features = [
 export default function WhyCHPPage() {
     return (
         <main className="min-h-screen bg-stone-50 pt-16">
+
             {/* Hero */}
             <section className="bg-green-950 py-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
                     <p className="mb-4 inline-block rounded-full bg-black/25 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-orange-300 shadow-sm backdrop-blur-sm">
                         Why Choose Us
                     </p>
@@ -272,12 +275,14 @@ export default function WhyCHPPage() {
                         Join CHP and unlock opportunities in hospitality, tourism,
                         events, remote work, and sustainable living.
                     </p>
+
                 </div>
             </section>
 
             {/* All Reasons Grid */}
             <section className="py-20 lg:py-28">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
                     <SectionHeader
                         eyebrow="All Reasons"
                         title="Everything that makes CHP different"
@@ -285,6 +290,7 @@ export default function WhyCHPPage() {
                     />
 
                     <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
                         {features.map((f) => {
                             const Icon = f.icon;
 
@@ -308,7 +314,9 @@ export default function WhyCHPPage() {
                                     key={f.title}
                                     className="group overflow-hidden rounded-2xl border border-white/80 bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col"
                                 >
-                                    <div className={`${f.surface} p-6 flex-1 flex flex-col`}>
+                                    <div
+                                        className={`${f.surface} p-6 flex-1 flex flex-col`}
+                                    >
                                         <div
                                             className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${f.color}`}
                                         >
@@ -326,9 +334,25 @@ export default function WhyCHPPage() {
                                 </div>
                             );
                         })}
+
                     </div>
                 </div>
             </section>
+
+            {/* Back to Home */}
+            <section className="border-t border-stone-200 bg-white py-10">
+                <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+
+                    <Link
+                        href="/"
+                        className="inline-flex items-center justify-center rounded-full bg-green-900 px-8 py-3.5 text-sm font-semibold tracking-wide text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg"
+                    >
+                        Back to Home
+                    </Link>
+
+                </div>
+            </section>
+
         </main>
     );
 }

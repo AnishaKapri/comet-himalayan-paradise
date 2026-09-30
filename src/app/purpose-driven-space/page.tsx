@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 const HEADER_IMAGE =
-  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/df7926db-451e-458d-9471-b84f0a4b1860-comet-gauseva-header-under-500kb.webp";
+  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/612b6b26-6785-4b5b-b624-b74f4df937fb-scaled-chp-gauseva.webp";
 
 const GAUSEVA_WHATSAPP = "919949994989";
 
@@ -214,15 +214,17 @@ export default function CometGausevaPage() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#f7f3e9] text-[#17352d]">
-      {/* HERO — intentionally preserved from the existing page */}
-      <section className="relative isolate min-h-[760px] overflow-hidden bg-[#10241e]">
+      {/* HERO */}
+      <section className="relative isolate mt-[70px] w-full overflow-hidden bg-[#10241e] sm:mt-[72px]">
+        {/* The image defines the hero height naturally, so it is never cropped or stretched. */}
         <img
           src={HEADER_IMAGE}
           alt="Comet Gauseva Kendra in the Himalayas"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="block h-auto w-full object-contain"
           fetchPriority="high"
           decoding="async"
         />
+<<<<<<< HEAD
         <div className="absolute inset-0 bg-gradient-to-r from-[#071610]/90 via-[#071610]/52 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#071610]/85 via-transparent to-[#071610]/10" />
         <div className="relative z-10 mx-auto flex min-h-[760px] max-w-7xl items-end px-5 pb-16 sm:px-8 sm:pb-20 lg:px-10 lg:pb-24">
@@ -261,23 +263,72 @@ export default function CometGausevaPage() {
                 );
               })}
             </div>
+=======
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#membership"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#f2d487] px-7 py-4 text-sm font-bold text-[#17352d] transition hover:bg-[#ffe4a0]"
-              >
-                Support Gauseva <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#sustainability"
-                className="inline-flex items-center justify-center gap-3 rounded-full border border-white/25 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/15"
-              >
-                Explore the model <ArrowRight className="h-4 w-4" />
-              </a>
+        {/* Readability overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071610]/90 via-[#071610]/48 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#071610]/90 via-[#071610]/20 to-transparent" />
+>>>>>>> bb8fdf1 (c10)
+
+        {/* Hero content */}
+        <div className="absolute inset-0 z-10 pt-16 sm:pt-20 lg:pt-24">
+          <div className="mx-auto flex h-full max-w-7xl items-end px-5 pb-[13%] sm:px-8 sm:pb-[9%] lg:px-10 lg:pb-[7%]">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-[#f2d487] shadow-lg backdrop-blur-md sm:px-4 sm:text-[10px] sm:tracking-[0.2em] lg:text-[11px]">
+                <Heart className="h-3.5 w-3.5 shrink-0" />
+                CHP Cow-Care Centre
+              </div>
+
+              <h1 className="mt-4 max-w-3xl font-serif text-[2.5rem] leading-[0.92] tracking-[-0.04em] text-white drop-shadow-[0_3px_14px_rgba(0,0,0,0.45)] sm:mt-5 sm:text-5xl lg:mt-6 lg:text-7xl xl:text-8xl">
+                Comet
+                <span className="block text-[#f2d487]">Gauseva Kendra.</span>
+              </h1>
+
+              <div className="mt-6 hidden max-w-2xl grid-cols-4 sm:grid">
+                {[
+                  ["Cow Care", Heart],
+                  ["Organic Farming", Leaf],
+                  ["Rural Livelihoods", Users],
+                  ["A Greener Himalaya", Sprout],
+                ].map(([label, Icon], index) => {
+                  const C = Icon as typeof Heart;
+                  return (
+                    <div
+                      key={String(label)}
+                      className={`flex items-center gap-2 ${
+                        index > 0
+                          ? "border-l border-white/25 pl-4 lg:pl-5"
+                          : ""
+                      }`}
+                    >
+                      <C className="h-4 w-4 shrink-0 text-[#f2d487] lg:h-5 lg:w-5" />
+                      <span className="text-[11px] font-semibold text-white/85 lg:text-sm">
+                        {String(label)}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="mt-7 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:gap-3">
+                <a
+                  href="#membership"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#f2d487] px-5 py-3 text-xs font-bold text-[#17352d] shadow-lg transition hover:bg-[#ffe4a0] sm:px-6 sm:py-3.5 sm:text-sm"
+                >
+                  Support Gauseva <ArrowRight className="h-4 w-4" />
+                </a>
+                <a
+                  href="#sustainability"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-full border border-white/25 bg-white/10 px-5 py-3 text-xs font-semibold text-white backdrop-blur-md transition hover:bg-white/15 sm:px-6 sm:py-3.5 sm:text-sm"
+                >
+                  Explore the model <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Bottom glass navigation strip */}
         <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/10 bg-[#071610]/70 backdrop-blur-xl">
           <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-white/10 sm:grid-cols-4">
             {[
@@ -290,11 +341,17 @@ export default function CometGausevaPage() {
               return (
                 <div
                   key={String(label)}
+<<<<<<< HEAD
                   className={`flex items-center gap-3 px-4 py-4 ${i > 1 ? "hidden sm:flex" : ""
                     } sm:px-7`}
+=======
+                  className={`flex items-center justify-center gap-2 px-3 py-2.5 sm:gap-3 sm:px-7 sm:py-4 ${
+                    i > 1 ? "hidden sm:flex" : ""
+                  }`}
+>>>>>>> bb8fdf1 (c10)
                 >
-                  <C className="h-5 w-5 text-[#f2d487]" />
-                  <span className="text-xs font-semibold text-white/75 sm:text-sm">
+                  <C className="h-4 w-4 shrink-0 text-[#f2d487] sm:h-5 sm:w-5" />
+                  <span className="text-[10px] font-semibold text-white/80 sm:text-sm">
                     {String(label)}
                   </span>
                 </div>
@@ -303,6 +360,7 @@ export default function CometGausevaPage() {
           </div>
         </div>
       </section>
+
 
       {/* VISION & MISSION */}
       <section className="bg-white px-5 py-10 sm:px-8 sm:py-12 lg:px-10">

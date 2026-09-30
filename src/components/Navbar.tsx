@@ -15,10 +15,6 @@ const directLinks = [
 ];
 
 const operationsLink = { href: "/chp-operations", label: "CHP Operations" };
-const liveFromGroundLink = {
-  href: "/chp-live-from-the-ground",
-  label: "CHP Live from the Ground",
-};
 const faqLink = { href: "/faq", label: "FAQ" };
 
 const navGroups = [
@@ -29,8 +25,9 @@ const navGroups = [
       { href: "/camps", label: "Holiday Camp" },
       { href: "/treks", label: "Treks & Trails" },
       { href: "/experiences", label: "Experiences" },
-      { href: "/facilities", label: "Remote Work" },
+      { href: "/facilities", label: "Remote Work from himalayas" },
       { href: "/health-retreat-program", label: "Health & Wellness Retreats" },
+      { href: "/why-chp", label: "Why Choose CHP" },
     ],
   },
   {
@@ -38,11 +35,11 @@ const navGroups = [
     items: [
       { href: "/chp-biz-partnership", label: "CHP Biz. Partnership" },
       { href: "/growth-partner", label: "CHP Growth Partnership" },
+      { href: "/chp-enclave#group-ownership", label: "Co-Ownership Model" },
       { href: "/business-investment", label: "Investment Options" },
-      { href: "/chp-enclave", label: "Co-Ownership Models" },
       { href: "/chp-enclave", label: "Second Home" },
-      { href: "/facilities", label: "16 Dream Spaces" },
-      { href: "/facilities", label: "12 Biz Facilities" },
+      { href: "/facilities#dream-spaces", label: "16 Dream Spaces" },
+      { href: "/facilities#biz-facilities", label: "12 Biz Facilities" },
       { href: "/gateways", label: "5 Gateways" },
     ],
   },
@@ -50,7 +47,7 @@ const navGroups = [
     label: "CHP Social Impact",
     items: [
       { href: "/comet-educational-services", label: "Comet Educational Services" },
-      { href: "/purpose-driven-space", label: "Comet Gauseva" },
+      { href: "/purpose-driven-space", label: "CHP Gauseva" },
       { href: "/organic", label: "Himalayan Organic & Herbal Farms" },
       { href: "/sanaatan-isht-dev-sthal", label: "Sanaatan Isht Dev Sthal" },
     ],
@@ -293,21 +290,6 @@ export function Navbar() {
                   )}
                 >
                   {operationsLink.label}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={liveFromGroundLink.href}
-                  className={cn(
-                    desktopLink,
-                    pathname === liveFromGroundLink.href
-                      ? isLight
-                        ? "bg-green-900/10 text-green-900 font-semibold"
-                        : "bg-white/20 text-white font-semibold"
-                      : desktopText
-                  )}
-                >
-                  {liveFromGroundLink.label}
                 </Link>
               </li>
               <li>
@@ -571,38 +553,6 @@ export function Navbar() {
                     (navGroups.length +
                       directLinks.length +
                       1) *
-                    0.045,
-                }}
-              >
-                <Link
-                  href={liveFromGroundLink.href}
-                  onClick={() =>
-                    setMenuOpen(false)
-                  }
-                  className={cn(
-                    "flex items-center py-3 px-4 rounded-xl text-lg font-medium transition-colors",
-                    pathname === liveFromGroundLink.href
-                      ? "bg-green-900/10 text-green-900"
-                      : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
-                  )}
-                >
-                  {liveFromGroundLink.label}
-                </Link>
-              </motion.li>
-              <motion.li
-                initial={{
-                  opacity: 0,
-                  x: -16,
-                }}
-                animate={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                transition={{
-                  delay:
-                    (navGroups.length +
-                      directLinks.length +
-                      2) *
                     0.045,
                 }}
               >

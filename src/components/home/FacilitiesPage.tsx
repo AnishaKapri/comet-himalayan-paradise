@@ -389,20 +389,21 @@ function EcosystemCard({
    ============================================================ */
 
 function EcosystemSection({
+  id,
   title,
   intro,
   items,
 }: {
+  id: string;
   title: string;
   intro: ReactNode;
   items: EcosystemItem[];
 }) {
-  const headingId = `${title
-    .toLowerCase()
-    .replaceAll(" ", "-")}-heading`;
+  const headingId = `${id}-heading`;
 
   return (
     <section
+      id={id}
       className="scroll-mt-24"
       aria-labelledby={headingId}
     >
@@ -501,6 +502,7 @@ export function FacilitiesPage() {
               ================================================== */}
 
           <EcosystemSection
+            id="dream-spaces"
             title="CHP Dream Spaces"
             intro={
               <>
@@ -517,6 +519,7 @@ export function FacilitiesPage() {
               ================================================== */}
 
           <EcosystemSection
+            id="biz-facilities"
             title="CHP Facilities"
             intro={
               <>

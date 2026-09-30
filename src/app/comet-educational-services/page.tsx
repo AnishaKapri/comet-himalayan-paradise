@@ -494,6 +494,7 @@ export default function CometEducationalServicesPage() {
             className="min-h-screen bg-stone-50 text-slate-800 pt-16 [hyphens:auto]"
         >
 
+<<<<<<< HEAD
             {/* ── Hero (all text centred) ── */}
             <section className="relative h-[calc(100vh-4rem)] min-h-[650px] overflow-hidden flex items-center">
                 {/* Background image */}
@@ -504,10 +505,29 @@ export default function CometEducationalServicesPage() {
                     priority
                     className="object-cover object-center"
                     sizes="100vw"
+=======
+            {/* ── Hero ── */}
+            {/*
+             * The image controls the hero height.
+             * No fixed viewport height, min-height, aspect ratio, or object-cover is used,
+             * so the section is exactly as tall as the supplied image at the current width.
+             */}
+            <section className="relative w-full overflow-hidden">
+                {/* Supplied header image — natural aspect ratio, never cropped */}
+                <img
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/bc09c63b-c759-45c6-bf7c-84970f484ded-scaled-comet-svc.webp"
+                    alt="Comet Educational Services in the Himalayas"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="block h-auto w-full"
+>>>>>>> bb8fdf1 (c10)
                 />
+
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-green-950/95 via-green-950/50 to-black/20" />
+
                 {/* Content */}
+<<<<<<< HEAD
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
                     <ScrollReveal direction="up">
                         <div className="flex flex-col items-center text-center">
@@ -534,6 +554,28 @@ export default function CometEducationalServicesPage() {
                             </blockquote>
                         </div>
                     </ScrollReveal>
+=======
+                <div className="absolute inset-0 z-10 flex items-end">
+                    <div className="mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 sm:pb-14 lg:px-8 lg:pb-16">
+                        <ScrollReveal direction="up">
+                            <div className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 shadow-[0_8px_30px_rgba(0,0,0,0.18)] backdrop-blur-md">
+                                <span className="h-px w-7 bg-emerald-300" />
+                                <p className="text-emerald-200 text-[11px] font-semibold uppercase tracking-[0.2em]">CHP Social Impact</p>
+                            </div>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5 max-w-4xl text-white">
+                                About Comet<br />
+                                <span className="text-emerald-300">Educational Services</span>
+                            </h1>
+                            <p className="text-white/85 text-lg sm:text-xl leading-relaxed max-w-3xl mb-5">
+                                COMET Educational Service is a nonprofit initiative that works to bridge the career-development gap
+                                for talented students from remote and underserved communities.
+                            </p>
+                            <blockquote className="border-l-4 border-emerald-400 pl-6 text-white/90 text-lg italic font-medium max-w-2xl">
+                                &ldquo;Talent is everywhere. Opportunity should be too.&rdquo;
+                            </blockquote>
+                        </ScrollReveal>
+                    </div>
+>>>>>>> bb8fdf1 (c10)
                 </div>
             </section>
 

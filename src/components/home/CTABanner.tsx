@@ -13,7 +13,7 @@ interface CTABannerProps {
 
 export function CTABanner({ backHref, backLabel = "Go back" }: CTABannerProps) {
   return (
-    <section className="relative overflow-hidden py-24 lg:py-32">
+    <section className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <Image
@@ -30,7 +30,7 @@ export function CTABanner({ backHref, backLabel = "Go back" }: CTABannerProps) {
       <div className="absolute left-0 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5" />
       <div className="absolute right-0 top-1/2 h-80 w-80 translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5" />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,22 +38,22 @@ export function CTABanner({ backHref, backLabel = "Go back" }: CTABannerProps) {
           transition={{ duration: 0.7 }}
         >
           {/* Badge */}
-          <div className="glass mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-orange-400">
-            <Mountain className="h-3.5 w-3.5" />
+          <div className="inline-flex items-center gap-2 glass text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] px-4 py-2 rounded-full mb-6">
+            <Mountain className="w-3.5 h-3.5" />
             Enter the CHP Himalayan Paradise Ecosystem
           </div>
 
           {/* Heading */}
-          <h2 className="mb-6 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">
             The Himalayas Are
             <br />
-            <span className="bg-gradient-to-r from-sky-300 to-emerald-300 bg-clip-text text-transparent">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-emerald-300">
               Calling Your Name
             </span>
           </h2>
 
           {/* Description */}
-          <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg">
+          <p className="text-white/65 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
             Whether it&apos;s a weekend camp, a 10-day trek, or a month-long
             Himalayan immersion — we&apos;ll craft the perfect journey for you.
             No two trips are the same.
@@ -88,7 +88,7 @@ export function CTABanner({ backHref, backLabel = "Go back" }: CTABannerProps) {
           </div>
 
           {/* Small disclaimer */}
-          <p className="mt-8 text-xs text-white/35">
+          <p className="text-white/35 text-xs mt-8">
             Free consultation · Fully customizable · Responsible tourism
           </p>
         </motion.div>

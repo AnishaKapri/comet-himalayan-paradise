@@ -34,28 +34,37 @@ export const metadata: Metadata = {
    Page-level settings
    ──────────────────────────────────────────────────────────────── */
 
-// Update these two values to match the actual source page.
-const SOURCE_PAGE_NAME = "CHP Social Impact";
-const SOURCE_PAGE_HREF = "/chp-social-impact";
+// Menu name shown in the green pill on the header image.
+const MENU_NAME = "EDUCATIONAL SERVICES";
 
-// Menu name shown in the header pill.
-const MENU_NAME = "CHP Social Impact";
+// Position of the pill on the header image (distance from the top edge).
+// Increase the values to move it down, decrease to move it up.
+const PILL_POSITION_CLASS = "top-0 sm:top-1 lg:top-2";
 
-// Shared header title style (same family & size as the About CHP page).
-const HEADER_TITLE_CLASS =
-    "font-sans text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white";
+// Destination of the button at the bottom of the page.
+const HOME_HREF = "/";
+
+// Mixed light colour combos for the small chips (Focus Areas, Mentorship skills).
+const CHIP_COLORS = [
+    "bg-amber-100 border-amber-200 text-amber-900",
+    "bg-emerald-100 border-emerald-200 text-emerald-900",
+    "bg-sky-100 border-sky-200 text-sky-900",
+    "bg-violet-100 border-violet-200 text-violet-900",
+    "bg-rose-100 border-rose-200 text-rose-900",
+    "bg-orange-100 border-orange-200 text-orange-900",
+];
 
 /**
  * Key-word highlighter (bold + contrasting colour).
+ * Used sparingly – only for the most important phrases.
  * Short phrases are kept together on one line (inline-block + nowrap) so that
  * justified text can never stretch the gaps between the highlighted words.
- * Longer phrases wrap normally.
  */
-function Key({ children, onDark = false }: { children: ReactNode; onDark?: boolean }) {
+function Key({ children }: { children: ReactNode }) {
     const isShort = typeof children === "string" && children.length <= 30;
     return (
         <strong
-            className={`font-bold ${onDark ? "text-amber-300" : "text-orange-700"} ${
+            className={`font-semibold text-red-800 bg-red-50/70 rounded-sm px-0.5 ${
                 isShort ? "inline-block whitespace-nowrap text-left" : ""
             }`}
         >
@@ -117,8 +126,8 @@ const trainings: {
         tagline: "Practical Technology Skills for Tomorrow's Careers",
         description: (
             <>
-                Learn <Key>IT tools, technologies</Key> and <Key>job-oriented skills</Key> that build a
-                strong foundation for today&apos;s technology-driven careers.
+                Learn IT tools, technologies and <Key>job-oriented skills</Key> that build a strong
+                foundation for today&apos;s technology-driven careers.
             </>
         ),
         focus: ["IT Tools", "Technologies", "Job Profiles", "Practical Skills"],
@@ -128,12 +137,8 @@ const trainings: {
         icon: Users,
         title: "Group Discussion",
         tagline: "Think. Speak. Listen. Participate.",
-        description: (
-            <>
-                Develop <Key>communication, logical thinking, teamwork</Key> and <Key>confidence</Key>{" "}
-                through structured group discussions.
-            </>
-        ),
+        description:
+            "Develop communication, logical thinking, teamwork and confidence through structured group discussions.",
         focus: ["Communication", "Confidence", "Teamwork", "Critical Thinking"],
         color: "emerald",
     },
@@ -141,12 +146,8 @@ const trainings: {
         icon: Mic,
         title: "Presentation Skills",
         tagline: "Turn Knowledge Into Confidence.",
-        description: (
-            <>
-                Learn to organize ideas, create <Key>effective presentations</Key> and communicate clearly
-                and confidently before an audience.
-            </>
-        ),
+        description:
+            "Learn to organize ideas, create effective presentations and communicate clearly and confidently before an audience.",
         focus: ["Communication", "Presentation", "Public Speaking", "Confidence"],
         color: "violet",
     },
@@ -154,12 +155,8 @@ const trainings: {
         icon: BrainCircuit,
         title: "Soft Skills",
         tagline: "Skills Beyond the Classroom.",
-        description: (
-            <>
-                Build the <Key>interpersonal and professional skills</Key> required to succeed in academic,
-                interview and workplace environments.
-            </>
-        ),
+        description:
+            "Build the interpersonal and professional skills required to succeed in academic, interview and workplace environments.",
         focus: ["Communication", "Teamwork", "Leadership", "Interview Readiness"],
         color: "amber",
     },
@@ -169,23 +166,14 @@ const schoolServices: { icon: typeof Laptop; title: string; description: ReactNo
     {
         icon: HeartHandshake,
         title: "Career Counselling & Mentorship",
-        description: (
-            <>
-                <Key>Career counselling</Key> sessions and workshops help students understand career
-                options, identify their strengths, and make informed decisions about their future.
-            </>
-        ),
+        description:
+            "Career counselling sessions and workshops help students understand career options, identify their strengths, and make informed decisions about their future.",
     },
     {
         icon: School,
         title: "Adopt-a-School Program",
-        description: (
-            <>
-                Through our school-support initiative, COMET works with selected schools to improve{" "}
-                <Key>educational opportunities</Key> and contribute to the academic and career development
-                of their students.
-            </>
-        ),
+        description:
+            "Through our school-support initiative, COMET works with selected schools to improve educational opportunities and contribute to the academic and career development of their students.",
     },
     {
         icon: BookOpen,
@@ -201,22 +189,14 @@ const schoolServices: { icon: typeof Laptop; title: string; description: ReactNo
     {
         icon: Lightbulb,
         title: "Motivational & Awareness Programs",
-        description: (
-            <>
-                Industry professionals and experienced mentors conduct <Key>motivational sessions</Key>,
-                career-awareness programs, and interactive workshops for students.
-            </>
-        ),
+        description:
+            "Industry professionals and experienced mentors conduct motivational sessions, career-awareness programs, and interactive workshops for students.",
     },
     {
         icon: Trophy,
         title: "Competitions & Career Events",
-        description: (
-            <>
-                COMET supports <Key>inter-school competitions</Key> and plans career-focused events at
-                block and district levels to encourage healthy competition, exposure, and learning.
-            </>
-        ),
+        description:
+            "COMET supports inter-school competitions and plans career-focused events at block and district levels to encourage healthy competition, exposure, and learning.",
     },
 ];
 
@@ -248,176 +228,98 @@ const careerGuidanceOfferings = [
 ];
 
 const studyCentreFeatures: ReactNode[] = [
-    <>
-        <Key>Safe &amp; disciplined</Key> learning environment for focused study
-    </>,
+    "Safe & disciplined learning environment for focused study",
     <>
         <Key>24×7 supervision</Key>, mentoring and guidance
     </>,
-    <>
-        Structured rules and routines that encourage <Key>discipline and responsibility</Key>
-    </>,
-    <>
-        Close mentoring and <Key>continuous monitoring</Key> of student progress
-    </>,
-    <>
-        <Key>Technical and functional training</Key> during early morning and evening hours
-    </>,
-    <>
-        <Key>English communication</Key> and soft-skills development
-    </>,
-    <>
-        Group discussions, team activities and <Key>presentation-oriented sessions</Key>
-    </>,
-    <>
-        <Key>Mock interviews</Key> and career preparation
-    </>,
-    <>
-        <Key>Weekend workshops</Key> with focused student participation
-    </>,
-    <>
-        <Key>360° feedback</Key> to students and parents on learning and development
-    </>,
+    "Structured rules and routines that encourage discipline and responsibility",
+    "Close mentoring and continuous monitoring of student progress",
+    "Technical and functional training during early morning and evening hours",
+    "English communication and soft-skills development",
+    "Group discussions, team activities and presentation-oriented sessions",
+    "Mock interviews and career preparation",
+    "Weekend workshops with focused student participation",
+    "360° feedback to students and parents on learning and development",
 ];
 
 const careerMakeoverPathways: { title: string; description: ReactNode }[] = [
     {
         title: "From Beginner to Software Professional",
-        description: (
-            <>
-                <Key>Advanced computer training</Key> can help students with little or no prior computer
-                knowledge build the skills required for software careers.
-            </>
-        ),
+        description:
+            "Advanced computer training can help students with little or no prior computer knowledge build the skills required for software careers.",
     },
     {
         title: "From Hindi Medium to Professional Careers",
-        description: (
-            <>
-                <Key>Spoken English</Key>, group discussions, presentation practice and mock interviews
-                help students build communication and workplace confidence.
-            </>
-        ),
+        description:
+            "Spoken English, group discussions, presentation practice and mock interviews help students build communication and workplace confidence.",
     },
     {
         title: "Alternative Pathways to BCA",
-        description: (
-            <>
-                <Key>Arts and Commerce</Key> students can receive guidance and support to explore BCA and
-                other technology-oriented degree programs.
-            </>
-        ),
+        description:
+            "Arts and Commerce students can receive guidance and support to explore BCA and other technology-oriented degree programs.",
     },
     {
         title: "Opportunities Beyond Academic Scores",
-        description: (
-            <>
-                Students with <Key>lower Class 12 scores</Key> can receive guidance to explore BCA, BBA and
-                other suitable degree programs.
-            </>
-        ),
+        description:
+            "Students with lower Class 12 scores can receive guidance to explore BCA, BBA and other suitable degree programs.",
     },
     {
         title: "Support for Students Without Mathematics",
-        description: (
-            <>
-                Students from Science and Commerce backgrounds who <Key>did not study Mathematics</Key> can
-                explore suitable pathways toward BCA programs.
-            </>
-        ),
+        description:
+            "Students from Science and Commerce backgrounds who did not study Mathematics can explore suitable pathways toward BCA programs.",
     },
     {
         title: "Affordable Higher Education",
-        description: (
-            <>
-                COMET works to help deserving and financially constrained students identify{" "}
-                <Key>affordable college and degree options</Key>.
-            </>
-        ),
+        description:
+            "COMET works to help deserving and financially constrained students identify affordable college and degree options.",
     },
 ];
 
 const supportWays: { title: string; description: ReactNode }[] = [
     {
         title: "Adopt a School",
-        description: (
-            <>
-                Support the development of schools in remote communities through{" "}
-                <Key>technology, mentoring, training</Key> and educational initiatives.
-            </>
-        ),
+        description:
+            "Support the development of schools in remote communities through technology, mentoring, training and educational initiatives.",
     },
     {
         title: "Build Computer Labs",
-        description: (
-            <>
-                Help establish and sustain <Key>computer labs</Key> by sponsoring computers, lab
-                infrastructure or technical consultants.
-            </>
-        ),
+        description:
+            "Help establish and sustain computer labs by sponsoring computers, lab infrastructure or technical consultants.",
     },
     {
         title: "Support Career Workshops & Career Fests",
-        description: (
-            <>
-                Enable students to discover career opportunities through <Key>counselling sessions</Key>,
-                workshops and career awareness events.
-            </>
-        ),
+        description:
+            "Enable students to discover career opportunities through counselling sessions, workshops and career awareness events.",
     },
     {
         title: "Sponsor Competitions",
-        description: (
-            <>
-                Support <Key>inter-school competitions</Key> that encourage creativity, knowledge,
-                confidence and healthy competition among students.
-            </>
-        ),
+        description:
+            "Support inter-school competitions that encourage creativity, knowledge, confidence and healthy competition among students.",
     },
     {
         title: "Provide Digital Devices",
-        description: (
-            <>
-                Donate or sponsor <Key>laptops, desktops and tablets</Key> for students and schools that
-                lack access to technology.
-            </>
-        ),
+        description:
+            "Donate or sponsor laptops, desktops and tablets for students and schools that lack access to technology.",
     },
     {
         title: "Sponsor IT Training & Certifications",
-        description: (
-            <>
-                Help students gain <Key>industry-relevant IT skills</Key> and professional certifications
-                that can improve their career opportunities.
-            </>
-        ),
+        description:
+            "Help students gain industry-relevant IT skills and professional certifications that can improve their career opportunities.",
     },
     {
         title: "Support Higher Education",
-        description: (
-            <>
-                Sponsor <Key>BCA, BBA</Key> or other higher-education expenses for deserving students who
-                face financial constraints.
-            </>
-        ),
+        description:
+            "Sponsor BCA, BBA or other higher-education expenses for deserving students who face financial constraints.",
     },
     {
         title: "Sponsor Student Laptops",
-        description: (
-            <>
-                Provide <Key>laptops</Key> to students pursuing professional courses who cannot afford the
-                equipment required for their education.
-            </>
-        ),
+        description:
+            "Provide laptops to students pursuing professional courses who cannot afford the equipment required for their education.",
     },
     {
         title: "Create Internship & Job Opportunities",
-        description: (
-            <>
-                Organizations can support COMET students by offering <Key>internships</Key>, project
-                opportunities and <Key>entry-level employment</Key>.
-            </>
-        ),
+        description:
+            "Organizations can support COMET students by offering internships, project opportunities and entry-level employment.",
     },
 ];
 
@@ -427,12 +329,12 @@ const leaders: { name: string; role: string; bio: ReactNode; photo: string }[] =
         role: "Founder & Chairman, COMET Foundation",
         bio: (
             <>
-                An <Key>MCA postgraduate and IIM Calcutta alumnus</Key>, Ram Datt Bhatt brings{" "}
-                <Key>more than two decades</Key> of experience across leading IT organizations. His
-                professional journey includes management roles with companies such as Dell, HPE, Wipro,
-                Infosys, Stanley and ValueLabs. His earlier experience in education and social service,
-                combined with his passion for supporting students and creating sustainable opportunities in
-                the Himalayan region, led to the creation of COMET and its broader social initiatives.
+                An MCA postgraduate and <Key>IIM Calcutta alumnus</Key>, Ram Datt Bhatt brings more than
+                two decades of experience across leading IT organizations. His professional journey
+                includes management roles with companies such as Dell, HPE, Wipro, Infosys, Stanley and
+                ValueLabs. His earlier experience in education and social service, combined with his
+                passion for supporting students and creating sustainable opportunities in the Himalayan
+                region, led to the creation of COMET and its broader social initiatives.
             </>
         ),
         photo: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-education-services/d5416b2e-95cc-425b-862d-e9d142a7cbe8-ram-sir.jpeg",
@@ -442,7 +344,7 @@ const leaders: { name: string; role: string; bio: ReactNode; photo: string }[] =
         role: "Co-Founder & Director, COMET Foundation",
         bio: (
             <>
-                A <Key>Master of Science in Computer Science and MBA</Key>, Jeetendra Ranjan has{" "}
+                A Master of Science in Computer Science and MBA, Jeetendra Ranjan has{" "}
                 <Key>more than 20 years</Key> of experience working with Indian and multinational
                 technology organizations. He contributes to COMET through his technical, management and
                 mentoring expertise, helping strengthen programs designed for students and young
@@ -457,10 +359,10 @@ const leaders: { name: string; role: string; bio: ReactNode; photo: string }[] =
         role: "Co-Founder & Director, COMET Foundation",
         bio: (
             <>
-                A <Key>B.Sc. and B.Ed. graduate from Kumaun University</Key>, Harish Chandra Bhatt has been
-                actively involved in social causes in the <Key>Pithoragarh region</Key> for more than two
-                decades. His longstanding commitment to supporting underserved communities and helping
-                people in remote villages inspired him to join COMET and contribute to its education and
+                A B.Sc. and B.Ed. graduate from Kumaun University, Harish Chandra Bhatt has been actively
+                involved in social causes in the <Key>Pithoragarh region</Key> for more than two decades.
+                His longstanding commitment to supporting underserved communities and helping people in
+                remote villages inspired him to join COMET and contribute to its education and
                 community-development initiatives.
             </>
         ),
@@ -494,7 +396,7 @@ export default function CometEducationalServicesPage() {
             className="min-h-screen bg-stone-50 text-slate-800 pt-16 [hyphens:auto]"
         >
 
-            {/* ── Hero ── */}
+            {/* ── Hero (header image + menu-name pill) ── */}
             {/*
              * The image controls the hero height.
              * No fixed viewport height, min-height, aspect ratio, or object-cover is used,
@@ -503,37 +405,21 @@ export default function CometEducationalServicesPage() {
             <section className="relative w-full overflow-hidden">
                 {/* Supplied header image — natural aspect ratio, never cropped */}
                 <img
-                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/bc09c63b-c759-45c6-bf7c-84970f484ded-scaled-comet-svc.webp"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a47a04af-cd8a-4fca-8ee0-ccac2e47a922-comet-svc.webp"
                     alt="Comet Educational Services in the Himalayas"
                     fetchPriority="high"
                     decoding="async"
-                    className="block h-auto w-full"
+                    className="block h-auto w-full border-0 outline-none"
                 />
 
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-green-950/95 via-green-950/50 to-black/20" />
+                {/* Page title for search engines & screen readers (not visible) */}
+                <h1 className="sr-only">About Comet Educational Services</h1>
 
-                {/* Content */}
-                <div className="absolute inset-0 z-10 flex items-end">
-                    <div className="mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 sm:pb-14 lg:px-8 lg:pb-16">
-                        <ScrollReveal direction="up">
-                            <div className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 shadow-[0_8px_30px_rgba(0,0,0,0.18)] backdrop-blur-md">
-                                <span className="h-px w-7 bg-emerald-300" />
-                                <p className="text-emerald-200 text-[11px] font-semibold uppercase tracking-[0.2em]">CHP Social Impact</p>
-                            </div>
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5 max-w-4xl text-white">
-                                About Comet<br />
-                                <span className="text-emerald-300">Educational Services</span>
-                            </h1>
-                            <p className="text-white/85 text-lg sm:text-xl leading-relaxed max-w-3xl mb-5">
-                                COMET Educational Service is a nonprofit initiative that works to bridge the career-development gap
-                                for talented students from remote and underserved communities.
-                            </p>
-                            <blockquote className="border-l-4 border-emerald-400 pl-6 text-white/90 text-lg italic font-medium max-w-2xl">
-                                &ldquo;Talent is everywhere. Opportunity should be too.&rdquo;
-                            </blockquote>
-                        </ScrollReveal>
-                    </div>
+                {/* Menu name: centred at the top of the image, takes no layout space */}
+                <div className={`absolute inset-x-0 z-10 flex justify-center ${PILL_POSITION_CLASS}`}>
+                    <span className="inline-block whitespace-nowrap rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold tracking-wide text-white shadow-md">
+                        {MENU_NAME}
+                    </span>
                 </div>
             </section>
 
@@ -563,7 +449,7 @@ export default function CometEducationalServicesPage() {
                         subtitle="COMET training programs help students develop the technical, communication and professional skills needed for higher education, employment and career growth. Our training combines IT skills, practical learning and professional development to prepare students for real-world opportunities."
                     />
                     <StaggerContainer className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.08}>
-                        {trainings.map((t) => {
+                        {trainings.map((t, ti) => {
                             const Icon = t.icon;
                             return (
                                 <StaggerItem key={t.title}>
@@ -579,8 +465,11 @@ export default function CometEducationalServicesPage() {
                                         <div className="mt-auto">
                                             <p className="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-2">Focus Areas</p>
                                             <div className="flex flex-wrap gap-1.5">
-                                                {t.focus.map((f) => (
-                                                    <span key={f} className="bg-white/70 text-slate-700 text-xs px-2.5 py-1 rounded-full border border-slate-200">
+                                                {t.focus.map((f, fi) => (
+                                                    <span
+                                                        key={f}
+                                                        className={`text-xs font-medium px-2.5 py-1 rounded-full border ${CHIP_COLORS[(ti + fi) % CHIP_COLORS.length]}`}
+                                                    >
                                                         {f}
                                                     </span>
                                                 ))}
@@ -641,19 +530,20 @@ export default function CometEducationalServicesPage() {
                             </h2>
                             <p className="text-slate-700 max-w-3xl mx-auto mb-4 leading-relaxed text-justify">
                                 COMET is expanding its mentorship services to school students, with{" "}
-                                <Key>career guidance planned from Class 5</Key> onwards and{" "}
-                                <Key>preparation support for competitive examinations</Key> for students from
-                                Class 8 onwards.
+                                <Key>career guidance planned from Class 5</Key> onwards and preparation
+                                support for competitive examinations for students from Class 8 onwards.
                             </p>
                             <p className="text-slate-700 max-w-3xl mx-auto mb-8 leading-relaxed text-justify">
-                                The program also focuses on essential <Key>life and soft skills</Key> designed
-                                to support students&apos; overall personal, academic, and career development.
+                                The program also focuses on essential life and soft skills designed to
+                                support students&apos; overall personal, academic, and career development.
                             </p>
                         </ScrollReveal>
                         <div className="flex flex-wrap justify-center gap-3">
                             {mentorshipSkills.map((skill, i) => (
                                 <ScrollReveal key={skill} delay={i * 0.05} direction="up">
-                                    <span className="bg-white border border-green-200 text-green-900 text-sm font-medium px-4 py-2 rounded-full">
+                                    <span
+                                        className={`text-sm font-medium px-4 py-2 rounded-full border ${CHIP_COLORS[i % CHIP_COLORS.length]}`}
+                                    >
                                         {skill}
                                     </span>
                                 </ScrollReveal>
@@ -676,16 +566,14 @@ export default function CometEducationalServicesPage() {
                                 What We Offer
                             </h2>
                             <p className="text-slate-600 leading-relaxed mb-5 text-justify">
-                                The traditional education system in our country does{" "}
-                                <Key>not consider career development</Key> aspect in its curriculum. Hence,
-                                career counselling services are associated with{" "}
-                                <Key>expensive schools in major cities</Key> only. COMET bridges this gap by
-                                making <Key>career guidance accessible to all</Key>.
+                                The traditional education system in our country does not consider career
+                                development aspect in its curriculum. Hence, career counselling services
+                                are associated with expensive schools in major cities only. COMET bridges
+                                this gap by making <Key>career guidance accessible to all</Key>.
                             </p>
                             <p className="text-slate-600 leading-relaxed text-justify">
-                                The training covers both <Key>job-profile-oriented skills</Key> and{" "}
-                                <Key>technology-based learning</Key>, supported by professionals from the IT
-                                industry.
+                                The training covers both job-profile-oriented skills and technology-based
+                                learning, supported by professionals from the IT industry.
                             </p>
                         </ScrollReveal>
                         <ScrollReveal direction="right">
@@ -730,15 +618,14 @@ export default function CometEducationalServicesPage() {
                                 <div>
                                     <h3 className="font-bold text-xl mb-3 text-slate-800">More Than a Study Centre</h3>
                                     <p className="text-slate-700 leading-relaxed mb-4 text-justify">
-                                        COMET Study Centre combines <Key>education, mentoring, discipline,
-                                        technology and personality development</Key> in one structured
+                                        COMET Study Centre combines education, mentoring, discipline,
+                                        technology and personality development in one structured
                                         environment.
                                     </p>
                                     <p className="text-slate-700 leading-relaxed text-justify">
                                         The objective is not simply to help students study better, but to
-                                        help them develop the <Key>knowledge, confidence, communication
-                                        skills and professional readiness</Key> needed to pursue their
-                                        future careers.
+                                        help them develop the knowledge, confidence, communication skills
+                                        and professional readiness needed to pursue their future careers.
                                     </p>
                                 </div>
                                 <div className="border-t border-green-200 pt-5">
@@ -784,8 +671,8 @@ export default function CometEducationalServicesPage() {
                     <ScrollReveal direction="up" className="mt-8">
                         <div className="bg-amber-50 border border-amber-100 rounded-2xl p-6 max-w-3xl mx-auto">
                             <p className="text-amber-900 font-semibold text-base leading-relaxed text-justify">
-                                Career Makeover is about helping students move from{" "}
-                                <Key>uncertainty to clarity</Key>, <Key>skills to confidence</Key>, and{" "}
+                                Career Makeover is about helping students move from uncertainty to
+                                clarity, skills to confidence, and{" "}
                                 <Key>education to employment opportunities</Key>.
                             </p>
                         </div>
@@ -806,21 +693,20 @@ export default function CometEducationalServicesPage() {
                                 Transforming Schools Together
                             </h2>
                             <p className="text-slate-600 leading-relaxed mb-4 text-justify">
-                                The future of a nation depends upon the <Key>quality of education</Key> imparted
-                                to our children. We believe that it is the{" "}
-                                <Key>joint responsibility of the Government and citizens</Key> to improve
-                                school education, hence we have begun the process of transforming
-                                underprivileged schools by the active involvement of donors, non-government
-                                organizations, and corporate sectors through the &ldquo;
+                                The future of a nation depends upon the quality of education imparted to
+                                our children. We believe that it is the joint responsibility of the
+                                Government and citizens to improve school education, hence we have begun
+                                the process of transforming underprivileged schools by the active
+                                involvement of donors, non-government organizations, and corporate
+                                sectors through the &ldquo;
                                 <Key>COMET — Adopt-A-School Programme</Key>&rdquo;.
                             </p>
                             <p className="text-slate-600 leading-relaxed text-justify">
-                                This program is an initiative to develop{" "}
-                                <Key>partnerships between schools, professionals, and organizations</Key>. The
-                                focus of the program is on identifying and solving problems that affect the
-                                quality of education and is grounded in the belief that government,
-                                corporates, and individuals can all play a pivotal role in accelerating
-                                student and school success.
+                                This program is an initiative to develop partnerships between schools,
+                                professionals, and organizations. The focus of the program is on
+                                identifying and solving problems that affect the quality of education and
+                                is grounded in the belief that government, corporates, and individuals can
+                                all play a pivotal role in accelerating student and school success.
                             </p>
                         </ScrollReveal>
                         <ScrollReveal direction="right">
@@ -870,9 +756,9 @@ export default function CometEducationalServicesPage() {
                         <div className="bg-green-50 border border-green-100 text-slate-700 rounded-2xl p-8 text-center max-w-3xl mx-auto">
                             <p className="text-green-800 text-xs font-semibold uppercase tracking-widest mb-4">Make a Direct Impact</p>
                             <p className="text-slate-700 text-lg leading-relaxed mb-2 text-justify">
-                                Your contribution can help a student{" "}
-                                <Key>access a computer, complete a professional course, attend a career
-                                workshop, pursue higher education</Key> or take the first step toward a career.
+                                Your contribution can help a student access a computer, complete a
+                                professional course, attend a career workshop, pursue higher education or
+                                take the first step toward a career.
                             </p>
                             <p className="text-slate-600 mt-4 text-sm text-justify">
                                 COMET believes that the <Key>right support at the right time</Key> can change a
@@ -884,9 +770,9 @@ export default function CometEducationalServicesPage() {
                         <div className="bg-amber-50 border border-amber-100 rounded-2xl p-6 max-w-3xl mx-auto">
                             <p className="text-amber-900 font-semibold text-sm mb-2">Transparency & Engagement</p>
                             <p className="text-slate-600 text-sm leading-relaxed text-justify">
-                                We encourage supporters to see the impact of their contributions firsthand.
-                                Donors may <Key>visit supported schools or facilities</Key>, meet students
-                                directly, and receive <Key>updates, photographs and videos</Key> from sponsored
+                                We encourage supporters to see the impact of their contributions
+                                firsthand. Donors may visit supported schools or facilities, meet students
+                                directly, and receive updates, photographs and videos from sponsored
                                 programs and events.
                             </p>
                         </div>
@@ -928,15 +814,15 @@ export default function CometEducationalServicesPage() {
                 </div>
             </section>
 
-            {/* ── Go back to source page ── */}
+            {/* ── Go Back to Home ── */}
             <section className="py-8 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
                     <Link
-                        href={SOURCE_PAGE_HREF}
+                        href={HOME_HREF}
                         className="inline-flex items-center gap-2 rounded-full bg-green-50 border border-green-200 px-6 py-3 text-sm font-semibold text-green-900 hover:bg-green-100 transition-colors"
                     >
                         <ArrowLeft className="w-4 h-4" />
-                        Go back to {SOURCE_PAGE_NAME}
+                        Go Back to Home
                     </Link>
                 </div>
             </section>

@@ -367,18 +367,18 @@ export default function CHPBizPartnershipPage() {
 
         <div className="absolute inset-0 bg-black/10" />
 
-        <div className="relative z-10 mx-auto flex min-h-[72vh] w-full max-w-7xl flex-col items-center px-5 pb-36 pt-12 text-center sm:px-8 sm:pb-40 sm:pt-14 lg:items-start lg:px-10 lg:pb-40 lg:pl-16 lg:pt-20 lg:text-left xl:pl-20">
+        <div className="relative z-10 mx-auto flex min-h-[72vh] w-full max-w-7xl flex-col items-center px-5 pb-36 pt-[84px] text-center sm:px-8 sm:pb-40 sm:pt-[100px] lg:px-10 lg:pb-40 lg:pt-[116px]">
 
           {/* =====================================================
               CHP BIZ PARTNERSHIP BADGE
           ===================================================== */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-green-700/70 bg-green-950/95 px-3.5 py-1.5 shadow-lg backdrop-blur-sm sm:px-4 sm:py-1.5">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/20 bg-emerald-950/90 px-4 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.22)] backdrop-blur-md sm:px-5 sm:py-2.5">
             <TrendingUp
               className="h-3.5 w-3.5 shrink-0 text-amber-400 sm:h-4 sm:w-4"
               strokeWidth={2.1}
             />
 
-            <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-300 sm:text-[11px] sm:tracking-[0.2em]">
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white sm:text-xs sm:tracking-[0.22em]">
               CHP BIZ. PARTNERSHIP
             </span>
           </div>
@@ -387,42 +387,24 @@ export default function CHPBizPartnershipPage() {
               HERO CONTENT
               TITLE IS LEFT UNCHANGED
           ===================================================== */}
-          <div className="mt-5 w-full max-w-5xl text-white sm:mt-6 lg:max-w-4xl">
-            <h1 className="max-w-4xl text-[2.15rem] font-bold leading-[1.08] tracking-[-0.025em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:text-[2.5rem] md:text-[2.8rem] lg:text-[3.05rem] xl:text-[3.2rem]">
-              <span className="block">
+          <div className="mt-5 w-full max-w-6xl text-white sm:mt-6">
+            <h1 className="mx-auto w-full font-serif text-[2.1rem] font-bold leading-[1.08] tracking-[-0.03em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:text-[2.45rem] md:text-[2.8rem] lg:text-[3.1rem] xl:text-[3.3rem]">
+              <span className="block whitespace-nowrap">
                 Bring Your Business. Build Your Vision.
               </span>
 
               <span className="mt-1 block">
                 Become Part of the{" "}
-                <span className="text-amber-500">
+                <span>
                   CHP Ecosystem.
                 </span>
               </span>
             </h1>
 
             {/* =====================================================
-                HERO DESCRIPTION
-                INCREASED SLIGHTLY
-            ===================================================== */}
-            <p className="mt-4 max-w-3xl text-[14px] leading-6 text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] sm:mt-5 sm:text-[15px] sm:leading-6.5 lg:text-[16px] lg:leading-7">
-              CHP Biz Partnership brings together{" "}
-              <strong className="font-semibold text-white">
-                entrepreneurs, investors, professionals, organizations,
-                institutions and business groups
-              </strong>{" "}
-              to create and operate{" "}
-              <strong className="font-semibold text-white">
-                distinctive businesses within the CHP Himalayan Paradise
-                ecosystem.
-              </strong>
-            </p>
-
-            {/* =====================================================
                 HERO BUTTONS
-                INCREASED SLIGHTLY
             ===================================================== */}
-            <div className="mt-5 flex flex-wrap justify-center gap-2.5 sm:mt-6 sm:gap-3 lg:justify-start">
+            <div className="mt-8 flex flex-wrap justify-center gap-2.5 sm:mt-9 sm:gap-3">
 
               {/* Explore Opportunities */}
               <a
@@ -468,28 +450,17 @@ export default function CHPBizPartnershipPage() {
                 One Destination. Multiple Businesses.
               </p>
 
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+              <h2 className="mt-4 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
                 A business ecosystem, not just a business location.
               </h2>
 
-              <div className="mt-6 space-y-5 text-base leading-8 text-slate-600 sm:text-lg">
+              <div className="mt-6 text-justify text-base leading-8 text-slate-600 sm:text-lg">
                 <p>
-                  <strong className="font-semibold text-slate-900">
-                    CHP is being developed as an integrated Himalayan
-                    destination
-                  </strong>{" "}
+                  CHP is being developed as an <strong className="font-semibold text-slate-900">integrated Himalayan destination</strong>{" "}
                   bringing together hospitality, wellness, adventure,
                   education, creativity, agriculture, eco-tourism, culture and
                   entrepreneurship under one connected ecosystem.
-                </p>
-
-                <p>
-                  Instead of building a business as an isolated venture,{" "}
-                  <strong className="font-semibold text-slate-900">
-                    partners can become part of a destination where multiple
-                    businesses, facilities, experiences and customer segments
-                    work together.
-                  </strong>
+                  Instead of building a business as an isolated venture, partners can become part of a destination where multiple businesses, facilities, experiences and customer segments <strong className="font-semibold text-slate-900">work together</strong>.
                 </p>
               </div>
             </div>
@@ -511,9 +482,7 @@ export default function CHPBizPartnershipPage() {
                     </p>
 
                     <p className="mt-1 text-sm leading-6 text-slate-500">
-                      <strong className="font-semibold text-slate-700">
-                        {label}
-                      </strong>
+                      {label}
                     </p>
                   </div>
                 ))}
@@ -525,10 +494,7 @@ export default function CHPBizPartnershipPage() {
                 <p>
                   The CHP proposal portfolio repeatedly emphasizes the
                   advantages of{" "}
-                  <strong className="font-semibold">
-                    shared infrastructure, cross-selling, CHP branding and
-                    year-round opportunities.
-                  </strong>
+                  <strong className="font-semibold">shared infrastructure</strong>, cross-selling, CHP branding and year-round opportunities.
                 </p>
               </div>
             </div>
@@ -548,22 +514,37 @@ export default function CHPBizPartnershipPage() {
           />
 
           <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {ecosystemBenefits.map((benefit, index) => (
-              <div
-                key={benefit}
-                className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-950/5"
-              >
+            {ecosystemBenefits.map((benefit, index) => {
+              const benefitBackgrounds = [
+                "bg-emerald-50/80",
+                "bg-sky-50/80",
+                "bg-amber-50/80",
+                "bg-violet-50/80",
+                "bg-rose-50/80",
+                "bg-cyan-50/80",
+                "bg-lime-50/80",
+                "bg-indigo-50/80",
+                "bg-orange-50/80",
+                "bg-teal-50/80",
+                "bg-fuchsia-50/80",
+                "bg-yellow-50/80",
+              ];
+
+              return (
+                <div
+                  key={benefit}
+                  className={`group flex items-start gap-4 rounded-2xl border border-slate-200/80 ${benefitBackgrounds[index]} p-5 transition duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-lg hover:shadow-emerald-950/5`}
+                >
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-xs font-semibold text-emerald-700">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
                 <p className="pt-1 text-sm font-medium leading-6 text-slate-700">
-                  <strong className="font-semibold text-slate-900">
-                    {benefit}
-                  </strong>
+                  {benefit}
                 </p>
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -586,11 +567,7 @@ export default function CHPBizPartnershipPage() {
                 title: "Destination Weddings",
                 text: (
                   <>
-                    <strong className="font-semibold text-white">
-                      Accommodation, food, wellness, adventure, organic
-                      farming, village tourism and river experiences
-                    </strong>{" "}
-                    can combine to create a complete Himalayan experience
+                    Accommodation, food, wellness, adventure, organic farming, village tourism and river experiences can combine to create a <strong className="font-semibold text-white">complete Himalayan experience</strong>
                     rather than a standalone wedding venue.
                   </>
                 ),
@@ -601,10 +578,7 @@ export default function CHPBizPartnershipPage() {
                 text: (
                   <>
                     A film studio can connect with{" "}
-                    <strong className="font-semibold text-white">
-                      accommodation, outdoor locations, local artists,
-                      transportation and events.
-                    </strong>
+                    accommodation, <strong className="font-semibold text-white">outdoor locations</strong>, local artists, transportation and events.
                   </>
                 ),
                 icon: Video,
@@ -614,10 +588,7 @@ export default function CHPBizPartnershipPage() {
                 text: (
                   <>
                     An education venture can connect with{" "}
-                    <strong className="font-semibold text-white">
-                      STEM, adventure, wellness, accommodation and
-                      experiential learning.
-                    </strong>
+                    STEM, adventure, wellness, accommodation and <strong className="font-semibold text-white">experiential learning</strong>.
                   </>
                 ),
                 icon: GraduationCap,
@@ -627,10 +598,7 @@ export default function CHPBizPartnershipPage() {
                 text: (
                   <>
                     An eco-agri business can connect with{" "}
-                    <strong className="font-semibold text-white">
-                      Gaushala, tourism, food, wellness, hospitality and local
-                      community development.
-                    </strong>
+                    Gaushala, tourism, food, wellness, hospitality and <strong className="font-semibold text-white">local community development</strong>.
                   </>
                 ),
                 icon: Leaf,
@@ -702,9 +670,7 @@ export default function CHPBizPartnershipPage() {
                         <Check className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
 
                         <span>
-                          <strong className="font-semibold text-slate-800">
-                            {item}
-                          </strong>
+                          {item}
                         </span>
                       </li>
                     ))}
@@ -733,14 +699,7 @@ export default function CHPBizPartnershipPage() {
                 </h2>
 
                 <p className="mt-5 text-sm leading-7 text-white/65 sm:text-base">
-                  CHP welcomes partnership discussions with{" "}
-                  <strong className="font-semibold text-white">
-                    individuals, businesses, institutions and organizations
-                  </strong>{" "}
-                  looking to build or participate in a{" "}
-                  <strong className="font-semibold text-white">
-                    distinctive Himalayan venture.
-                  </strong>
+                  CHP welcomes partnership discussions with individuals, businesses, institutions and organizations looking to build or participate in a <strong className="font-semibold text-white">distinctive Himalayan venture</strong>.
                 </p>
               </div>
 
@@ -752,7 +711,7 @@ export default function CHPBizPartnershipPage() {
                   >
                     <Check className="h-4 w-4 shrink-0 text-emerald-300" />
 
-                    <strong className="font-semibold">{partner}</strong>
+                    {partner}
                   </div>
                 ))}
               </div>
@@ -787,9 +746,7 @@ export default function CHPBizPartnershipPage() {
                 </h3>
 
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  <strong className="font-semibold text-slate-900">
-                    {model.description.split(".")[0]}.
-                  </strong>{" "}
+                  {model.description.split(".")[0]}.{" "}
                   {model.description.substring(
                     model.description.indexOf(".") + 1
                   )}
@@ -817,18 +774,13 @@ export default function CHPBizPartnershipPage() {
 
               <p className="mt-5 text-base leading-8 text-slate-600">
                 Depending on the selected business model,{" "}
-                <strong className="font-semibold text-slate-900">
-                  CHP may support partners through ecosystem-level resources
-                </strong>{" "}
+                CHP may support partners through <strong className="font-semibold text-slate-900">ecosystem-level resources</strong>{" "}
                 including infrastructure, marketing, referrals and community
                 integration.
               </p>
 
               <p className="mt-4 text-sm leading-7 text-slate-500">
-                <strong className="font-semibold text-slate-700">
-                  The exact responsibilities would be defined separately for
-                  each business partnership.
-                </strong>
+                The exact responsibilities would be defined separately for each business partnership.
               </p>
             </div>
 
@@ -871,30 +823,16 @@ export default function CHPBizPartnershipPage() {
               >
                 <CircleDollarSign className="h-4 w-4 shrink-0 text-emerald-600" />
 
-                <strong className="font-semibold text-slate-800">
-                  {stream}
-                </strong>
+                {stream}
               </div>
             ))}
           </div>
 
           <div className="mx-auto mt-10 max-w-5xl rounded-2xl border border-emerald-100 bg-white p-6 text-sm leading-7 text-slate-600 shadow-sm sm:p-8">
-            <strong className="text-slate-900">
-              Examples from the CHP proposals:
-            </strong>{" "}
-            the Destination Wedding proposal identifies{" "}
-            <strong className="font-semibold text-slate-900">
-              venue bookings, wedding packages, catering, decoration,
-              photography, event management, accommodation, transportation,
-              pre-wedding shoots, corporate events, wellness retreats and
-              adventure packages
-            </strong>{" "}
-            as potential revenue streams. The Eco-Agri proposal similarly
+            Examples from the CHP proposals: 
+            the Destination Wedding proposal identifies <strong className="font-semibold text-slate-900">potential revenue streams</strong> including venue bookings, wedding packages, catering, decoration, photography, event management, accommodation, transportation, pre-wedding shoots, corporate events, wellness retreats and adventure packages. The Eco-Agri proposal similarly
             combines agriculture with{" "}
-            <strong className="font-semibold text-slate-900">
-              food processing, herbal products, agri-tourism and
-              wellness-oriented enterprises.
-            </strong>
+            food processing, herbal products, <strong className="font-semibold text-slate-900">agri-tourism</strong> and wellness-oriented enterprises.
           </div>
         </div>
       </section>
@@ -922,7 +860,7 @@ export default function CHPBizPartnershipPage() {
               ].map((item, index, array) => (
                 <div key={item} className="flex items-center gap-2">
                   <div className="rounded-2xl border border-white/10 bg-white/[0.06] px-5 py-4 text-center text-sm font-medium text-white/85">
-                    <strong>{item}</strong>
+                    {item}
                   </div>
 
                   {index < array.length - 1 ? (
@@ -965,18 +903,14 @@ export default function CHPBizPartnershipPage() {
                 </h3>
 
                 <p className="mt-2 text-xs leading-6 text-white/55">
-                  <strong className="font-semibold text-white/85">
-                    {text}
-                  </strong>
+                  {text}
                 </p>
               </div>
             ))}
           </div>
 
           <div className="mx-auto mt-6 max-w-xl rounded-2xl border border-emerald-400/15 bg-emerald-400/10 p-5 text-center text-sm leading-7 text-emerald-100/80">
-            <strong className="font-semibold text-emerald-100">
-              Year-Round Opportunities:
-            </strong>{" "}
+            <strong className="font-semibold text-emerald-100">Year-Round Opportunities</strong>: 
             Different businesses can attract different customer segments
             across different seasons.
           </div>
@@ -1017,9 +951,7 @@ export default function CHPBizPartnershipPage() {
                 </h3>
 
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  <strong className="font-semibold text-slate-900">
-                    {step.description}
-                  </strong>
+                  {step.description}
                 </p>
               </div>
             ))}
@@ -1052,9 +984,7 @@ export default function CHPBizPartnershipPage() {
                   </h2>
 
                   <p className="mt-5 text-sm leading-7 text-white/65 sm:text-base">
-                    <strong className="font-semibold text-white">
-                      Share a little about your business, idea or expertise.
-                    </strong>{" "}
+                    Share a little about your <strong className="font-semibold text-white">business idea</strong> or expertise. 
                     The information below will help frame the right partnership
                     conversation with the CHP team.
                   </p>
@@ -1072,9 +1002,7 @@ export default function CHPBizPartnershipPage() {
                         </div>
 
                         <p className="text-sm leading-6 text-white/75">
-                          <strong className="font-semibold text-white">
-                            {item}
-                          </strong>
+                          {item}
                         </p>
                       </div>
                     ))}
@@ -1086,10 +1014,7 @@ export default function CHPBizPartnershipPage() {
                     </p>
 
                     <p className="mt-2 text-sm leading-6 text-white/60">
-                      <strong className="font-semibold text-white/80">
-                        Partnership structures, responsibilities and support
-                        are defined separately
-                      </strong>{" "}
+                      Partnership structures, responsibilities and support are defined separately 
                       according to the selected business opportunity.
                     </p>
                   </div>
@@ -1107,10 +1032,7 @@ export default function CHPBizPartnershipPage() {
                   </h3>
 
                   <p className="mt-2 text-sm leading-6 text-slate-500">
-                    <strong className="font-semibold text-slate-700">
-                      Fill in the details below and start your CHP partnership
-                      conversation.
-                    </strong>
+                    Fill in the details below and start your <strong className="font-semibold text-slate-700">CHP partnership conversation</strong>.
                   </p>
                 </div>
 
@@ -1314,10 +1236,7 @@ export default function CHPBizPartnershipPage() {
                 </h3>
 
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  <strong className="font-semibold text-slate-900">
-                    {text.split(".")[0]}.
-                  </strong>{" "}
-                  {text.substring(text.indexOf(".") + 1)}
+                  {text}
                 </p>
               </div>
             ))}
@@ -1342,13 +1261,9 @@ export default function CHPBizPartnershipPage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">
-            <strong className="font-semibold text-white">
-              Share your business idea, expertise or proposed venture
-            </strong>{" "}
+            Share your <strong className="font-semibold text-white">business idea</strong>, expertise or proposed venture{" "}
             and explore how it can connect with the wider{" "}
-            <strong className="font-semibold text-white">
-              CHP Himalayan Paradise ecosystem.
-            </strong>
+            <strong className="font-semibold text-white">CHP Himalayan Paradise ecosystem</strong>
           </p>
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">
@@ -1370,21 +1285,18 @@ export default function CHPBizPartnershipPage() {
           </div>
 
           <p className="mt-7 text-xs leading-6 text-white/40">
-            <strong className="font-semibold text-white/60">
-              Partnership structures, responsibilities and support are defined
-              separately
-            </strong>{" "}
+            Partnership structures, responsibilities and support are defined separately{" "}
             according to the selected business opportunity.
           </p>
 
           {/* Back to CHP Biz Partnership — positioned at the bottom of the green CTA section */}
           <div className="mt-8 flex justify-center sm:mt-9">
             <Link
-              href="#hero"
+              href="/"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-black/10 backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-white/15"
             >
               <ArrowRight className="h-4 w-4 rotate-180" />
-              Back to CHP Biz Partnership
+              Home
             </Link>
           </div>
         </div>

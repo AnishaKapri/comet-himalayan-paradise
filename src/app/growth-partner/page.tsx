@@ -309,9 +309,9 @@ export default function GrowthPartnerPage() {
         <div className="absolute inset-0 bg-black/10" />
 
         {/* Hero content aligned like the CHP Biz Partnership hero */}
-        <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-7xl flex-col items-center px-6 pt-16 pb-12 text-center sm:px-8 sm:pt-20 sm:pb-14 lg:px-10 lg:pt-24 lg:pb-16">
+        <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-7xl translate-y-16 flex-col items-center px-6 pt-16 pb-12 text-center sm:translate-y-20 sm:px-8 sm:pt-20 sm:pb-14 lg:translate-y-24 lg:px-10 lg:pt-24 lg:pb-16">
           {/* Dark-green CHP label */}
-          <div className="inline-flex items-center rounded-full border border-white/20 bg-emerald-950/90 px-4 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.22)] backdrop-blur-md sm:px-5 sm:py-2.5">
+          <div className="mx-auto inline-flex items-center rounded-full border border-white/20 bg-emerald-950/90 px-4 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.22)] backdrop-blur-md sm:px-5 sm:py-2.5">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white sm:text-xs sm:tracking-[0.22em]">
               CHP Growth Partnership
             </span>
@@ -319,31 +319,13 @@ export default function GrowthPartnerPage() {
 
           {/* Title */}
           <div className="mt-5 w-full max-w-6xl text-white sm:mt-6">
-            <h1 className="mx-auto max-w-5xl font-serif text-[2.35rem] font-bold leading-[1.08] tracking-[-0.03em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:text-4xl md:text-[2.75rem] lg:text-[3.15rem] xl:text-[3.35rem]">
-              <span className="block">Grow with CHP.</span>
-              <span className="mt-1 block text-[#f3c96b]">
-                Build opportunities
-              </span>
-              <span className="mt-1 block">in the Himalayas.</span>
+            <h1 className="mx-auto w-full font-serif text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:text-[2.35rem] md:text-[2.7rem] lg:text-[3rem] xl:text-[3.2rem]">
+              <span className="block">Grow with CHP.<br />Build opportunities in the Himalayas.</span>
             </h1>
-
-            {/* Description */}
-            <p className="mx-auto mt-5 max-w-3xl text-[14px] leading-6 text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] sm:mt-6 sm:text-[15px] sm:leading-6.5 lg:text-base lg:leading-7">
-              Be part of a{" "}
-              <strong className="font-semibold text-white">
-                purpose-driven ecosystem
-              </strong>{" "}
-              bringing together{" "}
-              <strong className="font-semibold text-white">
-                hospitality, tourism, adventure, wellness, agriculture, events,
-                infrastructure and other opportunities
-              </strong>{" "}
-              across the Himalayas.
-            </p>
           </div>
 
           {/* Buttons aligned and sized like CHP Biz Partnership */}
-          <div className="mt-6 flex w-full flex-wrap justify-center gap-2.5 sm:mt-7 sm:gap-3">
+          <div className="mt-9 flex w-full flex-wrap justify-center gap-2.5 sm:mt-10 sm:gap-3">
             <a
               href="#apply-partner"
               className="inline-flex items-center gap-1.5 rounded-full bg-[#f3c96b] px-5 py-2.5 text-xs font-semibold text-[#14231f] shadow-lg shadow-black/10 transition duration-200 hover:-translate-y-0.5 hover:bg-[#ffe09a] sm:px-5.5 sm:py-2.5 sm:text-sm"
@@ -375,10 +357,10 @@ export default function GrowthPartnerPage() {
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
               CHP Growth Partnership
             </p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
+            <h2 className="mt-4 font-serif text-3xl leading-tight tracking-tight sm:text-4xl">
               What is CHP Growth Partnership?
             </h2>
-            <p className="mt-6 text-base leading-8 text-[#50605a]">
+            <p className="mt-6 text-justify text-base leading-8 text-[#50605a]">
               CHP Growth Partnership is a collaborative business-development model where partners help expand the CHP ecosystem through:
             </p>
 
@@ -393,15 +375,29 @@ export default function GrowthPartnerPage() {
                 "Strategic collaborations",
                 "Local and regional business development",
                 "Promotion of CHP experiences and offerings",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-3 rounded-2xl border border-[#ddd6c8] bg-white/70 p-4 text-sm font-medium leading-6"
-                >
+              ].map((item, index) => {
+                const programBackgrounds = [
+                  "bg-emerald-50/80",
+                  "bg-sky-50/80",
+                  "bg-amber-50/80",
+                  "bg-violet-50/80",
+                  "bg-rose-50/80",
+                  "bg-cyan-50/80",
+                  "bg-lime-50/80",
+                  "bg-indigo-50/80",
+                  "bg-orange-50/80",
+                ];
+
+                return (
+                  <div
+                    key={item}
+                    className={`flex items-start gap-3 rounded-2xl border border-slate-200/80 ${programBackgrounds[index]} p-4 text-sm font-medium leading-6 transition hover:-translate-y-0.5 hover:border-emerald-300`}
+                  >
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#8d6a2d]" />
                   <span>{item}</span>
-                </div>
-              ))}
+                  </div>
+                );
+              })}
             </div>
 
             <div className="mt-7 rounded-2xl border border-[#d8cba9] bg-[#fff8df] p-5 text-sm leading-7 text-[#5e553d]">
@@ -959,14 +955,13 @@ export default function GrowthPartnerPage() {
             <ArrowRight className="h-4 w-4" />
           </a>
 
-          {/* Back to the main CHP Growth Partnership header */}
           <div className="mt-10 flex justify-center">
             <a
-              href="#growth-partner-hero"
+              href="/"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-xs font-semibold text-white backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-white/15 sm:text-sm"
             >
-              Back to CHP Growth Partner
-              <ArrowRight className="h-4 w-4 rotate-[-90deg]" />
+              <ArrowRight className="h-4 w-4 rotate-180" />
+              Home
             </a>
           </div>
         </div>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { CheckCircle2, Star } from "lucide-react";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 import { CTABanner } from "@/components/home/CTABanner";
@@ -23,9 +22,6 @@ export const metadata: Metadata = {
 const Hl = ({ children }: { children: ReactNode }) => (
   <strong className="font-bold text-green-800">{children}</strong>
 );
-const HlLight = ({ children }: { children: ReactNode }) => (
-  <strong className="font-bold text-amber-300">{children}</strong>
-);
 
 const stays: {
   type: string;
@@ -43,7 +39,7 @@ const stays: {
     description: (
       <>
         Stay with <Hl>warm Kumaoni families</Hl> in their homes. Share meals at
-        the family table, learn about <Hl>daily mountain life</Hl>, and form
+        the family table, learn about daily mountain life, and form
         friendships that last long after you leave.
       </>
     ),
@@ -65,9 +61,9 @@ const stays: {
     tagline: "Sleep under Himalayan stars",
     description: (
       <>
-        <Hl>Premium canvas tents</Hl> set at spectacular riverside, meadow, or
-        forest locations. <Hl>All bedding and equipment provided</Hl> — bring
-        only yourself and your sense of wonder.
+        Premium canvas tents set at spectacular riverside, meadow, or forest
+        locations. <Hl>All bedding and equipment provided</Hl> — bring only
+        yourself and your sense of wonder.
       </>
     ),
     image:
@@ -88,9 +84,9 @@ const stays: {
     tagline: "Premium comfort, mountain magic",
     description: (
       <>
-        Beautifully appointed cottages with <Hl>panoramic Himalayan views</Hl>,{" "}
-        <Hl>private decks</Hl>, <Hl>premium bedding</Hl>, and curated
-        interiors. The finest way to experience the mountains in comfort.
+        Beautifully appointed cottages with <Hl>panoramic Himalayan views</Hl>,
+        private decks, premium bedding, and curated interiors. The finest way
+        to experience the mountains in comfort.
       </>
     ),
     image:
@@ -112,7 +108,7 @@ export default function AccommodationPage() {
   return (
     <>
       {/* Hero — same size and text styling as the About CHP header */}
-      <section className="relative w-full aspect-[3/1] min-h-[260px] overflow-hidden">
+      <section className="relative w-full aspect-[3/1] min-h-[320px] overflow-hidden">
         <Image
           src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/85e08a69-8e2c-458a-b7b8-2b36bf846c43-scaled-stay-options.webp"
           alt="Mountain accommodation"
@@ -123,19 +119,20 @@ export default function AccommodationPage() {
         />
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
-          <p className="mb-3 inline-block rounded-full bg-green-900 px-4 py-1.5 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-white">
-            Homestay
-          </p>
-          <h1 className="text-white text-sm sm:text-base md:text-lg font-semibold uppercase tracking-[0.28em] drop-shadow-[0_3px_7px_rgba(0,0,0,0.95)]">
-            Accommodation
-          </h1>
-          <p className="mt-3 max-w-3xl text-justify text-white text-[10px] sm:text-xs md:text-sm lg:text-base font-medium tracking-wide drop-shadow-[0_3px_7px_rgba(0,0,0,0.95)]">
-            Three distinct ways to stay in the Himalayas — from{" "}
-            <HlLight>camping tents under stars</HlLight> to{" "}
-            <HlLight>heritage homes</HlLight> and{" "}
-            <HlLight>luxury cottages</HlLight>.
-          </p>
+        <div className="absolute inset-0 flex flex-col items-center px-4 sm:px-6 pt-20 sm:pt-24">
+          {/* Text stack at the top of the image — all lines use the About CHP font + size */}
+          <div className="flex w-full flex-col items-center text-center">
+            <p className="rounded-full bg-green-900 px-5 py-2 text-white text-sm sm:text-base md:text-lg font-semibold uppercase tracking-[0.28em]">
+              Homestay
+            </p>
+            <h1 className="mt-3 text-white text-sm sm:text-base md:text-lg font-semibold uppercase tracking-[0.28em] drop-shadow-[0_3px_7px_rgba(0,0,0,0.95)]">
+              Accommodation
+            </h1>
+            <p className="mt-3 max-w-4xl text-justify text-white text-sm sm:text-base md:text-lg font-semibold uppercase tracking-[0.28em] drop-shadow-[0_3px_7px_rgba(0,0,0,0.95)]">
+              Three distinct ways to stay in the Himalayas — from camping tents
+              under stars to heritage homes and luxury cottages.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -150,8 +147,8 @@ export default function AccommodationPage() {
               Choose How You Stay
             </h2>
             <p className="mt-3 text-base leading-relaxed text-slate-600 text-justify">
-              From <Hl>budget homestays</Hl> to <Hl>luxury cottages</Hl> — every
-              option comes with <Hl>authentic Himalayan hospitality</Hl>.
+              From budget homestays to luxury cottages — every option comes
+              with <Hl>authentic Himalayan hospitality</Hl>.
             </p>
           </div>
 
@@ -233,17 +230,7 @@ export default function AccommodationPage() {
         </div>
       </section>
 
-      <CTABanner />
-
-      {/* Go back */}
-      <section className="bg-stone-50 py-6 flex justify-center">
-        <Link
-          href="/"
-          className="inline-flex items-center rounded-full bg-green-900 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-green-800"
-        >
-          Go back to Home
-        </Link>
-      </section>
+      <CTABanner backHref="/" backLabel="Go back to Home" />
     </>
   );
 }

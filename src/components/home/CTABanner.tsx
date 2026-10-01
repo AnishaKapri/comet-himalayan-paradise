@@ -9,9 +9,10 @@ interface CTABannerProps {
   /** Optional: shows a "go back" button in the same row as the other two buttons. */
   backHref?: string;
   backLabel?: string;
+  showHomeButton?: boolean;
 }
 
-export function CTABanner({ backHref, backLabel = "Go back" }: CTABannerProps) {
+export function CTABanner({ backHref, backLabel = "Go back", showHomeButton }: CTABannerProps) {
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}

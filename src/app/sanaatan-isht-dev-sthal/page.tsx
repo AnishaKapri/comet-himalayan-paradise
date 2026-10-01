@@ -167,58 +167,21 @@ export default function SanaatanIshtDevSthalPage() {
             {/* ── Hero ── */}
             <section className="relative w-full overflow-hidden bg-amber-950 pt-16">
                 <div className="relative aspect-[1000/333] w-full overflow-hidden">
-
                     {/* Header Background Image */}
                     <Image
-                        src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/571aac89-dc00-40e9-ba3d-96219c1f2665-cp-isht-dev-sthal-no-text-clean-under-500kb.webp"
+                        src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-gaushala/075cabe3-34b8-45d5-a44e-9a7d84dbed07-chp-isht-dev-sthal.png"
                         alt="Sanaatan Isht Dev Sthal – sacred shrine complex in the Himalayas"
                         fill
                         priority
                         sizes="100vw"
-                        className="object-cover object-center"
+                        className="object-cover object-[center_20%]"
                     />
 
-                    {/* Warm dark overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-amber-900/30 to-amber-950/75" />
-
-                    {/* Hero Content */}
-                    <div className="absolute inset-0 flex items-center">
-                        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-                            <ScrollReveal direction="up">
-
-                                <span className="mb-4 inline-block rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold tracking-wide text-white shadow-sm">
-                                    CHP Social Impact
-                                </span>
-
-                                <div className="mb-5 flex items-center gap-4">
-                                    <span className="text-4xl sm:text-5xl">
-                                        🕉️
-                                    </span>
-
-                                    <h1 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-                                        Sanaatan Isht{" "}
-                                        <span className="text-amber-300">
-                                            Dev Sthal
-                                        </span>
-                                    </h1>
-                                </div>
-
-                                <p className="text-xl font-semibold italic text-white/90 sm:text-2xl">
-                                    <strong className="font-bold text-amber-300">
-                                        One Place. Divine Unity. A Temple for Every Heart.
-                                    </strong>
-                                </p>
-
-                                <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/90">
-                                    A sacred initiative to reconnect generations with their{" "}
-                                    <strong className="font-bold text-amber-200">
-                                        Isht-Devas, Sanatan traditions
-                                    </strong>{" "}
-                                    and Uttarakhand&apos;s rich spiritual heritage.
-                                </p>
-
-                            </ScrollReveal>
-                        </div>
+                    {/* Center Most Top Tag */}
+                    <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10">
+                        <span className="mb-4 inline-block rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold tracking-wide text-white shadow-sm">
+                            CHP Social Impact
+                        </span>
                     </div>
                 </div>
             </section>
@@ -278,20 +241,20 @@ export default function SanaatanIshtDevSthalPage() {
                         </ScrollReveal>
 
                         <ScrollReveal direction="right">
-                            <div className="rounded-2xl bg-gradient-to-br from-amber-950 to-orange-900 p-8 text-white shadow-lg">
+                            <div className="rounded-2xl border border-amber-200/80 bg-amber-50/90 p-8 text-slate-800 shadow-sm">
 
                                 <div className="mb-6 flex items-center gap-3">
-                                    <MapPin className="h-6 w-6 text-amber-300" />
+                                    <MapPin className="h-6 w-6 text-amber-700" />
 
-                                    <p className="text-sm font-semibold uppercase tracking-wider text-amber-300">
+                                    <p className="text-sm font-semibold uppercase tracking-wider text-amber-800">
                                         Located in Devbhoomi
                                     </p>
                                 </div>
 
-                                <p className="mb-6 text-justify leading-relaxed text-white/85">
+                                <p className="mb-6 text-justify leading-relaxed text-slate-700">
                                     Located in Uttarakhand — widely associated
                                     with the idea of{" "}
-                                    <strong className="font-bold text-amber-300">
+                                    <strong className="font-bold text-amber-800">
                                         Devbhoomi, the Land of the Gods
                                     </strong>{" "}
                                     — the initiative aims to provide a dedicated
@@ -299,7 +262,7 @@ export default function SanaatanIshtDevSthalPage() {
                                     can be experienced together.
                                 </p>
 
-                                <p className="mb-6 text-sm font-semibold text-amber-300">
+                                <p className="mb-6 text-sm font-semibold text-amber-800">
                                     This project is intended to contribute to:
                                 </p>
 
@@ -309,9 +272,9 @@ export default function SanaatanIshtDevSthalPage() {
                                             key={i}
                                             className="flex items-start gap-3"
                                         >
-                                            <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-amber-300" />
+                                            <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
 
-                                            <span className="text-sm text-white/85">
+                                            <span className="text-sm text-slate-700">
                                                 {item}
                                             </span>
                                         </li>
@@ -350,7 +313,7 @@ export default function SanaatanIshtDevSthalPage() {
                                     delay={i * 0.08}
                                     direction="up"
                                 >
-                                    <div className="flex items-start gap-4 rounded-2xl border border-amber-100/80 bg-white p-6 shadow-sm transition-colors hover:border-amber-200">
+                                    <div className="flex items-start gap-4 rounded-2xl border border-amber-200/70 bg-amber-50/60 p-6 shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50">
 
                                         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-600 text-sm font-bold text-white">
                                             {i + 1}
@@ -413,30 +376,30 @@ export default function SanaatanIshtDevSthalPage() {
             {/* ── More Than a Place of Worship ── */}
             <section
                 id="more-than-worship"
-                className="bg-gradient-to-br from-amber-950 to-orange-900 py-12 text-white"
+                className="border-y border-amber-200/50 bg-amber-50/40 py-12 text-slate-800"
             >
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
                     <ScrollReveal direction="up">
                         <div className="mb-4 flex items-center justify-center gap-3">
-                            <span className="h-px w-8 bg-amber-300" />
+                            <span className="h-px w-8 bg-amber-500" />
 
-                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
+                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
                                 More Than a Place of Worship
                             </p>
 
-                            <span className="h-px w-8 bg-amber-300" />
+                            <span className="h-px w-8 bg-amber-500" />
                         </div>
 
-                        <h2 className="mb-4 text-center text-3xl font-bold sm:text-4xl">
+                        <h2 className="mb-4 text-center text-3xl font-bold text-slate-800 sm:text-4xl">
                             A Destination Combining Devotion, Cultural Education,
                             <br className="hidden sm:block" />
                             Wellness &amp; Community
                         </h2>
 
-                        <p className="mx-auto mb-10 max-w-2xl text-justify text-white/80 sm:text-center">
+                        <p className="mx-auto mb-10 max-w-2xl text-justify text-slate-600 sm:text-center">
                             The proposed Isht Dev Sthal is envisioned as a{" "}
-                            <strong className="font-bold text-amber-200">
+                            <strong className="font-bold text-amber-800">
                                 complete destination for devotees, students,
                                 families and visitors
                             </strong>{" "}
@@ -454,17 +417,17 @@ export default function SanaatanIshtDevSthalPage() {
                                     delay={i * 0.1}
                                     direction="up"
                                 >
-                                    <div className="rounded-2xl border border-white/20 bg-white/10 p-6 sm:p-8">
+                                    <div className="rounded-2xl border border-amber-200/70 bg-amber-50/80 p-6 shadow-sm sm:p-8">
 
-                                        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-400/20">
-                                            <Icon className="h-6 w-6 text-amber-300" />
+                                        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-200/60">
+                                            <Icon className="h-6 w-6 text-amber-800" />
                                         </div>
 
-                                        <h3 className="mb-3 text-xl font-bold text-white">
+                                        <h3 className="mb-3 text-xl font-bold text-slate-800">
                                             {item.title}
                                         </h3>
 
-                                        <p className="text-justify text-sm leading-relaxed text-white/80">
+                                        <p className="text-justify text-sm leading-relaxed text-slate-600">
                                             {item.description}
                                         </p>
 
@@ -476,19 +439,19 @@ export default function SanaatanIshtDevSthalPage() {
 
                     {/* Self-Sustaining Model */}
                     <ScrollReveal direction="up">
-                        <div className="mx-auto max-w-3xl rounded-2xl border border-white/20 bg-white/10 p-6 sm:p-8">
+                        <div className="mx-auto max-w-3xl rounded-2xl border border-amber-200/80 bg-amber-50/90 p-6 shadow-sm sm:p-8">
 
                             <div className="mb-6 flex items-center gap-3">
-                                <Leaf className="h-6 w-6 text-amber-300" />
+                                <Leaf className="h-6 w-6 text-amber-700" />
 
-                                <h3 className="text-xl font-bold text-white">
+                                <h3 className="text-xl font-bold text-slate-800">
                                     Building a Self-Sustaining Spiritual Initiative
                                 </h3>
                             </div>
 
-                            <p className="mb-6 text-justify text-sm leading-relaxed text-white/80">
+                            <p className="mb-6 text-justify text-sm leading-relaxed text-slate-600">
                                 The initiative proposes a{" "}
-                                <strong className="font-bold text-amber-200">
+                                <strong className="font-bold text-amber-800">
                                     self-sustainability model
                                 </strong>{" "}
                                 that includes:
@@ -500,9 +463,9 @@ export default function SanaatanIshtDevSthalPage() {
                                         key={i}
                                         className="flex items-start gap-3"
                                     >
-                                        <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-amber-300" />
+                                        <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
 
-                                        <span className="text-sm text-white/85">
+                                        <span className="text-sm text-slate-700">
                                             {item}
                                         </span>
                                     </li>
@@ -562,22 +525,22 @@ export default function SanaatanIshtDevSthalPage() {
                         </ScrollReveal>
 
                         <ScrollReveal direction="up">
-                            <div className="mb-6 rounded-2xl bg-gradient-to-br from-amber-950 to-orange-900 p-8 text-center text-white shadow-xl sm:p-10">
+                            <div className="mb-6 rounded-2xl border border-amber-200/80 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100/80 p-8 text-center text-slate-800 shadow-md sm:p-10">
 
                                 <span className="mb-6 block text-5xl">
                                     🪔
                                 </span>
 
-                                <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-amber-300">
+                                <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-amber-800">
                                     Faith. Service. Action.
                                 </p>
 
-                                <h3 className="mb-3 text-2xl font-bold">
+                                <h3 className="mb-3 text-2xl font-bold text-slate-900">
                                     Support a shrine. Preserve a tradition.
                                     Connect generations.
                                 </h3>
 
-                                <p className="mb-8 text-sm leading-relaxed text-white/80">
+                                <p className="mb-8 text-sm leading-relaxed text-slate-600">
                                     Reconnect with Your Isht-Devta.
                                     <br />
                                     A sacred journey of faith, heritage and

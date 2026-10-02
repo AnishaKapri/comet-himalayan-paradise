@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const HERO_IMAGE_URL =
-  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ecea6144-0af9-4acf-9670-23da3c694548-chp-enclave-no-text-under-900kb.webp";
+  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/dc7ca774-6fbf-41b9-88b1-a339db14e822-gemini-generated-image-re7mtvre7mtvre7m.png";
 
 export function CHPEnclaveHero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -33,17 +33,11 @@ export function CHPEnclaveHero() {
         />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/15 to-black/55" />
-      <Link
-        href="/business-proposals"
-        className="absolute left-4 top-20 z-20 inline-flex rounded-full bg-green-900 px-7 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-2xl hover:shadow-green-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-white sm:left-6 sm:top-24"
-      >
-        Business Proposals
-      </Link>
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
         className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center sm:px-6"
       >
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-xs font-semibold uppercase tracking-wider mb-6">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-xs font-semibold uppercase tracking-wider mb-6 -mt-30">
           <span className="h-px w-8 bg-orange-400/70" />
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white-400">
             A New Way to Belong

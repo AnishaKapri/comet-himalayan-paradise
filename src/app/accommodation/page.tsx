@@ -125,12 +125,9 @@ export default function AccommodationPage() {
             <p className="rounded-full bg-green-900 px-5 py-2 text-white text-sm sm:text-base md:text-lg font-semibold uppercase tracking-[0.28em]">
               Homestay
             </p>
-            <h1 className="mt-3 text-white text-sm sm:text-base md:text-lg font-semibold uppercase tracking-[0.28em] drop-shadow-[0_3px_7px_rgba(0,0,0,0.95)]">
-              Accommodation
-            </h1>
-            <p className="mt-3 max-w-4xl text-justify text-white text-sm sm:text-base md:text-lg font-semibold uppercase tracking-[0.28em] drop-shadow-[0_3px_7px_rgba(0,0,0,0.95)]">
-              Three distinct ways to stay in the Himalayas — from camping tents
-              under stars to heritage homes and luxury cottages.
+            
+            <p className="text-white/80 text-lg max-w-xl sm:text-xl md:text-1xl mt-4 sm:mt-6 text-justify">
+              Don't just visit the Himalayas — live like you belong here.
             </p>
           </div>
         </div>

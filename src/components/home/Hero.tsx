@@ -10,7 +10,6 @@ import {
   ChevronDown,
   Briefcase,
   Home as HomeIcon,
-  Sparkles,
 } from "lucide-react";
 
 const stats = [
@@ -72,13 +71,14 @@ export function Hero() {
 
       {/* =========================================================
           CONTENT
+          Entire hero content moved upward by 1.5cm
       ========================================================= */}
       <motion.div
         style={{
           opacity: contentOpacity,
           y: contentY,
         }}
-        className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6"
+        className="relative z-10 -top-[1.5cm] flex h-full flex-col items-center justify-start px-4 pt-16 text-center sm:px-6 sm:pt-20 md:pt-24 lg:pt-28"
       >
         {/* =====================================================
             EYEBROW
@@ -139,9 +139,7 @@ export function Hero() {
           }}
           className="text-white/70 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed mb-8"
         >
-          A Himalayan second home, surrounded by nature,
-          adventure, treks, holiday & wellness camps, culture, and
-          experiences — created for living, not just visiting.
+         Live the Himalayas. Build Your Legacy. Experience Life Beyond the Ordinary.
         </motion.p>
 
         {/* =====================================================
@@ -155,7 +153,7 @@ export function Hero() {
             duration: 0.7,
             delay: 0.95,
           }}
-          className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-14 sm:mb-20 max-w-3xl"
+          className="flex max-w-3xl flex-wrap items-center justify-center gap-2.5 sm:gap-3"
         >
           {/* Booking Options */}
           <Link
@@ -175,31 +173,22 @@ export function Hero() {
             Treks and Trails
           </Link>
 
-          {/* Business Opportunities */}
+          {/* Biz & Investment Opportunities */}
           <Link
-            href="/contact"
+            href="/chp-biz-partnership"
             className="group inline-flex items-center gap-1.5 glass text-white px-5 py-2.5 rounded-full font-semibold text-[11px] sm:text-xs transition-all duration-300 hover:-translate-y-0.5"
           >
             <Briefcase className="w-3.5 h-3.5" />
             Biz & investment Opportunities
           </Link>
 
-          {/* Second Home */}
+          {/* Own a Second Home */}
           <Link
-            href="/contact"
+            href="/chp-enclave"
             className="group inline-flex items-center gap-1.5 glass text-white px-5 py-2.5 rounded-full font-semibold text-[11px] sm:text-xs transition-all duration-300 hover:-translate-y-0.5"
           >
             <HomeIcon className="w-3.5 h-3.5" />
             Own a second home in Himalayas
-          </Link>
-
-          {/* Purpose Driven Space */}
-          <Link
-            href="/#purpose-driven-space"
-            className="group inline-flex items-center gap-1.5 glass text-white px-5 py-2.5 rounded-full font-semibold text-[11px] sm:text-xs transition-all duration-300 hover:-translate-y-0.5"
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            Purpose Driven Space
           </Link>
         </motion.div>
 

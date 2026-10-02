@@ -247,12 +247,8 @@ export default function OrganicFarmingPage() {
             className="object-cover object-[center_20%]"
           />
 
-          {/* Center Most Top Tag */}
-          <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10">
-            <span className="mb-4 inline-block rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold tracking-wide text-white shadow-sm">
-              CHP Social Impact
-            </span>
-          </div>
+          {/* Subtle dark image treatment — keeps the hero image clearly visible */}
+          <div className="pointer-events-none absolute inset-0 z-10 bg-black/10" aria-hidden="true" />
         </div>
       </section>
 
@@ -829,7 +825,7 @@ export default function OrganicFarmingPage() {
             href="/#social-impact"
             className="inline-block rounded-full bg-green-900 px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-green-800"
           >
-            Go back to CHP Social Impact
+            Home
           </Link>
         </div>
       </section>

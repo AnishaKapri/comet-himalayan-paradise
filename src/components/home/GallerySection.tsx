@@ -12,18 +12,12 @@ export function GallerySection() {
   return (
     <section className="py-14 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
+        <div className="mb-14">
           <SectionHeader
             title="CHP Image Gallery"
             subtitle="A glimpse of the extraordinary moments that await you."
             align="left"
           />
-          <Link
-            href="/gallery"
-            className="hidden md:inline-flex items-center gap-2 text-green-900 font-semibold text-sm hover:text-green-700 transition-colors shrink-0"
-          >
-            View all &rarr;
-          </Link>
         </div>
 
         {/* 3 Images Grid */}

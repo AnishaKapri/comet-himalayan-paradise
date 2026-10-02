@@ -170,9 +170,9 @@ export default function HealthRetreatProgramPage() {
 
             {/* ── Philosophy ── */}
             <section className="py-16 bg-gradient-to-r from-amber-950 to-stone-900 text-white">
-                <div className="max-w-4xl mx-auto px-4 text-center">
-                    <p className="text-amber-300 text-xs font-semibold uppercase tracking-widest mb-4">Our Philosophy</p>
-                    <blockquote className="text-2xl sm:text-2xl font-light leading-relaxed text-white/90 italic text-justify">
+                <div className="max-w-4xl mx-auto px-2 text-center">
+                    <p className="text-amber-300 text-2x2 font-semibold uppercase tracking-widest mb-4">Our Philosophy</p>
+                    <blockquote className="text-1xl sm:text-1xl font-light leading-relaxed text-white/90 italic text-justify">
                         {/* eslint-disable-next-line react/no-unescaped-entities */}
                         "The Himalayas do not merely house peaks — they house silence, wisdom, and the ancient breath of the earth. CHP is designed to help you listen."
                     </blockquote>

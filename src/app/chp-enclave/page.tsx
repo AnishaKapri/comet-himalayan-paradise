@@ -53,7 +53,7 @@ export default function CHPEnclavePage() {
                 A Mountain Community, Thoughtfully Planned
               </h2>
               <p className="text-slate-600 leading-relaxed text-lg text-justify">
-                CHP Himalayan Paradise Enclave is CHP&apos;s first <Highlight>thoughtfully planned mountain community</Highlight> where nature, comfort, and opportunity come together. Enjoy <Highlight>premium cottages</Highlight>, <Highlight>breathtaking Himalayan views</Highlight>, and a vibrant ecosystem designed for leisure, wellness, remote work, and meaningful living.
+                CHP Himalayan Paradise Enclave is CHP&apos;s first thoughtfully planned mountain community where nature, comfort, and opportunity come together. Enjoy <Highlight>premium cottages</Highlight>, <Highlight>breathtaking Himalayan views</Highlight>, and a vibrant ecosystem designed for leisure, wellness, remote work, and meaningful living.
               </p>
             </ScrollReveal>
 
@@ -101,7 +101,7 @@ export default function CHPEnclavePage() {
                 Group-Ownership Model
               </h2>
               <p className="text-slate-600 leading-relaxed text-lg text-justify">
-                CHP&apos;s <Highlight>Group Ownership Model</Highlight> enables friends, families, or like-minded investors to <Highlight>co-own premium Himalayan assets</Highlight> through shared investment. This collaborative approach reduces individual investment costs while creating opportunities for <Highlight>shared returns, lower financial risk, and long-term wealth creation</Highlight>.
+                CHP&apos;s Group Ownership Model enables friends, families, or like-minded investors to co-own premium Himalayan assets through shared investment. This collaborative approach reduces individual investment costs while creating opportunities for <Highlight>shared returns, lower financial risk, and long-term wealth creation</Highlight>.
               </p>
             </ScrollReveal>
           </div>
@@ -122,7 +122,7 @@ export default function CHPEnclavePage() {
               Location Matters
             </h2>
             <p className="max-w-3xl text-slate-600 leading-relaxed text-lg text-justify">
-              Strategically located in the Himalayas with <Highlight>excellent road connectivity</Highlight>, stunning mountain views, and close proximity to the <Highlight>airport, Munsyari, and Adi Kailash</Highlight>—offering the perfect balance of accessibility and serenity.
+              Strategically located in the Himalayas with excellent road connectivity, stunning mountain views, and close proximity to the <Highlight>airport, Munsyari, and Adi Kailash</Highlight>—offering the perfect balance of accessibility and serenity.
             </p>
           </ScrollReveal>
 
@@ -173,7 +173,7 @@ export default function CHPEnclavePage() {
                 Shared Services
               </h2>
               <p className="text-slate-600 leading-relaxed text-lg text-justify">
-                CHP Himalayan Enclave offers <Highlight>professionally managed shared services</Highlight>, allowing residents to enjoy premium facilities without the burden of individual maintenance. From housekeeping and security to landscaping and common infrastructure, <Highlight>everything is managed by the community</Highlight>.
+                CHP Himalayan Enclave offers <Highlight>professionally managed shared services</Highlight>, allowing residents to enjoy premium facilities without the burden of individual maintenance. From housekeeping and security to landscaping and common infrastructure, everything is managed by the community.
               </p>
               <ul className="mt-6 grid grid-cols-1 gap-x-8 gap-y-1 pl-5 text-sm leading-6 text-slate-600 sm:grid-cols-2 sm:list-disc">
                 <li>Camp fire facility</li>

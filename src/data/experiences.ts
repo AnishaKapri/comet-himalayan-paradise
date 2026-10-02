@@ -51,7 +51,7 @@ export const experiences: Experience[] = [
       "From high-altitude treks to river crossings and rock scrambles, chase adrenaline across the Kumaon Himalayas.",
     icon: "Mountain",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/3895ddcc-39ff-4d10-9cc0-c55ec7ad4a69-tresure-hunt-jpg.jpeg",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/e2f6218f-1fd8-4ef6-b33c-3f8a921c0467-adventure-and-exploration.png",
     duration: "1–7 Days",
     category: "adventure",
     highlights: [
@@ -85,7 +85,7 @@ export const experiences: Experience[] = [
       "Group games, bonfire nights, and playful outdoor activities designed to bring people together in nature.",
     icon: "PartyPopper",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/6b1f1669-87a6-4fa4-b4c6-67b7141244c9-guess-the-song-jpg.jpeg",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ea8e57de-0cd0-4a41-969c-3197dcb7af69-fun-games-and-recreation.png",
     duration: "Half–Full Day",
     category: "adventure",
     highlights: [
@@ -119,7 +119,7 @@ export const experiences: Experience[] = [
       "Discover centuries of Kumaoni heritage — ancient temples, folk art, festivals, and mountain traditions.",
     icon: "Landmark",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/9eed9cb8-1ac1-4677-8269-d503d4afb53c-kdc.webp",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/b72a9397-894d-4a6e-8215-0a4084bf8852-padadi-culture-and-heritage.png",
     duration: "Full Day",
     category: "culture",
     highlights: [
@@ -136,7 +136,7 @@ export const experiences: Experience[] = [
       "Get your hands in the soil of high-altitude farms — planting, harvesting, and organic cultivation with local families.",
     icon: "Sprout",
     image:
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80&auto=format&fit=crop",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/086c4037-0ab4-4ad4-8298-2f29d68eedcc-farming-and-rural-experience.png",
     duration: "Half–Full Day",
     category: "nature",
     highlights: [
@@ -170,7 +170,7 @@ export const experiences: Experience[] = [
       "Work remotely with reliable connectivity, mountain views, and a slower pace — built for extended Himalayan stays.",
     icon: "Laptop",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d24cfc6e-0194-484b-b5ad-ddff2560a032-wrt.webp",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/5bb04353-bfaa-4083-a85a-0078ba83e606-workation-and-long-stay.png",
     duration: "7–45 Days",
     category: "culture",
     highlights: [
@@ -204,7 +204,7 @@ export const experiences: Experience[] = [
       "Witness clear Himalayan night skies through stargazing sessions and guided night safaris away from city lights.",
     icon: "Moon",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/bc55a313-cbaf-42f6-89fc-92a46e61d145-adventure-camp.jpg",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f2c397b5-a54c-4fd4-9295-df1db3ad9313-sky-stars-and-night-experiences.png",
     duration: "Evening–Night",
     category: "nature",
     highlights: [

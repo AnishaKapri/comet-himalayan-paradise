@@ -405,7 +405,7 @@ export default function CometEducationalServicesPage() {
             <section className="relative w-full overflow-hidden">
                 {/* Supplied header image — natural aspect ratio, never cropped */}
                 <img
-                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a47a04af-cd8a-4fca-8ee0-ccac2e47a922-comet-svc.webp"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/86de4622-f5cd-4554-bbb4-986432e9ae9b-gemini-generated-image-8k3jlu8k3jlu8k3j.png"
                     alt="Comet Educational Services in the Himalayas"
                     fetchPriority="high"
                     decoding="async"

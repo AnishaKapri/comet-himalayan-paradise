@@ -137,7 +137,7 @@ function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <h2 className="mt-3 font-serif text-4xl leading-[1.04] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+      <h2 className="mt-3 font-serif text-4xl leading-[1.04] tracking-[-0.03em] sm:text-6xl lg:text-3xl">
         {title}
       </h2>
       {description && (
@@ -225,19 +225,13 @@ export default function CometGausevaPage() {
             decoding="async"
           />
 
-          {/* Center Most Top Tag */}
-          <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10">
-            <span className="mb-4 inline-block rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold tracking-wide text-white shadow-sm">
-              CHP Social Impact
-            </span>
-          </div>
         </div>
       </section>
 
 
       {/* VISION & MISSION */}
       <section className="bg-white px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-8xl">
           <SectionHeading title="Vision & Mission" />
 
           <div className="mt-8 grid gap-5 lg:grid-cols-2">
@@ -245,7 +239,7 @@ export default function CometGausevaPage() {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-800">
                 <Heart className="h-6 w-6" />
               </div>
-              <h3 className="mt-7 font-serif text-3xl text-emerald-950">Vision</h3>
+              <h3 className="mt-7 font-serif text-2xl text-emerald-950">Vision</h3>
               <p className="mt-5 text-lg leading-8 text-slate-700 text-justify">
                 To create a <strong className="font-bold text-emerald-900">compassionate and sustainable ecosystem</strong> where every cow is respected, protected and nurtured, while contributing to <strong className="font-bold text-emerald-900">rural livelihoods, organic farming and spiritual harmony</strong>.
               </p>
@@ -255,7 +249,7 @@ export default function CometGausevaPage() {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-800">
                 <Shield className="h-6 w-6" />
               </div>
-              <h3 className="mt-7 font-serif text-3xl text-amber-950">Mission</h3>
+              <h3 className="mt-7 font-serif text-2xl text-amber-950">Mission</h3>
               <p className="mt-5 text-lg leading-8 text-slate-700 text-justify">
                 To <strong className="font-bold text-green-900">rescue, shelter and care</strong> for abandoned, injured and aging cows in a safe and loving environment.
               </p>
@@ -370,7 +364,7 @@ export default function CometGausevaPage() {
                     <Icon className="h-5 w-5" />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="font-serif text-2xl leading-tight text-[#17352d] sm:text-3xl">
+                    <h3 className="font-serif text-2xl leading-tight text-[#17352d] sm:text-1xl">
                       {title}
                     </h3>
                     <div className="mt-6">

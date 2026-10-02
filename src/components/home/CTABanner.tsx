@@ -3,31 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  Mountain,
-  ArrowRight,
-  ArrowLeft,
-  Home,
-} from "lucide-react";
+import { Mountain, ArrowRight, Home } from "lucide-react";
 
-interface CTABannerProps {
-  /** Shows a "go back" button when backHref is provided. */
-  backHref?: string;
-
-  /** Label for the back button. */
-  backLabel?: string;
-
-  /** Shows a Home button when enabled. */
+type CTABannerProps = {
   showHomeButton?: boolean;
-}
+};
 
-export function CTABanner({
-  backHref,
-  backLabel = "Go back",
-  showHomeButton = false,
-}: CTABannerProps) {
+export function CTABanner({ showHomeButton = false }: CTABannerProps) {
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
+    <section className="relative overflow-hidden py-24 lg:py-32">
       {/* Background */}
       <div className="absolute inset-0">
         <Image
@@ -37,13 +21,11 @@ export function CTABanner({
           sizes="100vw"
           className="object-cover"
         />
-
         <div className="absolute inset-0 bg-gradient-to-br from-green-950/90 via-green-900/80 to-sky-900/70" />
       </div>
 
       {/* Decorative circles */}
       <div className="absolute left-0 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5" />
-
       <div className="absolute right-0 top-1/2 h-80 w-80 translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
@@ -75,55 +57,41 @@ export function CTABanner({
             No two trips are the same.
           </p>
 
-          {/* Buttons */}
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
-            {/* Booking */}
+          {/* Main Buttons */}
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-400 hover:shadow-2xl hover:shadow-orange-500/30"
+              className="group inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-400 hover:shadow-2xl hover:shadow-orange-500/30"
             >
               Booking Options
-
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
 
-            {/* Browse Treks */}
             <Link
               href="/treks"
-              className="glass inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5"
+              className="glass inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5"
             >
               Browse Treks
             </Link>
-
-            {/* Back Button */}
-            {backHref && (
-              <Link
-                href={backHref}
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-green-900 transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-50 hover:shadow-2xl"
-              >
-                <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-
-                {backLabel}
-              </Link>
-            )}
-
-            {/* Home Button */}
-            {showHomeButton && (
-              <Link
-                href="/"
-                className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20"
-              >
-                <Home className="h-4 w-4 transition-transform group-hover:scale-110" />
-
-                Home
-              </Link>
-            )}
           </div>
 
-          {/* Disclaimer */}
+          {/* Small disclaimer */}
           <p className="mt-8 text-xs text-white/35">
             Free consultation · Fully customizable · Responsible tourism
           </p>
+
+          {/* Home redirect row */}
+          {showHomeButton && (
+            <div className="mt-8 flex justify-center">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 py-3.5 font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20"
+              >
+                <Home className="h-4 w-4" />
+                Back to Home
+              </Link>
+            </div>
+          )}
         </motion.div>
       </div>
     </section>

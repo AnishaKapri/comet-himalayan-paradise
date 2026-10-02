@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { Filter, ArrowLeft } from "lucide-react";
+import { Filter } from "lucide-react";
 import { TrekCard } from "@/components/TrekCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
@@ -12,7 +11,7 @@ import { CTABanner } from "@/components/home/CTABanner";
 
 /* Shared header tokens — keep identical to the Camps page and About CHP page */
 const HERO_TITLE_CLASS =
-  "text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4";
+  "text-white text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4";
 const HERO_TAG_CLASS =
   "mb-4 inline-block rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white";
 
@@ -53,7 +52,7 @@ export default function TreksPage() {
           />
         </div>
         <div className="absolute inset-0 bg-black/45" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center -mt-36">
           {/* Menu name: small, rounded, deep green, white text */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -165,17 +164,7 @@ export default function TreksPage() {
         </div>
       </section>
 
-      <CTABanner />
-
-      {/* Go back button */}
-      <div className="bg-white py-8 text-center">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
-        >
-          <ArrowLeft className="w-4 h-4" /> Go back to Home
-        </Link>
-      </div>
+      <CTABanner showHomeButton />
     </>
   );
 }

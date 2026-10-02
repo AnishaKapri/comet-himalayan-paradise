@@ -647,7 +647,7 @@ export default function CometGausevaPage() {
             href="/#social-impact"
             className="inline-block rounded-full bg-green-900 px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-md hover:bg-green-800 transition-all duration-200 hover:-translate-y-0.5"
           >
-            Go back to CHP Social Impact
+            Home 
           </Link>
         </div>
       </section>

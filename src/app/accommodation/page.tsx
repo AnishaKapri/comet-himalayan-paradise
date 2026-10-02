@@ -227,7 +227,20 @@ export default function AccommodationPage() {
         </div>
       </section>
 
-      <CTABanner backHref="/" backLabel="Go back to Home" />
+      {/* =====================================================
+          BACK TO HOME
+          Simple bottom navigation button — no CTA banner.
+      ===================================================== */}
+      <section className="border-t border-stone-200 bg-white py-10">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <a
+            href="/"
+            className="inline-flex items-center justify-center rounded-full bg-green-900 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800"
+          >
+            Home
+          </a>
+        </div>
+      </section>
     </>
   );
 }

@@ -95,12 +95,15 @@ export function CHPFacilities() {
 
         {/* Row 1 — Dream Spaces */}
         <div className="mt-14">
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex items-center gap-4">
             <h3 className="text-xl sm:text-2xl font-bold text-slate-800">
-              Dream Spaces
+              CHP Dream Spaces
             </h3>
             <div className="h-px flex-1 bg-slate-200" />
           </div>
+          <p className="mb-8 mt-3 max-w-2xl text-sm font-medium leading-relaxed text-slate-600 sm:text-base">
+            Sixteen distinctive settings where Himalayan life finds room to belong, restore, and become.
+          </p>
 
           <StaggerContainer
             className="grid grid-cols-1 sm:grid-cols-3 gap-6"
@@ -114,7 +117,7 @@ export function CHPFacilities() {
           </StaggerContainer>
           <div className="mt-8 text-center">
             <Link
-              href="/facilities#chp-dream-spaces-heading"
+              href="/dream-spaces"
               className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
             >
               Explore Dream Spaces
@@ -125,12 +128,15 @@ export function CHPFacilities() {
 
         {/* Row 2 — Facilities */}
         <div className="mt-16">
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex items-center gap-4">
             <h3 className="text-xl sm:text-2xl font-bold text-slate-800">
-              Facilities
+              CHP Facilities
             </h3>
             <div className="h-px flex-1 bg-slate-200" />
           </div>
+          <p className="mb-8 mt-3 max-w-2xl text-sm font-medium leading-relaxed text-slate-600 sm:text-base">
+            Twelve purposeful facilities that turn every stay into a richer Himalayan experience.
+          </p>
 
           <StaggerContainer
             className="grid grid-cols-1 sm:grid-cols-3 gap-6"
@@ -146,13 +152,16 @@ export function CHPFacilities() {
 
         <div className="mt-10 text-center">
           <Link
-            href="/facilities"
+            href="/biz-facilities"
             className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
           >
             Explore Facilities
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
+        <p className="mx-auto mt-12 max-w-3xl text-center text-lg font-semibold leading-relaxed text-green-950 sm:text-xl">
+          Himalayan living, shared experiences, and purposeful spaces for a life of deeper belonging.
+        </p>
       </div>
     </section>
   );

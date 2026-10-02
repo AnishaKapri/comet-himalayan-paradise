@@ -260,28 +260,45 @@ export default function WhyCHPPage() {
         <main className="min-h-screen bg-stone-50 pt-16">
 
             {/* Hero */}
-            <section className="bg-green-950 py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <section
+                className="relative min-h-[460px] overflow-hidden"
+                style={{
+                    backgroundImage:
+                        "url('https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/764956a7-3f03-45a0-82e4-36d68cba3d0c-why-choose-chp-under-500kb.webp')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                }}
+            >
+                {/* Keep the Himalayan image clearly visible */}
+                <div className="absolute inset-0 bg-black/15" />
 
-                    <p className="mb-4 inline-block rounded-full bg-black/25 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-orange-300 shadow-sm backdrop-blur-sm">
-                        Why Choose Us
-                    </p>
+                {/* Hero content moved upward */}
+                <div className="relative z-10 flex min-h-[460px] items-center justify-center px-4 sm:px-6 lg:px-8">
+                    <div className="w-full max-w-4xl -translate-y-14 text-center sm:-translate-y-16 md:-translate-y-20">
 
-                    <h1 className="text-white text-4xl sm:text-5xl font-bold tracking-tight mb-5">
-                        Why CHP Himalayan Paradise
-                    </h1>
+                        {/* ONLY "WHY CHOOSE US" gets the dark green background */}
+                        <p className="mx-auto mb-5 inline-block rounded-full bg-green-950/95 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.24em] text-orange-300 shadow-lg backdrop-blur-sm">
+                            Why Choose Us
+                        </p>
 
-                    <p className="text-white/60 text-lg max-w-2xl mx-auto">
-                        Join CHP and unlock opportunities in hospitality, tourism,
-                        events, remote work, and sustainable living.
-                    </p>
+                        {/* No green background behind the title */}
+                        <h1 className="text-4xl font-bold tracking-tight text-white drop-shadow-lg sm:text-5xl">
+                            Why CHP Himalayan Paradise
+                        </h1>
 
+                        {/* No green background behind the description */}
+                        <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white drop-shadow-md">
+                            Join CHP and unlock opportunities in hospitality, tourism,
+                            events, remote work, and sustainable living.
+                        </p>
+
+                    </div>
                 </div>
             </section>
 
             {/* All Reasons Grid */}
             <section className="py-20 lg:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
                     <SectionHeader
                         eyebrow="All Reasons"
@@ -289,7 +306,7 @@ export default function WhyCHPPage() {
                         subtitle="From cool mountain summers to meaningful connections and unique mountain living — here is why people choose CHP for their Himalayan journey."
                     />
 
-                    <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
                         {features.map((f) => {
                             const Icon = f.icon;
@@ -298,7 +315,7 @@ export default function WhyCHPPage() {
                                 return (
                                     <div
                                         key={f.title}
-                                        className="group overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                                        className="group overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                                     >
                                         <img
                                             src={f.image}
@@ -312,22 +329,22 @@ export default function WhyCHPPage() {
                             return (
                                 <div
                                     key={f.title}
-                                    className="group overflow-hidden rounded-2xl border border-white/80 bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col"
+                                    className="group flex flex-col overflow-hidden rounded-2xl border border-white/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                                 >
                                     <div
-                                        className={`${f.surface} p-6 flex-1 flex flex-col`}
+                                        className={`${f.surface} flex flex-1 flex-col p-6`}
                                     >
                                         <div
-                                            className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${f.color}`}
+                                            className={`mb-4 flex h-10 w-10 items-center justify-center rounded-xl ${f.color}`}
                                         >
-                                            <Icon className="w-5 h-5" />
+                                            <Icon className="h-5 w-5" />
                                         </div>
 
-                                        <h2 className="font-bold text-slate-800 text-lg mb-2">
+                                        <h2 className="mb-2 text-lg font-bold text-slate-800">
                                             {f.title}
                                         </h2>
 
-                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                        <p className="text-sm leading-relaxed text-slate-600">
                                             {f.description}
                                         </p>
                                     </div>

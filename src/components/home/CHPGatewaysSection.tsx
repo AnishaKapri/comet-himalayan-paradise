@@ -22,13 +22,13 @@ export function CHPGatewaysSection() {
                         transition={{ duration: 0.6 }}
                         className="relative order-2 lg:order-1 flex justify-center"
                     >
-                        <div className="relative w-full max-w-[550px] aspect-square rounded-3xl overflow-hidden shadow-xl border border-stone-200 group">
+                        <div className="group relative aspect-square w-full max-w-[480px] overflow-hidden rounded-full">
                             <Image
                                 src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4a56d566-736b-4b08-9377-4d61304207ab-scaled-chp-gateways.webp"
                                 alt="CHP Gateways"
                                 fill
-                                sizes="(max-width: 1024px) 100vw, 550px"
-                                className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                                sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1024px) 480px, 40vw"
+                                className="object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                             />
                         </div>
                     </motion.div>

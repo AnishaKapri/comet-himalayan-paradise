@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Compass } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { CTABanner } from "@/components/home/CTABanner";
 import { AboutHero } from "@/components/about/AboutHero";
 import type { ReactNode } from "react";
 
@@ -67,25 +67,47 @@ const timeline = [
     year: "2023",
     title: "Expansion of CHP Community",
     description:
-      <>Driven by the increasing aspiration for peaceful second homes amidst nature, the CHP Community expanded into a vibrant neighborhood of <Highlight>35–40 cottages</Highlight>, creating an ideal destination for families, retirees, and remote professionals seeking a Himalayan lifestyle.</>,
+      <>
+        Driven by the increasing aspiration for peaceful second homes amidst
+        nature, the CHP Community expanded into a vibrant neighborhood of{" "}
+        <Highlight>35–40 cottages</Highlight>, creating an ideal destination
+        for families, retirees, and remote professionals seeking a Himalayan
+        lifestyle.
+      </>,
   },
   {
     year: "2024–25",
     title: "Transformation of CHP into CHP Ecosystem",
     description:
-      <>The evolution of CHP reached a new milestone with the creation of the CHP Ecosystem—an integrated network of <Highlight>25+ travel, hospitality, wellness, and recreational offerings</Highlight>. This holistic approach makes CHP a complete destination for unforgettable Himalayan experiences, all in one place.</>,
+      <>
+        The evolution of CHP reached a new milestone with the creation of the
+        CHP Ecosystem—an integrated network of{" "}
+        <Highlight>
+          25+ travel, hospitality, wellness, and recreational offerings
+        </Highlight>
+        . This holistic approach makes CHP a complete destination for
+        unforgettable Himalayan experiences, all in one place.
+      </>,
   },
   {
     year: "2025",
     title: "First Trek Programs",
     description:
-      <>We launched our first guided trek programs to <Highlight>Khaliya Top and Chandika Ghat</Highlight>, receiving overwhelmingly positive feedback from our early trekking groups.</>,
+      <>
+        We launched our first guided trek programs to{" "}
+        <Highlight>Khaliya Top and Chandika Ghat</Highlight>, receiving
+        overwhelmingly positive feedback from our early trekking groups.
+      </>,
   },
   {
     year: "2026",
     title: "Holiday Camp Launch",
     description:
-      <>The Holiday Camp program was born — our most comprehensive offering, combining accommodation, guided activities, wellness, and cultural immersion.</>,
+      <>
+        The Holiday Camp program was born — our most comprehensive offering,
+        combining accommodation, guided activities, wellness, and cultural
+        immersion.
+      </>,
   },
 ];
 
@@ -117,23 +139,25 @@ export default function AboutPage() {
 
               <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
                 Welcome to CHP
-
               </h2>
 
               <div className="space-y-4 text-justify text-slate-600 leading-relaxed text-base">
                 <p>
                   Comet Himalayan Paradise (CHP) is a unique Himalayan
-                  destination where <Highlight>nature, adventure, wellness, culture, and
-                  community living</Highlight> come together in one inspiring ecosystem.
-                  Nestled amidst the pristine mountains of Uttarakhand, CHP
-                  offers authentic experiences ranging from scenic treks,
-                  village homestays, cottage stays, and Himalayan camping to
-                  wellness retreats, organic farming, cultural immersion, and
-                  outdoor learning.
+                  destination where{" "}
+                  <Highlight>
+                    nature, adventure, wellness, culture, and community living
+                  </Highlight>{" "}
+                  come together in one inspiring ecosystem. Nestled amidst the
+                  pristine mountains of Uttarakhand, CHP offers authentic
+                  experiences ranging from scenic treks, village homestays,
+                  cottage stays, and Himalayan camping to wellness retreats,
+                  organic farming, cultural immersion, and outdoor learning.
                 </p>
 
                 <p>
-                  Whether you&apos;re seeking a <Highlight>second home in the Himalayas</Highlight>, a
+                  Whether you&apos;re seeking a{" "}
+                  <Highlight>second home in the Himalayas</Highlight>, a
                   peaceful escape, an adventurous holiday, a remote work
                   destination, or a meaningful connection with Himalayan life,
                   CHP provides unforgettable experiences for families,
@@ -208,8 +232,9 @@ export default function AboutPage() {
 
                 <p className="text-slate-600 leading-relaxed text-lg text-justify">
                   Working on our mission to connect visionary leaders with the
-                  Himalayas, <Highlight>professionals and industry leaders</Highlight> from the
-                  following organizations have already chosen CHP as their{" "}
+                  Himalayas,{" "}
+                  <Highlight>professionals and industry leaders</Highlight> from
+                  the following organizations have already chosen CHP as their
                   second home.
                 </p>
 
@@ -248,17 +273,18 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-slate-600 leading-relaxed text-lg text-justify">
-                CHP offers a <Highlight>complete Himalayan experience</Highlight> with nature,
-                adventure, wellness, spirituality, and community living. From
-                scenic treks and village walks to remote work, cultural
-                experiences, and wellness retreats, every visit creates{" "}
-                lasting memories.
+                CHP offers a{" "}
+                <Highlight>complete Himalayan experience</Highlight> with
+                nature, adventure, wellness, spirituality, and community
+                living. From scenic treks and village walks to remote work,
+                cultural experiences, and wellness retreats, every visit
+                creates lasting memories.
               </p>
             </ScrollReveal>
 
             <ScrollReveal direction="right">
               <div className="group relative mx-auto mt-6 w-full max-w-md lg:mt-0">
-                <div className=" overflow-hidden ">
+                <div className="overflow-hidden">
                   <Image
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a87aeb9b-4231-4bf0-a7aa-2987fc4df906-scaled-thingstodo.webp"
                     alt="Things to do at CHP Himalayan Paradise"
@@ -421,10 +447,19 @@ export default function AboutPage() {
       </section>
 
       {/* =====================================================
-          CTA
+          BACK TO HOME
+          Simple bottom navigation button — no CTA banner.
       ===================================================== */}
-      {/* Go back to source page — lives in the CTA button row */}
-      <CTABanner backHref="/" backLabel="Go back to Home" />
+      <section className="border-t border-stone-200 bg-white py-10">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <Link
+            href="/"
+            className="inline-flex items-center justify-center rounded-full bg-green-900 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800"
+          >
+            Home
+          </Link>
+        </div>
+      </section>
     </>
   );
 }

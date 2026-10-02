@@ -116,8 +116,8 @@ export default function GatewaysPage() {
     return (
         <main className="min-h-screen bg-stone-50 text-slate-800 pt-16 text-justify">
             {/* Hero Section */}
-            <section className="relative py-20 lg:py-24 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 border-b border-slate-800">
-                <div className="absolute inset-0 z-0 opacity-40">
+            <section className="relative py-20 lg:py-24 overflow-hidden bg-gradient-to-b from-neutral-800 via-neutral-750 to-neutral-850 border-b border-neutral-800">
+                <div className="absolute inset-0 z-0">
                     <Image
                         src="/images/chp-gateways.png"
                         alt="CHP Gateways"
@@ -125,7 +125,7 @@ export default function GatewaysPage() {
                         priority
                         className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-950/60" />
+                    <div className="absolute inset-0 bg-black/45" />
                 </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,7 +135,7 @@ export default function GatewaysPage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5 }}
-                                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-xs font-semibold uppercase tracking-wider mb-6"
+                                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-700/60 text-white text-xs font-semibold uppercase tracking-wider mb-6 shadow-lg shadow-black/20 backdrop-blur-sm"
                             >
                                 <Navigation className="w-3.5 h-3.5" />
                                 <span>Ecosystem Partnerships & Access</span>
@@ -159,7 +159,7 @@ export default function GatewaysPage() {
                                 transition={{ duration: 0.5, delay: 0.2 }}
                                 className="mt-6 text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed font-light"
                             >
-                                CHP Gateways are the different ways to become part of the CHP ecosystem. Whether through Purchase, Donation, Sponsorship, Adoption, or Partnership, every gateway opens new opportunities to grow, contribute, and belong in the Himalayas.
+                                
                             </motion.p>
 
                             <motion.div
@@ -177,7 +177,7 @@ export default function GatewaysPage() {
                                 </a>
                                 <a
                                     href="#gateways"
-                                    className="bg-slate-800 hover:bg-slate-700 text-white font-medium px-7 py-3.5 rounded-full border border-slate-700 transition-all duration-200"
+                                    className="bg-neutral-700/80 hover:bg-neutral-600 text-white font-medium px-7 py-3.5 rounded-full border border-white/15 transition-all duration-200 shadow-lg shadow-black/20 backdrop-blur-sm"
                                 >
                                     Explore the Gateways
                                 </a>
@@ -189,20 +189,15 @@ export default function GatewaysPage() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-800 group"
+                            className="relative mx-auto aspect-square w-full max-w-[460px] overflow-hidden rounded-full"
                         >
                             <Image
                                 src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/6755c577-d5ba-49c5-974c-8adc54ef1619-chatgpt-image-sep-17-2026-11-52-51-am.webp"
                                 alt="CHP Gateways Ecosystem"
                                 fill
-                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1024px) 460px, 40vw"
                                 className="object-contain object-center"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/10">
-                                <p className="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1">CHP Gateways</p>
-                                <p className="text-white text-sm font-medium">Portals of entry, contribution & partnership across the Himalayas.</p>
-                            </div>
                         </motion.div>
                     </div>
                 </div>
@@ -371,7 +366,7 @@ export default function GatewaysPage() {
                         className="inline-flex items-center gap-2 rounded-full bg-green-900 px-7 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800"
                     >
                         <ArrowLeft className="w-4 h-4" />
-                        Back to Home
+                        Home
                     </Link>
                 </div>
             </section>

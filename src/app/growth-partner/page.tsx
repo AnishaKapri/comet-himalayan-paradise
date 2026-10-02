@@ -294,7 +294,7 @@ export default function GrowthPartnerPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#f5f1e8] text-[#14231f]">
       {/* HERO */}
-      <section id="growth-partner-hero" className="relative isolate min-h-[78vh] overflow-hidden bg-slate-950">
+      <section id="growth-partner-hero" className="relative isolate mt-[70px] min-h-[78vh] overflow-hidden bg-slate-950 sm:mt-[72px]">
         <Image
           src={HEADER_IMAGE}
           alt="CHP Growth Partnership in the Himalayas"
@@ -308,24 +308,29 @@ export default function GrowthPartnerPage() {
         {/* Subtle darkening — keeps the supplied header artwork visible */}
         <div className="absolute inset-0 bg-black/10" />
 
-        {/* Hero content aligned like the CHP Biz Partnership hero */}
-        <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-7xl translate-y-16 flex-col items-center px-6 pt-16 pb-12 text-center sm:translate-y-20 sm:px-8 sm:pt-20 sm:pb-14 lg:translate-y-24 lg:px-10 lg:pt-24 lg:pb-16">
-          {/* Dark-green CHP label */}
-          <div className="mx-auto inline-flex items-center rounded-full border border-white/20 bg-emerald-950/90 px-4 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.22)] backdrop-blur-md sm:px-5 sm:py-2.5">
+        {/* Hero content aligned to the CHP Biz Partnership hero */}
+        <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-7xl flex-col items-center px-5 pb-36 pt-[84px] text-center sm:px-8 sm:pb-40 sm:pt-[100px] lg:px-10 lg:pb-40 lg:pt-[116px]">
+          <div
+            className="flex w-full flex-col items-center"
+            style={{ transform: "translateY(-2cm)" }}
+          >
+            {/* Dark-green CHP label */}
+            <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/20 bg-emerald-950/90 px-4 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.22)] backdrop-blur-md sm:px-5"
+            >
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white sm:text-xs sm:tracking-[0.22em]">
               CHP Growth Partnership
             </span>
           </div>
 
           {/* Title */}
-          <div className="mt-5 w-full max-w-6xl text-white sm:mt-6">
+            <div className="mt-5 w-full max-w-6xl text-white sm:mt-6">
             <h1 className="mx-auto w-full font-serif text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:text-[2.35rem] md:text-[2.7rem] lg:text-[3rem] xl:text-[3.2rem]">
               <span className="block">Grow with CHP.<br />Build opportunities in the Himalayas.</span>
             </h1>
           </div>
 
-          {/* Buttons aligned and sized like CHP Biz Partnership */}
-          <div className="mt-9 flex w-full flex-wrap justify-center gap-2.5 sm:mt-10 sm:gap-3">
+            {/* Buttons aligned and sized like CHP Biz Partnership */}
+            <div className="mt-9 flex w-full flex-wrap justify-center gap-2.5 sm:mt-9 sm:gap-3">
             <a
               href="#apply-partner"
               className="inline-flex items-center gap-1.5 rounded-full bg-[#f3c96b] px-5 py-2.5 text-xs font-semibold text-[#14231f] shadow-lg shadow-black/10 transition duration-200 hover:-translate-y-0.5 hover:bg-[#ffe09a] sm:px-5.5 sm:py-2.5 sm:text-sm"
@@ -341,6 +346,7 @@ export default function GrowthPartnerPage() {
               Explore the partnership
               <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </a>
+            </div>
           </div>
         </div>
       </section>

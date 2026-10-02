@@ -139,9 +139,7 @@ export function Hero() {
           }}
           className="text-white/70 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed mb-8"
         >
-          A Himalayan second home, surrounded by nature,
-          adventure, treks, holiday & wellness camps, culture, and
-          experiences — created for living, not just visiting.
+         Live the Himalayas. Build Your Legacy. Experience Life Beyond the Ordinary.
         </motion.p>
 
         {/* =====================================================

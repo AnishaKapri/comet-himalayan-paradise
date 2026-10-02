@@ -232,8 +232,7 @@ export default function CampsPage() {
           </p>
 
           <p className="text-white/80 text-lg max-w-xl">
-            Immersive camp programs combining adventure, wellness, culture, and
-            nature. From a weekend to 45 days — at your pace.
+            Adventure, wellness, culture & nature — all at your pace.
           </p>
         </div>
       </section>

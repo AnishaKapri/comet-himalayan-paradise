@@ -15,27 +15,44 @@ import {
   PieChart,
   Target,
   Award,
-  Briefcase,
 } from "lucide-react";
 
 /* ────────────────────────────────────────────────────────────────
    Page-level settings
    ──────────────────────────────────────────────────────────────── */
 
-// Menu name shown in the header pill (checklist #1).
-const MENU_NAME = "CHP Investment Program";
+// Menu name shown on the header image.
+const MENU_NAME = "CHP OPPORTUNITIES";
 
-// Update these two values to match the actual source page (checklist #9).
-const SOURCE_PAGE_NAME = "CHP Investment Program";
-const SOURCE_PAGE_HREF = "/chp-investment";
+// Destination of the button at the bottom of the page.
+const HOME_HREF = "/";
 
-// Shared header title style – same family & size as the About CHP page (checklist #2).
-const HEADER_TITLE_BASE = "font-sans text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight";
+// Position of the menu-name pill on the header image (distance from the top edge).
+// Increase the values to move it down, decrease to move it up.
+const PILL_POSITION_CLASS = "top-4 sm:top-6 lg:top-8";
+
+// Colour combos for the small feature boxes (each box in a group gets a different one).
+const TILE_COLORS = [
+  { box: "bg-amber-100 border-amber-200 text-amber-900", icon: "text-amber-600" },
+  { box: "bg-emerald-100 border-emerald-200 text-emerald-900", icon: "text-emerald-600" },
+  { box: "bg-sky-100 border-sky-200 text-sky-900", icon: "text-sky-600" },
+  { box: "bg-violet-100 border-violet-200 text-violet-900", icon: "text-violet-600" },
+  { box: "bg-rose-100 border-rose-200 text-rose-900", icon: "text-rose-600" },
+  { box: "bg-orange-100 border-orange-200 text-orange-900", icon: "text-orange-600" },
+];
+
+// Shared page-title style (single line, reduced size).
+const HEADER_TITLE_BASE = "font-sans text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight";
+
+// Shared section-heading style (single line, reduced size).
+const SECTION_TITLE_BASE =
+  "font-sans text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight mb-4";
 
 /**
- * Key-word highlighter (bold + contrasting colour) – checklist #7.
- * Short phrases stay together on one line (inline-block + nowrap) so justified
- * text can never stretch the gaps between highlighted words.
+ * Key-word highlighter (bold + contrasting colour).
+ * Used sparingly – only for the most important facts.
+ * Short phrases stay together on one line so justified text
+ * can never stretch the gaps between highlighted words.
  */
 function Key({ children }: { children: ReactNode }) {
   const isShort = typeof children === "string" && children.length <= 30;
@@ -75,27 +92,17 @@ const investmentModes: InvestmentMode[] = [
   },
   {
     title: "Facility-Based Investment",
-    description: (
-      <>
-        Invest in a CHP <Key>co-owned facility</Key> and enjoy multiple benefits:
-      </>
-    ),
+    description: "Invest in a CHP co-owned facility and enjoy multiple benefits:",
     bullets: [
-      <>
-        <Key>30% discount</Key> on space
-      </>,
+      "30% discount on space",
       <>
         <Key>1 plot as a gift</Key> for a personal cottage within the CHP community
       </>,
-      <>
-        Privileged access to <Key>all CHP amenities</Key>
-      </>,
+      "Privileged access to all CHP amenities",
       <>
         <Key>100% profit share</Key> until the total invested amount is recovered
       </>,
-      <>
-        <Key>80% profit share</Key> thereafter
-      </>,
+      "80% profit share thereafter",
     ],
     highlight: "Shared Infrastructure Revenue",
   },
@@ -126,16 +133,23 @@ export default function BusinessInvestmentPage() {
       lang="en"
       className="min-h-screen bg-stone-50 text-slate-800 pt-20 [hyphens:auto]"
     >
-      {/* ── FULL-WIDTH HEADER IMAGE ── */}
-      <div className="w-full h-[340px] sm:h-[400px] lg:h-[600px] overflow-hidden">
+      {/* ── FULL-WIDTH HEADER IMAGE (with menu-name pill) ── */}
+      <div className="relative w-full h-[340px] sm:h-[400px] lg:h-[600px] overflow-hidden">
         <Image
-          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/0c29135f-8f3f-408c-8163-a5533f27db3a-investment-options.webp"
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/13d7ffa0-d45d-40ab-9147-2369efa927e0-investment-opportunities.webp"
           alt="CHP Business and Investment"
           width={1920}
           height={600}
           priority
           className="w-full h-full object-cover object-center border-0 outline-none"
         />
+        {/* Overlay: centred horizontally at the top of the image. Takes no layout space.
+            Fine-tune with PILL_POSITION_CLASS. */}
+        <div className={`absolute left-1/2 -translate-x-1/2 ${PILL_POSITION_CLASS}`}>
+          <span className="inline-block whitespace-nowrap rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold tracking-wide text-white shadow-md">
+            {MENU_NAME}
+          </span>
+        </div>
       </div>
 
       {/* ── 1. Hero & Business and Investment Section ── */}
@@ -144,25 +158,13 @@ export default function BusinessInvestmentPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7">
-              {/* #1 – menu name in a small, rounded, deep-green pill with white text */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-green-900 text-white text-xs font-semibold tracking-wide mb-4"
-              >
-                <Briefcase className="w-3.5 h-3.5" />
-                <span>{MENU_NAME}</span>
-              </motion.div>
-
-              {/* #2 – shared header title font family & size */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
+                transition={{ duration: 0.5 }}
                 className={`${HEADER_TITLE_BASE} text-slate-900 mb-3`}
               >
-                Business and <br />
+                Business and{" "}
                 <span className="bg-gradient-to-r from-amber-500 via-emerald-500 to-teal-500 bg-clip-text text-transparent">
                   Investment
                 </span>
@@ -171,7 +173,7 @@ export default function BusinessInvestmentPage() {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.15 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
                 className="text-sm sm:text-base font-semibold text-emerald-700 tracking-wide mb-4"
               >
                 Build • Invest • Grow • Prosper
@@ -180,14 +182,13 @@ export default function BusinessInvestmentPage() {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.15 }}
                 className="text-base sm:text-lg text-slate-600 leading-relaxed font-light mb-6 text-justify"
               >
-                CHP offers <Key>two modes of investment</Key> opportunities across{" "}
-                <Key>cottages, homestays, hospitality, wellness</Key>, remote work infrastructure, and
-                tourism-driven businesses. Be a part of a <Key>fast-growing Himalayan ecosystem</Key>{" "}
-                built for <Key>sustainable growth, recurring income</Key>, and{" "}
-                <Key>long-term value</Key>.
+                CHP offers <Key>two modes of investment</Key> opportunities across cottages,
+                homestays, hospitality, wellness, remote work infrastructure, and tourism-driven
+                businesses. Be a part of a fast-growing Himalayan ecosystem built for sustainable
+                growth, <Key>recurring income</Key>, and long-term value.
               </motion.p>
 
               {/* Two Modes Cards (light shaded containers) */}
@@ -245,7 +246,7 @@ export default function BusinessInvestmentPage() {
               </motion.div>
             </div>
 
-            {/* Right Image – no border (#5) */}
+            {/* Right Image – no border */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -277,24 +278,25 @@ export default function BusinessInvestmentPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4">
+            {/* Badge – violet combo */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-100 border border-violet-200 text-violet-800 text-xs font-semibold uppercase tracking-wider mb-4">
               <Award className="w-3.5 h-3.5" />
               <span>Competitive Edge</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight mb-4">
-              Strategic <br />
+            <h2 className={SECTION_TITLE_BASE}>
+              Strategic{" "}
               <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-amber-500 bg-clip-text text-transparent">
                 Advantages
               </span>
             </h2>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-light mb-6 text-justify">
-              CHP combines the <Key>pristine beauty of the Himalayas</Key> with a{" "}
+              CHP combines the pristine beauty of the Himalayas with a{" "}
               <Key>thoughtfully planned, integrated ecosystem</Key> for tourism, wellness, business,
-              and community living. Backed by <Key>strong market demand</Key>,{" "}
-              <Key>strategic connectivity</Key>, and <Key>local community support</Key>, it offers a
-              distinctive opportunity for <Key>sustainable growth and long-term value</Key>.
+              and community living. Backed by strong market demand, strategic connectivity, and local
+              community support, it offers a distinctive opportunity for sustainable growth and{" "}
+              <Key>long-term value</Key>.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -305,12 +307,12 @@ export default function BusinessInvestmentPage() {
                 "Local Community Support",
                 "Thoughtfully Planned Ecosystem",
                 "Sustainable Long-Term Growth",
-              ].map((item) => (
+              ].map((item, i) => (
                 <div
                   key={item}
-                  className="flex items-center gap-2.5 text-sm text-slate-700 p-3 rounded-xl bg-amber-100/70 border border-amber-200"
+                  className={`flex items-center gap-2.5 text-sm font-medium p-3 rounded-xl border ${TILE_COLORS[i % TILE_COLORS.length].box}`}
                 >
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className={`w-4 h-4 shrink-0 ${TILE_COLORS[i % TILE_COLORS.length].icon}`} />
                   <span>{item}</span>
                 </div>
               ))}
@@ -328,24 +330,24 @@ export default function BusinessInvestmentPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-200 text-amber-800 text-xs font-semibold uppercase tracking-wider mb-4">
+            {/* Badge – rose combo */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 border border-rose-200 text-rose-800 text-xs font-semibold uppercase tracking-wider mb-4">
               <Target className="w-3.5 h-3.5" />
               <span>Market Growth</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight mb-4">
-              Target Market <br />
+            <h2 className={SECTION_TITLE_BASE}>
+              Target Market{" "}
               <span className="bg-gradient-to-r from-amber-500 via-amber-600 to-emerald-500 bg-clip-text text-transparent">
                 Opportunities
               </span>
             </h2>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-light mb-6 text-justify">
-              CHP caters to a wide range of customer segments, including{" "}
-              <Key>students, families, corporates, pilgrims, wellness seekers, tourists</Key>, and
-              event planners. Its integrated Himalayan ecosystem creates{" "}
-              <Key>year-round opportunities</Key> across education, tourism, hospitality, wellness,
-              adventure, and destination celebrations.
+              CHP caters to a wide range of customer segments, including students, families,
+              corporates, pilgrims, wellness seekers, tourists, and event planners. Its integrated
+              Himalayan ecosystem creates <Key>year-round opportunities</Key> across education,
+              tourism, hospitality, wellness, adventure, and destination celebrations.
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -356,10 +358,10 @@ export default function BusinessInvestmentPage() {
                 "Pilgrims & Devotees",
                 "Wellness Seekers",
                 "Event Planners",
-              ].map((segment) => (
+              ].map((segment, i) => (
                 <div
                   key={segment}
-                  className="p-3.5 rounded-xl bg-emerald-100/70 border border-emerald-200 text-center text-xs font-semibold text-emerald-800"
+                  className={`p-3.5 rounded-xl border text-center text-xs font-semibold ${TILE_COLORS[i % TILE_COLORS.length].box}`}
                 >
                   {segment}
                 </div>
@@ -378,24 +380,25 @@ export default function BusinessInvestmentPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4">
+            {/* Badge – indigo combo */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-800 text-xs font-semibold uppercase tracking-wider mb-4">
               <PieChart className="w-3.5 h-3.5" />
               <span>Financial Sustainability</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight mb-4">
-              Revenue <br />
+            <h2 className={SECTION_TITLE_BASE}>
+              Revenue{" "}
               <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-amber-500 bg-clip-text text-transparent">
                 Streams
               </span>
             </h2>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-light mb-6 text-justify">
-              CHP is designed with <Key>multiple year-round revenue streams</Key>, creating a{" "}
-              <Key>diversified and sustainable business model</Key>. From tourism, hospitality,
-              adventure, wellness, and events to corporate programs, educational partnerships, and
-              guided experiences, the integrated ecosystem generates <Key>recurring income</Key> from
-              a wide range of customer segments.
+              CHP is designed with <Key>multiple year-round revenue streams</Key>, creating a
+              diversified and sustainable business model. From tourism, hospitality, adventure,
+              wellness, and events to corporate programs, educational partnerships, and guided
+              experiences, the integrated ecosystem generates <Key>recurring income</Key> from a wide
+              range of customer segments.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -406,12 +409,12 @@ export default function BusinessInvestmentPage() {
                 "Wellness & Retreats",
                 "Corporate Programs",
                 "Events & Celebrations",
-              ].map((stream) => (
+              ].map((stream, i) => (
                 <div
                   key={stream}
-                  className="flex items-center gap-2.5 text-sm text-slate-700 p-3 rounded-xl bg-teal-100/70 border border-teal-200"
+                  className={`flex items-center gap-2.5 text-sm font-medium p-3 rounded-xl border ${TILE_COLORS[i % TILE_COLORS.length].box}`}
                 >
-                  <TrendingUp className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <TrendingUp className={`w-4 h-4 shrink-0 ${TILE_COLORS[i % TILE_COLORS.length].icon}`} />
                   <span>{stream}</span>
                 </div>
               ))}
@@ -429,22 +432,23 @@ export default function BusinessInvestmentPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-200 text-amber-800 text-xs font-semibold uppercase tracking-wider mb-4">
+            {/* Badge – orange combo */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 border border-orange-200 text-orange-800 text-xs font-semibold uppercase tracking-wider mb-4">
               <Building2 className="w-3.5 h-3.5" />
               <span>Entrepreneur Benefits</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight mb-4">
-              CHP Advantage for <br />
+            <h2 className={SECTION_TITLE_BASE}>
+              CHP Advantage for{" "}
               <span className="bg-gradient-to-r from-amber-500 via-emerald-500 to-amber-400 bg-clip-text text-transparent">
                 Hospitality Entrepreneurs
               </span>
             </h2>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-light mb-6 text-justify">
-              CHP offers a <Key>smarter way to own in the Himalayas</Key>—offering{" "}
-              <Key>affordable costs, managed maintenance, easy construction, shared infrastructure</Key>,
-              and year-round programs that maximize <Key>occupancy and investment potential</Key>.
+              CHP offers a <Key>smarter way to own in the Himalayas</Key>—offering affordable costs,
+              managed maintenance, easy construction, shared infrastructure, and year-round programs
+              that maximize occupancy and investment potential.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -455,12 +459,12 @@ export default function BusinessInvestmentPage() {
                 "Shared Community Infrastructure",
                 "Year-Round Programmed Occupancy",
                 "Maximized Return on Investment",
-              ].map((benefit) => (
+              ].map((benefit, i) => (
                 <div
                   key={benefit}
-                  className="flex items-center gap-2.5 text-sm text-slate-700 p-3 rounded-xl bg-sky-100/70 border border-sky-200"
+                  className={`flex items-center gap-2.5 text-sm font-medium p-3 rounded-xl border ${TILE_COLORS[i % TILE_COLORS.length].box}`}
                 >
-                  <CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0" />
+                  <CheckCircle2 className={`w-4 h-4 shrink-0 ${TILE_COLORS[i % TILE_COLORS.length].icon}`} />
                   <span>{benefit}</span>
                 </div>
               ))}
@@ -482,8 +486,8 @@ export default function BusinessInvestmentPage() {
             Inquire About Business & Investment
           </h2>
           <p className="text-slate-600 text-sm mt-3 max-w-xl mx-auto text-justify">
-            Connect with our strategy and investment team to discuss <Key>plot options</Key> and{" "}
-            <Key>facility co-ownership</Key>.
+            Connect with our strategy and investment team to discuss plot options and facility
+            co-ownership.
           </p>
         </div>
 
@@ -496,8 +500,8 @@ export default function BusinessInvestmentPage() {
             <CheckCircle2 className="w-12 h-12 text-emerald-500 mx-auto mb-3" />
             <h3 className="text-2xl font-bold text-slate-900">Inquiry Received!</h3>
             <p className="text-slate-600 text-sm mt-2 max-w-md mx-auto text-justify">
-              Thank you for reaching out. Our <Key>Investment Relations team</Key> will contact you
-              shortly to provide detailed documentation.
+              Thank you for reaching out. Our Investment Relations team will contact you shortly to
+              provide detailed documentation.
             </p>
             <button
               onClick={() => setFormSubmitted(false)}
@@ -597,15 +601,15 @@ export default function BusinessInvestmentPage() {
         )}
       </section>
 
-      {/* ── #9 Go back to CHP Enclave ── */}
+      {/* ── Go Back to Home ── */}
       <section className="pb-10 pt-2 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
           <Link
-            href="/chp-enclave"
+            href={HOME_HREF}
             className="inline-flex items-center gap-2 rounded-full bg-green-900 px-6 py-3 text-sm font-semibold text-white hover:bg-green-800 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to CHP Enclave
+            Go Back to Home
           </Link>
         </div>
       </section>

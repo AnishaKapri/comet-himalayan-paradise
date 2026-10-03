@@ -18,15 +18,19 @@ import {
     ArrowLeft,
     CheckCircle,
 } from "lucide-react";
-import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
-import { CTABanner } from "@/components/home/CTABanner";
+import {
+    ScrollReveal,
+    StaggerContainer,
+    StaggerItem,
+} from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
     title: "Comet Educational Services",
     description:
         "COMET Educational Service is a nonprofit initiative bridging the career-development gap for talented students from remote and underserved communities through mentoring, IT training, and professional skills development.",
     alternates: {
-        canonical: "https://comet-himalayan-paradise.vercel.app/comet-educational-services",
+        canonical:
+            "https://comet-himalayan-paradise.vercel.app/comet-educational-services",
     },
 };
 
@@ -37,35 +41,40 @@ export const metadata: Metadata = {
 // Menu name shown in the green pill on the header image.
 const MENU_NAME = "EDUCATIONAL SERVICES";
 
-// Position of the pill on the header image (distance from the top edge).
-// Increase the values to move it down, decrease to move it up.
+// Position of the pill on the header image.
 const PILL_POSITION_CLASS = "top-0 sm:top-1 lg:top-2";
 
 // Destination of the button at the bottom of the page.
 const HOME_HREF = "/";
 
-// Mixed light colour combos for the small chips (Focus Areas, Mentorship skills).
-const CHIP_COLORS = [
-    "bg-amber-100 border-amber-200 text-amber-900",
-    "bg-emerald-100 border-emerald-200 text-emerald-900",
-    "bg-sky-100 border-sky-200 text-sky-900",
-    "bg-violet-100 border-violet-200 text-violet-900",
-    "bg-rose-100 border-rose-200 text-rose-900",
-    "bg-orange-100 border-orange-200 text-orange-900",
-];
+/*
+ * SINGLE CONTAINER COLOR
+ *
+ * All text/card containers on this page use the same
+ * very-light green treatment.
+ */
+const CONTAINER_CLASS =
+    "bg-green-50 border border-green-100";
+
+const CHIP_CLASS =
+    "bg-green-50 border border-green-100 text-green-800";
 
 /**
- * Key-word highlighter (bold + contrasting colour).
- * Used sparingly – only for the most important phrases.
- * Short phrases are kept together on one line (inline-block + nowrap) so that
- * justified text can never stretch the gaps between the highlighted words.
+ * Key-word highlighter.
+ *
+ * Kept subtle and consistent with the page's single light-green
+ * container treatment instead of using a separate red container.
  */
 function Key({ children }: { children: ReactNode }) {
-    const isShort = typeof children === "string" && children.length <= 30;
+    const isShort =
+        typeof children === "string" && children.length <= 30;
+
     return (
         <strong
-            className={`font-semibold text-red-800 bg-red-50/70 rounded-sm px-0.5 ${
-                isShort ? "inline-block whitespace-nowrap text-left" : ""
+            className={`font-semibold text-green-800 bg-green-50 rounded-sm px-0.5 ${
+                isShort
+                    ? "inline-block whitespace-nowrap text-left"
+                    : ""
             }`}
         >
             {children}
@@ -87,15 +96,21 @@ function CenteredHeader({
         <ScrollReveal direction="up">
             <div className="flex items-center justify-center gap-3 mb-3">
                 <span className="h-px w-8 bg-orange-500" />
+
                 <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em] text-center">
                     {eyebrow}
                 </p>
+
                 <span className="h-px w-8 bg-orange-500" />
             </div>
+
             <h2 className="text-3xl sm:text-4xl font-bold text-center text-slate-800 leading-tight mb-5 max-w-3xl mx-auto">
                 {title}
             </h2>
-            <p className="text-slate-600 leading-relaxed text-justify max-w-4xl mx-auto">{subtitle}</p>
+
+            <p className="text-slate-600 leading-relaxed text-justify max-w-4xl mx-auto">
+                {subtitle}
+            </p>
         </ScrollReveal>
     );
 }
@@ -105,11 +120,26 @@ function CenteredHeader({
    ──────────────────────────────────────────────────────────────── */
 
 const stats = [
-    { value: "40+", label: "Senior IT Professionals" },
-    { value: "20,000+", label: "Students Reached" },
-    { value: "7", label: "States" },
-    { value: "50+", label: "Schools & Colleges" },
-    { value: "500+", label: "Success Stories" },
+    {
+        value: "40+",
+        label: "Senior IT Professionals",
+    },
+    {
+        value: "20,000+",
+        label: "Students Reached",
+    },
+    {
+        value: "7",
+        label: "States",
+    },
+    {
+        value: "50+",
+        label: "Schools & Colleges",
+    },
+    {
+        value: "500+",
+        label: "Success Stories",
+    },
 ];
 
 const trainings: {
@@ -123,15 +153,22 @@ const trainings: {
     {
         icon: Laptop,
         title: "IT Training",
-        tagline: "Practical Technology Skills for Tomorrow's Careers",
+        tagline:
+            "Practical Technology Skills for Tomorrow's Careers",
         description: (
             <>
-                Learn IT tools, technologies and <Key>job-oriented skills</Key> that build a strong
+                Learn IT tools, technologies and{" "}
+                <Key>job-oriented skills</Key> that build a strong
                 foundation for today&apos;s technology-driven careers.
             </>
         ),
-        focus: ["IT Tools", "Technologies", "Job Profiles", "Practical Skills"],
-        color: "blue",
+        focus: [
+            "IT Tools",
+            "Technologies",
+            "Job Profiles",
+            "Practical Skills",
+        ],
+        color: "green",
     },
     {
         icon: Users,
@@ -139,8 +176,13 @@ const trainings: {
         tagline: "Think. Speak. Listen. Participate.",
         description:
             "Develop communication, logical thinking, teamwork and confidence through structured group discussions.",
-        focus: ["Communication", "Confidence", "Teamwork", "Critical Thinking"],
-        color: "emerald",
+        focus: [
+            "Communication",
+            "Confidence",
+            "Teamwork",
+            "Critical Thinking",
+        ],
+        color: "green",
     },
     {
         icon: Mic,
@@ -148,8 +190,13 @@ const trainings: {
         tagline: "Turn Knowledge Into Confidence.",
         description:
             "Learn to organize ideas, create effective presentations and communicate clearly and confidently before an audience.",
-        focus: ["Communication", "Presentation", "Public Speaking", "Confidence"],
-        color: "violet",
+        focus: [
+            "Communication",
+            "Presentation",
+            "Public Speaking",
+            "Confidence",
+        ],
+        color: "green",
     },
     {
         icon: BrainCircuit,
@@ -157,12 +204,21 @@ const trainings: {
         tagline: "Skills Beyond the Classroom.",
         description:
             "Build the interpersonal and professional skills required to succeed in academic, interview and workplace environments.",
-        focus: ["Communication", "Teamwork", "Leadership", "Interview Readiness"],
-        color: "amber",
+        focus: [
+            "Communication",
+            "Teamwork",
+            "Leadership",
+            "Interview Readiness",
+        ],
+        color: "green",
     },
 ];
 
-const schoolServices: { icon: typeof Laptop; title: string; description: ReactNode }[] = [
+const schoolServices: {
+    icon: typeof Laptop;
+    title: string;
+    description: ReactNode;
+}[] = [
     {
         icon: HeartHandshake,
         title: "Career Counselling & Mentorship",
@@ -180,9 +236,10 @@ const schoolServices: { icon: typeof Laptop; title: string; description: ReactNo
         title: "Career Planning & Tracking",
         description: (
             <>
-                Our <Key>Career Planning Tracker</Key> provides students with a platform to plan their
-                careers while enabling school management to follow their progress and support them through
-                COMET mentorship.
+                Our <Key>Career Planning Tracker</Key> provides
+                students with a platform to plan their careers while
+                enabling school management to follow their progress
+                and support them through COMET mentorship.
             </>
         ),
     },
@@ -242,7 +299,10 @@ const studyCentreFeatures: ReactNode[] = [
     "360° feedback to students and parents on learning and development",
 ];
 
-const careerMakeoverPathways: { title: string; description: ReactNode }[] = [
+const careerMakeoverPathways: {
+    title: string;
+    description: ReactNode;
+}[] = [
     {
         title: "From Beginner to Software Professional",
         description:
@@ -275,7 +335,10 @@ const careerMakeoverPathways: { title: string; description: ReactNode }[] = [
     },
 ];
 
-const supportWays: { title: string; description: ReactNode }[] = [
+const supportWays: {
+    title: string;
+    description: ReactNode;
+}[] = [
     {
         title: "Adopt a School",
         description:
@@ -323,65 +386,86 @@ const supportWays: { title: string; description: ReactNode }[] = [
     },
 ];
 
-const leaders: { name: string; role: string; bio: ReactNode; photo: string }[] = [
+const leaders: {
+    name: string;
+    role: string;
+    bio: ReactNode;
+    photo: string;
+}[] = [
     {
         name: "Ram Datt Bhatt",
         role: "Founder & Chairman, COMET Foundation",
         bio: (
             <>
-                An MCA postgraduate and <Key>IIM Calcutta alumnus</Key>, Ram Datt Bhatt brings more than
-                two decades of experience across leading IT organizations. His professional journey
-                includes management roles with companies such as Dell, HPE, Wipro, Infosys, Stanley and
-                ValueLabs. His earlier experience in education and social service, combined with his
-                passion for supporting students and creating sustainable opportunities in the Himalayan
-                region, led to the creation of COMET and its broader social initiatives.
+                An MCA postgraduate and{" "}
+                <Key>IIM Calcutta alumnus</Key>, Ram Datt Bhatt
+                brings more than two decades of experience across
+                leading IT organizations. His professional journey
+                includes management roles with companies such as Dell,
+                HPE, Wipro, Infosys, Stanley and ValueLabs. His earlier
+                experience in education and social service, combined
+                with his passion for supporting students and creating
+                sustainable opportunities in the Himalayan region,
+                led to the creation of COMET and its broader social
+                initiatives.
             </>
         ),
-        photo: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-education-services/d5416b2e-95cc-425b-862d-e9d142a7cbe8-ram-sir.jpeg",
+        photo:
+            "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-education-services/d5416b2e-95cc-425b-862d-e9d142a7cbe8-ram-sir.jpeg",
     },
     {
         name: "Jeetendra Ranjan",
         role: "Co-Founder & Director, COMET Foundation",
         bio: (
             <>
-                A Master of Science in Computer Science and MBA, Jeetendra Ranjan has{" "}
-                <Key>more than 20 years</Key> of experience working with Indian and multinational
-                technology organizations. He contributes to COMET through his technical, management and
-                mentoring expertise, helping strengthen programs designed for students and young
-                professionals. He is also associated with social initiatives supporting education and
-                scholarships for students from weaker sections of society.
+                A Master of Science in Computer Science and MBA,
+                Jeetendra Ranjan has{" "}
+                <Key>more than 20 years</Key> of experience working
+                with Indian and multinational technology organizations.
+                He contributes to COMET through his technical,
+                management and mentoring expertise, helping strengthen
+                programs designed for students and young professionals.
+                He is also associated with social initiatives supporting
+                education and scholarships for students from weaker
+                sections of society.
             </>
         ),
-        photo: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-education-services/716f2d6b-a5dc-4ad7-bb7c-99cd1ebbb44a-jjeetendraranjan.jpeg",
+        photo:
+            "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-education-services/716f2d6b-a5dc-4ad7-bb7c-99cd1ebbb44a-jjeetendraranjan.jpeg",
     },
     {
         name: "Harish Chandra Bhatt",
         role: "Co-Founder & Director, COMET Foundation",
         bio: (
             <>
-                A B.Sc. and B.Ed. graduate from Kumaun University, Harish Chandra Bhatt has been actively
-                involved in social causes in the <Key>Pithoragarh region</Key> for more than two decades.
-                His longstanding commitment to supporting underserved communities and helping people in
-                remote villages inspired him to join COMET and contribute to its education and
+                A B.Sc. and B.Ed. graduate from Kumaun University,
+                Harish Chandra Bhatt has been actively involved in
+                social causes in the <Key>Pithoragarh region</Key> for
+                more than two decades. His longstanding commitment to
+                supporting underserved communities and helping people
+                in remote villages inspired him to join COMET and
+                contribute to its education and
                 community-development initiatives.
             </>
         ),
-        photo: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-education-services/b9912e60-8f4c-4bd5-ba96-8bc6058f644f-harishchandra.jpeg",
+        photo:
+            "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-education-services/b9912e60-8f4c-4bd5-ba96-8bc6058f644f-harishchandra.jpeg",
     },
 ];
 
+/*
+ * All training cards now use the SAME light-green container.
+ *
+ * The object is retained because the training data still uses
+ * the color property, but every value resolves to the same
+ * visual treatment.
+ */
 const colorMap: Record<string, string> = {
-    blue: "bg-blue-50 border-blue-100 text-blue-700",
-    emerald: "bg-emerald-50 border-emerald-100 text-emerald-700",
-    violet: "bg-violet-50 border-violet-100 text-violet-700",
-    amber: "bg-amber-50 border-amber-100 text-amber-700",
+    green: "bg-green-50 border-green-100 text-green-800",
 };
 
 const iconBgMap: Record<string, string> = {
-    blue: "bg-blue-600",
-    emerald: "bg-emerald-600",
-    violet: "bg-violet-600",
-    amber: "bg-amber-600",
+    green: "bg-green-900",
 };
 
 /* ────────────────────────────────────────────────────────────────
@@ -390,49 +474,56 @@ const iconBgMap: Record<string, string> = {
 
 export default function CometEducationalServicesPage() {
     return (
-        // lang + hyphens keep justified paragraphs evenly spaced (no wide word gaps)
         <main
             lang="en"
             className="min-h-screen bg-stone-50 text-slate-800 pt-16 [hyphens:auto]"
         >
-
             {/* ── Hero (header image + menu-name pill) ── */}
-            {/*
-             * The image controls the hero height.
-             * No fixed viewport height, min-height, aspect ratio, or object-cover is used,
-             * so the section is exactly as tall as the supplied image at the current width.
-             */}
+
             <section className="relative w-full overflow-hidden">
                 {/* Supplied header image — natural aspect ratio, never cropped */}
                 <img
-                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/86de4622-f5cd-4554-bbb4-986432e9ae9b-gemini-generated-image-8k3jlu8k3jlu8k3j.png"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/47ac4747-8af6-43b8-a00a-35d08e567d4d-scaled-comet-svc.webp"
                     alt="Comet Educational Services in the Himalayas"
                     fetchPriority="high"
                     decoding="async"
                     className="block h-auto w-full border-0 outline-none"
                 />
 
-                {/* Page title for search engines & screen readers (not visible) */}
-                <h1 className="sr-only">About Comet Educational Services</h1>
+                {/* Page title for search engines & screen readers */}
+                <h1 className="sr-only">
+                    About Comet Educational Services
+                </h1>
 
-                {/* Menu name: centred at the top of the image, takes no layout space */}
-                <div className={`absolute inset-x-0 z-10 flex justify-center ${PILL_POSITION_CLASS}`}>
+                {/* Menu name */}
+                <div
+                    className={`absolute inset-x-0 z-10 flex justify-center ${PILL_POSITION_CLASS}`}
+                >
                     <span className="inline-block whitespace-nowrap rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold tracking-wide text-white shadow-md">
                         {MENU_NAME}
                     </span>
                 </div>
             </section>
 
-
             {/* ── Stats ── */}
+
             <section className="bg-white border-b border-slate-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
                         {stats.map((stat, i) => (
-                            <ScrollReveal key={stat.label} delay={i * 0.07} direction="up">
+                            <ScrollReveal
+                                key={stat.label}
+                                delay={i * 0.07}
+                                direction="up"
+                            >
                                 <div className="text-center">
-                                    <p className="text-4xl font-bold text-green-900 mb-2">{stat.value}</p>
-                                    <p className="text-slate-500 text-sm">{stat.label}</p>
+                                    <p className="text-4xl font-bold text-green-900 mb-2">
+                                        {stat.value}
+                                    </p>
+
+                                    <p className="text-slate-500 text-sm">
+                                        {stat.label}
+                                    </p>
                                 </div>
                             </ScrollReveal>
                         ))}
@@ -441,6 +532,7 @@ export default function CometEducationalServicesPage() {
             </section>
 
             {/* ── COMET Trainings ── */}
+
             <section id="trainings" className="py-10 bg-stone-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <CenteredHeader
@@ -448,27 +540,49 @@ export default function CometEducationalServicesPage() {
                         title="Building Skills. Building Confidence. Building Careers."
                         subtitle="COMET training programs help students develop the technical, communication and professional skills needed for higher education, employment and career growth. Our training combines IT skills, practical learning and professional development to prepare students for real-world opportunities."
                     />
-                    <StaggerContainer className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.08}>
-                        {trainings.map((t, ti) => {
+
+                    <StaggerContainer
+                        className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                        staggerDelay={0.08}
+                    >
+                        {trainings.map((t) => {
                             const Icon = t.icon;
+
                             return (
                                 <StaggerItem key={t.title}>
-                                    <div className={`rounded-2xl border p-6 flex flex-col gap-4 h-full ${colorMap[t.color]}`}>
-                                        <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${iconBgMap[t.color]}`}>
+                                    <div
+                                        className={`rounded-2xl border p-6 flex flex-col gap-4 h-full ${colorMap[t.color]}`}
+                                    >
+                                        <div
+                                            className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${iconBgMap[t.color]}`}
+                                        >
                                             <Icon className="w-5 h-5 text-white" />
                                         </div>
+
                                         <div>
-                                            <h3 className="text-slate-800 font-bold text-lg mb-1">{t.title}</h3>
-                                            <p className="text-slate-500 text-xs font-semibold uppercase tracking-wide mb-3">{t.tagline}</p>
-                                            <p className="text-slate-600 text-sm leading-relaxed mb-4 text-justify">{t.description}</p>
+                                            <h3 className="text-slate-800 font-bold text-lg mb-1">
+                                                {t.title}
+                                            </h3>
+
+                                            <p className="text-slate-500 text-xs font-semibold uppercase tracking-wide mb-3">
+                                                {t.tagline}
+                                            </p>
+
+                                            <p className="text-slate-600 text-sm leading-relaxed mb-4 text-justify">
+                                                {t.description}
+                                            </p>
                                         </div>
+
                                         <div className="mt-auto">
-                                            <p className="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-2">Focus Areas</p>
+                                            <p className="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-2">
+                                                Focus Areas
+                                            </p>
+
                                             <div className="flex flex-wrap gap-1.5">
-                                                {t.focus.map((f, fi) => (
+                                                {t.focus.map((f) => (
                                                     <span
                                                         key={f}
-                                                        className={`text-xs font-medium px-2.5 py-1 rounded-full border ${CHIP_COLORS[(ti + fi) % CHIP_COLORS.length]}`}
+                                                        className={`text-xs font-medium px-2.5 py-1 rounded-full ${CHIP_CLASS}`}
                                                     >
                                                         {f}
                                                     </span>
@@ -484,6 +598,7 @@ export default function CometEducationalServicesPage() {
             </section>
 
             {/* ── COMET Services for Schools ── */}
+
             <section id="schools" className="py-10 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <CenteredHeader
@@ -491,20 +606,36 @@ export default function CometEducationalServicesPage() {
                         title="Empowering Students. Strengthening Schools. Building Careers."
                         subtitle="COMET Services (eCOMET Foundation) is a non-profit initiative focused on helping students from remote and underserved communities access career guidance, mentoring, quality training, and opportunities that may otherwise be limited by geography or financial constraints. We believe talented students exist everywhere. With the right guidance, mentoring, discipline, and exposure, their potential can be transformed into meaningful career opportunities."
                     />
+
                     <div className="mt-8">
-                        <p className="text-slate-700 font-semibold text-lg mb-6 text-center">What We Offer Schools</p>
-                        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.07}>
+                        <p className="text-slate-700 font-semibold text-lg mb-6 text-center">
+                            What We Offer Schools
+                        </p>
+
+                        <StaggerContainer
+                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                            staggerDelay={0.07}
+                        >
                             {schoolServices.map((service) => {
                                 const Icon = service.icon;
+
                                 return (
                                     <StaggerItem key={service.title}>
-                                        <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 flex gap-4 hover:shadow-md transition-shadow duration-300 h-full">
+                                        <div
+                                            className={`${CONTAINER_CLASS} rounded-2xl p-6 flex gap-4 hover:shadow-md transition-shadow duration-300 h-full`}
+                                        >
                                             <div className="w-10 h-10 rounded-xl bg-green-900 flex items-center justify-center shrink-0">
                                                 <Icon className="w-5 h-5 text-white" />
                                             </div>
+
                                             <div>
-                                                <h3 className="text-slate-800 font-bold text-base mb-2">{service.title}</h3>
-                                                <p className="text-slate-600 text-sm leading-relaxed text-justify">{service.description}</p>
+                                                <h3 className="text-slate-800 font-bold text-base mb-2">
+                                                    {service.title}
+                                                </h3>
+
+                                                <p className="text-slate-600 text-sm leading-relaxed text-justify">
+                                                    {service.description}
+                                                </p>
                                             </div>
                                         </div>
                                     </StaggerItem>
@@ -515,34 +646,54 @@ export default function CometEducationalServicesPage() {
                 </div>
             </section>
 
-            {/* ── COMET Mentorship Program (light shaded container) ── */}
+            {/* ── COMET Mentorship Program ── */}
+
             <section id="mentorship" className="py-10 bg-stone-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-gradient-to-br from-green-50 to-emerald-100 border border-green-100 rounded-2xl px-6 py-10 sm:px-10">
+                    <div className={`${CONTAINER_CLASS} rounded-2xl px-6 py-10 sm:px-10`}>
                         <ScrollReveal direction="up">
                             <div className="flex items-center gap-3 mb-4 justify-center">
                                 <span className="h-px w-8 bg-green-700" />
-                                <p className="text-green-800 text-xs font-semibold uppercase tracking-[0.2em]">COMET Mentorship Program</p>
+
+                                <p className="text-green-800 text-xs font-semibold uppercase tracking-[0.2em]">
+                                    COMET Mentorship Program
+                                </p>
+
                                 <span className="h-px w-8 bg-green-700" />
                             </div>
+
                             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-5 max-w-3xl mx-auto text-slate-800">
                                 Mentoring from Class 5 Through Career
                             </h2>
+
                             <p className="text-slate-700 max-w-3xl mx-auto mb-4 leading-relaxed text-justify">
-                                COMET is expanding its mentorship services to school students, with{" "}
-                                <Key>career guidance planned from Class 5</Key> onwards and preparation
-                                support for competitive examinations for students from Class 8 onwards.
+                                COMET is expanding its mentorship services
+                                to school students, with{" "}
+                                <Key>
+                                    career guidance planned from Class 5
+                                </Key>{" "}
+                                onwards and preparation support for
+                                competitive examinations for students
+                                from Class 8 onwards.
                             </p>
+
                             <p className="text-slate-700 max-w-3xl mx-auto mb-8 leading-relaxed text-justify">
-                                The program also focuses on essential life and soft skills designed to
-                                support students&apos; overall personal, academic, and career development.
+                                The program also focuses on essential life
+                                and soft skills designed to support
+                                students&apos; overall personal, academic,
+                                and career development.
                             </p>
                         </ScrollReveal>
+
                         <div className="flex flex-wrap justify-center gap-3">
                             {mentorshipSkills.map((skill, i) => (
-                                <ScrollReveal key={skill} delay={i * 0.05} direction="up">
+                                <ScrollReveal
+                                    key={skill}
+                                    delay={i * 0.05}
+                                    direction="up"
+                                >
                                     <span
-                                        className={`text-sm font-medium px-4 py-2 rounded-full border ${CHIP_COLORS[i % CHIP_COLORS.length]}`}
+                                        className={`text-sm font-medium px-4 py-2 rounded-full ${CHIP_CLASS}`}
                                     >
                                         {skill}
                                     </span>
@@ -554,36 +705,64 @@ export default function CometEducationalServicesPage() {
             </section>
 
             {/* ── Career Guidance & Mentorship ── */}
-            <section id="career-guidance" className="py-10 bg-white">
+
+            <section
+                id="career-guidance"
+                className="py-10 bg-white"
+            >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                         <ScrollReveal direction="left">
                             <div className="flex items-center gap-3 mb-4">
                                 <span className="h-px w-8 bg-orange-500" />
-                                <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em]">Career Guidance & Mentorship</p>
+
+                                <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em]">
+                                    Career Guidance & Mentorship
+                                </p>
                             </div>
+
                             <h2 className="text-3xl sm:text-4xl font-bold mb-5 leading-tight text-slate-800">
                                 What We Offer
                             </h2>
+
                             <p className="text-slate-600 leading-relaxed mb-5 text-justify">
-                                The traditional education system in our country does not consider career
-                                development aspect in its curriculum. Hence, career counselling services
-                                are associated with expensive schools in major cities only. COMET bridges
-                                this gap by making <Key>career guidance accessible to all</Key>.
+                                The traditional education system in our
+                                country does not consider career
+                                development aspect in its curriculum.
+                                Hence, career counselling services are
+                                associated with expensive schools in
+                                major cities only. COMET bridges this gap
+                                by making{" "}
+                                <Key>
+                                    career guidance accessible to all
+                                </Key>
+                                .
                             </p>
+
                             <p className="text-slate-600 leading-relaxed text-justify">
-                                The training covers both job-profile-oriented skills and technology-based
-                                learning, supported by professionals from the IT industry.
+                                The training covers both job-profile-oriented
+                                skills and technology-based learning,
+                                supported by professionals from the IT
+                                industry.
                             </p>
                         </ScrollReveal>
+
                         <ScrollReveal direction="right">
                             <ul className="space-y-3">
-                                {careerGuidanceOfferings.map((item, i) => (
-                                    <li key={i} className="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
-                                        <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                                        <span className="text-slate-700 text-sm font-medium">{item}</span>
-                                    </li>
-                                ))}
+                                {careerGuidanceOfferings.map(
+                                    (item, i) => (
+                                        <li
+                                            key={i}
+                                            className={`flex items-start gap-3 p-3 rounded-xl ${CONTAINER_CLASS}`}
+                                        >
+                                            <CheckCircle className="w-5 h-5 text-green-700 shrink-0 mt-0.5" />
+
+                                            <span className="text-slate-700 text-sm font-medium">
+                                                {item}
+                                            </span>
+                                        </li>
+                                    ),
+                                )}
                             </ul>
                         </ScrollReveal>
                     </div>
@@ -591,51 +770,92 @@ export default function CometEducationalServicesPage() {
             </section>
 
             {/* ── COMET Study Centre ── */}
-            <section id="study-centre" className="py-10 bg-stone-50">
+
+            <section
+                id="study-centre"
+                className="py-10 bg-stone-50"
+            >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <CenteredHeader
                         eyebrow="COMET Study Centre"
                         title="A Disciplined Environment for Learning, Mentoring & Career Growth"
                         subtitle="The COMET Study Centre (CSC) is an economical, residential e-Gurukul-style learning environment designed to help students build strong academic foundations, develop professional skills and work steadily toward their career goals. We believe that students can achieve greater career outcomes when they receive consistent mentoring, structured guidance and a focused study environment over two to three years."
                     />
+
                     <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                         <ScrollReveal direction="left">
                             <div>
-                                <h3 className="text-slate-800 font-bold text-xl mb-5">What the COMET Study Centre Offers</h3>
+                                <h3 className="text-slate-800 font-bold text-xl mb-5">
+                                    What the COMET Study Centre Offers
+                                </h3>
+
                                 <ul className="space-y-3">
-                                    {studyCentreFeatures.map((feature, i) => (
-                                        <li key={i} className="flex items-start gap-3">
-                                            <span className="mt-1 w-5 h-5 rounded-full bg-green-900 text-white flex items-center justify-center text-xs font-bold shrink-0">{i + 1}</span>
-                                            <span className="text-slate-600 text-sm leading-relaxed text-justify">{feature}</span>
-                                        </li>
-                                    ))}
+                                    {studyCentreFeatures.map(
+                                        (feature, i) => (
+                                            <li
+                                                key={i}
+                                                className="flex items-start gap-3"
+                                            >
+                                                <span className="mt-1 w-5 h-5 rounded-full bg-green-900 text-white flex items-center justify-center text-xs font-bold shrink-0">
+                                                    {i + 1}
+                                                </span>
+
+                                                <span className="text-slate-600 text-sm leading-relaxed text-justify">
+                                                    {feature}
+                                                </span>
+                                            </li>
+                                        ),
+                                    )}
                                 </ul>
                             </div>
                         </ScrollReveal>
+
                         <ScrollReveal direction="right">
-                            <div className="bg-green-50 border border-green-100 text-slate-700 rounded-2xl p-8 flex flex-col gap-5">
+                            <div
+                                className={`${CONTAINER_CLASS} text-slate-700 rounded-2xl p-8 flex flex-col gap-5`}
+                            >
                                 <GraduationCap className="w-10 h-10 text-green-800" />
+
                                 <div>
-                                    <h3 className="font-bold text-xl mb-3 text-slate-800">More Than a Study Centre</h3>
+                                    <h3 className="font-bold text-xl mb-3 text-slate-800">
+                                        More Than a Study Centre
+                                    </h3>
+
                                     <p className="text-slate-700 leading-relaxed mb-4 text-justify">
-                                        COMET Study Centre combines education, mentoring, discipline,
-                                        technology and personality development in one structured
+                                        COMET Study Centre combines
+                                        education, mentoring, discipline,
+                                        technology and personality
+                                        development in one structured
                                         environment.
                                     </p>
+
                                     <p className="text-slate-700 leading-relaxed text-justify">
-                                        The objective is not simply to help students study better, but to
-                                        help them develop the knowledge, confidence, communication skills
-                                        and professional readiness needed to pursue their future careers.
+                                        The objective is not simply to
+                                        help students study better, but
+                                        to help them develop the
+                                        knowledge, confidence,
+                                        communication skills and
+                                        professional readiness needed
+                                        to pursue their future careers.
                                     </p>
                                 </div>
+
                                 <div className="border-t border-green-200 pt-5">
-                                    <p className="text-green-800 text-xs font-semibold uppercase tracking-widest mb-3">Our Vision</p>
-                                    <p className="text-slate-800 font-semibold leading-relaxed text-justify">
-                                        Create an environment where students can learn, grow, build
-                                        confidence and prepare themselves for a successful career.
+                                    <p className="text-green-800 text-xs font-semibold uppercase tracking-widest mb-3">
+                                        Our Vision
                                     </p>
-                                    <p className="text-orange-700 font-bold mt-3 text-sm">
-                                        COMET Study Centre — Learn. Grow. Prepare. Succeed.
+
+                                    <p className="text-slate-800 font-semibold leading-relaxed text-justify">
+                                        Create an environment where
+                                        students can learn, grow, build
+                                        confidence and prepare
+                                        themselves for a successful
+                                        career.
+                                    </p>
+
+                                    <p className="text-green-800 font-bold mt-3 text-sm">
+                                        COMET Study Centre — Learn. Grow.
+                                        Prepare. Succeed.
                                     </p>
                                 </div>
                             </div>
@@ -645,35 +865,64 @@ export default function CometEducationalServicesPage() {
             </section>
 
             {/* ── Career Makeover ── */}
-            <section id="career-makeover" className="py-10 bg-white">
+
+            <section
+                id="career-makeover"
+                className="py-10 bg-white"
+            >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <CenteredHeader
                         eyebrow="Career Makeover"
                         title="Transforming Potential into Career Opportunities"
                         subtitle="COMET's Career Makeover initiative helps students overcome academic, financial, language and skill-related barriers and move confidently toward higher education and professional careers. Through a combination of technology training, communication skills, mentoring and career guidance, COMET helps students discover pathways that may otherwise seem out of reach."
                     />
+
                     <p className="text-center text-slate-600 font-semibold text-base mt-4 mb-6">
                         What COMET Helps Students Achieve
                     </p>
-                    <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.07}>
-                        {careerMakeoverPathways.map((pathway, i) => (
-                            <StaggerItem key={i}>
-                                <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 hover:shadow-md transition-shadow duration-300 h-full">
-                                    <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center mb-4">
-                                        <ArrowRight className="w-4 h-4 text-orange-600" />
+
+                    <StaggerContainer
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                        staggerDelay={0.07}
+                    >
+                        {careerMakeoverPathways.map(
+                            (pathway, i) => (
+                                <StaggerItem key={i}>
+                                    <div
+                                        className={`${CONTAINER_CLASS} rounded-2xl p-6 hover:shadow-md transition-shadow duration-300 h-full`}
+                                    >
+                                        <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center mb-4">
+                                            <ArrowRight className="w-4 h-4 text-green-800" />
+                                        </div>
+
+                                        <h3 className="text-slate-800 font-bold text-base mb-2">
+                                            {pathway.title}
+                                        </h3>
+
+                                        <p className="text-slate-600 text-sm leading-relaxed text-justify">
+                                            {pathway.description}
+                                        </p>
                                     </div>
-                                    <h3 className="text-slate-800 font-bold text-base mb-2">{pathway.title}</h3>
-                                    <p className="text-slate-600 text-sm leading-relaxed text-justify">{pathway.description}</p>
-                                </div>
-                            </StaggerItem>
-                        ))}
+                                </StaggerItem>
+                            ),
+                        )}
                     </StaggerContainer>
-                    <ScrollReveal direction="up" className="mt-8">
-                        <div className="bg-amber-50 border border-amber-100 rounded-2xl p-6 max-w-3xl mx-auto">
-                            <p className="text-amber-900 font-semibold text-base leading-relaxed text-justify">
-                                Career Makeover is about helping students move from uncertainty to
+
+                    <ScrollReveal
+                        direction="up"
+                        className="mt-8"
+                    >
+                        <div
+                            className={`${CONTAINER_CLASS} rounded-2xl p-6 max-w-3xl mx-auto`}
+                        >
+                            <p className="text-green-900 font-semibold text-base leading-relaxed text-justify">
+                                Career Makeover is about helping
+                                students move from uncertainty to
                                 clarity, skills to confidence, and{" "}
-                                <Key>education to employment opportunities</Key>.
+                                <Key>
+                                    education to employment opportunities
+                                </Key>
+                                .
                             </p>
                         </div>
                     </ScrollReveal>
@@ -681,38 +930,68 @@ export default function CometEducationalServicesPage() {
             </section>
 
             {/* ── Adopt-A-School ── */}
-            <section id="adopt-a-school" className="py-10 bg-stone-50">
+
+            <section
+                id="adopt-a-school"
+                className="py-10 bg-stone-50"
+            >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                         <ScrollReveal direction="left">
                             <div className="flex items-center gap-3 mb-4">
                                 <span className="h-px w-8 bg-orange-500" />
-                                <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em]">Adopt-A-School</p>
+
+                                <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em]">
+                                    Adopt-A-School
+                                </p>
                             </div>
+
                             <h2 className="text-3xl sm:text-4xl font-bold mb-5 leading-tight text-slate-800">
                                 Transforming Schools Together
                             </h2>
+
                             <p className="text-slate-600 leading-relaxed mb-4 text-justify">
-                                The future of a nation depends upon the quality of education imparted to
-                                our children. We believe that it is the joint responsibility of the
-                                Government and citizens to improve school education, hence we have begun
-                                the process of transforming underprivileged schools by the active
-                                involvement of donors, non-government organizations, and corporate
-                                sectors through the &ldquo;
-                                <Key>COMET — Adopt-A-School Programme</Key>&rdquo;.
+                                The future of a nation depends upon the
+                                quality of education imparted to our
+                                children. We believe that it is the joint
+                                responsibility of the Government and
+                                citizens to improve school education,
+                                hence we have begun the process of
+                                transforming underprivileged schools by
+                                the active involvement of donors,
+                                non-government organizations, and
+                                corporate sectors through the
+                                &ldquo;
+                                <Key>
+                                    COMET — Adopt-A-School Programme
+                                </Key>
+                                &rdquo;.
                             </p>
+
                             <p className="text-slate-600 leading-relaxed text-justify">
-                                This program is an initiative to develop partnerships between schools,
-                                professionals, and organizations. The focus of the program is on
-                                identifying and solving problems that affect the quality of education and
-                                is grounded in the belief that government, corporates, and individuals can
-                                all play a pivotal role in accelerating student and school success.
+                                This program is an initiative to develop
+                                partnerships between schools,
+                                professionals, and organizations. The
+                                focus of the program is on identifying
+                                and solving problems that affect the
+                                quality of education and is grounded in
+                                the belief that government, corporates,
+                                and individuals can all play a pivotal
+                                role in accelerating student and school
+                                success.
                             </p>
                         </ScrollReveal>
+
                         <ScrollReveal direction="right">
-                            <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-8 text-slate-700">
+                            <div
+                                className={`${CONTAINER_CLASS} rounded-2xl p-8 text-slate-700`}
+                            >
                                 <Building2 className="w-10 h-10 text-green-800 mb-4" />
-                                <h3 className="font-bold text-xl mb-4 text-slate-800">Program Focus</h3>
+
+                                <h3 className="font-bold text-xl mb-4 text-slate-800">
+                                    Program Focus
+                                </h3>
+
                                 <ul className="space-y-3">
                                     {[
                                         "Developing partnerships between schools, professionals, and organizations",
@@ -722,9 +1001,15 @@ export default function CometEducationalServicesPage() {
                                         "Technology access for remote schools",
                                         "Career mentoring for underserved students",
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-3">
+                                        <li
+                                            key={i}
+                                            className="flex items-start gap-3"
+                                        >
                                             <CheckCircle className="w-4 h-4 text-green-700 shrink-0 mt-0.5" />
-                                            <span className="text-slate-700 text-sm text-justify">{item}</span>
+
+                                            <span className="text-slate-700 text-sm text-justify">
+                                                {item}
+                                            </span>
                                         </li>
                                     ))}
                                 </ul>
@@ -735,6 +1020,7 @@ export default function CometEducationalServicesPage() {
             </section>
 
             {/* ── Lending a Helping Hand ── */}
+
             <section id="support" className="py-10 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <CenteredHeader
@@ -742,38 +1028,73 @@ export default function CometEducationalServicesPage() {
                         title="Ways You Can Support"
                         subtitle="COMET works with schools, students and communities in underserved and remote areas to create access to education, technology, career guidance and professional opportunities. We invite government organizations, corporates, institutions and individuals to join us in creating meaningful opportunities for students who need them most."
                     />
-                    <StaggerContainer className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.06}>
+
+                    <StaggerContainer
+                        className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                        staggerDelay={0.06}
+                    >
                         {supportWays.map((way, i) => (
                             <StaggerItem key={i}>
-                                <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 hover:shadow-md hover:border-green-200 transition-all duration-300 h-full">
-                                    <h3 className="text-slate-800 font-bold text-base mb-3">{way.title}</h3>
-                                    <p className="text-slate-600 text-sm leading-relaxed text-justify">{way.description}</p>
+                                <div
+                                    className={`${CONTAINER_CLASS} rounded-2xl p-6 hover:shadow-md transition-all duration-300 h-full`}
+                                >
+                                    <h3 className="text-slate-800 font-bold text-base mb-3">
+                                        {way.title}
+                                    </h3>
+
+                                    <p className="text-slate-600 text-sm leading-relaxed text-justify">
+                                        {way.description}
+                                    </p>
                                 </div>
                             </StaggerItem>
                         ))}
                     </StaggerContainer>
-                    <ScrollReveal direction="up" className="mt-8">
-                        <div className="bg-green-50 border border-green-100 text-slate-700 rounded-2xl p-8 text-center max-w-3xl mx-auto">
-                            <p className="text-green-800 text-xs font-semibold uppercase tracking-widest mb-4">Make a Direct Impact</p>
-                            <p className="text-slate-700 text-lg leading-relaxed mb-2 text-justify">
-                                Your contribution can help a student access a computer, complete a
-                                professional course, attend a career workshop, pursue higher education or
-                                take the first step toward a career.
+
+                    <ScrollReveal
+                        direction="up"
+                        className="mt-8"
+                    >
+                        <div
+                            className={`${CONTAINER_CLASS} text-slate-700 rounded-2xl p-8 text-center max-w-3xl mx-auto`}
+                        >
+                            <p className="text-green-800 text-xs font-semibold uppercase tracking-widest mb-4">
+                                Make a Direct Impact
                             </p>
+
+                            <p className="text-slate-700 text-lg leading-relaxed mb-2 text-justify">
+                                Your contribution can help a student
+                                access a computer, complete a professional
+                                course, attend a career workshop, pursue
+                                higher education or take the first step
+                                toward a career.
+                            </p>
+
                             <p className="text-slate-600 mt-4 text-sm text-justify">
-                                COMET believes that the <Key>right support at the right time</Key> can change a
-                                student&apos;s future.
+                                COMET believes that the{" "}
+                                <Key>right support at the right time</Key>{" "}
+                                can change a student&apos;s future.
                             </p>
                         </div>
                     </ScrollReveal>
-                    <ScrollReveal direction="up" className="mt-6">
-                        <div className="bg-amber-50 border border-amber-100 rounded-2xl p-6 max-w-3xl mx-auto">
-                            <p className="text-amber-900 font-semibold text-sm mb-2">Transparency & Engagement</p>
+
+                    <ScrollReveal
+                        direction="up"
+                        className="mt-6"
+                    >
+                        <div
+                            className={`${CONTAINER_CLASS} rounded-2xl p-6 max-w-3xl mx-auto`}
+                        >
+                            <p className="text-green-900 font-semibold text-sm mb-2">
+                                Transparency & Engagement
+                            </p>
+
                             <p className="text-slate-600 text-sm leading-relaxed text-justify">
-                                We encourage supporters to see the impact of their contributions
-                                firsthand. Donors may visit supported schools or facilities, meet students
-                                directly, and receive updates, photographs and videos from sponsored
-                                programs and events.
+                                We encourage supporters to see the impact
+                                of their contributions firsthand. Donors
+                                may visit supported schools or facilities,
+                                meet students directly, and receive
+                                updates, photographs and videos from
+                                sponsored programs and events.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -781,6 +1102,7 @@ export default function CometEducationalServicesPage() {
             </section>
 
             {/* ── Change Leaders ── */}
+
             <section id="leaders" className="py-10 bg-stone-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <CenteredHeader
@@ -788,11 +1110,17 @@ export default function CometEducationalServicesPage() {
                         title="People Behind the COMET Mission"
                         subtitle="COMET is driven by professionals and social leaders who combine industry experience, education, mentorship and a commitment to community development. Our Change Leaders bring decades of experience across the IT industry, education and social initiatives. Together, they work to create better career opportunities for students, support underserved communities and contribute to sustainable development."
                     />
-                    <StaggerContainer className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.1}>
+
+                    <StaggerContainer
+                        className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6"
+                        staggerDelay={0.1}
+                    >
                         {leaders.map((leader) => (
                             <StaggerItem key={leader.name}>
-                                <div className="bg-green-50/60 border border-green-100 rounded-2xl p-8 hover:shadow-md transition-shadow duration-300 flex flex-col gap-5 h-full">
-                                    {/* Identical size for every image, no border/outline */}
+                                <div
+                                    className={`${CONTAINER_CLASS} rounded-2xl p-8 hover:shadow-md transition-shadow duration-300 flex flex-col gap-5 h-full`}
+                                >
+                                    {/* Identical size for every image */}
                                     <div className="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
                                         <Image
                                             src={leader.photo}
@@ -802,10 +1130,19 @@ export default function CometEducationalServicesPage() {
                                             className="w-24 h-24 object-cover object-top border-0 outline-none"
                                         />
                                     </div>
+
                                     <div>
-                                        <h3 className="text-slate-800 font-bold text-lg mb-1">{leader.name}</h3>
-                                        <p className="text-green-800 text-xs font-semibold uppercase tracking-wide mb-4">{leader.role}</p>
-                                        <p className="text-slate-600 text-sm leading-relaxed text-justify">{leader.bio}</p>
+                                        <h3 className="text-slate-800 font-bold text-lg mb-1">
+                                            {leader.name}
+                                        </h3>
+
+                                        <p className="text-green-800 text-xs font-semibold uppercase tracking-wide mb-4">
+                                            {leader.role}
+                                        </p>
+
+                                        <p className="text-slate-600 text-sm leading-relaxed text-justify">
+                                            {leader.bio}
+                                        </p>
                                     </div>
                                 </div>
                             </StaggerItem>
@@ -815,6 +1152,7 @@ export default function CometEducationalServicesPage() {
             </section>
 
             {/* ── Go Back to Home ── */}
+
             <section className="py-8 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
                     <Link
@@ -826,8 +1164,6 @@ export default function CometEducationalServicesPage() {
                     </Link>
                 </div>
             </section>
-
-            <CTABanner />
         </main>
     );
 }

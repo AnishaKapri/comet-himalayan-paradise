@@ -153,7 +153,7 @@ export const experiences: Experience[] = [
       "Connect with fellow travellers and local communities through shared meals, storytelling, and collaborative projects.",
     icon: "Users",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a6144aa9-77bf-406b-8909-fccf2edf9929-scaled-holiday-camp-2.webp",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/520d00a8-692d-4f9c-8e05-62ea77917da7-social-community-experiences-under-500kb.webp",
     duration: "Half–Full Day",
     category: "culture",
     highlights: [
@@ -221,7 +221,7 @@ export const experiences: Experience[] = [
       "Visit sacred Himalayan temples and pilgrimage sites steeped in centuries of spiritual tradition and mountain devotion.",
     icon: "Landmark",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/4fda68f8-5ef1-4450-adb7-aa1b3b29f7c1-kmt.webp",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/aa46e2d7-0ac1-48d9-bb0b-80625e0fd438-spiritual-pilgrimage-experiences-under-500kb.webp",
     duration: "Half–Full Day",
     category: "culture",
     highlights: [

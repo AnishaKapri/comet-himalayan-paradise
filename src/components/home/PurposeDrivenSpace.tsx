@@ -3,9 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
+import {
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/ui/ScrollReveal";
 
 const spaces = [
   {
@@ -13,21 +15,32 @@ const spaces = [
     description:
       "Concierge support for travel, stay, and on-ground logistics — handled end-to-end by the Comet team.",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/32308adc-0e58-4a98-acff-3731f0ad7327-scaled-comet-services-2.webp",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/91ae7f82-7142-4620-b99a-76043a52f9fe-education-square.webp",
+    href: "/comet-educational-services",
   },
   {
     title: "Gaushala",
     description:
       "A traditional cattle farm woven into daily life at CHP, reflecting our commitment to rural Himalayan heritage.",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/9d1fe41e-9c6c-405f-8b10-fe4d7c57e661-scaled-gaushala-png.webp",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6afaa741-dd2f-4bb3-b145-ebc25d58448e-cow-care-square.webp",
+    href: "/purpose-driven-space",
   },
   {
     title: "Isht Dev Sthal",
     description:
       "A sacred space for prayer and reflection, honoring the spiritual traditions of the Himalayan region.",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6a3c6200-6934-459f-8c9e-b8c348d74708-scaled-isht-dev-sthal.webp",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/5f46b59a-3451-42a2-a8f6-22079fad4369-isht.webp",
+    href: "/sanaatan-isht-dev-sthal",
+  },
+  {
+    title: "Himalayan Organic & Medicinal Farming",
+    description:
+      "Sustainable Himalayan farming that preserves traditional knowledge and nurtures natural wellness.",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/8970d740-c10c-40fb-8c3f-b28b0678d484-organic-herbal-farm-square.webp",
+    href: "/organic",
   },
 ];
 
@@ -35,67 +48,56 @@ export function PurposeDrivenSpace() {
   return (
     <section
       id="purpose-driven-space"
-      className="py-14 lg:py-20 bg-white scroll-mt-20"
+      className="scroll-mt-20 bg-white py-14 lg:py-20"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Purpose Driven Space"
           subtitle="Purposeful Spaces. Meaningful Experiences. Meaningful Contributions."
         />
 
         <StaggerContainer
-          className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6"
+          className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
           staggerDelay={0.08}
         >
           {spaces.map((space) => (
             <StaggerItem key={space.title} className="h-full">
-              <motion.article
-                whileHover={{ y: -5 }}
-                transition={{ duration: 0.25 }}
-                className="relative overflow-hidden rounded-2xl aspect-square h-full shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300"
+              <Link
+                href={space.href}
+                className="block h-full"
+                aria-label={`Explore ${space.title}`}
               >
-                <Image
-                  src={space.image}
-                  alt={space.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-700 hover:scale-110"
-                />
+                <motion.article
+                  whileHover={{ y: -5 }}
+                  transition={{ duration: 0.25 }}
+                  className="group relative aspect-square h-full cursor-pointer overflow-hidden rounded-2xl shadow-sm transition-shadow duration-300 hover:shadow-xl hover:shadow-black/12"
+                >
+                  <Image
+                    src={space.image}
+                    alt={space.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  {/* Readability overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
 
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <h3 className="text-white font-bold text-xl mb-1.5">
-                    {space.title}
-                  </h3>
+                  {/* Card content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="mb-1.5 text-xl font-bold leading-tight text-white">
+                      {space.title}
+                    </h3>
 
-                  <p className="text-white/65 text-sm leading-relaxed mb-3">
-                    {space.description}
-                  </p>
-
-                  <Link
-                    href="/purpose-driven-space"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-400 hover:text-amber-300 transition-colors"
-                  >
-                    View Details
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </motion.article>
+                    <p className="text-sm leading-relaxed text-white/75">
+                      {space.description}
+                    </p>
+                  </div>
+                </motion.article>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerContainer>
-
-        {/* View Details CTA */}
-        <div className="mt-12 flex justify-center">
-          <Link
-            href="/purpose-driven-space"
-            className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-orange-600/25 hover:-translate-y-0.5"
-          >
-            View Details
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
       </div>
     </section>
   );

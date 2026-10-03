@@ -561,20 +561,18 @@ export default function SanaatanIshtDevSthalPage() {
                     </div>
                 </div>
             </section>
-
-            {/* Bottom Nav Pill */}
-            <section className="border-t border-stone-200 bg-white py-8">
-                <div className="mx-auto max-w-7xl px-4 text-center">
-                    <Link
-                        href="/#social-impact"
-                        className="inline-block rounded-full bg-green-900 px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-green-800"
-                    >
-                        Home
-                    </Link>
-                </div>
-            </section>
-
-            <CTABanner />
+{/* BOTTOM NAV CAPTION */}
+      <section className="py-8 bg-white border-t border-stone-200">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <Link
+            href="/#social-impact"
+            className="inline-block rounded-full bg-green-900 px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-md hover:bg-green-800 transition-all duration-200 hover:-translate-y-0.5"
+          >
+            Home 
+          </Link>
+        </div>
+      </section>
+            
         </main>
     );
 }

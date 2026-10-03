@@ -16,7 +16,10 @@ import {
     Send,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
+import {
+    StaggerContainer,
+    StaggerItem,
+} from "@/components/ui/ScrollReveal";
 import { CTABanner } from "@/components/home/CTABanner";
 
 const pillars = [
@@ -39,14 +42,15 @@ const pillars = [
     {
         icon: Flame,
         title: "Isht Dev Sthal & Sacred Fire",
-        description:
+        description: (
             <>
                 Our traditional Isht Dev Sthal hosts daily{" "}
                 <span className="font-semibold text-orange-700">
                     Agni Puja, Havans, and Kumaoni spiritual ceremonies
                 </span>{" "}
                 — rooted in centuries of mountain devotion.
-            </>,
+            </>
+        ),
         bg: "bg-orange-50",
         border: "border-orange-200",
     },
@@ -69,14 +73,15 @@ const pillars = [
     {
         icon: Heart,
         title: "Satsang & Community Evenings",
-        description:
+        description: (
             <>
                 Campfire satsangs, kirtan evenings, storytelling circles, and{" "}
                 <span className="font-semibold text-rose-700">
                     Kumaoni folk music
                 </span>{" "}
                 nights that foster genuine human connection under the stars.
-            </>,
+            </>
+        ),
         bg: "bg-rose-50",
         border: "border-rose-200",
     },
@@ -86,7 +91,8 @@ const retreatPrograms = [
     {
         title: "Weekend Detox & Reset",
         duration: "2 Nights / 3 Days",
-        desc: "Digital detox, daily yoga, guided meditation, Sattvic meals, and a Himalayan forest walk to reset your mind and body.",
+        desc:
+            "Digital detox, daily yoga, guided meditation, Sattvic meals, and a Himalayan forest walk to reset your mind and body.",
         includes: [
             "Morning & evening yoga",
             "2 meditation sessions/day",
@@ -100,7 +106,8 @@ const retreatPrograms = [
     {
         title: "7-Day Inner Renewal",
         duration: "7 Nights / 8 Days",
-        desc: "An immersive week of Himalayan healing — yoga, pranayama, Ayurveda, Havan, silent forest walks, and personalised one-on-one guidance.",
+        desc:
+            "An immersive week of Himalayan healing — yoga, pranayama, Ayurveda, Havan, silent forest walks, and personalised one-on-one guidance.",
         includes: [
             "Daily yoga & pranayama",
             "Havan & Agni Puja ceremony",
@@ -116,7 +123,8 @@ const retreatPrograms = [
     {
         title: "Purpose & Clarity Retreat",
         duration: "14 Nights / 15 Days",
-        desc: "A deep-dive program for individuals seeking direction, clarity, and a renewed sense of purpose — combining silence, reflection, and Himalayan wisdom.",
+        desc:
+            "A deep-dive program for individuals seeking direction, clarity, and a renewed sense of purpose — combining silence, reflection, and Himalayan wisdom.",
         includes: [
             "Personalised guidance sessions",
             "Purpose journaling workshop",
@@ -185,30 +193,36 @@ export default function HealthRetreatProgramPage() {
                     alt="Health Retreat Program at CHP"
                     fill
                     priority
+                    sizes="100vw"
                     className="object-cover"
                 />
 
-                {/* Lighter overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-black/50" />
+                {/* No dark overlay */}
+                <div className="absolute inset-0 bg-transparent" />
 
                 <div className="absolute inset-0 flex flex-col items-center px-4 sm:px-6">
 
+                    {/* Hero Badge */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
                         className="mt-20 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-xs font-semibold uppercase tracking-wider"
                     >
                         <Flower2 className="w-3.5 h-3.5" />
-                        Spiritual &amp; Wellness Sanctuary
+                        Spiritual & Wellness Sanctuary
                     </motion.div>
 
-                    {/* Hero text moved higher */}
+                    {/* Hero Content */}
                     <div className="absolute top-[18%] sm:top-[17%] md:top-[16%] left-1/2 -translate-x-1/2 z-10 w-full px-4 flex flex-col items-center justify-center text-center">
 
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
+                            transition={{
+                                duration: 0.7,
+                                delay: 0.1,
+                            }}
                             className="text-white text-3xl sm:text-4xl md:text-5xl font-medium leading-tight"
                         >
                             Health Retreat Program
@@ -217,18 +231,24 @@ export default function HealthRetreatProgramPage() {
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
+                            transition={{
+                                duration: 0.6,
+                                delay: 0.2,
+                            }}
                             className="mt-4 text-white/90 text-base sm:text-lg max-w-2xl leading-relaxed text-center"
                         >
-                            A sacred Himalayan environment for yoga, meditation,
-                            Ayurveda, spiritual ceremony, and deep inner renewal —
-                            far from the noise of modern life.
+                            A sacred Himalayan environment for yoga,
+                            meditation, Ayurveda, spiritual ceremony, and deep
+                            inner renewal — far from the noise of modern life.
                         </motion.p>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.3 }}
+                            transition={{
+                                duration: 0.6,
+                                delay: 0.3,
+                            }}
                             className="mt-6 flex flex-wrap gap-4 justify-center"
                         >
                             <a
@@ -254,17 +274,16 @@ export default function HealthRetreatProgramPage() {
             {/* ── Philosophy ── */}
             <section className="py-16 bg-gradient-to-r from-amber-950 to-stone-900 text-white">
 
-                <div className="max-w-4xl mx-auto px-2 text-center">
+                <div className="max-w-4xl mx-auto px-4 text-center">
 
-                    <p className="text-amber-300 text-2x2 font-semibold uppercase tracking-widest mb-4">
+                    <p className="text-amber-300 text-sm sm:text-base font-semibold uppercase tracking-widest mb-4">
                         Our Philosophy
                     </p>
 
-                    <blockquote className="text-1xl sm:text-1xl font-light leading-relaxed text-white/90 italic text-justify">
-                        {/* eslint-disable-next-line react/no-unescaped-entities */}
-                        "The Himalayas do not merely house peaks — they house silence,
-                        wisdom, and the ancient breath of the earth. CHP is designed
-                        to help you listen."
+                    <blockquote className="text-lg sm:text-xl font-light leading-relaxed text-white/90 italic text-justify">
+                        "The Himalayas do not merely house peaks — they house
+                        silence, wisdom, and the ancient breath of the earth.
+                        CHP is designed to help you listen."
                     </blockquote>
 
                 </div>
@@ -281,8 +300,10 @@ export default function HealthRetreatProgramPage() {
                         subtitle="Six integrated practices woven into daily life at CHP — each designed to restore balance, awareness, and inner clarity."
                     />
 
-                    <StaggerContainer className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
+                    <StaggerContainer
+                        className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                        staggerDelay={0.08}
+                    >
                         {pillars.map((p) => {
                             const Icon = p.icon;
 
@@ -292,7 +313,6 @@ export default function HealthRetreatProgramPage() {
                                     <div
                                         className={`p-7 rounded-2xl ${p.bg} border ${p.border} hover:shadow-lg hover:shadow-amber-900/5 transition-all h-full`}
                                     >
-
                                         <div className="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 mb-4">
                                             <Icon className="w-5 h-5" />
                                         </div>
@@ -304,14 +324,13 @@ export default function HealthRetreatProgramPage() {
                                         <p className="text-slate-500 text-sm leading-relaxed text-justify">
                                             {p.description}
                                         </p>
-
                                     </div>
 
                                 </StaggerItem>
                             );
                         })}
-
                     </StaggerContainer>
+
                 </div>
             </section>
 
@@ -327,7 +346,6 @@ export default function HealthRetreatProgramPage() {
                                 key={t.label}
                                 className={`text-center p-5 rounded-2xl ${t.bg} border ${t.border}`}
                             >
-
                                 <div className="w-10 h-10 rounded-full bg-amber-100 mx-auto flex items-center justify-center text-amber-700 mb-3">
                                     <Flame className="w-5 h-5" />
                                 </div>
@@ -339,7 +357,6 @@ export default function HealthRetreatProgramPage() {
                                 <p className="text-slate-500 text-xs leading-snug">
                                     {t.desc}
                                 </p>
-
                             </div>
                         ))}
 
@@ -362,8 +379,10 @@ export default function HealthRetreatProgramPage() {
                         subtitle="Choose a program suited to your time, intention, and depth of practice."
                     />
 
-                    <StaggerContainer className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
-
+                    <StaggerContainer
+                        className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8"
+                        staggerDelay={0.08}
+                    >
                         {retreatPrograms.map((r) => (
                             <StaggerItem key={r.title}>
 
@@ -412,7 +431,6 @@ export default function HealthRetreatProgramPage() {
                                             </p>
 
                                             <ul className="space-y-2 mb-5">
-
                                                 {r.includes.map((inc) => (
                                                     <li
                                                         key={inc}
@@ -422,7 +440,6 @@ export default function HealthRetreatProgramPage() {
                                                         {inc}
                                                     </li>
                                                 ))}
-
                                             </ul>
 
                                         </div>
@@ -444,8 +461,8 @@ export default function HealthRetreatProgramPage() {
 
                             </StaggerItem>
                         ))}
-
                     </StaggerContainer>
+
                 </div>
             </section>
 
@@ -468,8 +485,8 @@ export default function HealthRetreatProgramPage() {
                         </h2>
 
                         <p className="text-slate-500 text-sm mt-2 text-justify">
-                            Our wellness team will reach out within 24 hours with
-                            availability and programme details.
+                            Our wellness team will reach out within 24 hours
+                            with availability and programme details.
                         </p>
 
                     </div>
@@ -485,8 +502,8 @@ export default function HealthRetreatProgramPage() {
                             </h3>
 
                             <p className="text-slate-500 text-sm mt-2 text-justify">
-                                Our team will get in touch to guide you toward the
-                                right program.
+                                Our team will get in touch to guide you toward
+                                the right program.
                             </p>
 
                         </div>
@@ -586,10 +603,18 @@ export default function HealthRetreatProgramPage() {
                                         }
                                         className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-amber-500"
                                     >
-                                        <option>Weekend Detox & Reset</option>
-                                        <option>7-Day Inner Renewal</option>
-                                        <option>Purpose & Clarity Retreat</option>
-                                        <option>Custom Program</option>
+                                        <option>
+                                            Weekend Detox & Reset
+                                        </option>
+                                        <option>
+                                            7-Day Inner Renewal
+                                        </option>
+                                        <option>
+                                            Purpose & Clarity Retreat
+                                        </option>
+                                        <option>
+                                            Custom Program
+                                        </option>
                                     </select>
 
                                 </div>
@@ -646,6 +671,7 @@ export default function HealthRetreatProgramPage() {
                             </button>
 
                         </form>
+
                     )}
 
                 </div>

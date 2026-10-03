@@ -28,6 +28,9 @@ import {
 const HEADER_IMAGE =
   "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ef39ec48-1b22-4b32-9fb6-83caf51fa84e-chp-growth-partnership-header-under-500kb.webp";
 
+const CARD_BG = "bg-[#f5f8f6]";
+const CARD_BORDER = "border-[#dfe9e3]";
+
 const ecosystem = [
   {
     title: "Hospitality",
@@ -277,6 +280,7 @@ const whyJoin = [
 
 export default function GrowthPartnerPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -292,9 +296,13 @@ export default function GrowthPartnerPage() {
   };
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f5f1e8] text-[#14231f]">
+    <main className="min-h-screen overflow-hidden bg-white text-[#14231f]">
+
       {/* HERO */}
-      <section id="growth-partner-hero" className="relative isolate mt-[70px] min-h-[78vh] overflow-hidden bg-slate-950 sm:mt-[72px]">
+      <section
+        id="growth-partner-hero"
+        className="relative isolate mt-[70px] min-h-[78vh] overflow-hidden bg-slate-950 sm:mt-[72px]"
+      >
         <Image
           src={HEADER_IMAGE}
           alt="CHP Growth Partnership in the Himalayas"
@@ -305,55 +313,57 @@ export default function GrowthPartnerPage() {
           className="object-cover"
         />
 
-        {/* Subtle darkening — keeps the supplied header artwork visible */}
         <div className="absolute inset-0 bg-black/10" />
 
-        {/* Hero content aligned to the CHP Biz Partnership hero */}
         <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-7xl flex-col items-center px-5 pb-36 pt-[84px] text-center sm:px-8 sm:pb-40 sm:pt-[100px] lg:px-10 lg:pb-40 lg:pt-[116px]">
           <div
             className="flex w-full flex-col items-center"
             style={{ transform: "translateY(-2cm)" }}
           >
-            {/* Dark-green CHP label */}
-            <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/20 bg-emerald-950/90 px-4 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.22)] backdrop-blur-md sm:px-5"
-            >
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white sm:text-xs sm:tracking-[0.22em]">
-              CHP Growth Partnership
-            </span>
-          </div>
+            <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/20 bg-emerald-950/90 px-4 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.22)] backdrop-blur-md sm:px-5">
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white sm:text-xs sm:tracking-[0.22em]">
+                CHP Growth Partnership
+              </span>
+            </div>
 
-          {/* Title */}
             <div className="mt-5 w-full max-w-6xl text-white sm:mt-6">
-            <h1 className="mx-auto w-full font-serif text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:text-[2.35rem] md:text-[2.7rem] lg:text-[3rem] xl:text-[3.2rem]">
-              <span className="block">Grow with CHP.<br />Build opportunities in the Himalayas.</span>
-            </h1>
-          </div>
+              <h1 className="mx-auto w-full font-serif text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:text-[2.35rem] md:text-[2.7rem] lg:text-[3rem] xl:text-[3.2rem]">
+                <span className="block">
+                  Grow with CHP.
+                  <br />
+                  Build opportunities in the Himalayas.
+                </span>
+              </h1>
+            </div>
 
-            {/* Buttons aligned and sized like CHP Biz Partnership */}
             <div className="mt-9 flex w-full flex-wrap justify-center gap-2.5 sm:mt-9 sm:gap-3">
-            <a
-              href="#apply-partner"
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#f3c96b] px-5 py-2.5 text-xs font-semibold text-[#14231f] shadow-lg shadow-black/10 transition duration-200 hover:-translate-y-0.5 hover:bg-[#ffe09a] sm:px-5.5 sm:py-2.5 sm:text-sm"
-            >
-              Become a Growth Partner
-              <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            </a>
+              <a
+                href="#apply-partner"
+                className="inline-flex items-center gap-1.5 rounded-full bg-[#f3c96b] px-5 py-2.5 text-xs font-semibold text-[#14231f] shadow-lg shadow-black/10 transition duration-200 hover:-translate-y-0.5 hover:bg-[#ffe09a] sm:px-5.5 sm:py-2.5 sm:text-sm"
+              >
+                Become a Growth Partner
+                <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              </a>
 
-            <a
-              href="#program"
-              className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-black/10 px-5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-black/10 backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-black/15 sm:px-5.5 sm:py-2.5 sm:text-sm"
-            >
-              Explore the partnership
-              <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            </a>
+              <a
+                href="#program"
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-black/10 px-5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-black/10 backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-black/15 sm:px-5.5 sm:py-2.5 sm:text-sm"
+              >
+                Explore the partnership
+                <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* WHAT IS CHP GROWTH PARTNERSHIP? */}
-      <section id="program" className="scroll-mt-24 bg-[#f5f1e8] py-20 sm:py-24 lg:py-28">
+      <section
+        id="program"
+        className="scroll-mt-24 bg-white py-20 sm:py-24 lg:py-28"
+      >
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:px-10">
+
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -363,11 +373,14 @@ export default function GrowthPartnerPage() {
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
               CHP Growth Partnership
             </p>
+
             <h2 className="mt-4 font-serif text-3xl leading-tight tracking-tight sm:text-4xl">
               What is CHP Growth Partnership?
             </h2>
+
             <p className="mt-6 text-justify text-base leading-8 text-[#50605a]">
-              CHP Growth Partnership is a collaborative business-development model where partners help expand the CHP ecosystem through:
+              CHP Growth Partnership is a collaborative business-development
+              model where partners help expand the CHP ecosystem through:
             </p>
 
             <div className="mt-7 space-y-3">
@@ -381,33 +394,23 @@ export default function GrowthPartnerPage() {
                 "Strategic collaborations",
                 "Local and regional business development",
                 "Promotion of CHP experiences and offerings",
-              ].map((item, index) => {
-                const programBackgrounds = [
-                  "bg-emerald-50/80",
-                  "bg-sky-50/80",
-                  "bg-amber-50/80",
-                  "bg-violet-50/80",
-                  "bg-rose-50/80",
-                  "bg-cyan-50/80",
-                  "bg-lime-50/80",
-                  "bg-indigo-50/80",
-                  "bg-orange-50/80",
-                ];
-
-                return (
-                  <div
-                    key={item}
-                    className={`flex items-start gap-3 rounded-2xl border border-slate-200/80 ${programBackgrounds[index]} p-4 text-sm font-medium leading-6 transition hover:-translate-y-0.5 hover:border-emerald-300`}
-                  >
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#8d6a2d]" />
+              ].map((item) => (
+                <div
+                  key={item}
+                  className={`flex items-start gap-3 rounded-2xl border ${CARD_BORDER} ${CARD_BG} p-4 text-sm font-medium leading-6 transition hover:-translate-y-0.5`}
+                >
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#7d9a67]" />
                   <span>{item}</span>
-                  </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
 
-            <div className="mt-7 rounded-2xl border border-[#d8cba9] bg-[#fff8df] p-5 text-sm leading-7 text-[#5e553d]">
-              The partnership is designed around a mutually agreed, target-based framework, with benefits linked to the contribution and performance of the Growth Partner.
+            <div
+              className={`mt-7 rounded-2xl border ${CARD_BORDER} ${CARD_BG} p-5 text-sm leading-7 text-[#5e6c65]`}
+            >
+              The partnership is designed around a mutually agreed,
+              target-based framework, with benefits linked to the contribution
+              and performance of the Growth Partner.
             </div>
           </motion.div>
 
@@ -428,6 +431,7 @@ export default function GrowthPartnerPage() {
                   className="object-cover transition duration-700 hover:scale-105"
                 />
               </div>
+
               <div className="col-span-5 grid gap-3 sm:gap-4">
                 <div className="relative h-[205px] overflow-hidden rounded-[2rem]">
                   <Image
@@ -439,6 +443,7 @@ export default function GrowthPartnerPage() {
                     className="object-cover transition duration-700 hover:scale-105"
                   />
                 </div>
+
                 <div className="relative h-[205px] overflow-hidden rounded-[2rem]">
                   <Image
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4b7c56df-d9d5-4eed-98e8-ae8bcdd4e8a6-wellness-retreats.jpg"
@@ -456,27 +461,34 @@ export default function GrowthPartnerPage() {
       </section>
 
       {/* WHO CAN BECOME A GROWTH PARTNER? */}
-      <section className="bg-[#0c211c] py-20 text-white sm:py-24 lg:py-28">
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
           <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#f3c96b]">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
               Growth Partner Network
             </p>
+
             <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
               Who Can Become a Growth Partner?
             </h2>
-            <p className="mt-5 text-base leading-8 text-white/65">
-              The program is open to people and organizations who can contribute to the growth of CHP through their networks, expertise, business relationships or market reach.
+
+            <p className="mt-5 text-base leading-8 text-[#596760]">
+              The program is open to people and organizations who can
+              contribute to the growth of CHP through their networks,
+              expertise, business relationships or market reach.
             </p>
           </div>
 
           <div className="mt-12">
-            <p className="mb-5 text-sm font-bold uppercase tracking-[0.22em] text-[#f3c96b]">
+            <p className="mb-5 text-sm font-bold uppercase tracking-[0.22em] text-[#8d6a2d]">
               Potential Growth Partners
             </p>
+
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {potentialPartners.map((item, index) => {
                 const Icon = item.icon;
+
                 return (
                   <motion.article
                     key={item.title}
@@ -484,13 +496,17 @@ export default function GrowthPartnerPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.15 }}
                     transition={{ delay: index * 0.04 }}
-                    className="group rounded-[1.5rem] border border-white/10 bg-white/[0.045] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#f3c96b]/35 hover:bg-white/[0.07]"
+                    className={`group rounded-[1.5rem] border ${CARD_BORDER} ${CARD_BG} p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg`}
                   >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#f3c96b]/30 bg-[#f3c96b]/10 text-[#f3c96b]">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#7d9a67] shadow-sm">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="mt-5 font-serif text-xl">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-white/55">
+
+                    <h3 className="mt-5 font-serif text-xl">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-3 text-sm leading-7 text-[#596760]">
                       {item.text}
                     </p>
                   </motion.article>
@@ -504,10 +520,12 @@ export default function GrowthPartnerPage() {
       {/* HOW GROWTH PARTNERS CONTRIBUTE */}
       <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
               Contribution
             </p>
+
             <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
               How Growth Partners Contribute
             </h2>
@@ -516,21 +534,26 @@ export default function GrowthPartnerPage() {
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
             {contributionSteps.map((step) => {
               const Icon = step.icon;
+
               return (
                 <article
                   key={step.number}
-                  className="rounded-[1.75rem] border border-[#ddd6c8] bg-[#faf8f2] p-7 shadow-sm sm:p-8"
+                  className={`rounded-[1.75rem] border ${CARD_BORDER} ${CARD_BG} p-7 shadow-sm sm:p-8`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-serif text-4xl text-[#c9ad69]">
+                    <span className="font-serif text-4xl text-[#7d9a67]">
                       {step.number}
                     </span>
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0c211c] text-[#f3c96b]">
+
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#7d9a67] shadow-sm">
                       <Icon className="h-5 w-5" />
                     </div>
                   </div>
 
-                  <h3 className="mt-6 font-serif text-2xl">{step.title}</h3>
+                  <h3 className="mt-6 font-serif text-2xl">
+                    {step.title}
+                  </h3>
+
                   <p className="mt-4 text-sm leading-7 text-[#596760]">
                     {step.intro}
                   </p>
@@ -540,9 +563,9 @@ export default function GrowthPartnerPage() {
                       {step.items.map((item) => (
                         <div
                           key={item}
-                          className="flex items-start gap-2 rounded-xl border border-[#e2ddd3] bg-white px-3 py-2.5 text-sm leading-5 text-[#43504b]"
+                          className={`flex items-start gap-2 rounded-xl border ${CARD_BORDER} bg-white px-3 py-2.5 text-sm leading-5 text-[#43504b]`}
                         >
-                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#8d6a2d]" />
+                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#7d9a67]" />
                           {item}
                         </div>
                       ))}
@@ -556,91 +579,80 @@ export default function GrowthPartnerPage() {
       </section>
 
       {/* A PERFORMANCE-BASED PARTNERSHIP */}
-      <section className="relative overflow-hidden bg-[#071512] py-20 text-white sm:py-24 lg:py-28">
-        <div className="absolute inset-0 opacity-25">
-          <Image
-            src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/affa9b38-a1fd-48ba-8040-f954839807b5-himalayan-experiences.jpg"
-            alt=""
-            fill
-            unoptimized
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-[#071512]/85" />
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
-        <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#f3c96b]">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
             Current partnership framework
           </p>
+
           <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
             A Performance-Based Partnership
           </h2>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-white/65">
+
+          <p className="mt-5 max-w-3xl text-base leading-8 text-[#596760]">
             CHP Growth Partnership follows a target-based approach.
           </p>
-          <p className="mt-3 max-w-3xl text-sm leading-7 text-white/50">
-            Under the current partnership framework, the indicative performance targets include:
+
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-[#66736d]">
+            Under the current partnership framework, the indicative
+            performance targets include:
           </p>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            <div className="rounded-[1.5rem] border border-white/15 bg-white/[0.07] p-7 backdrop-blur-md">
-              <Building2 className="h-7 w-7 text-[#f3c96b]" />
-              <p className="mt-7 text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
-                Personal Cottage Development
-              </p>
-              <p className="mt-3 font-serif text-3xl">1 plot registration referral per quarter</p>
-            </div>
+          {/* The two performance target boxes have been removed as requested. */}
 
-            <div className="rounded-[1.5rem] border border-white/15 bg-white/[0.07] p-7 backdrop-blur-md">
-              <Building2 className="h-7 w-7 text-[#f3c96b]" />
-              <p className="mt-7 text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
-                Facility Development
-              </p>
-              <p className="mt-3 font-serif text-3xl">
-                1 facility registration referral every 6 months
-              </p>
-            </div>
-          </div>
-
-          <p className="mt-7 max-w-3xl text-sm leading-7 text-white/45">
-            Specific targets, terms and applicable conditions may be mutually agreed between CHP and the individual Growth Partner.
+          <p className="mt-7 max-w-3xl text-sm leading-7 text-[#66736d]">
+            Specific targets, terms and applicable conditions may be mutually
+            agreed between CHP and the individual Growth Partner.
           </p>
         </div>
       </section>
 
       {/* GROWTH PARTNER BENEFITS */}
-      <section className="bg-[#f5f1e8] py-20 sm:py-24 lg:py-28">
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
               Value for both sides
             </p>
+
             <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
               Growth Partner Benefits
             </h2>
+
             <p className="mt-5 text-base leading-8 text-[#66736d]">
-              CHP believes that successful partnerships should create value for both sides.
+              CHP believes that successful partnerships should create value
+              for both sides.
             </p>
+
             <p className="mt-2 text-sm leading-7 text-[#66736d]">
-              Depending on the applicable partnership agreement, Growth Partners may receive benefits such as:
+              Depending on the applicable partnership agreement, Growth
+              Partners may receive benefits such as:
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
             {benefits.map((item) => {
               const Icon = item.icon;
+
               return (
                 <motion.article
                   key={item.title}
                   whileHover={{ y: -4 }}
-                  className="rounded-[1.5rem] border border-[#e1ddd3] bg-white p-6 shadow-sm"
+                  className={`rounded-[1.5rem] border ${CARD_BORDER} ${CARD_BG} p-6 shadow-sm`}
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0c211c] text-[#f3c96b]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#7d9a67] shadow-sm">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-5 font-serif text-xl">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-[#69746f]">{item.text}</p>
+
+                  <h3 className="mt-5 font-serif text-xl">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-7 text-[#69746f]">
+                    {item.text}
+                  </p>
                 </motion.article>
               );
             })}
@@ -649,16 +661,21 @@ export default function GrowthPartnerPage() {
       </section>
 
       {/* WHAT CHP PROVIDES */}
-      <section className="bg-[#e9e4d9] py-20 sm:py-24 lg:py-28">
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <div className="rounded-[2rem] bg-[#0c211c] p-8 text-white sm:p-10 lg:p-12">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#f3c96b]">
+
+          <div
+            className={`rounded-[2rem] border ${CARD_BORDER} ${CARD_BG} p-8 sm:p-10 lg:p-12`}
+          >
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#8d6a2d]">
               CHP support
             </p>
+
             <h2 className="mt-4 font-serif text-4xl sm:text-5xl">
               What CHP Provides
             </h2>
-            <p className="mt-5 max-w-3xl text-base leading-8 text-white/65">
+
+            <p className="mt-5 max-w-3xl text-base leading-8 text-[#596760]">
               CHP works with Growth Partners by providing:
             </p>
 
@@ -666,16 +683,18 @@ export default function GrowthPartnerPage() {
               {whatChpProvides.map((item) => (
                 <div
                   key={item}
-                  className="flex gap-3 border-b border-white/10 py-3 text-sm leading-6 text-white/75"
+                  className="flex gap-3 border-b border-[#dfe9e3] py-3 text-sm leading-6 text-[#43504b]"
                 >
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#f3c96b]" />
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#7d9a67]" />
                   <span>{item}</span>
                 </div>
               ))}
             </div>
 
-            <p className="mt-8 text-sm leading-7 text-white/55">
-              The MoU specifically provides for coordination between the Growth Partner and CHP regarding marketing materials and outreach plans.
+            <p className="mt-8 text-sm leading-7 text-[#66736d]">
+              The MoU specifically provides for coordination between the
+              Growth Partner and CHP regarding marketing materials and
+              outreach plans.
             </p>
           </div>
         </div>
@@ -684,17 +703,23 @@ export default function GrowthPartnerPage() {
       {/* WHAT WE EXPECT */}
       <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
                 Active participation
               </p>
+
               <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
                 What We Expect From Our Growth Partners
               </h2>
+
               <p className="mt-5 text-base leading-8 text-[#66736d]">
-                A successful Growth Partner relationship depends on active participation.
+                A successful Growth Partner relationship depends on active
+                participation.
               </p>
+
               <p className="mt-4 text-sm leading-7 text-[#66736d]">
                 Growth Partners are expected to:
               </p>
@@ -704,33 +729,40 @@ export default function GrowthPartnerPage() {
               {expectations.map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-[#e2ddd3] bg-[#faf8f2] p-5 text-sm font-medium leading-6 text-[#40504a]"
+                  className={`rounded-2xl border ${CARD_BORDER} ${CARD_BG} p-5 text-sm font-medium leading-6 text-[#40504a]`}
                 >
                   <CheckCircle2 className="mb-3 h-5 w-5 text-[#7d9a67]" />
                   {item}
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </section>
 
       {/* YOUR NETWORK */}
-      <section className="bg-[#f5f1e8] py-20 sm:py-24 lg:py-28">
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
           <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
+
             <div className="lg:col-span-5">
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
                 Network opportunity
               </p>
+
               <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
                 Your Network Can Become a Himalayan Opportunity
               </h2>
+
               <p className="mt-6 text-base leading-8 text-[#66736d]">
                 You may already know people who are looking for:
               </p>
+
               <p className="mt-5 text-base font-semibold leading-8 text-[#14231f]">
-                Your introduction could become the beginning of a new CHP partnership.
+                Your introduction could become the beginning of a new CHP
+                partnership.
               </p>
             </div>
 
@@ -738,24 +770,30 @@ export default function GrowthPartnerPage() {
               {networkOpportunities.map((item) => (
                 <div
                   key={item}
-                  className="group rounded-[1.25rem] border border-[#ddd6c8] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                  className={`group rounded-[1.25rem] border ${CARD_BORDER} ${CARD_BG} p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg`}
                 >
-                  <Mountain className="h-5 w-5 text-[#8d6a2d]" />
-                  <p className="mt-5 text-sm font-semibold leading-6">{item}</p>
+                  <Mountain className="h-5 w-5 text-[#7d9a67]" />
+
+                  <p className="mt-5 text-sm font-semibold leading-6">
+                    {item}
+                  </p>
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </section>
 
       {/* WHY JOIN */}
-      <section className="bg-[#0c211c] py-20 text-white sm:py-24 lg:py-28">
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
           <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#f3c96b]">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
               Growth Partner Network
             </p>
+
             <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
               Why Join CHP Growth Partner Network?
             </h2>
@@ -764,6 +802,7 @@ export default function GrowthPartnerPage() {
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {whyJoin.map((item, index) => {
               const Icon = item.icon;
+
               return (
                 <motion.article
                   key={item.title}
@@ -771,13 +810,19 @@ export default function GrowthPartnerPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15 }}
                   transition={{ delay: index * 0.04 }}
-                  className="rounded-[1.5rem] border border-white/10 bg-white/[0.045] p-7 transition hover:-translate-y-1 hover:border-[#f3c96b]/30 hover:bg-white/[0.07]"
+                  className={`rounded-[1.5rem] border ${CARD_BORDER} ${CARD_BG} p-7 transition hover:-translate-y-1 hover:shadow-lg`}
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#f3c96b]/30 bg-[#f3c96b]/10 text-[#f3c96b]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#7d9a67] shadow-sm">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-5 font-serif text-xl">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-white/55">{item.text}</p>
+
+                  <h3 className="mt-5 font-serif text-xl">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-7 text-[#596760]">
+                    {item.text}
+                  </p>
                 </motion.article>
               );
             })}
@@ -786,25 +831,45 @@ export default function GrowthPartnerPage() {
       </section>
 
       {/* APPLICATION */}
-      <section id="apply-partner" className="scroll-mt-20 bg-[#071512] py-20 text-white sm:py-24 lg:py-28">
+      <section
+        id="apply-partner"
+        className="scroll-mt-20 bg-white py-20 sm:py-24 lg:py-28"
+      >
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+
           <div className="grid gap-10 lg:grid-cols-5 lg:items-start">
+
             <div className="lg:col-span-2 lg:sticky lg:top-28">
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#f3c96b]">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
                 Become a CHP Growth Partner
               </p>
+
               <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
                 Become a CHP Growth Partner
               </h2>
-              <p className="mt-5 text-sm leading-7 text-white/60">
-                The CHP Growth Partnership Program is designed for individuals, entrepreneurs, business professionals, organizations, referral partners and community leaders who want to participate in the growth of the CHP Himalayan Ecosystem.
+
+              <p className="mt-5 text-sm leading-7 text-[#66736d]">
+                The CHP Growth Partnership Program is designed for
+                individuals, entrepreneurs, business professionals,
+                organizations, referral partners and community leaders who
+                want to participate in the growth of the CHP Himalayan
+                Ecosystem.
               </p>
+
               <div className="mt-8 space-y-3">
-                {["Partner with CHP", "Create Opportunities", "Grow Together"].map((item) => (
-                  <div key={item} className="flex items-center gap-3 text-sm text-white/75">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#f3c96b]/10 text-[#f3c96b]">
+                {[
+                  "Partner with CHP",
+                  "Create Opportunities",
+                  "Grow Together",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3 text-sm text-[#596760]"
+                  >
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#f5f8f6] text-[#7d9a67]">
                       <Check className="h-4 w-4" />
                     </span>
+
                     {item}
                   </div>
                 ))}
@@ -816,18 +881,25 @@ export default function GrowthPartnerPage() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.97 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="rounded-[2rem] border border-emerald-400/25 bg-emerald-950/40 p-10 text-center sm:p-14"
+                  className={`rounded-[2rem] border ${CARD_BORDER} ${CARD_BG} p-10 text-center sm:p-14`}
                 >
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-400/10 text-emerald-300">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white text-[#7d9a67] shadow-sm">
                     <CheckCircle2 className="h-9 w-9" />
                   </div>
-                  <h3 className="mt-6 font-serif text-3xl">Application received.</h3>
-                  <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-white/60">
-                    Thank you for your interest in joining CHP as a Growth Partner. Our team can review your inquiry and connect with you regarding the applicable partnership framework.
+
+                  <h3 className="mt-6 font-serif text-3xl">
+                    Application received.
+                  </h3>
+
+                  <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-[#66736d]">
+                    Thank you for your interest in joining CHP as a Growth
+                    Partner. Our team can review your inquiry and connect with
+                    you regarding the applicable partnership framework.
                   </p>
+
                   <button
                     onClick={() => setFormSubmitted(false)}
-                    className="mt-7 text-sm font-semibold text-[#f3c96b] hover:underline"
+                    className="mt-7 text-sm font-semibold text-[#7d9a67] hover:underline"
                   >
                     Submit another inquiry
                   </button>
@@ -835,23 +907,33 @@ export default function GrowthPartnerPage() {
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="rounded-[2rem] border border-white/10 bg-white/[0.055] p-6 shadow-2xl backdrop-blur-xl sm:p-9"
+                  className={`rounded-[2rem] border ${CARD_BORDER} ${CARD_BG} p-6 shadow-sm sm:p-9`}
                 >
                   <div className="mb-8">
-                    <h3 className="font-serif text-3xl">Partner with CHP</h3>
-                    <p className="mt-2 text-sm text-white/50">
-                      Share your network, expertise, business relationships or market reach.
+                    <h3 className="font-serif text-3xl">
+                      Partner with CHP
+                    </h3>
+
+                    <p className="mt-2 text-sm text-[#66736d]">
+                      Share your network, expertise, business relationships or
+                      market reach.
                     </p>
                   </div>
 
                   <div className="grid gap-5 sm:grid-cols-2">
+
                     <Field label="Full Name *">
                       <input
                         required
                         type="text"
                         placeholder="Your name"
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            name: e.target.value,
+                          })
+                        }
                         className="form-input"
                       />
                     </Field>
@@ -862,7 +944,12 @@ export default function GrowthPartnerPage() {
                         type="email"
                         placeholder="you@example.com"
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            email: e.target.value,
+                          })
+                        }
                         className="form-input"
                       />
                     </Field>
@@ -873,7 +960,12 @@ export default function GrowthPartnerPage() {
                         type="tel"
                         placeholder="+91 00000 00000"
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            phone: e.target.value,
+                          })
+                        }
                         className="form-input"
                       />
                     </Field>
@@ -884,7 +976,12 @@ export default function GrowthPartnerPage() {
                         type="text"
                         placeholder="Your city"
                         value={formData.city}
-                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            city: e.target.value,
+                          })
+                        }
                         className="form-input"
                       />
                     </Field>
@@ -892,15 +989,30 @@ export default function GrowthPartnerPage() {
                     <Field label="Preferred Partnership Area">
                       <select
                         value={formData.interest}
-                        onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            interest: e.target.value,
+                          })
+                        }
                         className="form-input"
                       >
-                        <option>Business & Professional Network</option>
-                        <option>Marketing & Digital Promotion</option>
+                        <option>
+                          Business & Professional Network
+                        </option>
+                        <option>
+                          Marketing & Digital Promotion
+                        </option>
                         <option>Travel & Tourism</option>
-                        <option>Community & Network Development</option>
-                        <option>Cottage / Facility Referrals</option>
-                        <option>Entrepreneurship / Business Collaboration</option>
+                        <option>
+                          Community & Network Development
+                        </option>
+                        <option>
+                          Cottage / Facility Referrals
+                        </option>
+                        <option>
+                          Entrepreneurship / Business Collaboration
+                        </option>
                         <option>Other</option>
                       </select>
                     </Field>
@@ -908,12 +1020,20 @@ export default function GrowthPartnerPage() {
                     <div className="sm:col-span-1" />
                   </div>
 
-                  <Field label="Tell us about your network, expertise or partnership interest" className="mt-5">
+                  <Field
+                    label="Tell us about your network, expertise or partnership interest"
+                    className="mt-5"
+                  >
                     <textarea
                       rows={5}
                       placeholder="Tell us about your network, business background, market reach or the opportunity you would like to explore..."
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          message: e.target.value,
+                        })
+                      }
                       className="form-input resize-none"
                     />
                   </Field>
@@ -934,25 +1054,18 @@ export default function GrowthPartnerPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="relative overflow-hidden bg-[#0c211c] py-20 text-white sm:py-24 lg:py-28">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/affa9b38-a1fd-48ba-8040-f954839807b5-himalayan-experiences.jpg"
-            alt=""
-            fill
-            unoptimized
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-[#0c211c]/85" />
-        <div className="relative mx-auto max-w-5xl px-5 text-center sm:px-8">
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#f3c96b]">
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-5xl px-5 text-center sm:px-8">
+
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
             People. Partnerships. Possibilities.
           </p>
+
           <h2 className="mt-5 font-serif text-4xl leading-tight sm:text-6xl">
-            Together, we can create businesses, experiences and opportunities in the Himalayas.
+            Together, we can create businesses, experiences and opportunities
+            in the Himalayas.
           </h2>
+
           <a
             href="#apply-partner"
             className="mt-9 inline-flex items-center gap-3 rounded-full bg-[#f3c96b] px-7 py-4 text-sm font-bold text-[#14231f] transition hover:bg-[#ffe09a]"
@@ -964,7 +1077,7 @@ export default function GrowthPartnerPage() {
           <div className="mt-10 flex justify-center">
             <a
               href="/"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-xs font-semibold text-white backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-white/15 sm:text-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-[#dfe9e3] bg-[#f5f8f6] px-5 py-2.5 text-xs font-semibold text-[#14231f] transition duration-200 hover:-translate-y-0.5 hover:bg-[#edf4f0] sm:text-sm"
             >
               <ArrowRight className="h-4 w-4 rotate-180" />
               Home
@@ -977,24 +1090,26 @@ export default function GrowthPartnerPage() {
         .form-input {
           width: 100%;
           border-radius: 0.9rem;
-          border: 1px solid rgba(255, 255, 255, 0.11);
-          background: rgba(255, 255, 255, 0.055);
+          border: 1px solid #dfe9e3;
+          background: white;
           padding: 0.85rem 1rem;
-          color: white;
+          color: #14231f;
           outline: none;
           font-size: 0.875rem;
           transition:
             border-color 180ms ease,
-            background 180ms ease;
+            background 180ms ease,
+            box-shadow 180ms ease;
         }
 
         .form-input::placeholder {
-          color: rgba(255, 255, 255, 0.32);
+          color: #9aa7a1;
         }
 
         .form-input:focus {
-          border-color: rgba(243, 201, 107, 0.65);
-          background: rgba(255, 255, 255, 0.075);
+          border-color: #7d9a67;
+          background: white;
+          box-shadow: 0 0 0 3px rgba(125, 154, 103, 0.1);
         }
 
         .form-input option {
@@ -1017,9 +1132,10 @@ function Field({
 }) {
   return (
     <div className={className}>
-      <label className="mb-2 block text-[11px] font-bold uppercase tracking-[0.16em] text-white/45">
+      <label className="mb-2 block text-[11px] font-bold uppercase tracking-[0.16em] text-[#66736d]">
         {label}
       </label>
+
       {children}
     </div>
   );

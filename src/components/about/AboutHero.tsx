@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const HEADER_IMAGE =
-  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/fee397f0-2808-4399-94b8-e2b7cf0f8362-chp-header-12-yoga-holiday-camp-under-500kb.webp";
+  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/bd529247-a2c2-48fc-8ac8-06cda264ecb0-gemini-generated-image-v7i446v7i446v7i4-1.png";
 
 export function AboutHero() {
   return (

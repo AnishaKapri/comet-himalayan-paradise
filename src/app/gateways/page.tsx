@@ -36,6 +36,36 @@ const ecosystemGateways = [
         cta: "Enquire About Purchase",
     },
     {
+        icon: Handshake,
+        key: "partnership",
+        title: "Partnership",
+        tagline: "Your Opportunity to Own, Partner & Belong.",
+        description:
+            "Co-own selected facilities within the CHP Ecosystem, become a CHP Partner, and gain privileged access to a diverse range of CHP facilities, experiences, services, and benefits.",
+        points: [
+            "Co-own selected CHP facilities",
+            "Become an official CHP Partner",
+            "Privileged access across the ecosystem",
+            "Shared experiences, services & benefits",
+        ],
+        cta: "Discuss Partnership",
+    },
+    {
+        icon: Award,
+        key: "sponsorship",
+        title: "Sponsorship",
+        tagline: "Support a Cause. Unlock a Himalayan Opportunity.",
+        description:
+        "Sponsor a student's education, a cow at the Gaushala, or development work at an Isht Dev Sthal, and receive a special discount on plot pricing as a token of appreciation toward a plot in CHP Enclave or a Dream Space of your choice, or privileged access to selected CHP facilities, experiences, and services.",
+        points: [
+            "Sponsor a student's education",
+            "Sponsor a cow at the Gaushala",
+            "Sponsor Isht Dev Sthal development",
+            "Special discount on plot pricing",
+        ],
+        cta: "Become a Sponsor",
+    },
+    {
         icon: HeartHandshake,
         key: "donation",
         title: "Donation",
@@ -52,21 +82,6 @@ const ecosystemGateways = [
         cta: "Explore Donation Benefits",
     },
     {
-        icon: Award,
-        key: "sponsorship",
-        title: "Sponsorship",
-        tagline: "Support a Cause. Unlock a Himalayan Opportunity.",
-        description:
-            "Sponsor a student's education, a cow at the Gaushala, or development work at an Isht Dev Sthal, and receive a special discount on plot pricing as a token of appreciation toward a plot in CHP Enclave or a Dream Space of your choice, or privileged access to selected CHP facilities, experiences, and services.",
-        points: [
-            "Sponsor a student's education",
-            "Sponsor a cow at the Gaushala",
-            "Sponsor Isht Dev Sthal development",
-            "Special discount on plot pricing",
-        ],
-        cta: "Become a Sponsor",
-    },
-    {
         icon: Heart,
         key: "adoption",
         title: "Adoption",
@@ -80,21 +95,6 @@ const ecosystemGateways = [
             "Exclusive benefits & privileges",
         ],
         cta: "Start an Adoption",
-    },
-    {
-        icon: Handshake,
-        key: "partnership",
-        title: "Partnership",
-        tagline: "Your Opportunity to Own, Partner & Belong.",
-        description:
-            "Co-own selected facilities within the CHP Ecosystem, become a CHP Partner, and gain privileged access to a diverse range of CHP facilities, experiences, services, and benefits.",
-        points: [
-            "Co-own selected CHP facilities",
-            "Become an official CHP Partner",
-            "Privileged access across the ecosystem",
-            "Shared experiences, services & benefits",
-        ],
-        cta: "Discuss Partnership",
     },
 ];
 
@@ -116,90 +116,59 @@ export default function GatewaysPage() {
     return (
         <main className="min-h-screen bg-stone-50 text-slate-800 pt-16 text-justify">
             {/* Hero Section */}
-            <section className="relative py-20 lg:py-24 overflow-hidden bg-gradient-to-b from-neutral-800 via-neutral-750 to-neutral-850 border-b border-neutral-800">
-                <div className="absolute inset-0 z-0">
-                    <Image
-                        src="/images/chp-gateways.png"
-                        alt="CHP Gateways"
-                        fill
-                        priority
-                        className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/45" />
-                </div>
+            <section className="relative h-[70vh] min-h-[480px] overflow-hidden">
+                <Image
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/60c714e9-e1a2-466f-93dd-e59079967b8f-gateways-header-1.png"
+                    alt="CHP Gateways"
+                    fill
+                    priority
+                    className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/45" />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5 }}
-                                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-700/60 text-white text-xs font-semibold uppercase tracking-wider mb-6 shadow-lg shadow-black/20 backdrop-blur-sm"
-                            >
-                                <Navigation className="w-3.5 h-3.5" />
-                                <span>Ecosystem Partnerships & Access</span>
-                            </motion.div>
+                <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center text-center px-4 sm:px-6 pb-12">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-700/60 text-white text-xs font-semibold uppercase tracking-wider mb-5 shadow-lg backdrop-blur-sm"
+                    >
+                        <Navigation className="w-3.5 h-3.5" />
+                        <span>Ecosystem Partnerships & Access</span>
+                    </motion.div>
 
-                            <motion.h1
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 0.1 }}
-                                className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight"
-                            >
-                                Gateways to <br />
-                                <span className="bg-gradient-to-r from-emerald-300 via-teal-200 to-amber-300 bg-clip-text text-transparent">
-                                    CHP Ecosystem
-                                </span>
-                            </motion.h1>
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6"
+                    >
+                        Gateways to{" "}
+                        <span className="bg-gradient-to-r from-emerald-300 via-teal-200 to-amber-300 bg-clip-text text-transparent">
+                            CHP Ecosystem
+                        </span>
+                    </motion.h1>
 
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 0.2 }}
-                                className="mt-6 text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed font-light"
-                            >
-                                
-                            </motion.p>
-
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 0.3 }}
-                                className="mt-8 flex flex-wrap gap-4"
-                            >
-                                <a
-                                    href="#connect"
-                                    className="bg-amber-600 hover:bg-amber-500 text-white font-bold px-7 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-amber-900/30 flex items-center gap-2"
-                                >
-                                    <span>Connect With Us</span>
-                                    <ArrowRight className="w-4 h-4" />
-                                </a>
-                                <a
-                                    href="#gateways"
-                                    className="bg-neutral-700/80 hover:bg-neutral-600 text-white font-medium px-7 py-3.5 rounded-full border border-white/15 transition-all duration-200 shadow-lg shadow-black/20 backdrop-blur-sm"
-                                >
-                                    Explore the Gateways
-                                </a>
-                            </motion.div>
-                        </div>
-
-                        {/* Side Image */}
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="relative mx-auto aspect-square w-full max-w-[460px] overflow-hidden rounded-full"
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="flex flex-wrap justify-center gap-4"
+                    >
+                        <a
+                            href="#connect"
+                            className="bg-amber-600 hover:bg-amber-500 text-white font-bold px-7 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-amber-900/30 flex items-center gap-2"
                         >
-                            <Image
-                                src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/6755c577-d5ba-49c5-974c-8adc54ef1619-chatgpt-image-sep-17-2026-11-52-51-am.webp"
-                                alt="CHP Gateways Ecosystem"
-                                fill
-                                sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1024px) 460px, 40vw"
-                                className="object-contain object-center"
-                            />
-                        </motion.div>
-                    </div>
+                            <span>Connect With Us</span>
+                            <ArrowRight className="w-4 h-4" />
+                        </a>
+                        <a
+                            href="#gateways"
+                            className="bg-neutral-700/80 hover:bg-neutral-600 text-white font-medium px-7 py-3.5 rounded-full border border-white/15 transition-all duration-200 backdrop-blur-sm"
+                        >
+                            Explore the Gateways
+                        </a>
+                    </motion.div>
                 </div>
             </section>
 

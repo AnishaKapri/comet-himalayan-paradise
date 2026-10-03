@@ -110,8 +110,8 @@ export default function AccommodationPage() {
       {/* Hero — same size and text styling as the About CHP header */}
       <section className="relative w-full aspect-[3/1] min-h-[320px] overflow-hidden">
         <Image
-          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/85e08a69-8e2c-458a-b7b8-2b36bf846c43-scaled-stay-options.webp"
-          alt="Mountain accommodation"
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/31bf3277-1044-4d6e-95b8-7b996904a4cc-gemini-generated-image-15sib15sib15sib1-1.png"
+          alt="Himalayan Accommodation"
           fill
           priority
           sizes="100vw"

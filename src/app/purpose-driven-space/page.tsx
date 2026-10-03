@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 const HEADER_IMAGE =
-  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-gaushala/794b8256-7013-4375-aa7a-b30db077698f-chp-gauseva.png";
+  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ecacd3e4-3238-4e26-b118-a485bbedb914-scaled-chp-gauseva.webp";
 
 const GAUSEVA_WHATSAPP = "919949994989";
 

@@ -4,10 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
-// Dream Spaces — curated from existing CHP facility assets
+// ============================================================
+// CHP DREAM SPACES
+// ============================================================
+
 const dreamSpaces = [
   {
     title: "Himalayan Mind Space",
@@ -32,7 +34,10 @@ const dreamSpaces = [
   },
 ];
 
-// Facilities — curated from existing CHP facility assets
+// ============================================================
+// CHP BUSINESS FACILITIES
+// ============================================================
+
 const facilities = [
   {
     title: "Holiday Resort",
@@ -57,12 +62,26 @@ const facilities = [
   },
 ];
 
-function FacilityCard({ facility }: { facility: (typeof dreamSpaces)[number] }) {
+// ============================================================
+// CARD TYPE
+// ============================================================
+
+type Facility = {
+  title: string;
+  description: string;
+  image: string;
+};
+
+// ============================================================
+// FACILITY CARD
+// ============================================================
+
+function FacilityCard({ facility }: { facility: Facility }) {
   return (
     <motion.article
       whileHover={{ y: -5 }}
       transition={{ duration: 0.25 }}
-      className="relative overflow-hidden rounded-2xl aspect-square shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300"
+      className="relative aspect-square overflow-hidden rounded-2xl shadow-sm transition-shadow duration-300 hover:shadow-xl hover:shadow-black/12"
     >
       <Image
         src={facility.image}
@@ -71,12 +90,17 @@ function FacilityCard({ facility }: { facility: (typeof dreamSpaces)[number] }) 
         sizes="(max-width: 640px) 100vw, 33vw"
         className="object-cover transition-transform duration-700 hover:scale-110"
       />
+
+      {/* Dark gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+      {/* Card content */}
       <div className="absolute bottom-0 left-0 right-0 p-5">
-        <h3 className="text-white font-bold text-xl mb-1.5">
+        <h3 className="mb-1.5 text-xl font-bold text-white">
           {facility.title}
         </h3>
-        <p className="text-white/65 text-sm leading-relaxed">
+
+        <p className="text-sm leading-relaxed text-white/65">
           {facility.description}
         </p>
       </div>
@@ -84,29 +108,41 @@ function FacilityCard({ facility }: { facility: (typeof dreamSpaces)[number] }) 
   );
 }
 
+// ============================================================
+// MAIN SECTION
+// ============================================================
+
 export function CHPFacilities() {
   return (
-    <section id="facilities" className="py-14 lg:py-20 bg-stone-50 scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          title="CHP Dream Spaces and Facilities"
-          subtitle="Thoughtfully Designed Dream Spaces. Meaningful Himalayan Experiences."
-        />
+    <section
+      id="facilities"
+      className="scroll-mt-20 bg-stone-50 py-10 lg:py-14"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-        {/* Row 1 — Dream Spaces */}
-        <div className="mt-14">
+        {/* ====================================================
+            ROW 1 — CHP DREAM SPACES
+            ==================================================== */}
+
+        <div>
+          {/* Section heading */}
           <div className="flex items-center gap-4">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-800">
+            <h2 className="text-xl font-bold leading-tight text-slate-800 sm:text-2xl">
               CHP Dream Spaces
-            </h3>
+            </h2>
+
             <div className="h-px flex-1 bg-slate-200" />
           </div>
+
+          {/* Section description */}
           <p className="mb-8 mt-3 max-w-2xl text-sm font-medium leading-relaxed text-slate-600 sm:text-base">
-            Sixteen distinctive settings where Himalayan life finds room to belong, restore, and become.
+            Sixteen distinctive settings where Himalayan life finds room to
+            belong, restore, and become.
           </p>
 
+          {/* Dream Space Cards */}
           <StaggerContainer
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-3"
             staggerDelay={0.08}
           >
             {dreamSpaces.map((space) => (
@@ -115,31 +151,42 @@ export function CHPFacilities() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          {/* Dream Spaces CTA */}
           <div className="mt-8 text-center">
             <Link
               href="/dream-spaces"
-              className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-green-900/20 px-6 py-3 text-sm font-semibold text-green-900 transition-colors hover:bg-green-900/5"
             >
               Explore Dream Spaces
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
 
-        {/* Row 2 — Facilities */}
-        <div className="mt-16">
+        {/* ====================================================
+            ROW 2 — CHP BUSINESS FACILITIES
+            ==================================================== */}
+
+        <div className="mt-14 lg:mt-16">
+          {/* Section heading */}
           <div className="flex items-center gap-4">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-800">
-              CHP Facilities
-            </h3>
+            <h2 className="text-xl font-bold leading-tight text-slate-800 sm:text-2xl">
+              CHP Business Facilities
+            </h2>
+
             <div className="h-px flex-1 bg-slate-200" />
           </div>
+
+          {/* Bottom sentence moved directly below heading */}
           <p className="mb-8 mt-3 max-w-2xl text-sm font-medium leading-relaxed text-slate-600 sm:text-base">
-            Twelve purposeful facilities that turn every stay into a richer Himalayan experience.
+            Himalayan living, shared experiences, and purposeful spaces for a
+            life of deeper belonging.
           </p>
 
+          {/* Business Facility Cards */}
           <StaggerContainer
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-3"
             staggerDelay={0.08}
           >
             {facilities.map((facility) => (
@@ -148,20 +195,19 @@ export function CHPFacilities() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          {/* Facilities CTA */}
+          <div className="mt-8 text-center">
+            <Link
+              href="/biz-facilities"
+              className="inline-flex items-center gap-2 rounded-full border border-green-900/20 px-6 py-3 text-sm font-semibold text-green-900 transition-colors hover:bg-green-900/5"
+            >
+              Explore Facilities
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
 
-        <div className="mt-10 text-center">
-          <Link
-            href="/biz-facilities"
-            className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
-          >
-            Explore Facilities
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-        <p className="mx-auto mt-12 max-w-3xl text-center text-lg font-semibold leading-relaxed text-green-950 sm:text-xl">
-          Himalayan living, shared experiences, and purposeful spaces for a life of deeper belonging.
-        </p>
       </div>
     </section>
   );

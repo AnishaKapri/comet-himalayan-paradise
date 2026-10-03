@@ -2,15 +2,8 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  Mountain,
-  Compass,
-  ChevronDown,
-  Briefcase,
-  Home as HomeIcon,
-} from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 const stats = [
   { value: "20+", label: "Trek Routes" },
@@ -63,16 +56,15 @@ export function Hero() {
       </motion.div>
 
       {/* =========================================================
-          GRADIENT OVERLAY
+          OVERLAYS
       ========================================================= */}
       <div className="absolute inset-0 hero-overlay" />
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
 
       {/* =========================================================
-          CONTENT
-          Entire hero content moved upward by 1.5cm
-      ========================================================= */}
+          HERO CONTENT
+          ========================================================= */}
       <motion.div
         style={{
           opacity: contentOpacity,
@@ -90,20 +82,17 @@ export function Hero() {
             duration: 0.7,
             delay: 0.3,
           }}
-          className="flex items-center gap-2.5 mb-5"
+          className="mb-5 flex items-center gap-2.5"
         >
-          {/* Left decorative line */}
-          <span className="h-px w-7 sm:w-9 bg-orange-400" />
+          <span className="h-px w-7 bg-orange-400 sm:w-9" />
 
-          {/* CHP Himalayan Paradise */}
-          <div className="bg-green-950/95 border border-green-700/70 px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full shadow-lg backdrop-blur-sm">
-            <span className="text-white text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em]">
+          <div className="rounded-full border border-green-700/70 bg-green-950/95 px-3.5 py-1.5 shadow-lg backdrop-blur-sm sm:px-4 sm:py-1.5">
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white sm:text-xs">
               CHP Himalayan Paradise
             </span>
           </div>
 
-          {/* Right decorative line */}
-          <span className="h-px w-7 sm:w-9 bg-orange-400" />
+          <span className="h-px w-7 bg-orange-400 sm:w-9" />
         </motion.div>
 
         {/* =====================================================
@@ -117,12 +106,12 @@ export function Hero() {
             delay: 0.5,
             ease: [0.25, 0.4, 0.25, 1],
           }}
-          className="text-white text-[28px] sm:text-[40px] md:text-[50px] xl:text-[62px] font-bold leading-[1.08] tracking-tight mb-5 max-w-5xl"
+          className="mb-5 max-w-5xl text-[28px] font-bold leading-[1.08] tracking-tight text-white sm:text-[40px] md:text-[50px] xl:text-[62px]"
         >
           Gateway to Himalayan Living
           <br />
           and{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-emerald-300 to-sky-400">
+          <span className="bg-gradient-to-r from-sky-400 via-emerald-300 to-sky-400 bg-clip-text text-transparent">
             Entrepreneurship
           </span>
         </motion.h1>
@@ -137,60 +126,17 @@ export function Hero() {
             duration: 0.8,
             delay: 0.75,
           }}
-          className="text-white/70 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed mb-8"
+          className="max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base md:text-lg"
         >
-         Live the Himalayas. Build Your Legacy. Experience Life Beyond the Ordinary.
+          Live the Himalayas. Build Your Legacy. Experience Life Beyond the
+          Ordinary.
         </motion.p>
 
         {/* =====================================================
-            CTA BUTTONS
+            NO HERO CTA BUTTONS
+            All Booking / Trek / Business / Second Home buttons
+            have been intentionally removed.
         ===================================================== */}
-        <motion.div
-          id="hero-ctas"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.7,
-            delay: 0.95,
-          }}
-          className="flex max-w-3xl flex-wrap items-center justify-center gap-2.5 sm:gap-3"
-        >
-          {/* Booking Options */}
-          <Link
-            href="/contact"
-            className="group inline-flex items-center gap-1.5 bg-green-900 hover:bg-green-800 text-white px-6 py-3 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 hover:shadow-2xl hover:shadow-green-900/40 hover:-translate-y-0.5"
-          >
-            <Mountain className="w-3.5 h-3.5" />
-            Booking Options
-          </Link>
-
-          {/* Treks and Trails */}
-          <Link
-            href="/treks"
-            className="group inline-flex items-center gap-1.5 glass text-white px-6 py-3 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 hover:-translate-y-0.5"
-          >
-            <Compass className="w-3.5 h-3.5" />
-            Treks and Trails
-          </Link>
-
-          {/* Biz & Investment Opportunities */}
-          <Link
-            href="/chp-biz-partnership"
-            className="group inline-flex items-center gap-1.5 glass text-white px-5 py-2.5 rounded-full font-semibold text-[11px] sm:text-xs transition-all duration-300 hover:-translate-y-0.5"
-          >
-            <Briefcase className="w-3.5 h-3.5" />
-            Biz & investment Opportunities
-          </Link>
-
-          {/* Own a Second Home */}
-          <Link
-            href="/chp-enclave"
-            className="group inline-flex items-center gap-1.5 glass text-white px-5 py-2.5 rounded-full font-semibold text-[11px] sm:text-xs transition-all duration-300 hover:-translate-y-0.5"
-          >
-            <HomeIcon className="w-3.5 h-3.5" />
-            Own a second home in Himalayas
-          </Link>
-        </motion.div>
 
         {/* =====================================================
             STATS BAR
@@ -202,7 +148,7 @@ export function Hero() {
             duration: 0.7,
             delay: 1.15,
           }}
-          className="absolute bottom-20 sm:bottom-16 flex items-center gap-7 sm:gap-10 md:gap-14"
+          className="absolute bottom-20 flex items-center gap-7 sm:bottom-16 sm:gap-10 md:gap-14"
         >
           {stats.map((stat, i) => (
             <div
@@ -210,15 +156,15 @@ export function Hero() {
               className="flex items-center gap-7 sm:gap-10 md:gap-14"
             >
               {i > 0 && (
-                <div className="hidden sm:block w-px h-7 bg-white/20" />
+                <div className="hidden h-7 w-px bg-white/20 sm:block" />
               )}
 
               <div className="text-center">
-                <p className="text-white text-xl md:text-2xl font-bold leading-none">
+                <p className="text-xl font-bold leading-none text-white md:text-2xl">
                   {stat.value}
                 </p>
 
-                <p className="text-white/50 text-[9px] uppercase tracking-widest mt-1.5">
+                <p className="mt-1.5 text-[9px] uppercase tracking-widest text-white/50">
                   {stat.label}
                 </p>
               </div>
@@ -234,7 +180,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/40"
+        className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1 text-white/40"
       >
         <span className="text-[8px] uppercase tracking-[0.25em]">
           Scroll
@@ -248,7 +194,7 @@ export function Hero() {
             ease: "easeInOut",
           }}
         >
-          <ChevronDown className="w-3.5 h-3.5" />
+          <ChevronDown className="h-3.5 w-3.5" />
         </motion.div>
       </motion.div>
     </section>

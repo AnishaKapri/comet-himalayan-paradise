@@ -111,21 +111,18 @@ export default function FacilitiesPage() {
               different environment from the city?
             </p>
 
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
+                       <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
               CHP is designed for professionals who want to maintain their{" "}
               <strong className="font-bold text-green-800">
                 productivity
               </strong>{" "}
               while enjoying a change of environment. Employees and
               professionals can combine work and the Himalayan experience
-              through a dedicated Remote Work from Himalaya program.
-            </p>
-
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
-              Whether you are an employee looking for a refreshing place to
-              work for a few days, or an employer looking to offer your team a
-              meaningful work-from-anywhere benefit, CHP provides a practical
-              environment where work and{" "}
+              through a dedicated Remote Work from Himalaya program. Whether
+              you are an employee looking for a refreshing place to work for a
+              few days, or an employer looking to offer your team a meaningful
+              work-from-anywhere benefit, CHP provides a practical environment
+              where work and{" "}
               <strong className="font-bold text-green-800">
                 Himalayan living
               </strong>{" "}
@@ -146,89 +143,28 @@ export default function FacilitiesPage() {
               It can be suitable for:
             </h3>
 
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-
-              {/* Individual coloured text boxes */}
-
-              <div className="rounded-xl bg-green-50 px-4 py-3">
-                <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
-                  IT professionals
+                        <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                "IT professionals",
+                "Startup founders",
+                "Entrepreneurs",
+                "Consultants",
+                "Freelancers",
+                "Designers and creatives",
+                "Digital professionals",
+                "Teachers and educators",
+                "Remote employees",
+                "Independent professionals",
+                "Professionals taking a workation",
+              ].map((item) => (
+                <div key={item} className="rounded-xl bg-green-50 px-4 py-3">
+                  <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
+                    <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
+                    {item}
+                  </div>
                 </div>
-              </div>
-
-              <div className="rounded-xl bg-blue-50 px-4 py-3">
-                <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-blue-700" />
-                  Startup founders
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-amber-50 px-4 py-3">
-                <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-amber-700" />
-                  Entrepreneurs
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-violet-50 px-4 py-3">
-                <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-violet-700" />
-                  Consultants
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-orange-50 px-4 py-3">
-                <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-orange-700" />
-                  Freelancers
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-sky-50 px-4 py-3">
-                <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-sky-700" />
-                  Designers and creatives
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-emerald-50 px-4 py-3">
-                <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-700" />
-                  Digital professionals
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-cyan-50 px-4 py-3">
-                <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-cyan-700" />
-                  Teachers and educators
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-lime-50 px-4 py-3">
-                <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-lime-700" />
-                  Remote employees
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-rose-50 px-4 py-3">
-                <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-rose-700" />
-                  Independent professionals
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-teal-50 px-4 py-3">
-                <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-teal-700" />
-                  Professionals taking a workation
-                </div>
-              </div>
-
+              ))}
             </div>
-
           </div>
 
         </div>
@@ -324,14 +260,14 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
+            <div className="rounded-2xl bg-green-50 p-6">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <Laptop className="h-6 w-6" />
               </div>
 
               <h3 className="text-xl font-bold text-slate-800">
                 Work Hours
-              </h3>
+                </h3>
 
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 Settle into your{" "}
@@ -342,8 +278,8 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
+            <div className="rounded-2xl bg-green-50 p-6">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <Coffee className="h-6 w-6" />
               </div>
 
@@ -361,8 +297,8 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
+            <div className="rounded-2xl bg-green-50 p-6">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <Heart className="h-6 w-6" />
               </div>
 
@@ -388,8 +324,8 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
+            <div className="rounded-2xl bg-green-50 p-6">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <CalendarDays className="h-6 w-6" />
               </div>
 
@@ -419,9 +355,9 @@ export default function FacilitiesPage() {
 
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
-          <div className="rounded-3xl bg-sky-50 p-7 sm:p-10 lg:p-12">
+          <div className="rounded-3xl bg-green-50 p-7 sm:p-10 lg:p-12">
 
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-100 text-sky-700">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-100 text-green-700">
               <Laptop className="h-7 w-7" />
             </div>
 
@@ -489,8 +425,7 @@ export default function FacilitiesPage() {
             ].map((item, index) => (
               <div
                 key={item}
-                className="flex items-start gap-3 rounded-2xl bg-white/80 p-5"
-              >
+className="flex items-start gap-3 rounded-2xl bg-green-50 p-5"              >
                 <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100 text-xs font-bold text-green-800">
                   {index + 1}
                 </span>
@@ -642,7 +577,7 @@ export default function FacilitiesPage() {
 
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-violet-50 p-7 text-center sm:p-10">
+          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-green-50 p-7 text-center sm:p-10">
 
             <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
               CHP can also combine remote work with team engagement, creating
@@ -700,7 +635,7 @@ export default function FacilitiesPage() {
             ].map((item) => (
               <div
                 key={item}
-                className="rounded-2xl bg-white/80 p-5"
+                className="rounded-2xl bg-green-50 p-5"
               >
                 <p className="font-medium text-slate-700">
                   {item}
@@ -746,7 +681,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
+            <div className="rounded-2xl bg-green-50 p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Continue Your Work
               </h3>
@@ -762,7 +697,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
+            <div className="rounded-2xl bg-green-50 p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Space to Recharge
               </h3>
@@ -777,7 +712,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
+            <div className="rounded-2xl bg-green-50 p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Connect with People
               </h3>
@@ -792,7 +727,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
+            <div className="rounded-2xl bg-green-50 p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Experience the Himalaya
               </h3>
@@ -857,8 +792,8 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
+            <div className="rounded-2xl bg-green-50 p-6">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <CalendarDays className="h-6 w-6" />
               </div>
 
@@ -875,8 +810,8 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
+            <div className="rounded-2xl bg-green-50 p-6">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <Building2 className="h-6 w-6" />
               </div>
 
@@ -894,8 +829,8 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
+            <div className="rounded-2xl bg-green-50 p-6">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <Users className="h-6 w-6" />
               </div>
 
@@ -913,8 +848,8 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
+            <div className="rounded-2xl bg-green-50 p-6">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <Mountain className="h-6 w-6" />
               </div>
 
@@ -1006,7 +941,7 @@ export default function FacilitiesPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl bg-stone-50 p-5"
+                  className="rounded-2xl bg-green-50 p-5"
                 >
                   <p className="font-medium text-slate-700">
                     {item}
@@ -1020,1502 +955,6 @@ export default function FacilitiesPage() {
 
         </div>
       </section>
-
-      {/* ======================================================
-          FROM WORKATION TO TEAM EXPERIENCE
-          ====================================================== */}
-
-      <section className="bg-white py-16 lg:py-24">
-
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              From Workation to Team Experience
-            </h2>
-
-          </div>
-
-          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-violet-50 p-7 text-center sm:p-10">
-
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
-              CHP can also combine remote work with team engagement, creating
-              a simple rhythm:
-            </p>
-
-            <p className="mt-6 text-2xl font-bold tracking-wide text-green-900 sm:text-3xl">
-              Work → Connect → Explore → Recharge
-            </p>
-
-            <p className="mt-6 text-base leading-relaxed text-slate-700 sm:text-lg">
-              Employees can work during designated hours and participate in
-              curated activities{" "}
-              <strong className="font-bold text-green-800">
-                outside work hours
-              </strong>
-              .
-            </p>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          POSSIBLE TEAM ACTIVITIES
-          ====================================================== */}
-
-      <section className="bg-stone-50 py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              Possible Team Activities
-            </h2>
-
-          </div>
-
-          <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-
-            {[
-              "Himalayan nature walks",
-              "Treks and trails",
-              "Adventure activities",
-              "Campfire evenings",
-              "Team-building activities",
-              "Local village experiences",
-              "Cultural experiences",
-              "Wellness sessions",
-              "Outdoor discussions",
-              "Leadership retreats",
-              "Weekend Himalayan excursions",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl bg-white/80 p-5"
-              >
-                <p className="font-medium text-slate-700">
-                  {item}
-                </p>
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          WHY WORK FROM CHP?
-          ====================================================== */}
-
-      <section className="bg-white py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              Why Work from CHP?
-            </h2>
-
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
-
-            <div className="rounded-2xl bg-green-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                A Change of Environment
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Move away from the noise and routine of the city and work in a
-                natural{" "}
-                <strong className="font-bold text-green-800">
-                  Himalayan setting
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-blue-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Continue Your Work
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Remote work doesn't mean taking time away from your
-                responsibilities. Continue your regular work while changing
-                your{" "}
-                <strong className="font-bold text-green-800">
-                  surroundings
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-amber-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Space to Recharge
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Use the mountains, nature and slower surroundings to create
-                space between work and everyday{" "}
-                <strong className="font-bold text-green-800">
-                  urban life
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-violet-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Connect with People
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Meet fellow professionals, entrepreneurs, travellers and
-                Himalayan{" "}
-                <strong className="font-bold text-green-800">
-                  communities
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-orange-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Experience the Himalaya
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Your workday can end with a sunset, nature walk, campfire or
-                Himalayan{" "}
-                <strong className="font-bold text-green-800">
-                  exploration
-                </strong>
-                .
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          FLEXIBLE REMOTE WORK MODEL
-          ====================================================== */}
-
-      <section className="bg-stone-50 py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="mx-auto max-w-4xl text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              A Flexible Remote Work Model
-            </h2>
-
-            <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
-              CHP can offer different formats depending on your{" "}
-              <strong className="font-bold text-green-800">
-                requirement
-              </strong>
-              .
-            </p>
-
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
-
-            <div className="rounded-2xl bg-green-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
-                <Laptop className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Individual Remote Stay
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                A professional can book a Himalayan stay and work
-                independently from{" "}
-                <strong className="font-bold text-green-800">
-                  CHP
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-blue-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
-                <CalendarDays className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Extended Workation
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Stay for several days or weeks while continuing regular{" "}
-                <strong className="font-bold text-green-800">
-                  remote work
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-violet-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
-                <Building2 className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Corporate Employee Program
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                An organization can sponsor or facilitate Himalayan work
-                stays for selected{" "}
-                <strong className="font-bold text-green-800">
-                  employees
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-orange-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
-                <Users className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Team Remote Work Retreat
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                A team can combine remote working with team activities and
-                Himalayan{" "}
-                <strong className="font-bold text-green-800">
-                  experiences
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-amber-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
-                <Mountain className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Work + Weekend Experience
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Work during weekdays and explore the Himalaya during{" "}
-                <strong className="font-bold text-green-800">
-                  weekends
-                </strong>
-                .
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          HR & CORPORATE TEAMS
-          ====================================================== */}
-
-      <section className="bg-white py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="mx-auto max-w-4xl text-center">
-
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
-              For HR & Corporate Teams
-            </p>
-
-            <h2 className="mt-3 text-3xl font-bold text-slate-800 sm:text-4xl">
-              Turn Remote Work into an Employee Experience
-            </h2>
-
-          </div>
-
-          <div className="mx-auto mt-10 max-w-5xl space-y-6">
-
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
-              Organizations can explore CHP as a destination for an employee
-              remote-work and{" "}
-              <strong className="font-bold text-green-800">
-                engagement program
-              </strong>
-              .
-            </p>
-
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
-              Instead of employees working remotely from another city without
-              a structured experience, the organization can provide an
-              environment designed around:
-            </p>
-
-          </div>
-
-          <div className="mx-auto mt-10 max-w-5xl rounded-3xl bg-green-50 p-7 text-center sm:p-10">
-
-            <p className="text-xl font-bold text-green-900 sm:text-2xl">
-              Accommodation + Work Space + Connectivity + Food + Nature +
-              Experiences
-            </p>
-
-          </div>
-
-          <div className="mx-auto mt-12 max-w-5xl">
-
-            <h3 className="text-2xl font-bold text-slate-800 sm:text-3xl">
-              CHP can work with organizations to develop a program based on:
-            </h3>
-
-            <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-
-              {[
-                "Number of employees",
-                "Duration of stay",
-                "Work requirements",
-                "Accommodation requirements",
-                "Workspace requirements",
-                "Meal plans",
-                "Team activities",
-                "Wellness programs",
-                "Adventure and exploration options",
-                "Weekend excursions",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl bg-stone-50 p-5"
-                >
-                  <p className="font-medium text-slate-700">
-                    {item}
-                  </p>
-                </div>
-              ))}
-
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          FROM WORKATION TO TEAM EXPERIENCE
-          ====================================================== */}
-
-      <section className="bg-white py-16 lg:py-24">
-
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              From Workation to Team Experience
-            </h2>
-
-          </div>
-
-          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-violet-50 p-7 text-center sm:p-10">
-
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
-              CHP can also combine remote work with team engagement, creating
-              a simple rhythm:
-            </p>
-
-            <p className="mt-6 text-2xl font-bold tracking-wide text-green-900 sm:text-3xl">
-              Work → Connect → Explore → Recharge
-            </p>
-
-            <p className="mt-6 text-base leading-relaxed text-slate-700 sm:text-lg">
-              Employees can work during designated hours and participate in
-              curated activities{" "}
-              <strong className="font-bold text-green-800">
-                outside work hours
-              </strong>
-              .
-            </p>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          POSSIBLE TEAM ACTIVITIES
-          ====================================================== */}
-
-      <section className="bg-stone-50 py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              Possible Team Activities
-            </h2>
-
-          </div>
-
-          <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-
-            {[
-              "Himalayan nature walks",
-              "Treks and trails",
-              "Adventure activities",
-              "Campfire evenings",
-              "Team-building activities",
-              "Local village experiences",
-              "Cultural experiences",
-              "Wellness sessions",
-              "Outdoor discussions",
-              "Leadership retreats",
-              "Weekend Himalayan excursions",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl bg-white/80 p-5"
-              >
-                <p className="font-medium text-slate-700">
-                  {item}
-                </p>
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          WHY WORK FROM CHP?
-          ====================================================== */}
-
-      <section className="bg-white py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              Why Work from CHP?
-            </h2>
-
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
-
-            <div className="rounded-2xl bg-green-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                A Change of Environment
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Move away from the noise and routine of the city and work in a
-                natural{" "}
-                <strong className="font-bold text-green-800">
-                  Himalayan setting
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-blue-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Continue Your Work
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Remote work doesn't mean taking time away from your
-                responsibilities. Continue your regular work while changing
-                your{" "}
-                <strong className="font-bold text-green-800">
-                  surroundings
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-amber-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Space to Recharge
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Use the mountains, nature and slower surroundings to create
-                space between work and everyday{" "}
-                <strong className="font-bold text-green-800">
-                  urban life
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-violet-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Connect with People
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Meet fellow professionals, entrepreneurs, travellers and
-                Himalayan{" "}
-                <strong className="font-bold text-green-800">
-                  communities
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-orange-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Experience the Himalaya
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Your workday can end with a sunset, nature walk, campfire or
-                Himalayan{" "}
-                <strong className="font-bold text-green-800">
-                  exploration
-                </strong>
-                .
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          FLEXIBLE REMOTE WORK MODEL
-          ====================================================== */}
-
-      <section className="bg-stone-50 py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="mx-auto max-w-4xl text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              A Flexible Remote Work Model
-            </h2>
-
-            <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
-              CHP can offer different formats depending on your{" "}
-              <strong className="font-bold text-green-800">
-                requirement
-              </strong>
-              .
-            </p>
-
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
-
-            <div className="rounded-2xl bg-green-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
-                <Laptop className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Individual Remote Stay
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                A professional can book a Himalayan stay and work
-                independently from{" "}
-                <strong className="font-bold text-green-800">
-                  CHP
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-blue-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
-                <CalendarDays className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Extended Workation
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Stay for several days or weeks while continuing regular{" "}
-                <strong className="font-bold text-green-800">
-                  remote work
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-violet-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
-                <Building2 className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Corporate Employee Program
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                An organization can sponsor or facilitate Himalayan work
-                stays for selected{" "}
-                <strong className="font-bold text-green-800">
-                  employees
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-orange-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
-                <Users className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Team Remote Work Retreat
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                A team can combine remote working with team activities and
-                Himalayan{" "}
-                <strong className="font-bold text-green-800">
-                  experiences
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-amber-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
-                <Mountain className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Work + Weekend Experience
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Work during weekdays and explore the Himalaya during{" "}
-                <strong className="font-bold text-green-800">
-                  weekends
-                </strong>
-                .
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          HR & CORPORATE TEAMS
-          ====================================================== */}
-
-      <section className="bg-white py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="mx-auto max-w-4xl text-center">
-
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
-              For HR & Corporate Teams
-            </p>
-
-            <h2 className="mt-3 text-3xl font-bold text-slate-800 sm:text-4xl">
-              Turn Remote Work into an Employee Experience
-            </h2>
-
-          </div>
-
-          <div className="mx-auto mt-10 max-w-5xl space-y-6">
-
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
-              Organizations can explore CHP as a destination for an employee
-              remote-work and{" "}
-              <strong className="font-bold text-green-800">
-                engagement program
-              </strong>
-              .
-            </p>
-
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
-              Instead of employees working remotely from another city without
-              a structured experience, the organization can provide an
-              environment designed around:
-            </p>
-
-          </div>
-
-          <div className="mx-auto mt-10 max-w-5xl rounded-3xl bg-green-50 p-7 text-center sm:p-10">
-
-            <p className="text-xl font-bold text-green-900 sm:text-2xl">
-              Accommodation + Work Space + Connectivity + Food + Nature +
-              Experiences
-            </p>
-
-          </div>
-
-          <div className="mx-auto mt-12 max-w-5xl">
-
-            <h3 className="text-2xl font-bold text-slate-800 sm:text-3xl">
-              CHP can work with organizations to develop a program based on:
-            </h3>
-
-            <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-
-              {[
-                "Number of employees",
-                "Duration of stay",
-                "Work requirements",
-                "Accommodation requirements",
-                "Workspace requirements",
-                "Meal plans",
-                "Team activities",
-                "Wellness programs",
-                "Adventure and exploration options",
-                "Weekend excursions",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl bg-stone-50 p-5"
-                >
-                  <p className="font-medium text-slate-700">
-                    {item}
-                  </p>
-                </div>
-              ))}
-
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          FROM WORKATION TO TEAM EXPERIENCE
-          ====================================================== */}
-
-      <section className="bg-white py-16 lg:py-24">
-
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              From Workation to Team Experience
-            </h2>
-
-          </div>
-
-          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-violet-50 p-7 text-center sm:p-10">
-
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
-              CHP can also combine remote work with team engagement, creating
-              a simple rhythm:
-            </p>
-
-            <p className="mt-6 text-2xl font-bold tracking-wide text-green-900 sm:text-3xl">
-              Work → Connect → Explore → Recharge
-            </p>
-
-            <p className="mt-6 text-base leading-relaxed text-slate-700 sm:text-lg">
-              Employees can work during designated hours and participate in
-              curated activities{" "}
-              <strong className="font-bold text-green-800">
-                outside work hours
-              </strong>
-              .
-            </p>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          POSSIBLE TEAM ACTIVITIES
-          ====================================================== */}
-
-      <section className="bg-stone-50 py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              Possible Team Activities
-            </h2>
-
-          </div>
-
-          <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-
-            {[
-              "Himalayan nature walks",
-              "Treks and trails",
-              "Adventure activities",
-              "Campfire evenings",
-              "Team-building activities",
-              "Local village experiences",
-              "Cultural experiences",
-              "Wellness sessions",
-              "Outdoor discussions",
-              "Leadership retreats",
-              "Weekend Himalayan excursions",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl bg-white/80 p-5"
-              >
-                <p className="font-medium text-slate-700">
-                  {item}
-                </p>
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          WHY WORK FROM CHP?
-          ====================================================== */}
-
-      <section className="bg-white py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              Why Work from CHP?
-            </h2>
-
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
-
-            <div className="rounded-2xl bg-green-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                A Change of Environment
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Move away from the noise and routine of the city and work in a
-                natural{" "}
-                <strong className="font-bold text-green-800">
-                  Himalayan setting
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-blue-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Continue Your Work
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Remote work doesn't mean taking time away from your
-                responsibilities. Continue your regular work while changing
-                your{" "}
-                <strong className="font-bold text-green-800">
-                  surroundings
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-amber-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Space to Recharge
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Use the mountains, nature and slower surroundings to create
-                space between work and everyday{" "}
-                <strong className="font-bold text-green-800">
-                  urban life
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-violet-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Connect with People
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Meet fellow professionals, entrepreneurs, travellers and
-                Himalayan{" "}
-                <strong className="font-bold text-green-800">
-                  communities
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-orange-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Experience the Himalaya
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Your workday can end with a sunset, nature walk, campfire or
-                Himalayan{" "}
-                <strong className="font-bold text-green-800">
-                  exploration
-                </strong>
-                .
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          FLEXIBLE REMOTE WORK MODEL
-          ====================================================== */}
-
-      <section className="bg-stone-50 py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="mx-auto max-w-4xl text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              A Flexible Remote Work Model
-            </h2>
-
-            <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
-              CHP can offer different formats depending on your{" "}
-              <strong className="font-bold text-green-800">
-                requirement
-              </strong>
-              .
-            </p>
-
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
-
-            <div className="rounded-2xl bg-green-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
-                <Laptop className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Individual Remote Stay
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                A professional can book a Himalayan stay and work
-                independently from{" "}
-                <strong className="font-bold text-green-800">
-                  CHP
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-blue-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
-                <CalendarDays className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Extended Workation
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Stay for several days or weeks while continuing regular{" "}
-                <strong className="font-bold text-green-800">
-                  remote work
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-violet-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
-                <Building2 className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Corporate Employee Program
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                An organization can sponsor or facilitate Himalayan work
-                stays for selected{" "}
-                <strong className="font-bold text-green-800">
-                  employees
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-orange-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
-                <Users className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Team Remote Work Retreat
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                A team can combine remote working with team activities and
-                Himalayan{" "}
-                <strong className="font-bold text-green-800">
-                  experiences
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-amber-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
-                <Mountain className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Work + Weekend Experience
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Work during weekdays and explore the Himalaya during{" "}
-                <strong className="font-bold text-green-800">
-                  weekends
-                </strong>
-                .
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          HR & CORPORATE TEAMS
-          ====================================================== */}
-
-      <section className="bg-white py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="mx-auto max-w-4xl text-center">
-
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
-              For HR & Corporate Teams
-            </p>
-
-            <h2 className="mt-3 text-3xl font-bold text-slate-800 sm:text-4xl">
-              Turn Remote Work into an Employee Experience
-            </h2>
-
-          </div>
-
-          <div className="mx-auto mt-10 max-w-5xl space-y-6">
-
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
-              Organizations can explore CHP as a destination for an employee
-              remote-work and{" "}
-              <strong className="font-bold text-green-800">
-                engagement program
-              </strong>
-              .
-            </p>
-
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
-              Instead of employees working remotely from another city without
-              a structured experience, the organization can provide an
-              environment designed around:
-            </p>
-
-          </div>
-
-          <div className="mx-auto mt-10 max-w-5xl rounded-3xl bg-green-50 p-7 text-center sm:p-10">
-
-            <p className="text-xl font-bold text-green-900 sm:text-2xl">
-              Accommodation + Work Space + Connectivity + Food + Nature +
-              Experiences
-            </p>
-
-          </div>
-
-          <div className="mx-auto mt-12 max-w-5xl">
-
-            <h3 className="text-2xl font-bold text-slate-800 sm:text-3xl">
-              CHP can work with organizations to develop a program based on:
-            </h3>
-
-            <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-
-              {[
-                "Number of employees",
-                "Duration of stay",
-                "Work requirements",
-                "Accommodation requirements",
-                "Workspace requirements",
-                "Meal plans",
-                "Team activities",
-                "Wellness programs",
-                "Adventure and exploration options",
-                "Weekend excursions",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl bg-stone-50 p-5"
-                >
-                  <p className="font-medium text-slate-700">
-                    {item}
-                  </p>
-                </div>
-              ))}
-
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          FROM WORKATION TO TEAM EXPERIENCE
-          ====================================================== */}
-
-      <section className="bg-white py-16 lg:py-24">
-
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              From Workation to Team Experience
-            </h2>
-
-          </div>
-
-          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-violet-50 p-7 text-center sm:p-10">
-
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
-              CHP can also combine remote work with team engagement, creating
-              a simple rhythm:
-            </p>
-
-            <p className="mt-6 text-2xl font-bold tracking-wide text-green-900 sm:text-3xl">
-              Work → Connect → Explore → Recharge
-            </p>
-
-            <p className="mt-6 text-base leading-relaxed text-slate-700 sm:text-lg">
-              Employees can work during designated hours and participate in
-              curated activities{" "}
-              <strong className="font-bold text-green-800">
-                outside work hours
-              </strong>
-              .
-            </p>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          POSSIBLE TEAM ACTIVITIES
-          ====================================================== */}
-
-      <section className="bg-stone-50 py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              Possible Team Activities
-            </h2>
-
-          </div>
-
-          <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-
-            {[
-              "Himalayan nature walks",
-              "Treks and trails",
-              "Adventure activities",
-              "Campfire evenings",
-              "Team-building activities",
-              "Local village experiences",
-              "Cultural experiences",
-              "Wellness sessions",
-              "Outdoor discussions",
-              "Leadership retreats",
-              "Weekend Himalayan excursions",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl bg-white/80 p-5"
-              >
-                <p className="font-medium text-slate-700">
-                  {item}
-                </p>
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          WHY WORK FROM CHP?
-          ====================================================== */}
-
-      <section className="bg-white py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              Why Work from CHP?
-            </h2>
-
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
-
-            <div className="rounded-2xl bg-green-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                A Change of Environment
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Move away from the noise and routine of the city and work in a
-                natural{" "}
-                <strong className="font-bold text-green-800">
-                  Himalayan setting
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-blue-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Continue Your Work
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Remote work doesn't mean taking time away from your
-                responsibilities. Continue your regular work while changing
-                your{" "}
-                <strong className="font-bold text-green-800">
-                  surroundings
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-amber-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Space to Recharge
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Use the mountains, nature and slower surroundings to create
-                space between work and everyday{" "}
-                <strong className="font-bold text-green-800">
-                  urban life
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-violet-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Connect with People
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Meet fellow professionals, entrepreneurs, travellers and
-                Himalayan{" "}
-                <strong className="font-bold text-green-800">
-                  communities
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-orange-50 p-6">
-              <h3 className="text-xl font-bold text-slate-800">
-                Experience the Himalaya
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Your workday can end with a sunset, nature walk, campfire or
-                Himalayan{" "}
-                <strong className="font-bold text-green-800">
-                  exploration
-                </strong>
-                .
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ======================================================
-          FLEXIBLE REMOTE WORK MODEL
-          ====================================================== */}
-
-      <section className="bg-stone-50 py-16 lg:py-24">
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          <div className="mx-auto max-w-4xl text-center">
-
-            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl">
-              A Flexible Remote Work Model
-            </h2>
-
-            <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
-              CHP can offer different formats depending on your{" "}
-              <strong className="font-bold text-green-800">
-                requirement
-              </strong>
-              .
-            </p>
-
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
-
-            <div className="rounded-2xl bg-green-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
-                <Laptop className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Individual Remote Stay
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                A professional can book a Himalayan stay and work
-                independently from{" "}
-                <strong className="font-bold text-green-800">
-                  CHP
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-blue-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
-                <CalendarDays className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Extended Workation
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Stay for several days or weeks while continuing regular{" "}
-                <strong className="font-bold text-green-800">
-                  remote work
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-violet-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
-                <Building2 className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Corporate Employee Program
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                An organization can sponsor or facilitate Himalayan work
-                stays for selected{" "}
-                <strong className="font-bold text-green-800">
-                  employees
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-orange-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
-                <Users className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Team Remote Work Retreat
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                A team can combine remote working with team activities and
-                Himalayan{" "}
-                <strong className="font-bold text-green-800">
-                  experiences
-                </strong>
-                .
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-amber-50 p-6">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
-                <Mountain className="h-6 w-6" />
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-800">
-                Work + Weekend Experience
-              </h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Work during weekdays and explore the Himalaya during{" "}
-                <strong className="font-bold text-green-800">
-                  weekends
-                </strong>
-                .
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-      
 
       {/* ======================================================
           END

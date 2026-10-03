@@ -221,7 +221,7 @@ export default function CampsPage() {
 
         {/* Hero content moved higher */}
         <div className="absolute inset-0 flex flex-col items-center justify-start pt-12 sm:pt-16 md:pt-20 lg:pt-24 text-center px-4 sm:px-6">
-          <p className={HERO_TAG_CLASS}>Holiday Camps</p>
+          <p className={HERO_TAG_CLASS}>Holiday Camp</p>
 
           <h1 className={HERO_TITLE_CLASS}>
             Live the Himalayan Life
@@ -464,7 +464,7 @@ export default function CampsPage() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/contact?tab=camp"
               className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-900/30"
             >
               Book Your Holiday Camp{" "}
@@ -522,8 +522,7 @@ export default function CampsPage() {
 
               {/* Only important phrase highlighted */}
               <p className="text-slate-600 leading-relaxed mb-4 text-justify">
-                After lunch, enjoy{" "}
-                <strong className={KEY}>organic farming</strong>, cultural
+                After lunch, enjoyorganic farming, cultural
                 activities and workshops, followed by bird watching and
                 wildlife experiences in the afternoon.
               </p>
@@ -597,17 +596,9 @@ export default function CampsPage() {
         </>
       )}
 
-      <CTABanner />
+      <CTABanner  showHomeButton/>
 
-      {/* Go back button */}
-      <div className="bg-white py-8 text-center">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
-        >
-          <ArrowLeft className="w-4 h-4" /> Go back to Home
-        </Link>
-      </div>
+     
     </>
   );
 }

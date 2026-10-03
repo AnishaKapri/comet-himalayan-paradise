@@ -12,7 +12,7 @@ export default function FeaturesPage() {
   return (
     <section className="bg-stone-50 py-20 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader eyebrow="Holiday Camps" title="Camp Features" subtitle="Explore the complete range of CHP Holiday Camp features." />
+        <SectionHeader eyebrow="Holiday Camp" title="Camp Features" subtitle="Explore the complete range of CHP Holiday Camp features." />
 
         <StaggerContainer className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.05}>
           {campFeatures.map((feature) => (
@@ -34,7 +34,7 @@ export default function FeaturesPage() {
 
         <ScrollReveal>
           <div className="mt-12 text-center">
-            <a href="/camps" className="inline-flex items-center rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30">Back to Holiday Camps</a>
+            <a href="/camps" className="inline-flex items-center rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30">Back to Holiday Camp</a>
           </div>
         </ScrollReveal>
       </div>

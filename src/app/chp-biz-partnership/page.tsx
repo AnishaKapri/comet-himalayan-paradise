@@ -119,7 +119,7 @@ function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className={`font-serif text-3xl font-bold tracking-[-0.025em] sm:text-4xl lg:text-5xl ${light ? "text-white" : "text-slate-950"}`}>
+      <h2 className={`font-serif text-2xl font-bold tracking-[-0.025em] sm:text-3xl lg:text-4xl ${light ? "text-white" : "text-slate-950"}`}>
         {title}
       </h2>
       {description ? (
@@ -133,7 +133,7 @@ function SectionHeading({
 
 function SoftCard({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <div className={`rounded-[1.5rem] border border-slate-200/80 bg-slate-50/80 ${className}`}>
+    <div className={`rounded-[1.5rem] border border-emerald-100 bg-emerald-50 ${className}`}>
       {children}
     </div>
   );
@@ -177,9 +177,6 @@ export default function CHPBizPartnershipPage() {
               <a href="#partnership-form" className="group inline-flex items-center gap-1.5 rounded-full bg-emerald-950/90 px-5 py-2.5 text-xs font-semibold text-white shadow-lg ring-1 ring-white/20 backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-emerald-900">
                 Start a Partnership Conversation <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
               </a>
-              <a href="/partnership-proposals" className="inline-flex items-center gap-1.5 rounded-full border border-white/35 bg-slate-900/20 px-5 py-2.5 text-xs font-semibold text-white shadow-lg backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-slate-900/30">
-                Business Proposals
-              </a>
             </div>
           </div>
           </div>
@@ -195,14 +192,11 @@ export default function CHPBizPartnershipPage() {
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-emerald-700">Build. Partner. Grow. in the Himalayas.</p>
               <h2 className="mt-4 font-serif text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">CHP Biz Partnership</h2>
               <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-                CHP Biz Partnership brings together <strong className="font-semibold text-slate-950">entrepreneurs, investors, professionals, organizations, institutions and business groups</strong> to create and operate distinctive businesses within the CHP Himalayan Paradise ecosystem.
-              </p>
-              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-                CHP is being developed as an <strong className="font-semibold text-slate-950">integrated Himalayan destination</strong> bringing together hospitality, wellness, adventure, education, creativity, agriculture, eco-tourism, culture and entrepreneurship under one connected ecosystem. Instead of building a business as an isolated venture, partners can become part of a destination where multiple businesses, facilities, experiences and customer segments <strong className="font-semibold text-slate-950">work together</strong>.
+                CHP Biz Partnership brings together <strong className="font-semibold text-slate-950">entrepreneurs, investors, professionals, organizations, institutions and business groups</strong> to create and operate distinctive businesses within the CHP Himalayan Paradise ecosystem. CHP is being developed as an <strong className="font-semibold text-slate-950">integrated Himalayan destination</strong> bringing together hospitality, wellness, adventure, education, creativity, agriculture, eco-tourism, culture and entrepreneurship under one connected ecosystem. Instead of building a business as an isolated venture, partners can become part of a destination where multiple businesses, facilities, experiences and customer segments <strong className="font-semibold text-slate-950">work together</strong>.
               </p>
             </div>
             <SoftCard className="p-7 shadow-[0_24px_70px_-35px_rgba(15,23,42,0.3)] sm:p-9">
-              <div className="rounded-2xl bg-white p-6 ring-1 ring-slate-200/80">
+              <div className="rounded-2xl bg-white p-6 ring-1 ring-emerald-100">
                 <h2 className="text-xs font-bold uppercase tracking-[0.25em] text-emerald-700">One Destination. Multiple Businesses. Shared Opportunities.</h2>
                 <p className="mt-4 font-serif text-2xl font-bold leading-tight text-slate-950">A connected place for businesses, facilities, experiences and customers to work together.</p>
               </div>
@@ -213,7 +207,7 @@ export default function CHPBizPartnershipPage() {
                   ["Multiple", "customer segments"],
                   ["Year-round", "possibilities"],
                 ].map(([value, label]) => (
-                  <div key={label} className="rounded-2xl bg-white p-4 ring-1 ring-slate-200/80">
+                  <div key={label} className="rounded-2xl bg-white p-4 ring-1 ring-emerald-100">
                     <p className="text-2xl font-bold text-slate-950">{value}</p>
                     <p className="mt-1 text-xs leading-5 text-slate-500">{label}</p>
                   </div>
@@ -233,7 +227,7 @@ export default function CHPBizPartnershipPage() {
           />
           <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {ecosystemBenefits.map((item, i) => (
-              <SoftCard key={item} className="p-5 transition hover:-translate-y-1 hover:border-emerald-200 hover:bg-emerald-50/70 hover:shadow-lg">
+              <SoftCard key={item} className="p-5 transition hover:-translate-y-1 hover:border-emerald-200 hover:bg-emerald-100/70 hover:shadow-lg">
                 <div className="flex items-start gap-4">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[11px] font-bold text-emerald-800">{String(i + 1).padStart(2, "0")}</span>
                   <p className="pt-1 text-sm font-medium leading-6 text-slate-700">{item}</p>
@@ -260,8 +254,8 @@ export default function CHPBizPartnershipPage() {
             ].map(([title, Icon, text]) => {
               const I = Icon as typeof Sparkles;
               return (
-                <div key={String(title)} className="rounded-[1.5rem] border border-slate-200 bg-white p-7 shadow-sm sm:p-8">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700"><I className="h-5 w-5" /></div>
+                <div key={String(title)} className="rounded-[1.5rem] border border-emerald-100 bg-emerald-50 p-7 shadow-sm sm:p-8">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700"><I className="h-5 w-5" /></div>
                   <h3 className="mt-5 text-xl font-bold text-slate-950">{title as string}</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">{text as ReactNode}</p>
                 </div>
@@ -284,10 +278,10 @@ export default function CHPBizPartnershipPage() {
           />
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {businessCategories.map(({ title, icon: Icon, items }) => (
-              <article key={title} className="rounded-[1.5rem] border border-slate-200 bg-slate-50/70 p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-xl sm:p-7">
+              <article key={title} className="rounded-[1.5rem] border border-emerald-100 bg-emerald-50 p-6 transition hover:-translate-y-1 hover:bg-emerald-100/70 hover:shadow-xl sm:p-7">
                 <div className="flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-emerald-700 shadow-sm ring-1 ring-slate-200"><Icon className="h-6 w-6" /></div>
-                  <span className="text-xs font-bold tracking-[0.18em] text-slate-300">{String(items.length).padStart(2, "0")}</span>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700"><Icon className="h-6 w-6" /></div>
+                  <span className="text-xs font-bold tracking-[0.18em] text-emerald-300">{String(items.length).padStart(2, "0")}</span>
                 </div>
                 <h3 className="mt-6 text-xl font-bold tracking-tight text-slate-950">{title}</h3>
                 <ul className="mt-5 space-y-2.5">
@@ -307,16 +301,16 @@ export default function CHPBizPartnershipPage() {
       <section className="bg-[#f5f8f5] py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <SectionHeading title="Who Can Become a CHP Business Partner?" description="CHP welcomes partnership discussions with:" />
-          <div className="mx-auto mt-12 max-w-5xl rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm sm:p-9">
+          <div className="mx-auto mt-12 max-w-5xl rounded-[1.75rem] border border-emerald-100 bg-emerald-50 p-7 shadow-sm sm:p-9">
             <div className="grid gap-x-10 gap-y-3 sm:grid-cols-2">
               {partnerTypes.map(item => (
-                <div key={item} className="flex items-start gap-3 rounded-xl bg-slate-50 px-4 py-3">
+                <div key={item} className="flex items-start gap-3 rounded-xl bg-white px-4 py-3">
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
                   <span className="text-sm font-medium text-slate-700">{item}</span>
                 </div>
               ))}
             </div>
-            <p className="mt-7 border-t border-slate-200 pt-6 text-sm leading-7 text-slate-600">
+            <p className="mt-7 border-t border-emerald-100 pt-6 text-sm leading-7 text-slate-600">
               The CHP proposal portfolio explicitly identifies <strong className="font-semibold text-slate-950">entrepreneurs, investors, organizations, educational institutions, CSR partners and business groups</strong> as potential long-term ecosystem partners.
             </p>
           </div>
@@ -332,8 +326,8 @@ export default function CHPBizPartnershipPage() {
           />
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {partnershipModels.map(([number, title, description]) => (
-              <div key={number} className="relative overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-50/70 p-7 transition hover:bg-white hover:shadow-lg">
-                <span className="text-5xl font-bold tracking-[-0.05em] text-slate-200">{number}</span>
+              <div key={number} className="relative overflow-hidden rounded-[1.5rem] border border-emerald-100 bg-emerald-50 p-7 transition hover:bg-emerald-100/70 hover:shadow-lg">
+                <span className="text-5xl font-bold tracking-[-0.05em] text-emerald-200">{number}</span>
                 <h3 className="relative -mt-3 text-lg font-bold text-slate-950">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">{description}</p>
               </div>
@@ -348,8 +342,8 @@ export default function CHPBizPartnershipPage() {
           <SectionHeading title="What CHP Can Bring to the Partnership" description="Depending on the selected business model, CHP may support partners through:" />
           <div className="mx-auto mt-12 grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {chpSupport.map(([title, Icon]) => (
-              <div key={title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700"><Icon className="h-5 w-5" /></div>
+              <div key={title} className="rounded-2xl border border-emerald-100 bg-emerald-50 p-5 shadow-sm">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700"><Icon className="h-5 w-5" /></div>
                 <p className="mt-4 text-sm font-semibold text-slate-800">{title}</p>
               </div>
             ))}
@@ -369,12 +363,12 @@ export default function CHPBizPartnershipPage() {
           />
           <div className="mx-auto mt-12 grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {revenueStreams.map(item => (
-              <div key={item} className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3.5 text-sm font-medium text-slate-700">
+              <div key={item} className="flex items-center gap-3 rounded-xl border border-emerald-100 bg-emerald-50 px-4 py-3.5 text-sm font-medium text-slate-700">
                 <CircleDollarSign className="h-4 w-4 shrink-0 text-emerald-600" /> {item}
               </div>
             ))}
           </div>
-          <div className="mx-auto mt-8 max-w-5xl rounded-2xl border border-slate-200 bg-slate-50/80 p-6 text-sm leading-7 text-slate-600 sm:p-8">
+          <div className="mx-auto mt-8 max-w-5xl rounded-2xl border border-emerald-100 bg-emerald-50 p-6 text-sm leading-7 text-slate-600 sm:p-8">
             For example, the Destination Wedding proposal identifies <strong className="font-semibold text-slate-950">venue bookings, wedding packages, catering, decoration, photography, event management, accommodation, transportation, pre-wedding shoots, corporate events, wellness retreats and adventure packages</strong> as potential revenue streams.
             The Eco-Agri proposal similarly combines agriculture with <strong className="font-semibold text-slate-950">food processing, herbal products, agri-tourism and wellness-oriented enterprises</strong>.
           </div>
@@ -382,7 +376,7 @@ export default function CHPBizPartnershipPage() {
       </section>
 
       {/* ADVANTAGE */}
-      <section className="bg-slate-950 py-20 text-white sm:py-24 lg:py-28">
+      <section className="bg-emerald-950 py-20 text-white sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <SectionHeading title="The CHP Advantage" light />
           <p className="mt-5 text-center text-sm font-semibold uppercase tracking-[0.18em] text-white/55">CHP aims to create:</p>
@@ -421,10 +415,10 @@ export default function CHPBizPartnershipPage() {
           <SectionHeading title="From Business Idea to Himalayan Venture" description="CHP Biz Partnership can support a journey such as:" />
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {journey.map(([number, title, description]) => (
-              <div key={number} className="rounded-[1.5rem] border border-slate-200 bg-slate-50/70 p-7 transition hover:-translate-y-1 hover:bg-white hover:shadow-xl">
+              <div key={number} className="rounded-[1.5rem] border border-emerald-100 bg-emerald-50 p-7 transition hover:-translate-y-1 hover:bg-emerald-100/70 hover:shadow-xl">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold tracking-[0.2em] text-emerald-700">{number}</span>
-                  <Rocket className="h-5 w-5 text-slate-300" />
+                  <Rocket className="h-5 w-5 text-emerald-300" />
                 </div>
                 <h3 className="mt-7 text-xl font-bold tracking-tight text-slate-950">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">{description}</p>
@@ -440,7 +434,7 @@ export default function CHPBizPartnershipPage() {
           <SectionHeading title="Why CHP?" />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {whyChp.map(([title, text]) => (
-              <div key={title} className="rounded-[1.5rem] border border-slate-200 bg-white p-7 shadow-sm">
+              <div key={title} className="rounded-[1.5rem] border border-emerald-100 bg-emerald-50 p-7 shadow-sm">
                 <div className="h-1 w-12 rounded-full bg-emerald-600" />
                 <h3 className="mt-6 text-lg font-bold text-slate-950">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">{text}</p>
@@ -453,7 +447,7 @@ export default function CHPBizPartnershipPage() {
       {/* FORM / CTA */}
       <section id="partnership-form" className="scroll-mt-24 py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
-          <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 shadow-[0_25px_80px_-35px_rgba(15,23,42,0.28)]">
+          <div className="overflow-hidden rounded-[2rem] border border-emerald-100 bg-emerald-50 shadow-[0_25px_80px_-35px_rgba(15,23,42,0.28)]">
             <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
               <div className="bg-emerald-950 p-8 text-white sm:p-10 lg:p-12">
                 <p className="text-xs font-bold uppercase tracking-[0.28em] text-emerald-300">Start the conversation</p>
@@ -470,23 +464,23 @@ export default function CHPBizPartnershipPage() {
                   ))}
                 </div>
               </div>
-              <div className="bg-slate-50 p-7 sm:p-10 lg:p-12">
+              <div className="bg-emerald-50 p-7 sm:p-10 lg:p-12">
                 <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-700">Partnership enquiry</p>
                 <h3 className="mt-2 text-2xl font-bold text-slate-950 sm:text-3xl">Tell us about your idea</h3>
                 <form className="mt-8 space-y-5" action="/contact" method="get">
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <input aria-label="Full name" name="name" type="text" required placeholder="Full name" className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10" />
-                    <input aria-label="Email address" name="email" type="email" required placeholder="Email address" className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10" />
+                    <input aria-label="Full name" name="name" type="text" required placeholder="Full name" className="w-full rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10" />
+                    <input aria-label="Email address" name="email" type="email" required placeholder="Email address" className="w-full rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10" />
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <input aria-label="Phone number" name="phone" type="tel" placeholder="Phone number" className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10" />
-                    <input aria-label="Business / organization" name="organization" type="text" placeholder="Business / organization" className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10" />
+                    <input aria-label="Phone number" name="phone" type="tel" placeholder="Phone number" className="w-full rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10" />
+                    <input aria-label="Business / organization" name="organization" type="text" placeholder="Business / organization" className="w-full rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10" />
                   </div>
-                  <select aria-label="What are you interested in?" name="partnershipType" defaultValue="" required className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10">
+                  <select aria-label="What are you interested in?" name="partnershipType" defaultValue="" required className="w-full rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10">
                     <option value="" disabled>What are you interested in?</option>
                     {businessCategories.map(({ title }) => <option key={title} value={title}>{title}</option>)}
                   </select>
-                  <textarea aria-label="Tell us about your idea" name="message" required rows={5} placeholder="Tell us about your business idea, expertise or proposed venture." className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm leading-6 outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10" />
+                  <textarea aria-label="Tell us about your idea" name="message" required rows={5} placeholder="Tell us about your business idea, expertise or proposed venture." className="w-full resize-none rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm leading-6 outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10" />
                   <button type="submit" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-950 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-emerald-900">
                     Start Partnership Conversation <ArrowRight className="h-4 w-4" />
                   </button>

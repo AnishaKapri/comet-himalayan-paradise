@@ -111,21 +111,18 @@ export default function FacilitiesPage() {
               different environment from the city?
             </p>
 
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
+                       <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
               CHP is designed for professionals who want to maintain their{" "}
               <strong className="font-bold text-green-800">
                 productivity
               </strong>{" "}
               while enjoying a change of environment. Employees and
               professionals can combine work and the Himalayan experience
-              through a dedicated Remote Work from Himalaya program.
-            </p>
-
-            <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
-              Whether you are an employee looking for a refreshing place to
-              work for a few days, or an employer looking to offer your team a
-              meaningful work-from-anywhere benefit, CHP provides a practical
-              environment where work and{" "}
+              through a dedicated Remote Work from Himalaya program. Whether
+              you are an employee looking for a refreshing place to work for a
+              few days, or an employer looking to offer your team a meaningful
+              work-from-anywhere benefit, CHP provides a practical environment
+              where work and{" "}
               <strong className="font-bold text-green-800">
                 Himalayan living
               </strong>{" "}
@@ -225,10 +222,8 @@ export default function FacilitiesPage() {
                   <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
                   Professionals taking a workation
                 </div>
-              </div>
-
+              ))}
             </div>
-
           </div>
 
         </div>
@@ -331,7 +326,7 @@ export default function FacilitiesPage() {
 
               <h3 className="text-xl font-bold text-slate-800">
                 Work Hours
-              </h3>
+                </h3>
 
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 Settle into your{" "}
@@ -421,7 +416,7 @@ export default function FacilitiesPage() {
 
           <div className="rounded-3xl bg-white/70 p-7 sm:p-10 lg:p-12">
 
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-100 text-sky-700">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-100 text-green-700">
               <Laptop className="h-7 w-7" />
             </div>
 
@@ -489,8 +484,7 @@ export default function FacilitiesPage() {
             ].map((item, index) => (
               <div
                 key={item}
-                className="flex items-start gap-3 rounded-2xl bg-white/80 p-5"
-              >
+className="flex items-start gap-3 rounded-2xl bg-green-50 p-5"              >
                 <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100 text-xs font-bold text-green-800">
                   {index + 1}
                 </span>

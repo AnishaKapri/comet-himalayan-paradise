@@ -98,13 +98,9 @@ export default function CampsPage() {
 
         {/* Hero content */}
         <div className="absolute inset-0 flex flex-col items-center justify-start pt-12 sm:pt-16 md:pt-20 lg:pt-24 text-center px-4 sm:px-6">
-<<<<<<< HEAD
-          <p className={HERO_TAG_CLASS}>Holiday Camp</p>
-=======
           <p className={HERO_TAG_CLASS}>
             Holiday Camps
           </p>
->>>>>>> cb08e5e (s)
 
           <h1 className={HERO_TITLE_CLASS}>
             Live the Himalayan Life
@@ -379,13 +375,8 @@ export default function CampsPage() {
             </Link>
 
             <Link
-<<<<<<< HEAD
-              href="/contact?tab=camp"
-              className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-900/30"
-=======
               href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
->>>>>>> cb08e5e (s)
             >
               Book Your Holiday Camp
               <ArrowRight className="w-4 h-4" />
@@ -444,18 +435,12 @@ export default function CampsPage() {
               </p>
 
               <p className="text-slate-600 leading-relaxed mb-4 text-justify">
-<<<<<<< HEAD
-                After lunch, enjoyorganic farming, cultural
-                activities and workshops, followed by bird watching and
-                wildlife experiences in the afternoon.
-=======
                 After lunch, enjoy{" "}
                 <strong className={KEY}>
                   organic farming
                 </strong>
                 , cultural activities and workshops, followed by bird watching
                 and wildlife experiences in the afternoon.
->>>>>>> cb08e5e (s)
               </p>
 
               <p className="text-slate-600 leading-relaxed text-justify">
@@ -482,68 +467,10 @@ export default function CampsPage() {
               />
             </div>
           </div>
-          <div className="bg-white py-8 text-center">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Go back to Home
-        </Link>
-      </div>
+          
         </div>
       </section>
 
-<<<<<<< HEAD
-      {false && (
-        <>
-          <section className="py-12 bg-stone-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <SectionHeader
-                eyebrow="Where You Stay"
-                title="Accommodation Options"
-                subtitle="Choose the stay that feels right for you — comfort to wilderness, all with Himalayan soul."
-              />
-
-              <StaggerContainer
-                className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
-                staggerDelay={0.08}
-              >
-                {accommodationTypes.map((acc) => (
-                  <StaggerItem key={acc.type}>
-                    <div className="group bg-green-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                      <div className={IMAGE_BOX}>
-                        <Image
-                          src={acc.image}
-                          alt={acc.type}
-                          fill
-                          sizes="(max-width: 1024px) 50vw, 25vw"
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-
-                      <div className="p-4">
-                        <h3 className="font-semibold text-slate-800 text-sm mb-1.5">
-                          {acc.type}
-                        </h3>
-
-                        <p className="text-slate-600 text-xs leading-relaxed text-justify">
-                          {acc.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </StaggerItem>
-                ))}
-              </StaggerContainer>
-            </div>
-          </section>
-        </>
-      )}
-
-      <CTABanner  showHomeButton/>
-
-     
-=======
       {/* =========================================================
           FINAL CTA
           =========================================================
@@ -565,7 +492,6 @@ export default function CampsPage() {
           Go back to Home
         </Link>
       </div>
->>>>>>> cb08e5e (s)
     </>
   );
 }

@@ -15,17 +15,25 @@ export function CHPGatewaysSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
                     {/* Image */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="relative order-2 lg:order-1 flex justify-center"
-                    >
-                        <div className="group relative aspect-square w-full max-w-[480px] overflow-hidden rounded-full">
-                           
-                        </div>
-                    </motion.div>
+{/* Image */}
+<motion.div
+    initial={{ opacity: 0, x: -30 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+    className="relative order-2 lg:order-1 flex justify-center"
+>
+    <div className="group relative w-full max-w-[680px] overflow-hidden rounded-2xl">
+        <Image
+            src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/60c714e9-e1a2-466f-93dd-e59079967b8f-gateways-header-1.png"
+            alt="CHP Gateways"
+            width={1200}
+            height={800}
+            sizes="(max-width: 1024px) 100vw, 680px"
+            className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+        />
+    </div>
+</motion.div>
 
                     {/* Text Content */}
                     <motion.div

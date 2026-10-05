@@ -1,18 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Filter } from "lucide-react";
+import { ArrowLeft, Filter } from "lucide-react";
 import { TrekCard } from "@/components/TrekCard";
-import { CTABanner } from "@/components/home/CTABanner";
 import { treks, TrekCategory, Difficulty } from "@/data/treks";
 
-/* Shared header tokens */
+/* =========================================================
+   SHARED HERO TOKENS — MATCH HOMEPAGE
+========================================================= */
+
 const HERO_TITLE_CLASS =
-  "text-white text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4";
+  "text-[32px] font-bold leading-[1.08] tracking-tight text-white sm:text-[42px] md:text-[52px] xl:text-[62px]";
 
 const HERO_TAG_CLASS =
-  "mb-4 inline-block rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white";
+  "mb-5 inline-block rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white";
 
 const categories: {
   value: TrekCategory | "all";
@@ -40,36 +43,28 @@ export default function TreksPage() {
   const [category, setCategory] = useState<TrekCategory | "all">("all");
   const [difficulty, setDifficulty] = useState<Difficulty | "all">("all");
 
-  /*
-   * CATEGORY FILTER
-   *
-   * Clicking a category clears the difficulty filter.
-   * Example:
-   * Cultural → shows every Cultural trek regardless of level.
-   */
+  /* =========================================================
+     CATEGORY FILTER
+  ========================================================= */
+
   const handleCategoryChange = (value: TrekCategory | "all") => {
     setCategory(value);
     setDifficulty("all");
   };
 
-  /*
-   * DIFFICULTY FILTER
-   *
-   * Clicking a difficulty clears the category filter.
-   * Example:
-   * Moderate → shows ONLY Moderate treks.
-   */
+  /* =========================================================
+     DIFFICULTY FILTER
+  ========================================================= */
+
   const handleDifficultyChange = (value: Difficulty | "all") => {
     setDifficulty(value);
     setCategory("all");
   };
 
-  /*
-   * FILTER TREKS
-   *
-   * Difficulty has priority when selected.
-   * Every trek has its own `difficulty` attribute in data/treks.
-   */
+  /* =========================================================
+     FILTER TREKS
+  ========================================================= */
+
   const filteredTreks = treks.filter((trek) => {
     if (difficulty !== "all") {
       return trek.difficulty === difficulty;
@@ -87,7 +82,8 @@ export default function TreksPage() {
       {/* =====================================================
           HERO
       ===================================================== */}
-      <section className="relative flex min-h-[500px] items-center justify-center bg-black">
+      <section className="relative mt-[72px] flex min-h-[500px] items-center justify-center overflow-hidden bg-black">
+        {/* Hero image */}
         <div className="absolute inset-0">
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -98,9 +94,12 @@ export default function TreksPage() {
           />
         </div>
 
+        {/* Hero overlay */}
         <div className="absolute inset-0 bg-black/45" />
 
-        <div className="relative z-10 mx-auto -mt-36 max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        {/* Entire hero text block */}
+        <div className="relative z-10 mx-auto -translate-y-[3cm] max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          {/* Badge */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -110,26 +109,30 @@ export default function TreksPage() {
             Treks and Trails
           </motion.p>
 
+          {/* Title */}
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className={HERO_TITLE_CLASS}
           >
-            Walk Beyond the Ordinary. Discover the Himalayas.
+            Walk Beyond the Ordinary.
+            <br />
+            Discover the Himalayas.
           </motion.h1>
 
+          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto max-w-xl text-lg text-white/85"
+            className="mx-auto mt-5 max-w-2xl text-base font-medium leading-relaxed text-white/90 sm:text-lg"
           >
-            <strong className="font-bold text-orange-300">
+            <strong className="font-bold text-white">
               20+ curated trails
             </strong>{" "}
             from gentle forest walks to epic base camp expeditions — for{" "}
-            <strong className="font-bold text-orange-300">
+            <strong className="font-bold text-white">
               every fitness level
             </strong>{" "}
             and adventure spirit.
@@ -140,10 +143,9 @@ export default function TreksPage() {
       {/* =====================================================
           FILTER BAR
       ===================================================== */}
-      <section className="bg-green-50 py-4 shadow-sm">
+      <section className="border-b border-slate-100 bg-white py-4 shadow-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-
             {/* CATEGORY FILTER */}
             <div className="flex flex-wrap items-center gap-2">
               <Filter className="h-4 w-4 shrink-0 text-slate-500" />
@@ -163,7 +165,7 @@ export default function TreksPage() {
                     className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all duration-200 ${
                       isActive
                         ? "bg-green-900 text-white shadow-sm"
-                        : "bg-white text-slate-600 hover:bg-green-100"
+                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                     }`}
                   >
                     {categoryOption.label}
@@ -173,7 +175,7 @@ export default function TreksPage() {
             </div>
 
             {/* DIVIDER */}
-            <div className="hidden h-5 w-px bg-green-200 sm:block" />
+            <div className="hidden h-5 w-px bg-slate-200 sm:block" />
 
             {/* DIFFICULTY FILTER */}
             <div className="flex flex-wrap items-center gap-2">
@@ -191,8 +193,8 @@ export default function TreksPage() {
                     }
                     className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all duration-200 ${
                       isActive
-                        ? "bg-sky-600 text-white shadow-sm"
-                        : "bg-white text-slate-600 hover:bg-green-100"
+                        ? "bg-green-900 text-white shadow-sm"
+                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                     }`}
                   >
                     {difficultyOption.label}
@@ -202,7 +204,7 @@ export default function TreksPage() {
             </div>
 
             {/* RESULT COUNT */}
-            <span className="ml-auto shrink-0 text-xs font-semibold text-green-900">
+            <span className="ml-auto shrink-0 text-xs font-semibold text-slate-600">
               {filteredTreks.length}{" "}
               {filteredTreks.length === 1 ? "trek" : "treks"}
             </span>
@@ -215,7 +217,6 @@ export default function TreksPage() {
       ===================================================== */}
       <section className="bg-stone-50 py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
           {filteredTreks.length === 0 ? (
             <div className="py-16 text-center">
               <p className="text-lg text-slate-500">
@@ -234,37 +235,39 @@ export default function TreksPage() {
               </button>
             </div>
           ) : (
-            /*
-             * IMPORTANT:
-             * No StaggerContainer/StaggerItem here.
-             *
-             * The previous implementation was leaving the cards
-             * invisible after the filtered array changed.
-             */
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {filteredTreks.map((trek, index) => (
-                <motion.div
-                  key={trek.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.35,
-                    delay: Math.min(index * 0.04, 0.4),
-                  }}
-                  className="h-full"
+            <>
+              {/* Trek cards */}
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {filteredTreks.map((trek, index) => (
+                  <motion.div
+                    key={trek.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.35,
+                      delay: Math.min(index * 0.04, 0.4),
+                    }}
+                    className="h-full"
+                  >
+                    <TrekCard trek={trek} className="h-full" />
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Back to Home */}
+              <div className="flex justify-center pt-10">
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
                 >
-                  <TrekCard trek={trek} className="h-full" />
-                </motion.div>
-              ))}
-            </div>
+                  <ArrowLeft className="h-4 w-4" />
+                  Back to Home
+                </Link>
+              </div>
+            </>
           )}
         </div>
       </section>
-
-      {/* =====================================================
-          CTA
-      ===================================================== */}
-      <CTABanner showHomeButton />
     </>
   );
 }

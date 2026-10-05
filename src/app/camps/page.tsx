@@ -1,18 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Mountain,
-  Tent,
-  Flame,
-  Leaf,
-  Heart,
-  Star,
-  Users,
-  Clock,
-  ArrowRight,
-  ArrowLeft,
-} from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import {
   ScrollReveal,
@@ -50,149 +39,34 @@ export const metadata: Metadata = {
 };
 
 /* ------------------------------------------------------------------
-   Shared design tokens
-------------------------------------------------------------------- */
+   Shared visual tokens
+   ------------------------------------------------------------------ */
 
+/*
+ * Hero typography follows the homepage visual hierarchy.
+ */
 const HERO_TITLE_CLASS =
-  "text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4";
+  "text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-4";
 
 const HERO_TAG_CLASS =
-  "inline-block rounded-full bg-green-900 px-4 py-1.5 text-white text-xs font-semibold uppercase tracking-[0.18em] mb-4";
+  "inline-flex items-center rounded-full bg-green-900/90 px-4 py-1.5 text-white text-xs font-semibold uppercase tracking-[0.18em] mb-4";
 
-const IMAGE_BOX = "relative aspect-video w-full overflow-hidden";
+const HERO_SUBTITLE_CLASS =
+  "text-white/90 text-base sm:text-lg font-medium tracking-wide mb-4";
 
-const KEY = "font-bold text-orange-600";
+const HERO_DESCRIPTION_CLASS =
+  "text-white/85 text-base sm:text-lg leading-relaxed max-w-xl";
 
-const legacyCampFeatures = [
-  {
-    icon: Mountain,
-    title: "Scenic Himalayan Locations",
-    color: "blue",
-    description:
-      "Camps set at panoramic Himalayan viewpoints with sweeping mountain and valley views.",
-  },
-  {
-    icon: Tent,
-    title: "Multiple Accommodation",
-    color: "orange",
-    description:
-      "Choose from hotels, homestays, traditional houses, luxury cottages, or camping tents.",
-  },
-  {
-    icon: Flame,
-    title: "Campfire Evenings",
-    color: "red",
-    description:
-      "Every evening ends around a crackling campfire with music, stories, and community.",
-  },
-  {
-    icon: Leaf,
-    title: "Organic Farm Experience",
-    color: "green",
-    description:
-      "Participate in herbal farming, organic cultivation, and Gaushala visits.",
-  },
-  {
-    icon: Heart,
-    title: "Wellness Programs",
-    color: "pink",
-    description:
-      "Daily yoga, meditation, pranayama, and mindfulness in pristine mountain air.",
-  },
-  {
-    icon: Star,
-    title: "Wildlife & Night Safari",
-    color: "purple",
-    description:
-      "Expert-guided jungle safaris and magical night safaris in Himalayan wildlife zones.",
-  },
-  {
-    icon: Users,
-    title: "All Age Groups",
-    color: "teal",
-    description:
-      "Carefully designed programs for children (5+), families, seniors, and solo travelers.",
-  },
-  {
-    icon: Clock,
-    title: "Flexible Duration",
-    color: "indigo",
-    description:
-      "One-day outings to weekend trips to extended 45-day programs — your choice.",
-  },
-];
+const IMAGE_BOX =
+  "relative aspect-video w-full overflow-hidden";
 
-const scheduleItems = [
-  {
-    time: "6:00 AM",
-    activity: "Sunrise yoga & meditation",
-    tag: "Wellness",
-  },
-  {
-    time: "7:30 AM",
-    activity: "Hot Himalayan breakfast",
-    tag: "Food",
-  },
-  {
-    time: "9:00 AM",
-    activity: "Guided nature walk / trek activity",
-    tag: "Adventure",
-  },
-  {
-    time: "1:00 PM",
-    activity: "Organic farm lunch",
-    tag: "Food",
-  },
-  {
-    time: "2:30 PM",
-    activity: "Cultural activity / workshop",
-    tag: "Culture",
-  },
-  {
-    time: "4:30 PM",
-    activity: "Bird watching / wildlife observation",
-    tag: "Nature",
-  },
-  {
-    time: "6:30 PM",
-    activity: "Campfire, music & group activities",
-    tag: "Community",
-  },
-  {
-    time: "8:00 PM",
-    activity: "Traditional dinner",
-    tag: "Food",
-  },
-  {
-    time: "9:30 PM",
-    activity: "Stargazing / night safari (selected camps)",
-    tag: "Adventure",
-  },
-];
-
-const accommodationTypes = [
-  {
-    type: "Hotels",
-    desc: "Comfortable mountain hotels with attached bathrooms, hot water, and Himalayan views.",
-    image:
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80&auto=format&fit=crop",
-  },
-  {
-    type: "Homestays",
-    desc: "Stay with a warm Kumaoni family. Experience local food, culture, and genuine mountain life.",
-    image: "/homestay.png",
-  },
-  {
-    type: "Traditional Houses",
-    desc: "Stone-and-wood heritage homes with centuries of Himalayan character and craftsmanship.",
-    image: "/th.png",
-  },
-  {
-    type: "Camping Tents",
-    desc: "Premium canvas tents at scenic riverside or meadow locations. Bedding provided.",
-    image: "/ct.png",
-  },
-];
+/*
+ * IMPORTANT:
+ * No coloured background is used for paragraph/text containers.
+ *
+ * All highlighted content text is black + bold.
+ */
+const KEY = "font-bold text-black";
 
 export default function CampsPage() {
   const trekkingImage =
@@ -206,7 +80,9 @@ export default function CampsPage() {
 
   return (
     <>
-      {/* Hero */}
+      {/* =========================================================
+          HERO
+          ========================================================= */}
       <section className="relative h-[65vh] min-h-[480px] overflow-hidden">
         <Image
           src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/38f2e4c5-2d33-48f0-9695-8f607faf69d8-scaled-holiday-camp-header-1.webp"
@@ -217,42 +93,53 @@ export default function CampsPage() {
           className="object-cover object-center"
         />
 
+        {/* Hero image readability overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
 
-        {/* Hero content moved higher */}
+        {/* Hero content */}
         <div className="absolute inset-0 flex flex-col items-center justify-start pt-12 sm:pt-16 md:pt-20 lg:pt-24 text-center px-4 sm:px-6">
+<<<<<<< HEAD
           <p className={HERO_TAG_CLASS}>Holiday Camp</p>
+=======
+          <p className={HERO_TAG_CLASS}>
+            Holiday Camps
+          </p>
+>>>>>>> cb08e5e (s)
 
           <h1 className={HERO_TITLE_CLASS}>
             Live the Himalayan Life
           </h1>
 
-          <p className="text-orange-200 text-sm sm:text-base font-semibold tracking-wide mb-4">
+          <p className={HERO_SUBTITLE_CLASS}>
             DISCOVER → VISIT → EXPERIENCE → RETURN → CONNECT → JOIN → BELONG
           </p>
 
-          <p className="text-white/80 text-lg max-w-xl">
-            Adventure, wellness, culture & nature — all at your pace.
+          <p className={HERO_DESCRIPTION_CLASS}>
+            Adventure, wellness, culture &amp; nature — all at your pace.
           </p>
         </div>
       </section>
 
-      {/* Overview */}
+      {/* =========================================================
+          OVERVIEW
+          ========================================================= */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <ScrollReveal direction="left">
-              <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+              <p className="text-slate-700 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
                 Camp Overview
               </p>
 
-              <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-4 leading-tight">
+              <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold tracking-tight mb-4 leading-tight">
                 Your Complete Himalayan Vacation — All in One Place
               </h2>
 
               <p className="text-slate-600 leading-relaxed mb-4 text-justify">
                 CHP Holiday Camps are designed to give you the full{" "}
-                <strong className={KEY}>Himalayan experience</strong>{" "}
+                <strong className={KEY}>
+                  Himalayan experience
+                </strong>{" "}
                 hassle free. We take care of everything — from accommodation
                 and meals to guided activities, permits, and logistics — so you
                 can simply arrive, breathe, and explore.
@@ -260,16 +147,20 @@ export default function CampsPage() {
 
               <p className="text-slate-600 leading-relaxed text-justify">
                 Whether you&apos;re a{" "}
-                <strong className={KEY}>family</strong> looking for a
-                meaningful summer vacation, a corporate group seeking
-                team-building in nature, a solo seeker on a wellness retreat,
-                or a student on an educational expedition — we have a camp
-                program designed for you.
+                <strong className={KEY}>
+                  family
+                </strong>{" "}
+                looking for a meaningful summer vacation, a corporate group
+                seeking team-building in nature, a solo seeker on a wellness
+                retreat, or a student on an educational expedition — we have a
+                camp program designed for you.
               </p>
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className={`${IMAGE_BOX} rounded-2xl`}>
+              <div
+                className={`${IMAGE_BOX} rounded-2xl overflow-hidden`}
+              >
                 <Image
                   src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a6144aa9-77bf-406b-8909-fccf2edf9929-scaled-holiday-camp-2.webp"
                   alt="Himalayan camp aerial view"
@@ -283,7 +174,9 @@ export default function CampsPage() {
         </div>
       </section>
 
-      {/* Features grid */}
+      {/* =========================================================
+          CAMP FEATURES
+          ========================================================= */}
       <section className="py-12 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
@@ -302,10 +195,13 @@ export default function CampsPage() {
               )
               .map((feature) => (
                 <StaggerItem key={feature.title}>
-                  <article className="h-full overflow-hidden rounded-2xl bg-green-50 shadow-sm [transform-style:preserve-3d] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-2xl hover:[transform:perspective(1000px)_rotateX(4deg)_rotateY(-4deg)_translateY(-4px)]">
-                    <div className={`${IMAGE_BOX} bg-green-100`}>
-                      {feature.image.startsWith("PASTE_IMAGE_URL_") ? (
-                        <div className="flex h-full items-center justify-center text-sm font-medium text-green-700">
+                  <article className="h-full overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                    {/* Image only */}
+                    <div className={`${IMAGE_BOX} bg-white`}>
+                      {feature.image.startsWith(
+                        "PASTE_IMAGE_URL_"
+                      ) ? (
+                        <div className="flex h-full items-center justify-center bg-slate-50 text-sm font-medium text-slate-600">
                           Image coming soon
                         </div>
                       ) : (
@@ -318,6 +214,13 @@ export default function CampsPage() {
                         />
                       )}
                     </div>
+
+                    {/* Plain white text area */}
+                    <div className="p-5 bg-white">
+                      <h3 className="font-semibold text-slate-900">
+                        {feature.title}
+                      </h3>
+                    </div>
                   </article>
                 </StaggerItem>
               ))}
@@ -328,35 +231,43 @@ export default function CampsPage() {
               href="/features"
               className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
             >
-              Show All Features <ArrowRight className="w-4 h-4" />
+              Show All Features
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Camp Activities */}
+      {/* =========================================================
+          CAMP ACTIVITIES
+          ========================================================= */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+            <p className="text-slate-700 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
               Camp Activities
             </p>
 
-            <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-3">
+            <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold tracking-tight mb-3">
               A World of Full Experiences Awaits
             </h2>
 
             <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed text-justify">
               From{" "}
-              <strong className={KEY}>mountain adventures</strong> to peaceful
-              moments in nature, every day brings something new to experience.
+              <strong className={KEY}>
+                mountain adventures
+              </strong>{" "}
+              to peaceful moments in nature, every day brings something new to
+              experience.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {/* Trekking */}
-            <div className="rounded-2xl bg-green-50 overflow-hidden shadow-sm [transform-style:preserve-3d] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-2xl hover:[transform:perspective(1000px)_rotateX(4deg)_rotateY(-4deg)_translateY(-4px)]">
-              <div className={`${IMAGE_BOX} bg-green-100`}>
+            {/* =====================================================
+                TREKKING
+                ===================================================== */}
+            <article className="rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div className={`${IMAGE_BOX} bg-white`}>
                 {trekkingImage ? (
                   <Image
                     src={trekkingImage}
@@ -366,30 +277,32 @@ export default function CampsPage() {
                     className="object-cover"
                   />
                 ) : (
-                  <div className="flex h-full items-center justify-center text-sm font-medium text-green-700">
+                  <div className="flex h-full items-center justify-center bg-slate-50 text-sm font-medium text-slate-600">
                     Image coming soon
                   </div>
                 )}
               </div>
 
-              <div className="p-5">
-                <h3 className="font-semibold text-green-900 mb-2">
-                  🥾 Trekking & Hiking
+              <div className="p-5 bg-white">
+                <h3 className="font-semibold text-slate-900 mb-2">
+                  Trekking &amp; Hiking
                 </h3>
 
                 <p className="text-sm text-slate-600 text-justify">
                   Explore{" "}
-                  <strong className="font-bold text-green-800">
+                  <strong className={KEY}>
                     scenic Himalayan trails
                   </strong>
                   , forests, villages and mountain viewpoints.
                 </p>
               </div>
-            </div>
+            </article>
 
-            {/* Campfire */}
-            <div className="rounded-2xl bg-orange-50 overflow-hidden shadow-sm [transform-style:preserve-3d] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-2xl hover:[transform:perspective(1000px)_rotateX(4deg)_rotateY(-4deg)_translateY(-4px)]">
-              <div className={`${IMAGE_BOX} bg-orange-100`}>
+            {/* =====================================================
+                CAMPFIRE
+                ===================================================== */}
+            <article className="rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div className={`${IMAGE_BOX} bg-white`}>
                 {campfireImage ? (
                   <Image
                     src={campfireImage}
@@ -399,30 +312,32 @@ export default function CampsPage() {
                     className="object-cover"
                   />
                 ) : (
-                  <div className="flex h-full items-center justify-center text-sm font-medium text-orange-700">
+                  <div className="flex h-full items-center justify-center bg-slate-50 text-sm font-medium text-slate-600">
                     Image coming soon
                   </div>
                 )}
               </div>
 
-              <div className="p-5">
-                <h3 className="font-semibold text-orange-900 mb-2">
-                  🔥 Campfire Evenings
+              <div className="p-5 bg-white">
+                <h3 className="font-semibold text-slate-900 mb-2">
+                  Campfire Evenings
                 </h3>
 
                 <p className="text-sm text-slate-600 text-justify">
                   Enjoy{" "}
-                  <strong className="font-bold text-orange-700">
+                  <strong className={KEY}>
                     music, stories, conversations
                   </strong>{" "}
                   and unforgettable evenings around the fire.
                 </p>
               </div>
-            </div>
+            </article>
 
-            {/* Wildlife */}
-            <div className="rounded-2xl bg-blue-50 overflow-hidden shadow-sm [transform-style:preserve-3d] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-2xl hover:[transform:perspective(1000px)_rotateX(4deg)_rotateY(-4deg)_translateY(-4px)]">
-              <div className={`${IMAGE_BOX} bg-blue-100`}>
+            {/* =====================================================
+                WILDLIFE
+                ===================================================== */}
+            <article className="rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div className={`${IMAGE_BOX} bg-white`}>
                 {wildlifeImage ? (
                   <Image
                     src={wildlifeImage}
@@ -432,26 +347,26 @@ export default function CampsPage() {
                     className="object-cover"
                   />
                 ) : (
-                  <div className="flex h-full items-center justify-center text-sm font-medium text-blue-700">
+                  <div className="flex h-full items-center justify-center bg-slate-50 text-sm font-medium text-slate-600">
                     Image coming soon
                   </div>
                 )}
               </div>
 
-              <div className="p-5">
-                <h3 className="font-semibold text-blue-900 mb-2">
-                  🐦 Nature & Wildlife
+              <div className="p-5 bg-white">
+                <h3 className="font-semibold text-slate-900 mb-2">
+                  Nature &amp; Wildlife
                 </h3>
 
                 <p className="text-sm text-slate-600 text-justify">
                   Discover{" "}
-                  <strong className="font-bold text-blue-800">
+                  <strong className={KEY}>
                     Himalayan birds, wildlife
                   </strong>{" "}
                   and the beauty of untouched mountain landscapes.
                 </p>
               </div>
-            </div>
+            </article>
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -459,35 +374,41 @@ export default function CampsPage() {
               href="/camp-activities"
               className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
             >
-              Show All Camp activities{" "}
+              Show All Camp Activities
               <ArrowRight className="w-4 h-4" />
             </Link>
 
             <Link
+<<<<<<< HEAD
               href="/contact?tab=camp"
               className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-900/30"
+=======
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
+>>>>>>> cb08e5e (s)
             >
-              Book Your Holiday Camp{" "}
+              Book Your Holiday Camp
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Daily Schedule */}
+      {/* =========================================================
+          DAILY SCHEDULE
+          ========================================================= */}
       <section className="pt-4 pb-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Heading */}
           <div className="text-center mb-8">
-            <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+            <p className="text-slate-700 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
               A Typical Day
             </p>
 
-            <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-3">
+            <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold tracking-tight mb-3">
               Camp Schedule | Duration
             </h2>
 
-            {/* Only one highlighted phrase */}
             <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed text-justify">
               Each day is thoughtfully structured —{" "}
               <strong className={KEY}>
@@ -499,17 +420,19 @@ export default function CampsPage() {
 
           {/* Description LEFT + Image RIGHT */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            {/* Description */}
-            <div className="rounded-2xl bg-orange-50 p-6">
-              <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+            {/* =====================================================
+                PLAIN TEXT CONTENT
+                NO COLOURED BACKGROUND
+                ===================================================== */}
+            <div className="p-0">
+              <p className="text-slate-700 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
                 Your Day in the Himalayas
               </p>
 
-              <h3 className="text-slate-800 text-2xl sm:text-3xl font-bold mb-4">
+              <h3 className="text-slate-800 text-2xl sm:text-3xl font-bold tracking-tight mb-4">
                 A Day Full of Experiences
               </h3>
 
-              {/* Only important phrase highlighted */}
               <p className="text-slate-600 leading-relaxed mb-4 text-justify">
                 Start your morning with{" "}
                 <strong className={KEY}>
@@ -520,25 +443,36 @@ export default function CampsPage() {
                 adventures.
               </p>
 
-              {/* Only important phrase highlighted */}
               <p className="text-slate-600 leading-relaxed mb-4 text-justify">
+<<<<<<< HEAD
                 After lunch, enjoyorganic farming, cultural
                 activities and workshops, followed by bird watching and
                 wildlife experiences in the afternoon.
+=======
+                After lunch, enjoy{" "}
+                <strong className={KEY}>
+                  organic farming
+                </strong>
+                , cultural activities and workshops, followed by bird watching
+                and wildlife experiences in the afternoon.
+>>>>>>> cb08e5e (s)
               </p>
 
-              {/* Only important phrase highlighted */}
               <p className="text-slate-600 leading-relaxed text-justify">
                 As evening arrives, gather around the{" "}
-                <strong className={KEY}>campfire</strong> for music, stories
-                and group activities before enjoying a traditional dinner. End
-                the day beneath the Himalayan sky with stargazing or a night
-                safari at selected camps.
+                <strong className={KEY}>
+                  campfire
+                </strong>{" "}
+                for music, stories and group activities before enjoying a
+                traditional dinner. End the day beneath the Himalayan sky with
+                stargazing or a night safari at selected camps.
               </p>
             </div>
 
             {/* Image */}
-            <div className={`${IMAGE_BOX} rounded-2xl`}>
+            <div
+              className={`${IMAGE_BOX} rounded-2xl overflow-hidden`}
+            >
               <Image
                 src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/976486cc-548b-42f2-ae8d-b2d827dc3448-scaled-schedule.webp"
                 alt="Himalayan camp schedule"
@@ -548,9 +482,19 @@ export default function CampsPage() {
               />
             </div>
           </div>
+          <div className="bg-white py-8 text-center">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Go back to Home
+        </Link>
+      </div>
         </div>
       </section>
 
+<<<<<<< HEAD
       {false && (
         <>
           <section className="py-12 bg-stone-50">
@@ -599,6 +543,29 @@ export default function CampsPage() {
       <CTABanner  showHomeButton/>
 
      
+=======
+      {/* =========================================================
+          FINAL CTA
+          =========================================================
+          IMPORTANT:
+          Holiday Camp is the ONE page where the
+          "The Himalayas Are Calling Your Name" section stays.
+      ========================================================= */}
+      <CTABanner />
+
+      {/* =========================================================
+          BACK TO HOME
+          ========================================================= */}
+      <div className="bg-white py-8 text-center">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Go back to Home
+        </Link>
+      </div>
+>>>>>>> cb08e5e (s)
     </>
   );
 }

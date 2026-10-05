@@ -16,13 +16,13 @@ import {
 
 export default function FacilitiesPage() {
   return (
-    <main className="min-h-screen bg-white pt-16">
+    <main className="min-h-screen bg-white pt-0">
 
       {/* ======================================================
           HERO / HEADER
           ====================================================== */}
 
-      <section className="relative min-h-[500px] h-[68vh] overflow-hidden">
+      <section className="relative mt-[72px] min-h-[500px] h-[68vh] overflow-hidden">
 
         <Image
           src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/baa1b671-abe3-4bc1-b818-6cc9500327e8-chp-remote-work-himalayas-header.webp"
@@ -45,7 +45,7 @@ export default function FacilitiesPage() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-3 inline-block rounded-full bg-green-900 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white sm:text-xs"
+              className="mb-3 inline-block rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white"
             >
               Remote Work
             </motion.p>
@@ -54,7 +54,7 @@ export default function FacilitiesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.6 }}
-              className="text-3xl font-bold uppercase tracking-[0.06em] leading-tight text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.75)] sm:text-4xl md:text-5xl lg:text-5xl"
+              className="text-[32px] font-bold leading-[1.08] tracking-tight text-white sm:text-[42px] md:text-[52px] xl:text-[62px]"
             >
               Remote Work from
               <br />
@@ -65,7 +65,7 @@ export default function FacilitiesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="mx-auto mt-4 max-w-3xl text-sm font-medium leading-relaxed text-white drop-shadow-[0_2px_5px_rgba(0,0,0,0.75)] sm:text-base md:text-lg"
+              className="mx-auto mt-4 max-w-3xl text-base font-medium leading-relaxed text-white/90 sm:text-lg"
             >
               Work, live, connect, and recharge in a Himalayan environment
               designed for the modern remote professional.
@@ -80,7 +80,7 @@ export default function FacilitiesPage() {
           WORK FROM THE HIMALAYA
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-20">
+      <section className="bg-white py-16 lg:py-20">
 
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
@@ -140,7 +140,7 @@ export default function FacilitiesPage() {
               ONLY individual text boxes are coloured.
               ================================================== */}
 
-          <div className="mx-auto mt-12 max-w-5xl rounded-3xl bg-white p-7 sm:p-9">
+          <div className="mx-auto mt-12 max-w-5xl rounded-3xl bg-white/70 p-7 sm:p-9">
 
             <h3 className="text-2xl font-bold text-slate-800 sm:text-3xl">
               It can be suitable for:
@@ -150,79 +150,79 @@ export default function FacilitiesPage() {
 
               {/* Individual coloured text boxes */}
 
-              <div className="rounded-xl bg-green-50 px-4 py-3">
+              <div className="rounded-xl bg-white px-4 py-3">
                 <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
                   <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
                   IT professionals
                 </div>
               </div>
 
-              <div className="rounded-xl bg-blue-50 px-4 py-3">
+              <div className="rounded-xl bg-white px-4 py-3">
                 <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-blue-700" />
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
                   Startup founders
                 </div>
               </div>
 
-              <div className="rounded-xl bg-amber-50 px-4 py-3">
+              <div className="rounded-xl bg-white px-4 py-3">
                 <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-amber-700" />
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
                   Entrepreneurs
                 </div>
               </div>
 
-              <div className="rounded-xl bg-violet-50 px-4 py-3">
+              <div className="rounded-xl bg-white px-4 py-3">
                 <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-violet-700" />
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
                   Consultants
                 </div>
               </div>
 
-              <div className="rounded-xl bg-orange-50 px-4 py-3">
+              <div className="rounded-xl bg-white px-4 py-3">
                 <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-orange-700" />
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
                   Freelancers
                 </div>
               </div>
 
-              <div className="rounded-xl bg-sky-50 px-4 py-3">
+              <div className="rounded-xl bg-white px-4 py-3">
                 <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-sky-700" />
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
                   Designers and creatives
                 </div>
               </div>
 
-              <div className="rounded-xl bg-emerald-50 px-4 py-3">
+              <div className="rounded-xl bg-white px-4 py-3">
                 <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-700" />
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
                   Digital professionals
                 </div>
               </div>
 
-              <div className="rounded-xl bg-cyan-50 px-4 py-3">
+              <div className="rounded-xl bg-white px-4 py-3">
                 <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-cyan-700" />
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
                   Teachers and educators
                 </div>
               </div>
 
-              <div className="rounded-xl bg-lime-50 px-4 py-3">
+              <div className="rounded-xl bg-white px-4 py-3">
                 <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-lime-700" />
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
                   Remote employees
                 </div>
               </div>
 
-              <div className="rounded-xl bg-rose-50 px-4 py-3">
+              <div className="rounded-xl bg-white px-4 py-3">
                 <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-rose-700" />
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
                   Independent professionals
                 </div>
               </div>
 
-              <div className="rounded-xl bg-teal-50 px-4 py-3">
+              <div className="rounded-xl bg-white px-4 py-3">
                 <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-teal-700" />
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-green-700" />
                   Professionals taking a workation
                 </div>
               </div>
@@ -256,7 +256,7 @@ export default function FacilitiesPage() {
 
           <div className="mx-auto mt-10 max-w-5xl">
 
-            <div className="rounded-3xl bg-green-50 p-7 sm:p-10">
+            <div className="rounded-3xl bg-white/70 p-7 sm:p-10">
 
               <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
                 Have you been working remotely from the same room, the same
@@ -288,7 +288,7 @@ export default function FacilitiesPage() {
           A TYPICAL REMOTE WORK DAY
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -306,7 +306,7 @@ export default function FacilitiesPage() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
 
-            <div className="rounded-2xl bg-green-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <Mountain className="h-6 w-6" />
               </div>
@@ -324,7 +324,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
                 <Laptop className="h-6 w-6" />
               </div>
@@ -342,7 +342,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
                 <Coffee className="h-6 w-6" />
               </div>
@@ -361,7 +361,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
                 <Heart className="h-6 w-6" />
               </div>
@@ -388,7 +388,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
                 <CalendarDays className="h-6 w-6" />
               </div>
@@ -419,7 +419,7 @@ export default function FacilitiesPage() {
 
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
-          <div className="rounded-3xl bg-sky-50 p-7 sm:p-10 lg:p-12">
+          <div className="rounded-3xl bg-white/70 p-7 sm:p-10 lg:p-12">
 
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-100 text-sky-700">
               <Laptop className="h-7 w-7" />
@@ -458,7 +458,7 @@ export default function FacilitiesPage() {
           DESIGNED FOR REMOTE PROFESSIONALS
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -503,7 +503,7 @@ export default function FacilitiesPage() {
 
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-2xl bg-green-50 px-6 py-7 text-center">
+          <div className="mx-auto mt-10 max-w-4xl rounded-2xl bg-white/70 px-6 py-7 text-center">
 
             <p className="text-xl font-bold text-green-900 sm:text-2xl">
               Come for work. Stay for the Himalaya.
@@ -565,7 +565,7 @@ export default function FacilitiesPage() {
           CORPORATE REMOTE WORK FACILITY
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -642,7 +642,7 @@ export default function FacilitiesPage() {
 
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-violet-50 p-7 text-center sm:p-10">
+          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-white/70 p-7 text-center sm:p-10">
 
             <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
               CHP can also combine remote work with team engagement, creating
@@ -671,7 +671,7 @@ export default function FacilitiesPage() {
           POSSIBLE TEAM ACTIVITIES
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -700,7 +700,7 @@ export default function FacilitiesPage() {
             ].map((item) => (
               <div
                 key={item}
-                className="rounded-2xl bg-white/80 p-5"
+                className="rounded-2xl bg-green-50 p-5"
               >
                 <p className="font-medium text-slate-700">
                   {item}
@@ -731,7 +731,7 @@ export default function FacilitiesPage() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
 
-            <div className="rounded-2xl bg-green-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 A Change of Environment
               </h3>
@@ -746,7 +746,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Continue Your Work
               </h3>
@@ -762,7 +762,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Space to Recharge
               </h3>
@@ -777,7 +777,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Connect with People
               </h3>
@@ -792,7 +792,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Experience the Himalaya
               </h3>
@@ -816,7 +816,7 @@ export default function FacilitiesPage() {
           FLEXIBLE REMOTE WORK MODEL
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -838,7 +838,7 @@ export default function FacilitiesPage() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
 
-            <div className="rounded-2xl bg-green-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <Laptop className="h-6 w-6" />
               </div>
@@ -857,7 +857,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
                 <CalendarDays className="h-6 w-6" />
               </div>
@@ -875,7 +875,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
                 <Building2 className="h-6 w-6" />
               </div>
@@ -894,7 +894,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
                 <Users className="h-6 w-6" />
               </div>
@@ -913,7 +913,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
                 <Mountain className="h-6 w-6" />
               </div>
@@ -975,7 +975,7 @@ export default function FacilitiesPage() {
 
           </div>
 
-          <div className="mx-auto mt-10 max-w-5xl rounded-3xl bg-green-50 p-7 text-center sm:p-10">
+          <div className="mx-auto mt-10 max-w-5xl rounded-3xl bg-white/70 p-7 text-center sm:p-10">
 
             <p className="text-xl font-bold text-green-900 sm:text-2xl">
               Accommodation + Work Space + Connectivity + Food + Nature +
@@ -1006,7 +1006,7 @@ export default function FacilitiesPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl bg-stone-50 p-5"
+                  className="rounded-2xl bg-green-50 p-5"
                 >
                   <p className="font-medium text-slate-700">
                     {item}
@@ -1037,7 +1037,7 @@ export default function FacilitiesPage() {
 
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-violet-50 p-7 text-center sm:p-10">
+          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-white/70 p-7 text-center sm:p-10">
 
             <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
               CHP can also combine remote work with team engagement, creating
@@ -1066,7 +1066,7 @@ export default function FacilitiesPage() {
           POSSIBLE TEAM ACTIVITIES
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -1095,7 +1095,7 @@ export default function FacilitiesPage() {
             ].map((item) => (
               <div
                 key={item}
-                className="rounded-2xl bg-white/80 p-5"
+                className="rounded-2xl bg-green-50 p-5"
               >
                 <p className="font-medium text-slate-700">
                   {item}
@@ -1126,7 +1126,7 @@ export default function FacilitiesPage() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
 
-            <div className="rounded-2xl bg-green-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 A Change of Environment
               </h3>
@@ -1141,7 +1141,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Continue Your Work
               </h3>
@@ -1157,7 +1157,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Space to Recharge
               </h3>
@@ -1172,7 +1172,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Connect with People
               </h3>
@@ -1187,7 +1187,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Experience the Himalaya
               </h3>
@@ -1211,7 +1211,7 @@ export default function FacilitiesPage() {
           FLEXIBLE REMOTE WORK MODEL
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -1233,7 +1233,7 @@ export default function FacilitiesPage() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
 
-            <div className="rounded-2xl bg-green-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <Laptop className="h-6 w-6" />
               </div>
@@ -1252,7 +1252,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
                 <CalendarDays className="h-6 w-6" />
               </div>
@@ -1270,7 +1270,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
                 <Building2 className="h-6 w-6" />
               </div>
@@ -1289,7 +1289,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
                 <Users className="h-6 w-6" />
               </div>
@@ -1308,7 +1308,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
                 <Mountain className="h-6 w-6" />
               </div>
@@ -1370,7 +1370,7 @@ export default function FacilitiesPage() {
 
           </div>
 
-          <div className="mx-auto mt-10 max-w-5xl rounded-3xl bg-green-50 p-7 text-center sm:p-10">
+          <div className="mx-auto mt-10 max-w-5xl rounded-3xl bg-white/70 p-7 text-center sm:p-10">
 
             <p className="text-xl font-bold text-green-900 sm:text-2xl">
               Accommodation + Work Space + Connectivity + Food + Nature +
@@ -1401,7 +1401,7 @@ export default function FacilitiesPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl bg-stone-50 p-5"
+                  className="rounded-2xl bg-green-50 p-5"
                 >
                   <p className="font-medium text-slate-700">
                     {item}
@@ -1432,7 +1432,7 @@ export default function FacilitiesPage() {
 
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-violet-50 p-7 text-center sm:p-10">
+          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-white/70 p-7 text-center sm:p-10">
 
             <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
               CHP can also combine remote work with team engagement, creating
@@ -1461,7 +1461,7 @@ export default function FacilitiesPage() {
           POSSIBLE TEAM ACTIVITIES
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -1490,7 +1490,7 @@ export default function FacilitiesPage() {
             ].map((item) => (
               <div
                 key={item}
-                className="rounded-2xl bg-white/80 p-5"
+                className="rounded-2xl bg-green-50 p-5"
               >
                 <p className="font-medium text-slate-700">
                   {item}
@@ -1521,7 +1521,7 @@ export default function FacilitiesPage() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
 
-            <div className="rounded-2xl bg-green-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 A Change of Environment
               </h3>
@@ -1536,7 +1536,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Continue Your Work
               </h3>
@@ -1552,7 +1552,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Space to Recharge
               </h3>
@@ -1567,7 +1567,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Connect with People
               </h3>
@@ -1582,7 +1582,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Experience the Himalaya
               </h3>
@@ -1606,7 +1606,7 @@ export default function FacilitiesPage() {
           FLEXIBLE REMOTE WORK MODEL
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -1628,7 +1628,7 @@ export default function FacilitiesPage() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
 
-            <div className="rounded-2xl bg-green-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <Laptop className="h-6 w-6" />
               </div>
@@ -1647,7 +1647,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
                 <CalendarDays className="h-6 w-6" />
               </div>
@@ -1665,7 +1665,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
                 <Building2 className="h-6 w-6" />
               </div>
@@ -1684,7 +1684,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
                 <Users className="h-6 w-6" />
               </div>
@@ -1703,7 +1703,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
                 <Mountain className="h-6 w-6" />
               </div>
@@ -1765,7 +1765,7 @@ export default function FacilitiesPage() {
 
           </div>
 
-          <div className="mx-auto mt-10 max-w-5xl rounded-3xl bg-green-50 p-7 text-center sm:p-10">
+          <div className="mx-auto mt-10 max-w-5xl rounded-3xl bg-white/70 p-7 text-center sm:p-10">
 
             <p className="text-xl font-bold text-green-900 sm:text-2xl">
               Accommodation + Work Space + Connectivity + Food + Nature +
@@ -1796,7 +1796,7 @@ export default function FacilitiesPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl bg-stone-50 p-5"
+                  className="rounded-2xl bg-green-50 p-5"
                 >
                   <p className="font-medium text-slate-700">
                     {item}
@@ -1827,7 +1827,7 @@ export default function FacilitiesPage() {
 
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-violet-50 p-7 text-center sm:p-10">
+          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-white/70 p-7 text-center sm:p-10">
 
             <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
               CHP can also combine remote work with team engagement, creating
@@ -1856,7 +1856,7 @@ export default function FacilitiesPage() {
           POSSIBLE TEAM ACTIVITIES
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -1885,7 +1885,7 @@ export default function FacilitiesPage() {
             ].map((item) => (
               <div
                 key={item}
-                className="rounded-2xl bg-white/80 p-5"
+                className="rounded-2xl bg-green-50 p-5"
               >
                 <p className="font-medium text-slate-700">
                   {item}
@@ -1916,7 +1916,7 @@ export default function FacilitiesPage() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
 
-            <div className="rounded-2xl bg-green-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 A Change of Environment
               </h3>
@@ -1931,7 +1931,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Continue Your Work
               </h3>
@@ -1947,7 +1947,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Space to Recharge
               </h3>
@@ -1962,7 +1962,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Connect with People
               </h3>
@@ -1977,7 +1977,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Experience the Himalaya
               </h3>
@@ -2001,7 +2001,7 @@ export default function FacilitiesPage() {
           FLEXIBLE REMOTE WORK MODEL
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -2023,7 +2023,7 @@ export default function FacilitiesPage() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
 
-            <div className="rounded-2xl bg-green-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <Laptop className="h-6 w-6" />
               </div>
@@ -2042,7 +2042,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
                 <CalendarDays className="h-6 w-6" />
               </div>
@@ -2060,7 +2060,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
                 <Building2 className="h-6 w-6" />
               </div>
@@ -2079,7 +2079,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
                 <Users className="h-6 w-6" />
               </div>
@@ -2098,7 +2098,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
                 <Mountain className="h-6 w-6" />
               </div>
@@ -2160,7 +2160,7 @@ export default function FacilitiesPage() {
 
           </div>
 
-          <div className="mx-auto mt-10 max-w-5xl rounded-3xl bg-green-50 p-7 text-center sm:p-10">
+          <div className="mx-auto mt-10 max-w-5xl rounded-3xl bg-white/70 p-7 text-center sm:p-10">
 
             <p className="text-xl font-bold text-green-900 sm:text-2xl">
               Accommodation + Work Space + Connectivity + Food + Nature +
@@ -2191,7 +2191,7 @@ export default function FacilitiesPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl bg-stone-50 p-5"
+                  className="rounded-2xl bg-green-50 p-5"
                 >
                   <p className="font-medium text-slate-700">
                     {item}
@@ -2222,7 +2222,7 @@ export default function FacilitiesPage() {
 
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-violet-50 p-7 text-center sm:p-10">
+          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-white/70 p-7 text-center sm:p-10">
 
             <p className="text-base leading-relaxed text-slate-700 sm:text-lg">
               CHP can also combine remote work with team engagement, creating
@@ -2251,7 +2251,7 @@ export default function FacilitiesPage() {
           POSSIBLE TEAM ACTIVITIES
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -2280,7 +2280,7 @@ export default function FacilitiesPage() {
             ].map((item) => (
               <div
                 key={item}
-                className="rounded-2xl bg-white/80 p-5"
+                className="rounded-2xl bg-green-50 p-5"
               >
                 <p className="font-medium text-slate-700">
                   {item}
@@ -2311,7 +2311,7 @@ export default function FacilitiesPage() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
 
-            <div className="rounded-2xl bg-green-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 A Change of Environment
               </h3>
@@ -2326,7 +2326,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Continue Your Work
               </h3>
@@ -2342,7 +2342,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Space to Recharge
               </h3>
@@ -2357,7 +2357,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Connect with People
               </h3>
@@ -2372,7 +2372,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <h3 className="text-xl font-bold text-slate-800">
                 Experience the Himalaya
               </h3>
@@ -2396,7 +2396,7 @@ export default function FacilitiesPage() {
           FLEXIBLE REMOTE WORK MODEL
           ====================================================== */}
 
-      <section className="bg-stone-50 py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -2418,7 +2418,7 @@ export default function FacilitiesPage() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
 
-            <div className="rounded-2xl bg-green-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-700">
                 <Laptop className="h-6 w-6" />
               </div>
@@ -2437,7 +2437,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-blue-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
                 <CalendarDays className="h-6 w-6" />
               </div>
@@ -2455,7 +2455,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-violet-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
                 <Building2 className="h-6 w-6" />
               </div>
@@ -2474,7 +2474,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-orange-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
                 <Users className="h-6 w-6" />
               </div>
@@ -2493,7 +2493,7 @@ export default function FacilitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-amber-50 p-6">
+            <div className="rounded-2xl bg-white p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
                 <Mountain className="h-6 w-6" />
               </div>

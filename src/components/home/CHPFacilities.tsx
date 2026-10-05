@@ -135,9 +135,8 @@ export function CHPFacilities() {
           </div>
 
           {/* Section description */}
-          <p className="mb-8 mt-3 max-w-2xl text-sm font-medium leading-relaxed text-slate-600 sm:text-base">
-            Sixteen distinctive settings where Himalayan life finds room to
-            belong, restore, and become.
+          <p className="mb-8 mt-3 text-sm font-medium leading-relaxed text-slate-600 sm:text-base md:whitespace-nowrap">
+            Distinctive spaces designed to turn the Himalayas into a place to live, create, and belong.
           </p>
 
           {/* Dream Space Cards */}
@@ -178,8 +177,8 @@ export function CHPFacilities() {
             <div className="h-px flex-1 bg-slate-200" />
           </div>
 
-          {/* Bottom sentence moved directly below heading */}
-          <p className="mb-8 mt-3 max-w-2xl text-sm font-medium leading-relaxed text-slate-600 sm:text-base">
+          {/* Section description */}
+          <p className="mb-8 mt-3 text-sm font-medium leading-relaxed text-slate-600 sm:text-base md:whitespace-nowrap">
             Himalayan living, shared experiences, and purposeful spaces for a
             life of deeper belonging.
           </p>

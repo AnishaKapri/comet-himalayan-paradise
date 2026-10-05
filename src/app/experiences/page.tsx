@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { CTABanner } from "@/components/home/CTABanner";
 import { experiences } from "@/data/experiences";
 
 const categories = [
@@ -19,10 +18,6 @@ const categories = [
 export default function ExperiencesPage() {
   const [activeCategory, setActiveCategory] = useState("all");
 
-  /*
-   * Normalize the category values so filtering still works if
-   * the data uses "Wellness", "WELLNESS", etc.
-   */
   const filtered =
     activeCategory === "all"
       ? experiences
@@ -34,10 +29,11 @@ export default function ExperiencesPage() {
 
   return (
     <>
-      {/* =========================
+      {/* =====================================================
           HERO
-      ========================== */}
-      <section className="relative h-[60vh] min-h-[420px] overflow-hidden bg-black">
+      ===================================================== */}
+      <section className="relative mt-[72px] h-[60vh] min-h-[420px] overflow-hidden bg-black">
+        {/* Hero image */}
         <Image
           src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ab74ec0a-4d09-40a2-b3d5-e249041fed33-chatgpt-image-sep-3-2026-02-25-33-am.webp"
           alt="Himalayan Experiences"
@@ -47,15 +43,20 @@ export default function ExperiencesPage() {
           className="object-cover object-[center_20%]"
         />
 
+        {/* Hero overlay */}
         <div className="absolute inset-0 bg-black/45" />
 
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 px-4 text-center sm:px-6 lg:px-8">
+        {/* =================================================
+            ENTIRE TEXT BLOCK
+            Moved upward by 2cm as one unit
+        ================================================= */}
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-start px-4 pt-20 text-center -translate-y-[2cm] sm:px-6 sm:pt-24 md:pt-28 lg:px-8">
           {/* Badge */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="absolute top-14 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full border border-green-700 bg-green-900 px-4 py-1.5 text-sm font-semibold uppercase tracking-wider text-white"
+            className="mb-3 inline-block rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white"
           >
             CHP Himalayan Paradise
           </motion.p>
@@ -65,7 +66,7 @@ export default function ExperiencesPage() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl text-white sm:text-4xl"
+            className="max-w-5xl text-[32px] font-bold leading-[1.08] tracking-tight text-white sm:text-[42px] md:text-[52px] xl:text-[62px]"
           >
             Himalayan Experiences
           </motion.h1>
@@ -75,7 +76,7 @@ export default function ExperiencesPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto max-w-2xl text-lg text-white/60"
+            className="mx-auto mt-3 max-w-3xl text-base font-medium leading-relaxed text-white/90 sm:text-lg"
           >
             STAY • EXPLORE • ADVENTURE • WELLNESS • FOOD • CULTURE • LEARN •
             WORK
@@ -83,9 +84,9 @@ export default function ExperiencesPage() {
         </div>
       </section>
 
-      {/* =========================
+      {/* =====================================================
           CATEGORY FILTER BAR
-      ========================== */}
+      ===================================================== */}
       <section className="border-b border-slate-100 bg-white py-4 shadow-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 overflow-x-auto pb-1">
@@ -109,7 +110,7 @@ export default function ExperiencesPage() {
               );
             })}
 
-            <span className="ml-auto shrink-0 text-xs text-slate-400">
+            <span className="ml-auto shrink-0 text-xs font-semibold text-slate-500">
               {filtered.length}{" "}
               {filtered.length === 1 ? "experience" : "experiences"}
             </span>
@@ -117,14 +118,14 @@ export default function ExperiencesPage() {
         </div>
       </section>
 
-      {/* =========================
+      {/* =====================================================
           EXPERIENCES GRID
-      ========================== */}
+      ===================================================== */}
       <section className="min-h-[500px] bg-stone-50 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {filtered.length === 0 ? (
             <div className="py-24 text-center">
-              <p className="text-lg text-slate-400">
+              <p className="text-lg text-slate-500">
                 No experiences match your filter.
               </p>
 
@@ -178,7 +179,7 @@ export default function ExperiencesPage() {
                       alt={experience.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 hover:scale-110"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -195,12 +196,12 @@ export default function ExperiencesPage() {
                   </div>
 
                   {/* Content */}
-                  <div className="flex flex-1 flex-col p-6">
-                    <h2 className="mb-2 text-lg font-bold text-slate-800">
+                  <div className="flex flex-1 flex-col bg-white p-6">
+                    <h2 className="mb-2 text-lg font-bold leading-snug text-slate-800">
                       {experience.title}
                     </h2>
 
-                    <p className="mb-5 flex-1 text-justify text-sm leading-relaxed text-slate-500">
+                    <p className="mb-5 flex-1 text-justify text-sm leading-relaxed text-slate-600">
                       {experience.description}
                     </p>
 
@@ -233,8 +234,20 @@ export default function ExperiencesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <CTABanner showHomeButton />
+      {/* =====================================================
+          BACK TO HOME
+      ===================================================== */}
+      <section className="border-t border-slate-100 bg-white py-8">
+        <div className="flex justify-center px-4">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:border-green-900 hover:bg-green-900 hover:text-white"
+          >
+            <ArrowRight className="h-4 w-4 rotate-180" />
+            Back to Home
+          </Link>
+        </div>
+      </section>
     </>
   );
 }

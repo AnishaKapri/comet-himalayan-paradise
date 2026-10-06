@@ -313,12 +313,6 @@ const requiredCampActivityGroups = [
     ],
   },
   {
-    title: "STEM & Learning",
-    activities: [
-      "STEM Discovery Zone",
-    ],
-  },
-  {
     title: "Team & Challenge",
     activities: [
       "Team Building",
@@ -348,16 +342,16 @@ const requiredCampActivityGroups = [
     ],
   },
   {
-    title: "Himalayan Outdoor Adventure",
+    title: "STEM & Himalayan Outdoor Adventure",
     activities: [
+      "STEM Discovery Zone",
       "Himalayan Adventure Games",
     ],
   },
 ] as const;
 
-export const campActivityGroups = requiredCampActivityGroups.map((group, groupIndex) => ({
+export const campActivityGroups = requiredCampActivityGroups.map((group) => ({
   ...group,
-  groupNumber: groupIndex + 1,
   items: group.activities
     .map((title) => {
       const activity = campCategories.find((item) => item.title === title);
@@ -374,7 +368,6 @@ export const campActivityGroups = requiredCampActivityGroups.map((group, groupIn
 export const campActivityCatalog = campActivityGroups.flatMap((group) => group.items.map((activity) => ({
   ...activity,
   group: group.title,
-  groupNumber: group.groupNumber,
 })));
 
 export const getCampActivityBySlug = (slug: string) =>

@@ -26,15 +26,12 @@ export default function CampActivitiesPage() {
           {campActivityGroups.map((group) => (
             <div key={group.title} className="scroll-mt-24">
               <div className="mb-5 text-center">
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-orange-500">
-                  Group {group.groupNumber}
-                </p>
-                <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+                <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
                   {group.title}
                 </h2>
               </div>
 
-              <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 {group.items.map((activity) => (
                   <Link
                     key={activity.title}
@@ -46,8 +43,8 @@ export default function CampActivitiesPage() {
                         src={activity.image}
                         alt={activity.title}
                         fill
-                        sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+                        className="object-contain"
                       />
                     </div>
                     <div className="flex grow flex-col p-5">

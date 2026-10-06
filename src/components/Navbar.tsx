@@ -31,9 +31,9 @@ const navGroups = [
     ],
   },
   {
-    label: "CHP Biz. Opportunities",
+    label: "CHP Business Opportunities",
     items: [
-      { href: "/chp-biz-partnership", label: "CHP Biz. Partnership" },
+      { href: "/chp-biz-partnership", label: "CHP Business Partnership" },
       { href: "/growth-partner", label: "CHP Growth Partnership" },
       { href: "/chp-enclave#group-ownership", label: "Co-Ownership Model" },
       { href: "/business-investment", label: "Investment Options" },

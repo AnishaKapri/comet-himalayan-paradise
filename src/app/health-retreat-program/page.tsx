@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
     Flower2,
@@ -13,6 +14,7 @@ import {
     Flame,
     CheckCircle2,
     ArrowRight,
+    ArrowLeft,
     Send,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -20,7 +22,6 @@ import {
     StaggerContainer,
     StaggerItem,
 } from "@/components/ui/ScrollReveal";
-import { CTABanner } from "@/components/home/CTABanner";
 
 const pillars = [
     {
@@ -45,7 +46,7 @@ const pillars = [
         description: (
             <>
                 Our traditional Isht Dev Sthal hosts daily{" "}
-                <span className="font-semibold text-orange-700">
+                <span className="font-bold text-slate-800">
                     Agni Puja, Havans, and Kumaoni spiritual ceremonies
                 </span>{" "}
                 — rooted in centuries of mountain devotion.
@@ -76,7 +77,7 @@ const pillars = [
         description: (
             <>
                 Campfire satsangs, kirtan evenings, storytelling circles, and{" "}
-                <span className="font-semibold text-rose-700">
+                <span className="font-bold text-slate-800">
                     Kumaoni folk music
                 </span>{" "}
                 nights that foster genuine human connection under the stars.
@@ -183,10 +184,10 @@ export default function HealthRetreatProgramPage() {
     };
 
     return (
-        <main className="min-h-screen bg-amber-950/5 text-slate-800 pt-16 text-justify">
+        <main className="min-h-screen bg-white text-slate-800 pt-0 text-justify">
 
             {/* ── Hero ── */}
-            <section className="relative h-[80vh] min-h-[560px] overflow-hidden">
+            <section className="relative mt-[72px] h-[80vh] min-h-[560px] overflow-hidden">
 
                 <Image
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d24cfc6e-0194-484b-b5ad-ddff2560a032-wrt.webp"
@@ -207,7 +208,7 @@ export default function HealthRetreatProgramPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="mt-20 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-900 border border-green-700 text-white text-xs font-semibold uppercase tracking-wider"
+                        className="mb-3 inline-flex translate-y-[1cm] items-center gap-2 rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white"
                     >
                         <Flower2 className="w-3.5 h-3.5" />
                         Spiritual & Wellness Sanctuary
@@ -223,7 +224,7 @@ export default function HealthRetreatProgramPage() {
                                 duration: 0.7,
                                 delay: 0.1,
                             }}
-                            className="text-white text-3xl sm:text-4xl md:text-5xl font-medium leading-tight"
+                            className="text-[32px] font-bold leading-[1.08] tracking-tight text-white sm:text-[42px] md:text-[52px] xl:text-[62px]"
                         >
                             Health Retreat Program
                         </motion.h1>
@@ -235,7 +236,7 @@ export default function HealthRetreatProgramPage() {
                                 duration: 0.6,
                                 delay: 0.2,
                             }}
-                            className="mt-4 text-white/90 text-base sm:text-lg max-w-2xl leading-relaxed text-center"
+                            className="mx-auto mt-4 max-w-3xl text-base font-medium leading-relaxed text-white/90 sm:text-lg"
                         >
                             A sacred Himalayan environment for yoga,
                             meditation, Ayurveda, spiritual ceremony, and deep
@@ -272,15 +273,15 @@ export default function HealthRetreatProgramPage() {
             </section>
 
             {/* ── Philosophy ── */}
-            <section className="py-16 bg-gradient-to-r from-amber-950 to-stone-900 text-white">
+            <section className="py-16 bg-white">
 
                 <div className="max-w-4xl mx-auto px-4 text-center">
 
-                    <p className="text-amber-300 text-sm sm:text-base font-semibold uppercase tracking-widest mb-4">
+                    <p className="text-green-800 text-sm sm:text-base font-semibold uppercase tracking-widest mb-4">
                         Our Philosophy
                     </p>
 
-                    <blockquote className="text-lg sm:text-xl font-light leading-relaxed text-white/90 italic text-justify">
+                    <blockquote className="mx-auto max-w-4xl text-lg sm:text-xl font-light leading-relaxed text-slate-700 italic text-justify">
                         "The Himalayas do not merely house peaks — they house
                         silence, wisdom, and the ancient breath of the earth.
                         CHP is designed to help you listen."
@@ -290,7 +291,7 @@ export default function HealthRetreatProgramPage() {
             </section>
 
             {/* ── Wellness Pillars ── */}
-            <section className="py-20 lg:py-28 bg-stone-50">
+            <section className="py-20 lg:py-28 bg-white">
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -311,9 +312,9 @@ export default function HealthRetreatProgramPage() {
                                 <StaggerItem key={p.title}>
 
                                     <div
-                                        className={`p-7 rounded-2xl ${p.bg} border ${p.border} hover:shadow-lg hover:shadow-amber-900/5 transition-all h-full`}
+                                        className="p-7 rounded-2xl bg-white border border-slate-100 hover:shadow-lg hover:shadow-black/5 transition-all h-full"
                                     >
-                                        <div className="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 mb-4">
+                                        <div className="w-11 h-11 rounded-xl bg-green-100 border border-green-200 flex items-center justify-center text-green-700 mb-4">
                                             <Icon className="w-5 h-5" />
                                         </div>
 
@@ -335,7 +336,7 @@ export default function HealthRetreatProgramPage() {
             </section>
 
             {/* ── Sacred Traditions ── */}
-            <section className="py-16 bg-amber-950/10 border-y border-amber-200/40">
+            <section className="py-16 bg-white border-y border-slate-100">
 
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -344,9 +345,9 @@ export default function HealthRetreatProgramPage() {
                         {traditions.map((t) => (
                             <div
                                 key={t.label}
-                                className={`text-center p-5 rounded-2xl ${t.bg} border ${t.border}`}
+                                className="text-center p-5 rounded-2xl bg-green-50 border border-green-100"
                             >
-                                <div className="w-10 h-10 rounded-full bg-amber-100 mx-auto flex items-center justify-center text-amber-700 mb-3">
+                                <div className="w-10 h-10 rounded-full bg-green-100 mx-auto flex items-center justify-center text-green-700 mb-3">
                                     <Flame className="w-5 h-5" />
                                 </div>
 
@@ -436,7 +437,7 @@ export default function HealthRetreatProgramPage() {
                                                         key={inc}
                                                         className="flex items-center gap-2 text-xs text-slate-600"
                                                     >
-                                                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                                                        <CheckCircle2 className="w-3.5 h-3.5 text-green-700 shrink-0" />
                                                         {inc}
                                                     </li>
                                                 ))}
@@ -469,7 +470,7 @@ export default function HealthRetreatProgramPage() {
             {/* ── Enquiry Form ── */}
             <section
                 id="enquire"
-                className="py-20 bg-stone-50 scroll-mt-20"
+                className="py-20 bg-white scroll-mt-20"
             >
 
                 <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -677,7 +678,17 @@ export default function HealthRetreatProgramPage() {
                 </div>
             </section>
 
-            <CTABanner showHomeButton />
+            <section className="bg-white py-10">
+                <div className="mx-auto flex max-w-7xl justify-center px-4 sm:px-6 lg:px-8">
+                    <Link
+                        href="/"
+                        className="inline-flex items-center gap-2 rounded-full bg-green-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-green-800"
+                    >
+                        <ArrowLeft className="h-4 w-4" />
+                        Back to Home
+                    </Link>
+                </div>
+            </section>
 
         </main>
     );

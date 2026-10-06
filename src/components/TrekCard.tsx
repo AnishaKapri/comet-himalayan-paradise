@@ -38,6 +38,7 @@ export function TrekCard({ trek, className }: TrekCardProps) {
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
+
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
         {/* Difficulty badge */}
@@ -63,7 +64,9 @@ export function TrekCard({ trek, className }: TrekCardProps) {
         <h3 className="font-bold text-slate-800 text-lg leading-snug mb-1">
           {trek.name}
         </h3>
-        <p className="text-orange-500 text-sm font-medium mb-3">
+
+        {/* Trek tagline — dark green + bold */}
+        <p className="text-green-900 text-sm font-bold mb-3">
           {trek.tagline}
         </p>
 
@@ -73,10 +76,12 @@ export function TrekCard({ trek, className }: TrekCardProps) {
             <Clock className="w-3.5 h-3.5" />
             {trek.duration}
           </span>
+
           <span className="flex items-center gap-1.5 text-xs text-slate-500">
             <MapPin className="w-3.5 h-3.5" />
             {trek.location}
           </span>
+
           {trek.maxAltitude && (
             <span className="flex items-center gap-1.5 text-xs text-slate-500">
               <TrendingUp className="w-3.5 h-3.5" />
@@ -88,7 +93,10 @@ export function TrekCard({ trek, className }: TrekCardProps) {
         {/* Highlights */}
         <ul className="space-y-1 mb-5">
           {trek.highlights.slice(0, 3).map((h) => (
-            <li key={h} className="flex items-center gap-2 text-xs text-slate-600">
+            <li
+              key={h}
+              className="flex items-center gap-2 text-xs text-slate-600"
+            >
               <span className="w-1.5 h-1.5 rounded-full bg-green-600 shrink-0" />
               {h}
             </li>

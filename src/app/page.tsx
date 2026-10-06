@@ -34,7 +34,7 @@ export default function HomePage() {
       <Testimonials />
       <FAQ />
       <StatsSection />
-      <CTABanner />
+     
     </>
   );
 }
